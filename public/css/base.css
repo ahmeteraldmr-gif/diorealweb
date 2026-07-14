@@ -1,0 +1,54 @@
+/* ── BASE STYLES ── */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white: #ffffff;
+    --off-white: #fcfbf9;
+    --light-gray: #f0ede8;
+    --mid-gray: #9c9893;
+    --dark-gray: #3d3a37;
+    --near-black: #1a1816;
+    --black: #0d0c0b;
+    --accent: #c8a96e;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Jost', sans-serif;
+    --font-condensed: 'Oswald', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--white);
+    color: var(--near-black);
+    font-family: var(--font-body);
+    font-weight: 300;
+    overflow-x: hidden;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: .8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes marqueeRoll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* ── Language Switcher CSS-based display rules ── */
+html[lang="tr"] .lang-text-en { display: none !important; }
+html[lang="en"] .lang-text-tr { display: none !important; }

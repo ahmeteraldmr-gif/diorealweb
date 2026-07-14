@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "title": {
+            "tr": "Bodrum Komple Rehber",
+            "en": "Bodrum Complete Guide"
+        },
+        "tag": {
+            "tr": "Destinasyon Rehberi",
+            "en": "Destination Guide"
+        },
+        "img": "foto.img/bodrum.jpg",
+        "desc": {
+            "tr": "Gidilecek plajlar, gece hayatı, en iyi restoranlar ve gizli koylar. Bodrum'da yapılacak her şey.",
+            "en": "Beaches to go, night life, best restaurants and hidden bays. Everything to do in Bodrum."
+        }
+    },
+    {
+        "id": 2,
+        "title": {
+            "tr": "Kapadokya Gizli Köşeleri",
+            "en": "Hidden Corners of Cappadocia"
+        },
+        "tag": {
+            "tr": "Destinasyon Rehberi",
+            "en": "Destination Guide"
+        },
+        "img": "foto.img/kapadokya.jpg",
+        "desc": {
+            "tr": "Turistik yerler dışında, peri bacalarının arasında saklı kalmış otantik köyler.",
+            "en": "Authentic villages hidden among fairy chimneys, apart from tourist attractions."
+        }
+    },
+    {
+        "id": 3,
+        "title": {
+            "tr": "Çeşme & Alaçatı Mayıs",
+            "en": "Cesme & Alacati May"
+        },
+        "tag": {
+            "tr": "Sezon Rehberi",
+            "en": "Season Guide"
+        },
+        "img": "foto.img/cesme.jpg",
+        "desc": {
+            "tr": "Kalabalık öncesi Çeşme'nin en keyifli hali. Rüzgar festivali ve sakin kafeler.",
+            "en": "The most pleasant state of Cesme before the crowd. Wind festival and quiet cafes."
+        }
+    }
+]

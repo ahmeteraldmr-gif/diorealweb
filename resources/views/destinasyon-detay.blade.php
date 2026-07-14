@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="base-url" content="{{ url('/') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ $destination->name['tr'] ?? 'Destinasyon Detayı' }} — Dioreal Dijital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@200;300;400;500;600&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('css/base.css') }}?v={{ time() }}">
+    <link rel="stylesheet" href="{{ asset('css/nav-footer.css') }}?v={{ time() }}">
+    <link rel="stylesheet" href="{{ asset('css/components.css') }}?v={{ time() }}">
+    <link rel="stylesheet" href="{{ asset('css/about.css') }}?v={{ time() }}">
+    <style>
+        body {
+            background-color: var(--off-white);
+            color: var(--dark-gray);
+        }
+        .page-hero {
+            position: relative;
+            height: 70vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            overflow: hidden;
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+            z-index: 1;
+        }
+        .page-hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 2rem;
+            max-width: 900px;
+        }
+        .page-eyebrow {
+            font-family: var(--font-condensed);
+            font-size: 0.9rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        .page-title {
+            font-family: var(--font-display);
+            font-size: clamp(3.2rem, 7vw, 5rem);
+            line-height: 1.1;
+            font-weight: 300;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .dest-intro {
+            max-width: 900px;
+            margin: 6rem auto 4rem;
+            text-align: center;
+            padding: 0 2rem;
+        }
+        .dest-intro-desc {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            line-height: 1.6;
+            color: var(--near-black);
+            font-weight: 300;
+        }
+        .dest-section-title {
+            font-family: var(--font-display);
+            font-size: 2.8rem;
+            color: var(--near-black);
+            margin-bottom: 2.5rem;
+            text-align: center;
+            font-weight: 400;
+        }
+        .dest-section-title em {
+            font-style: italic;
+            font-weight: 300;
+            color: var(--accent);
+        }
+        .dest-section {
+            padding: 5rem 0;
+        }
+        .dest-section.alt {
+            background-color: var(--light-gray);
+        }
+        /* Square grid layout for country gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .gallery-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            aspect-ratio: 1/1;
+            box-shadow: 0 15px 35px rgba(29, 27, 26, 0.06);
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+            cursor: pointer;
+        }
+        .gallery-img-wrapper:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(29, 27, 26, 0.12);
+        }
+        .gallery-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .gallery-img-wrapper:hover img {
+            transform: scale(1.05);
+        }
+        .inner-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Desktop Nav -->
+    <nav id="mainNav">
+        <div class="nav-logo-wrapper">
+            <a href="{{ url('/') }}" class="nav-logo">
+                <span class="logo-text">DIOREAL</span>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{{ url('/hakkimizda') }}" data-i18n="nav_about">Hakkımızda</a></li>
+            <li><a href="{{ url('/oteller') }}" data-i18n="nav_hotels">Oteller</a></li>
+            <li><a href="{{ url('/yatlar') }}" data-i18n="nav_yachts">Yatlar</a></li>
+            <li><a href="{{ url('/restoranlar') }}" data-i18n="nav_restaurants">Restoranlar</a></li>
+            <li><a href="{{ url('/destinasyonlar') }}" data-i18n="nav_guide">Destinasyonlar</a></li>
+            <li><a href="{{ url('/etkinlikler') }}" data-i18n="nav_events">Etkinlikler</a></li>
+            <li><a href="{{ url('/journal') }}" data-i18n="nav_journal">Journal</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="lang-switch desk-lang">
+                <span id="lang-tr" class="lang-btn">TR</span>
+                <span>|</span>
+                <span id="lang-en" class="lang-btn">EN</span>
+            </div>
+            <div class="hamburger" id="hamb">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Fullscreen Menu -->
+    <div class="fs-menu" id="fsMenu">
+        <ul class="fs-links">
+            <li><a href="{{ url('/hakkimizda') }}" data-i18n="nav_about">Hakkımızda</a></li>
+            <li><a href="{{ url('/oteller') }}" data-i18n="nav_hotels">Oteller</a></li>
+            <li><a href="{{ url('/yatlar') }}" data-i18n="nav_yachts">Yatlar</a></li>
+            <li><a href="{{ url('/restoranlar') }}" data-i18n="nav_restaurants">Restoranlar</a></li>
+            <div class="fs-divider"></div>
+            <li><a href="{{ url('/destinasyonlar') }}" data-i18n="nav_guide">Destinasyonlar</a></li>
+            <li><a href="{{ url('/etkinlikler') }}" data-i18n="nav_events">Etkinlikler</a></li>
+            <li><a href="{{ url('/journal') }}" data-i18n="nav_journal">Journal</a></li>
+            <li class="lang-switch" style="font-size: 1.5rem; font-family: var(--font-display); justify-content: center; margin-top:3rem;">
+                <span id="lang-tr-fs" class="lang-btn">TR</span> | <span id="lang-en-fs" class="lang-btn">EN</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Page Hero -->
+    @php
+        $showVideoCover = !empty($destination->show_video_on_cover) && (!empty($destination->video_file) || !empty($destination->video_url));
+        $destImg = !empty($destination->img) ? $destination->img : 'foto.img/etkinlik_hero.jpg';
+        $destImgUrl = str_starts_with($destImg, 'data:') || str_starts_with($destImg, 'http') ? $destImg : asset($destImg);
+    @endphp
+    <div class="page-hero" style="@if(!$showVideoCover) background-image: url('{{ $destImgUrl }}'); @endif">
+        @if($showVideoCover)
+            <div class="hero-video-container" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; z-index: 0;">
+                @if(!empty($destination->video_file))
+                    <video src="{{ asset($destination->video_file) }}" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
+                @elseif(!empty($destination->video_url))
+                    @php
+                        $embedUrl = $destination->video_url;
+                        if (preg_match('/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/', $destination->video_url, $matches)) {
+                            $embedUrl = 'https://www.youtube.com/embed/' . $matches[1] . '?autoplay=1&mute=1&loop=1&playlist=' . $matches[1] . '&controls=0&showinfo=0&rel=0&iv_load_policy=3&playsinline=1';
+                        }
+                    @endphp
+                    <iframe src="{{ $embedUrl }}" frameborder="0" allow="autoplay; encrypted-media" style="position: absolute; top: 50%; left: 50%; width: 100vw; height: 56.25vw; min-width: 100%; min-height: 100%; transform: translate(-50%, -50%); pointer-events: none; object-fit: cover;"></iframe>
+                @endif
+                <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5); z-index: 1;"></div>
+            </div>
+        @endif
+        <div class="page-hero-content" style="position: relative; z-index: 2;">
+            <span class="page-eyebrow lang-text-tr">{{ $destination->region['tr'] ?? '' }}</span>
+            <span class="page-eyebrow lang-text-en">{{ $destination->region['en'] ?? '' }}</span>
+            <h1 class="page-title lang-text-tr">{{ $destination->name['tr'] ?? '' }}</h1>
+            <h1 class="page-title lang-text-en">{{ $destination->name['en'] ?? '' }}</h1>
+        </div>
+    </div>
+
+    <!-- Description Introduction -->
+    @if(!empty($destination->desc['tr']) || !empty($destination->desc['en']))
+        <section class="dest-intro reveal">
+            <div class="dest-intro-desc lang-text-tr">
+                {!! nl2br(e($destination->desc['tr'] ?? '')) !!}
+            </div>
+            <div class="dest-intro-desc lang-text-en">
+                {!! nl2br(e($destination->desc['en'] ?? '')) !!}
+            </div>
+        </section>
+    @endif
+
+    <!-- Videos Section -->
+    @if(!empty($destination->video_file) || !empty($destination->video_url))
+        <section class="dest-section reveal">
+            <h2 class="dest-section-title">Tanıtım <em>Videosu</em></h2>
+            <div class="inner-container">
+                <div class="video-container" style="position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.15); background: #000; aspect-ratio: 16/9; max-width: 900px; margin: 0 auto;">
+                    @if(!empty($destination->video_file))
+                        <video src="{{ asset($destination->video_file) }}" controls style="width: 100%; height: 100%; object-fit: cover;"></video>
+                    @elseif(!empty($destination->video_url))
+                        @php
+                            $embedUrl = $destination->video_url;
+                            if (preg_match('/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/', $destination->video_url, $matches)) {
+                                $embedUrl = 'https://www.youtube.com/embed/' . $matches[1];
+                            }
+                        @endphp
+                        <iframe src="{{ $embedUrl }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top:0; left:0; width:100%; height:100%; border:none;"></iframe>
+                    @endif
+                </div>
+            </div>
+        </section>
+    @endif
+
+    <!-- Hotels Section -->
+    @if(count($hotels) > 0)
+        <section class="dest-section alt">
+            <h2 class="dest-section-title">Lüks <em>Oteller</em></h2>
+            <div class="inner-container">
+                <div class="card-grid">
+                    @foreach($hotels as $otel)
+                        <div class="card reveal visible">
+                            <div class="card-img" style="position: relative; overflow: hidden; background-image: none;">
+                                @if($otel->show_video_on_cover && (!empty($otel->video_file) || !empty($otel->video_url)))
+                                    @if(!empty($otel->video_file))
+                                        <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;">
+                                            <source src="{{ asset($otel->video_file) }}" type="video/mp4">
+                                        </video>
+                                    @elseif(!empty($otel->video_url))
+                                        @php
+                                            $embedUrl = $otel->video_url;
+                                            if (preg_match('/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/', $otel->video_url, $matches)) {
+                                                $embedUrl = 'https://www.youtube.com/embed/' . $matches[1] . '?autoplay=1&mute=1&loop=1&playlist=' . $matches[1] . '&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3';
+                                            }
+                                        @endphp
+                                        <iframe src="{{ $embedUrl }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none; transform: scale(1.35); position: absolute; inset: 0; border: none;"></iframe>
+                                    @endif
+                                @else
+                                    <div style="background-image:url('{{ asset($otel->img) }}'); width: 100%; height: 100%; background-size: cover; background-position: center; position: absolute; inset: 0;"></div>
+                                @endif
+                            </div>
+                            <div class="card-body">
+                                <span class="card-tag lang-text-tr">{{ $otel->tag["tr"] ?? "" }}</span>
+                                <span class="card-tag lang-text-en">{{ $otel->tag["en"] ?? "" }}</span>
+                                
+                                <h3 class="card-title lang-text-tr">{{ $otel->name["tr"] ?? "" }}</h3>
+                                <h3 class="card-title lang-text-en">{{ $otel->name["en"] ?? "" }}</h3>
+                                
+                                <p class="card-desc lang-text-tr">{{ $otel->desc["tr"] ?? "" }}</p>
+                                <p class="card-desc lang-text-en">{{ $otel->desc["en"] ?? "" }}</p>
+                                
+                                <a href="{{ url("/otel/" . $otel->id) }}" class="btn btn-primary" style="margin-top:1rem; padding: 0.5rem 1rem;">
+                                    <span class="lang-text-tr">Detayları İncele</span>
+                                    <span class="lang-text-en">View Details</span>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    @endif
+
+    <!-- Restaurants Section -->
+    @if(count($restaurants) > 0)
+        <section class="dest-section">
+            <h2 class="dest-section-title">Seçkin <em>Restoranlar</em></h2>
+            <div class="inner-container">
+                <div class="card-grid">
+                    @foreach($restaurants as $restoran)
+                        <div class="card reveal visible">
+                            <div class="card-img" style="position: relative; overflow: hidden; background-image: none;">
+                                @if($restoran->show_video_on_cover && (!empty($restoran->video_file) || !empty($restoran->video_url)))
+                                    @if(!empty($restoran->video_file))
+                                        <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;">
+                                            <source src="{{ asset($restoran->video_file) }}" type="video/mp4">
+                                        </video>
+                                    @elseif(!empty($restoran->video_url))
+                                        @php
+                                            $embedUrl = $restoran->video_url;
+                                            if (preg_match('/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/', $restoran->video_url, $matches)) {
+                                                $embedUrl = 'https://www.youtube.com/embed/' . $matches[1] . '?autoplay=1&mute=1&loop=1&playlist=' . $matches[1] . '&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3';
+                                            }
+                                        @endphp
+                                        <iframe src="{{ $embedUrl }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none; transform: scale(1.35); position: absolute; inset: 0; border: none;"></iframe>
+                                    @endif
+                                @else
+                                    <div style="background-image:url('{{ asset($restoran->img) }}'); width: 100%; height: 100%; background-size: cover; background-position: center; position: absolute; inset: 0;"></div>
+                                @endif
+                            </div>
+                            <div class="card-body">
+                                <span class="card-tag lang-text-tr">{{ $restoran->tag["tr"] ?? "" }}</span>
+                                <span class="card-tag lang-text-en">{{ $restoran->tag["en"] ?? "" }}</span>
+                                
+                                <h3 class="card-title lang-text-tr">{{ $restoran->name["tr"] ?? "" }}</h3>
+                                <h3 class="card-title lang-text-en">{{ $restoran->name["en"] ?? "" }}</h3>
+                                
+                                <p class="card-desc lang-text-tr">{{ $restoran->desc["tr"] ?? "" }}</p>
+                                <p class="card-desc lang-text-en">{{ $restoran->desc["en"] ?? "" }}</p>
+                                
+                                <a href="{{ url("/restoran/" . $restoran->id) }}" class="btn btn-primary" style="margin-top:1rem; padding: 0.5rem 1rem;">
+                                    <span class="lang-text-tr">Detayları İncele</span>
+                                    <span class="lang-text-en">View Details</span>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    @endif
+
+    <!-- Journal Section -->
+    @if(count($journals) > 0)
+        <section class="dest-section alt">
+            <h2 class="dest-section-title">İlgili <em>Yazılar & Blog</em></h2>
+            <div class="inner-container">
+                <div class="card-grid">
+                    @foreach($journals as $journal)
+                        <div class="card reveal visible">
+                            <div class="card-img" style="background-image:url('{{ asset($journal->img) }}')"></div>
+                            <div class="card-body">
+                                <span class="card-tag">{{ $journal->tag["tr"] ?? "" }}</span>
+                                
+                                <h3 class="card-title lang-text-tr">{{ $journal->title["tr"] ?? "" }}</h3>
+                                <h3 class="card-title lang-text-en">{{ $journal->title["en"] ?? "" }}</h3>
+                                
+                                <p class="card-desc lang-text-tr">{{ $journal->desc["tr"] ?? "" }}</p>
+                                <p class="card-desc lang-text-en">{{ $journal->desc["en"] ?? "" }}</p>
+                                
+                                <a href="{{ url("/journal/" . $journal->id) }}" class="btn btn-primary" style="margin-top:1rem; padding: 0.5rem 1rem;">
+                                    <span class="lang-text-tr">Okumaya Başla</span>
+                                    <span class="lang-text-en">Read More</span>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    @endif
+
+    <!-- Gallery Section -->
+    @if(!empty($destination->gallery) && is_array($destination->gallery))
+        <section class="dest-section reveal">
+            <h2 class="dest-section-title">Fotoğraf <em>Galerisi</em></h2>
+            <div class="gallery-grid">
+                @foreach($destination->gallery as $g)
+                    <div class="gallery-img-wrapper">
+                        <img src="{{ str_starts_with($g, 'data:') || str_starts_with($g, 'http') ? $g : asset($g) }}" alt="Galeri Görseli">
+                    </div>
+                @endforeach
+            </div>
+        </section>
+    @endif
+
+    @include('partials.footer')
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/i18n.js') }}?v={{ time() }}"></script>
+    <script src="{{ asset('js/common.js') }}?v={{ time() }}"></script>
+    <script src="{{ asset('js/nav.js') }}?v={{ time() }}"></script>
+</body>
+</html>
+

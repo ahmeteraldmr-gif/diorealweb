@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": {
+            "tr": "Bodrum Blue",
+            "en": "Bodrum Blue"
+        },
+        "tag": {
+            "tr": "Gulet · 24m",
+            "en": "Gulet · 24m"
+        },
+        "img": "foto.img/yat_bodrum_blue.jpg",
+        "desc": {
+            "tr": "8 misafir kapasiteli, teak güverteli, Türk el sanatlarıyla donatılmış geleneksel Bodrum gulet'i.",
+            "en": "Traditional Bodrum gulet for 8 guests, with teak deck and Turkish handicrafts."
+        }
+    },
+    {
+        "id": 2,
+        "name": {
+            "tr": "Azure Dream",
+            "en": "Azure Dream"
+        },
+        "tag": {
+            "tr": "Motor Yat · 35m",
+            "en": "Motor Yacht · 35m"
+        },
+        "img": "foto.img/yat_azure_dream.jpg",
+        "desc": {
+            "tr": "12 misafir kapasiteli, helikopter pisti, jakuzi ve tam donanımlı modern süper yat deneyimi.",
+            "en": "Modern super yacht for 12 guests, featuring helipad, jacuzzi and full equipment."
+        }
+    },
+    {
+        "id": 3,
+        "name": {
+            "tr": "Aegean Wind",
+            "en": "Aegean Wind"
+        },
+        "tag": {
+            "tr": "Yelkenli · 18m",
+            "en": "Sailing Yacht · 18m"
+        },
+        "img": "foto.img/yat_aegean_wind.jpg",
+        "desc": {
+            "tr": "6 misafir için özel, rüzgarın gücüyle Ege'yi keşfetmek isteyenler için premium yelkenli yat.",
+            "en": "Premium sailing yacht for 6 guests, for those who want to explore the Aegean with wind power."
+        }
+    }
+]

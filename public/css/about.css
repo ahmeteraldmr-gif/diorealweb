@@ -1,0 +1,102 @@
+/* ── ABOUT PAGE SPECIFIC ── */
+.stat-row { display: flex; gap: 4rem; margin: 4rem 0; }
+.stat-item { text-align: center; }
+.stat-num { font-family: var(--font-display); font-size: 4rem; font-weight: 300; color: var(--accent); display: block; }
+.stat-label { font-size: .8rem; letter-spacing: .2em; text-transform: uppercase; color: var(--mid-gray); }
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.team-card { text-align: center; }
+.team-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; margin-bottom: 1.5rem; }
+.team-name { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: .25rem; }
+.team-role { font-size: .8rem; letter-spacing: .15em; text-transform: uppercase; color: var(--accent); }
+
+.page-hero {
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: var(--white);
+    text-align: center;
+}
+
+.page-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+}
+
+.page-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.page-eyebrow {
+    font-size: .9rem;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.page-title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 300;
+}
+
+.page-title em { font-style: italic; }
+
+.content-section { padding: 9rem 5rem; }
+.content-section.alt { background: var(--off-white); }
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+}
+
+.content-grid.reverse { direction: rtl; }
+.content-grid.reverse > div { direction: ltr; }
+
+.content-eyebrow {
+    font-size: .85rem;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.content-title {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 2.5rem;
+    color: var(--near-black);
+}
+
+.content-title em { font-style: italic; }
+
+.content-body {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--dark-gray);
+    margin-bottom: 2rem;
+}
+
+@media(max-width:1024px) {
+    .content-section { padding: 6rem 2.5rem; }
+    .content-grid { gap: 3rem; }
+}
+
+@media(max-width:768px) {
+    .stat-row { flex-direction: column; gap: 2rem; }
+    .team-grid { grid-template-columns: 1fr; }
+    .content-grid { grid-template-columns: 1fr; }
+    .content-title { font-size: 2.2rem; }
+}

@@ -1,0 +1,209 @@
+/* ── COMPONENTS ── */
+.btn {
+    display: inline-block;
+    font-size: .85rem;
+    font-weight: 600;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    padding: 1.2rem 2.8rem;
+    text-decoration: none;
+    transition: .3s;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--near-black);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--accent);
+    color: var(--white);
+}
+
+.btn-outline {
+    border-color: rgba(0, 0, 0, 0.2);
+    color: var(--near-black);
+}
+
+.btn-outline:hover {
+    background: var(--near-black);
+    color: var(--white);
+}
+
+/* Hero specific button overrides */
+.hero .btn-outline {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: var(--white);
+}
+
+.hero .btn-outline:hover {
+    background: var(--white);
+    color: var(--near-black);
+}
+
+/* ── MARQUEE ── */
+.marquee {
+    overflow: hidden;
+    background: var(--near-black);
+    padding: 1.4rem 0;
+}
+
+.marquee-track {
+    display: flex;
+    gap: 4rem;
+    width: max-content;
+    animation: marqueeRoll 28s linear infinite;
+}
+
+.marquee-item {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+    white-space: nowrap;
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255, 255, 255, .22);
+    letter-spacing: .04em;
+}
+
+.marquee-dot {
+    color: var(--accent);
+    font-style: normal;
+    font-size: .45rem;
+}
+
+/* ── STATS ── */
+.stats-row {
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    margin-top: 5.5rem;
+    flex-wrap: wrap;
+}
+
+.stat { text-align: center; }
+.stat-n {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    color: var(--near-black);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.stat-l {
+    font-size: .9rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+}
+
+/* ── TESTIMONIAL ── */
+.testi {
+    padding: 9rem 5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--off-white);
+}
+
+.testi::before {
+    content: '\201C';
+    position: absolute;
+    top: -3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-display);
+    font-size: 20rem;
+    color: rgba(26, 24, 22, .04);
+}
+
+.testi-quote {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.55;
+    max-width: 900px;
+    margin: 0 auto 2.5rem;
+    color: var(--near-black);
+    position: relative;
+}
+
+.testi-author {
+    font-size: 1rem;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    color: var(--dark-gray);
+}
+
+/* ── CARDS ── */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-top: 4rem;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.card-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s ease;
+}
+
+.card:hover .card-img {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 2.5rem 0;
+}
+
+.card-tag {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.card-title {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 1.2rem;
+    color: var(--near-black);
+}
+
+.card-desc {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--mid-gray);
+}
+
+@media (max-width: 1024px) {
+    .card-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .card-grid { grid-template-columns: 1fr; }
+}

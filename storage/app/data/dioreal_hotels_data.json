@@ -1,0 +1,194 @@
+[
+    {
+        "id": 1248642333,
+        "name": {
+            "tr": "Bizim Ev Datça",
+            "en": "Bizim Ev Datça"
+        },
+        "tag": {
+            "tr": "Otel",
+            "en": "Hotel"
+        },
+        "img": "foto.img/otel_maxx_royal.jpg",
+        "desc": {
+            "tr": "Bizim Ev Datça\r\n\r\nDatça’nın yavaş akan ruhunu taşıyan Bizim Ev Datça, doğanın ritmini bozmadan modern bir sadelik hissi sunuyor. Kargı Koyu’nun makili...",
+            "en": "..."
+        },
+        "long_desc": {
+            "tr": "Bizim Ev Datça<br />\r\n<br />\r\nDatça’nın yavaş akan ruhunu taşıyan Bizim Ev Datça, doğanın ritmini bozmadan modern bir sadelik hissi sunuyor. Kargı Koyu’nun makiliklerle çevrili yamaçlarında konumlanan bu özel yaşam alanı, taş mimarisi, dingin atmosferi ve zamandan uzak hissiyle Datça’nın en huzurlu kaçış noktalarından biri.<br />\r\n<br />\r\nYıllar önce küçük bir çoban evinin yeniden hayat bulmasıyla başlayan hikaye, bugün hala aynı ruhu koruyor. Doğayla uyum içinde konumlanan taş odalar, zeytin ağaçlarının gölgesi ve denizden gelen tuz kokulu rüzgar eşliğinde burada her detay, sakinleşmeyi, yavaşlamayı ve anın içinde kalmayı hatırlatıyor.<br />\r\n<br />\r\nSabahları bahçeden gelen doğal yaşamın sesiyle uyanmak, gün batımında Kargı’nın ışığını izlemek ve taş duvarların arasında Datça’nın gerçek atmosferini hissetmek… Bizim Ev Datça’nın sunduğu deneyim tam olarak bu yalın lüks anlayışında saklı.<br />\r\n<br />\r\nGösterişten uzak ama karakter sahibi atmosferiyle burası yalnızca bir konaklama deneyimi değil,kendinizi gerçekten ait hissedebileceğiniz, Datça’yı yaşamaya davet eden zamansız bir durak.",
+            "en": ""
+        },
+        "gallery": [
+            "foto.img/otel_museum.jpg",
+            "foto.img/otel_hillside.jpg"
+        ],
+        "created_at": "2026-07-10 12:41:52",
+        "updated_at": "2026-07-10 12:41:52",
+        "destination_id": null,
+        "order": 0,
+        "is_archived": 0,
+        "video_file": null,
+        "video_url": null,
+        "show_video_on_cover": 0
+    },
+    {
+        "id": 1248642334,
+        "name": {
+            "tr": "Nautical Hotel",
+            "en": "Nautical Hotel"
+        },
+        "tag": {
+            "tr": "Otel",
+            "en": "Hotel"
+        },
+        "img": "foto.img/otel_museum.jpg",
+        "desc": {
+            "tr": "Denizin sonsuz maviliğiyle çam ormanlarının yeşili arasında konumlanan Nautical Hotel, doğayla uyum içinde şekillenen sakin ve zamansız bir Akdeniz de...",
+            "en": "..."
+        },
+        "long_desc": {
+            "tr": "Denizin sonsuz maviliğiyle çam ormanlarının yeşili arasında konumlanan Nautical Hotel, doğayla uyum içinde şekillenen sakin ve zamansız bir Akdeniz deneyimi sunuyor. Gösterişten uzak ama karakter sahibi atmosferiyle burası, modern konforu doğanın yalın güzelliğiyle bir araya getiriyor.<br />\r\n<br />\r\nGün boyunca masmavi koylarda serinlemek, ağaç gölgelerinde yavaşlayan zamanın tadını çıkarmak ve Akdeniz’in dingin ritmini hissetmek burada yaşamın doğal bir parçasına dönüşüyor. Gün batımında ise denizden gelen hafif esinti ve doğanın sessizliği, Nautical’ın huzurlu atmosferini daha da derinleştiriyor.<br />\r\n<br />\r\nAkdeniz mutfağından ilham alan lezzetler, bulunduğu coğrafyanın doğal ruhunu sofralara taşırken; her mevsim burada farklı bir hikâye anlatıyor. İlkbaharın tazeliği, yazın enerjisi ve sonbaharın sakin romantizmi… Nautical Hotel’de doğa, zamanı kendi ritminde yaşatıyor.<br />\r\n<br />\r\nDalgaların sesiyle uyanıp yıldızların altında günü tamamladığınız bu atmosfer, yalnızca bir tatil deneyimi değil,şehirden uzaklaşıp doğayla ve kendinizle yeniden bağ kurabildiğiniz özel bir kaçış hissi sunuyor.",
+            "en": ""
+        },
+        "gallery": [
+            "foto.img/otel_hillside.jpg",
+            "foto.img/otel_soneva.jpg"
+        ],
+        "created_at": "2026-07-10 12:41:51",
+        "updated_at": "2026-07-10 12:41:51",
+        "destination_id": null,
+        "order": 0,
+        "is_archived": 0,
+        "video_file": null,
+        "video_url": null,
+        "show_video_on_cover": 0
+    },
+    {
+        "id": 1248642335,
+        "name": {
+            "tr": "Perdue Otel",
+            "en": "Perdue Hotel"
+        },
+        "tag": {
+            "tr": "Otel",
+            "en": "Hotel"
+        },
+        "img": "foto.img/otel_hillside.jpg",
+        "desc": {
+            "tr": "Akdeniz’in berrak sularıyla çevrili Faralya kıyılarında konumlanan Perdue, doğanın ritmini bozmadan şekillenen sakin ve özel bir atmosfer sunuyor. Zey...",
+            "en": "..."
+        },
+        "long_desc": {
+            "tr": "Akdeniz’in berrak sularıyla çevrili Faralya kıyılarında konumlanan Perdue, doğanın ritmini bozmadan şekillenen sakin ve özel bir atmosfer sunuyor. Zeytin ağaçları, çam ormanları ve denize açılan sonsuz manzara eşliğinde burada zaman, şehir hayatının telaşından uzak başka bir akışta ilerliyor.<br />\r\n<br />\r\nDoğayla iç içe konumlanan yaşam alanları, yalın detaylarla bütünleşirken; denizden gelen hafif meltem ve dalgaların ritmik sesi günün her anına huzurlu bir sakinlik katıyor. Sabahın ilk ışıklarından gün batımına kadar Perdue’nün atmosferi, bulunduğu coğrafyanın doğal ruhunu hissettiriyor.<br />\r\n<br />\r\nGün boyunca Akdeniz’in serin sularında vakit geçirmek, doğanın sessizliğinde dinlenmek ve yıldızların altında yavaşlayan akşamların tadını çıkarmak burada deneyimin bir parçasına dönüşüyor.<br />\r\n<br />\r\nGösterişten uzak ama güçlü bir atmosfere sahip Perdue, doğayla, sessizlikle ve anın kendisiyle yeniden bağ kurabildiğiniz özel bir kaçış hissi sunuyor.",
+            "en": ""
+        },
+        "gallery": [
+            "foto.img/otel_soneva.jpg",
+            "foto.img/otel_aman.jpg"
+        ],
+        "created_at": "2026-07-10 12:41:51",
+        "updated_at": "2026-07-10 12:41:51",
+        "destination_id": null,
+        "order": 0,
+        "is_archived": 0,
+        "video_file": null,
+        "video_url": null,
+        "show_video_on_cover": 0
+    },
+    {
+        "id": 1248642336,
+        "name": {
+            "tr": "Kargilos Hotel & Beach",
+            "en": "Kargilos Hotel & Beach"
+        },
+        "tag": {
+            "tr": "Otel & Beach",
+            "en": "Hotel & Beach"
+        },
+        "img": "foto.img/otel_soneva.jpg",
+        "desc": {
+            "tr": "Datça’nın en özel koylarından biri olan Kargı Koyu’nda konumlanan Kargilos Hotel & Beach, doğanın yalın güzelliğiyle şekillenen sakin bir Akdeniz atmo...",
+            "en": "..."
+        },
+        "long_desc": {
+            "tr": "Datça’nın en özel koylarından biri olan Kargı Koyu’nda konumlanan Kargilos Hotel & Beach, doğanın yalın güzelliğiyle şekillenen sakin bir Akdeniz atmosferi sunuyor. Kekik kokulu tepeler, masmavi deniz ve gün boyunca değişen Datça ışığı burada yaşamın ritmini belirliyor.<br />\r\n<br />\r\nYeşilin ve mavinin iç içe geçtiği bu özel noktada, günler denizin berrak sularında serinleyerek, kıyının huzurlu sessizliğinde yavaşlayarak geçiyor. Sabah saatlerinde doğanın dinginliği hissedilirken, gün batımında Kargı’nın sıcak tonları tüm atmosfere farklı bir sakinlik katıyor.<br />\r\n<br />\r\nDoğayla uyum içinde şekillenen atmosferiyle Kargilos, gösterişten uzak ama karakter sahibi bir deneyim sunuyor. Burada her detay; Datça’nın doğal ruhunu, sade yaşam hissini ve Akdeniz’in yavaş akan ritmini hissettiriyor.<br />\r\n<br />\r\nKargilos Hotel & Beach yalnızca bir konaklama noktası değil; şehirden uzaklaşıp denizle, doğayla ve zamanın daha sakin aktığı bir yaşam hissiyle yeniden buluşabildiğiniz özel bir kaçış noktası.",
+            "en": ""
+        },
+        "gallery": [
+            "foto.img/otel_aman.jpg",
+            "foto.img/otel_sirenuse.jpg"
+        ],
+        "created_at": "2026-07-10 12:41:51",
+        "updated_at": "2026-07-10 12:41:51",
+        "destination_id": null,
+        "order": 0,
+        "is_archived": 0,
+        "video_file": null,
+        "video_url": null,
+        "show_video_on_cover": 0
+    },
+    {
+        "id": 1248642337,
+        "name": {
+            "tr": "Mehtap Kaleköy",
+            "en": "Mehtap Kaleköy"
+        },
+        "tag": {
+            "tr": "Otel",
+            "en": "Hotel"
+        },
+        "img": "foto.img/otel_aman.jpg",
+        "desc": {
+            "tr": "Simena Antik Kenti’nin izlerini taşıyan Kaleköy kıyılarında konumlanan Mehtap Kaleköy, Akdeniz’in doğal güzelliğini tarihi atmosferle bir araya getire...",
+            "en": "..."
+        },
+        "long_desc": {
+            "tr": "Simena Antik Kenti’nin izlerini taşıyan Kaleköy kıyılarında konumlanan Mehtap Kaleköy, Akdeniz’in doğal güzelliğini tarihi atmosferle bir araya getiren sakin ve zamansız bir konaklama deneyimi sunuyor. Denize sıfır konumu, taş mimarisi ve dingin atmosferiyle burası, Kaleköy’ün ruhunu hissettiren özel adreslerden biri.<br />\r\n<br />\r\nLikya lahitleriyle çevrili kıyılar, berrak Akdeniz suları ve gün boyunca değişen ışık burada yaşamın ritmini belirliyor. Sabahları denizin huzurlu sesiyle başlayan günler, gün batımında Kaleköy’ün taş sokaklarına yayılan sıcak tonlarla bambaşka bir atmosfere dönüşüyor.<br />\r\n<br />\r\nGeleneksel taş mimarisini modern detaylarla buluşturan yaşam alanları, doğayla uyum içinde sakin bir deneyim sunarken; verandalar, denize açılan manzaralar ve kıyının dinginliği burada zamanı yavaşlatıyor.<br />\r\n<br />\r\nMehtap Kaleköy yalnızca bir konaklama noktası değil; tarih, deniz ve doğanın aynı manzarada buluştuğu, şehirden uzaklaşıp Akdeniz’in sade ritmine karışabildiğiniz özel bir kaçış hissi sunuyor.",
+            "en": ""
+        },
+        "gallery": [
+            "foto.img/otel_sirenuse.jpg",
+            "foto.img/otel_oda.jpg"
+        ],
+        "created_at": "2026-07-10 12:41:50",
+        "updated_at": "2026-07-10 12:41:50",
+        "destination_id": null,
+        "order": 0,
+        "is_archived": 0,
+        "video_file": null,
+        "video_url": null,
+        "show_video_on_cover": 0
+    },
+    {
+        "id": 1248642339,
+        "name": {
+            "tr": "Mendelle",
+            "en": "Mendelle Hotel"
+        },
+        "tag": {
+            "tr": "otel",
+            "en": "Hotel"
+        },
+        "img": "foto.img/otel_sirenuse.jpg",
+        "desc": {
+            "tr": "Doğa bir ilham kaynağına dönüştüğünde ve düşleyen insanlar bir araya geldiğinde, sihir doğar. Her şey Datça'nın ikonik güzelliğindeki sessiz bir koyda...",
+            "en": "..."
+        },
+        "long_desc": {
+            "tr": "Doğa bir ilham kaynağına dönüştüğünde ve düşleyen insanlar bir araya geldiğinde, sihir doğar. Her şey Datça'nın ikonik güzelliğindeki sessiz bir koyda başladı. Kargı kıyısında Mendelle doğdu.",
+            "en": ""
+        },
+        "gallery": [
+            "foto.img/otel_oda.jpg",
+            "foto.img/otel_maxx_royal.jpg"
+        ],
+        "created_at": "2026-07-10 12:41:50",
+        "updated_at": "2026-07-10 12:41:50",
+        "destination_id": null,
+        "order": 0,
+        "is_archived": 0,
+        "video_file": null,
+        "video_url": null,
+        "show_video_on_cover": 0
+    }
+]
