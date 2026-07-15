@@ -38,8 +38,8 @@ class AuthController extends Controller
         }
 
         // 2. Try environment variables fallback
-        $adminUser = env('ADMIN_USERNAME', 'admin');
-        $adminPass = env('ADMIN_PASSWORD', 'admin');
+        $adminUser = env('ADMIN_USERNAME', 'DioTurkReal.13');
+        $adminPass = env('ADMIN_PASSWORD', 'xYdioReal.13xY');
 
         if ($username === $adminUser && $password === $adminPass) {
             $request->session()->put('is_admin', true);
