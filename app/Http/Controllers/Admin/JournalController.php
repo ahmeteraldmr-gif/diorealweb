@@ -35,6 +35,14 @@ class JournalController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+                        'slug_tr' => 'nullable|string|max:255',
+            'slug_en' => 'nullable|string|max:255',
+            'seo_title_tr' => 'nullable|string|max:255',
+            'seo_title_en' => 'nullable|string|max:255',
+            'seo_description_tr' => 'nullable|string',
+            'seo_description_en' => 'nullable|string',
+            'og_image_file' => 'nullable|image|max:5120',
+            'seo_noindex' => 'nullable',
             'title.tr' => 'required|string|max:255',
             'title.en' => 'required|string|max:255',
             'tag.tr' => 'nullable|string|max:255',
@@ -83,6 +91,14 @@ class JournalController extends Controller
     public function update(Request $request, Journal $journal)
     {
         $request->validate([
+                        'slug_tr' => 'nullable|string|max:255',
+            'slug_en' => 'nullable|string|max:255',
+            'seo_title_tr' => 'nullable|string|max:255',
+            'seo_title_en' => 'nullable|string|max:255',
+            'seo_description_tr' => 'nullable|string',
+            'seo_description_en' => 'nullable|string',
+            'og_image_file' => 'nullable|image|max:5120',
+            'seo_noindex' => 'nullable',
             'title.tr' => 'required|string|max:255',
             'title.en' => 'required|string|max:255',
             'tag.tr' => 'nullable|string|max:255',

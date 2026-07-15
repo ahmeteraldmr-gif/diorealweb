@@ -41,13 +41,13 @@ Route::get('/journal', [PageController::class, 'journal'])->name('journal');
 Route::get('/journal.html', [PageController::class, 'journal']);
 
 // Detail Pages
-Route::get('/otel/{id}', [PageController::class, 'otelDetay'])->name('otel.detay');
-Route::get('/restoran/{id}', [PageController::class, 'restoranDetay'])->name('restoran.detay');
-Route::get('/journal/{id}', [PageController::class, 'journalDetay'])->name('journal.detay');
-Route::get('/destinasyon/{id}', [PageController::class, 'destinasyonDetay'])->name('destinasyon.detay');
-Route::get('/etkinlik/{id}', [PageController::class, 'etkinlikDetay'])->name('etkinlik.detay');
-Route::get('/rehber/{id}', [PageController::class, 'rehberDetay'])->name('rehber.detay');
-Route::get('/yat/{id}', [PageController::class, 'yatDetay'])->name('yat.detay');
+Route::get('/otel/{slug_or_id}', [PageController::class, 'otelDetay'])->name('otel.detay');
+Route::get('/restoran/{slug_or_id}', [PageController::class, 'restoranDetay'])->name('restoran.detay');
+Route::get('/journal/{slug_or_id}', [PageController::class, 'journalDetay'])->name('journal.detay');
+Route::get('/destinasyon/{slug_or_id}', [PageController::class, 'destinasyonDetay'])->name('destinasyon.detay');
+Route::get('/etkinlik/{slug_or_id}', [PageController::class, 'etkinlikDetay'])->name('etkinlik.detay');
+Route::get('/rehber/{slug_or_id}', [PageController::class, 'rehberDetay'])->name('rehber.detay');
+Route::get('/yat/{slug_or_id}', [PageController::class, 'yatDetay'])->name('yat.detay');
 
 // Authentication Routes
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');

@@ -35,6 +35,14 @@ class HotelController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'slug_tr' => 'nullable|string|max:255',
+            'slug_en' => 'nullable|string|max:255',
+            'seo_title_tr' => 'nullable|string|max:255',
+            'seo_title_en' => 'nullable|string|max:255',
+            'seo_description_tr' => 'nullable|string',
+            'seo_description_en' => 'nullable|string',
+            'og_image_file' => 'nullable|image|max:5120',
+            'seo_noindex' => 'nullable',
             'name.tr' => 'required|string|max:255',
             'name.en' => 'nullable|string|max:255',
             'tag.tr' => 'nullable|string|max:255',
@@ -57,6 +65,18 @@ class HotelController extends Controller
         $data['order'] = $data['order'] ?? 0;
         $data['is_archived'] = $request->has('is_archived') ? 1 : 0;
         $data['show_video_on_cover'] = $request->has('show_video_on_cover') ? 1 : 0;
+
+        $data['slug_tr'] = $request->input('slug_tr') ? \Illuminate\Support\Str::slug($request->input('slug_tr')) : \Illuminate\Support\Str::slug($request->input('name.tr'));
+        $data['slug_en'] = $request->input('slug_en') ? \Illuminate\Support\Str::slug($request->input('slug_en')) : \Illuminate\Support\Str::slug($request->input('name.en'));
+        $data['seo_title_tr'] = $request->input('seo_title_tr');
+        $data['seo_title_en'] = $request->input('seo_title_en');
+        $data['seo_description_tr'] = $request->input('seo_description_tr');
+        $data['seo_description_en'] = $request->input('seo_description_en');
+        $data['seo_noindex'] = $request->has('seo_noindex') ? 1 : 0;
+        if ($request->hasFile('og_image_file')) {
+            $data['og_image'] = $this->handleFileUpload($request->file('og_image_file'));
+        }
+
 
         // Handle cover image
         if ($request->hasFile('img_file')) {
@@ -93,6 +113,14 @@ class HotelController extends Controller
     public function update(Request $request, Hotel $hotel)
     {
         $request->validate([
+            'slug_tr' => 'nullable|string|max:255',
+            'slug_en' => 'nullable|string|max:255',
+            'seo_title_tr' => 'nullable|string|max:255',
+            'seo_title_en' => 'nullable|string|max:255',
+            'seo_description_tr' => 'nullable|string',
+            'seo_description_en' => 'nullable|string',
+            'og_image_file' => 'nullable|image|max:5120',
+            'seo_noindex' => 'nullable',
             'name.tr' => 'required|string|max:255',
             'name.en' => 'nullable|string|max:255',
             'tag.tr' => 'nullable|string|max:255',
@@ -115,6 +143,18 @@ class HotelController extends Controller
         $data['order'] = $data['order'] ?? 0;
         $data['is_archived'] = $request->has('is_archived') ? 1 : 0;
         $data['show_video_on_cover'] = $request->has('show_video_on_cover') ? 1 : 0;
+
+        $data['slug_tr'] = $request->input('slug_tr') ? \Illuminate\Support\Str::slug($request->input('slug_tr')) : \Illuminate\Support\Str::slug($request->input('name.tr'));
+        $data['slug_en'] = $request->input('slug_en') ? \Illuminate\Support\Str::slug($request->input('slug_en')) : \Illuminate\Support\Str::slug($request->input('name.en'));
+        $data['seo_title_tr'] = $request->input('seo_title_tr');
+        $data['seo_title_en'] = $request->input('seo_title_en');
+        $data['seo_description_tr'] = $request->input('seo_description_tr');
+        $data['seo_description_en'] = $request->input('seo_description_en');
+        $data['seo_noindex'] = $request->has('seo_noindex') ? 1 : 0;
+        if ($request->hasFile('og_image_file')) {
+            $data['og_image'] = $this->handleFileUpload($request->file('og_image_file'));
+        }
+
 
         // Handle cover image
         if ($request->hasFile('img_file')) {

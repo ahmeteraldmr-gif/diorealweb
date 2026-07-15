@@ -61,63 +61,63 @@ class PageController extends Controller
 
 
 
-    public function otelDetay($id)
+    public function otelDetay($slug_or_id)
     {
-        $otel = Hotel::findOrFail($id);
+        $otel = Hotel::where('id', $slug_or_id)->orWhere('slug_tr', $slug_or_id)->orWhere('slug_en', $slug_or_id)->firstOrFail();
         return view("otel-detay", compact("otel"));
     }
 
-    public function restoranDetay($id)
+    public function restoranDetay($slug_or_id)
     {
-        $restoran = Restaurant::findOrFail($id);
+        $restoran = Restaurant::where('id', $slug_or_id)->orWhere('slug_tr', $slug_or_id)->orWhere('slug_en', $slug_or_id)->firstOrFail();
         return view("restoran-detay", compact("restoran"));
     }
 
-    public function journalDetay($id)
+    public function journalDetay($slug_or_id)
     {
-        $journal = \App\Models\Journal::findOrFail($id);
+        $journal = \App\Models\Journal::where('id', $slug_or_id)->orWhere('slug_tr', $slug_or_id)->orWhere('slug_en', $slug_or_id)->firstOrFail();
         // Get related/recent articles for sidebar (excluding current)
-        $related = \App\Models\Journal::where('id', '!=', $id)->latest()->take(4)->get();
+        $related = \App\Models\Journal::where('id', '!=', $journal->id)->latest()->take(4)->get();
         return view("journal-detay", compact("journal", "related"));
     }
 
-    public function destinasyonDetay($id)
+    public function destinasyonDetay($slug_or_id)
     {
-        $destination = \App\Models\Destination::findOrFail($id);
+        $destination = \App\Models\Destination::where('id', $slug_or_id)->orWhere('slug_tr', $slug_or_id)->orWhere('slug_en', $slug_or_id)->firstOrFail();
         
-        $hotels = Hotel::where('destination_id', $id)
+        $hotels = Hotel::where('destination_id', $destination->id)
             ->where('is_archived', 0)
             ->orderBy('order')
             ->orderBy('id', 'desc')
             ->get();
             
-        $restaurants = Restaurant::where('destination_id', $id)
+        $restaurants = Restaurant::where('destination_id', $destination->id)
             ->where('is_archived', 0)
             ->orderBy('order')
             ->orderBy('id', 'desc')
             ->get();
             
-        $journals = Journal::where('destination_id', $id)
+        $journals = Journal::where('destination_id', $destination->id)
             ->latest()
             ->get();
             
         return view("destinasyon-detay", compact("destination", "hotels", "restaurants", "journals"));
     }
 
-    public function etkinlikDetay($id)
+    public function etkinlikDetay($slug_or_id)
     {
         $etkinlik = Event::findOrFail($id);
         return view("etkinlik-detay", compact("etkinlik"));
     }
 
-    public function rehberDetay($id)
+    public function rehberDetay($slug_or_id)
     {
         $rehber = Guide::findOrFail($id);
-        $otherGuides = Guide::where('id', '!=', $id)->get();
+        $otherGuides = Guide::where('id', '!=', $journal->id)->get();
         return view("rehber-detay", compact("rehber", "otherGuides"));
     }
 
-    public function yatDetay($id)
+    public function yatDetay($slug_or_id)
     {
         $yat = Yacht::findOrFail($id);
         return view("yat-detay", compact("yat"));

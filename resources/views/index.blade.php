@@ -6,9 +6,8 @@
     <meta name="base-url" content="{{ url('/') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dioreal Dijital — Global Deneyim & Medya Platformu</title>
-    <meta name="description"
-        content="Türkiye ve dünyada seçkin deneyimlerin kapısını aralıyoruz. Lüks oteller, yatlar ve yaşam tarzı markaları için yeni nesil medya platformu.">
+    
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -18,6 +17,63 @@
     <link rel="stylesheet" href="{{ asset('css/nav-footer.css') }}?v={{ time() }}">
     <link rel="stylesheet" href="{{ asset('css/components.css') }}?v={{ time() }}">
     <link rel="stylesheet" href="{{ asset('css/home.css') }}?v={{ time() }}">
+    @php
+        $seo_title = $seo_title ?? 'Dioreal Dijital - Global Deneyim & Medya Platformu';
+        $seo_desc = $seo_desc ?? 'Türkiye ve dünyada seçkin deneyimlerin kapısını aralıyoruz. Lüks oteller, yatlar ve yaşam tarzı markaları için yeni nesil medya platformu.';
+        $og_image = $og_image ?? asset('foto.img/hero_4k.jpg');
+        $canonical = $canonical ?? url()->current();
+        $noindex = $noindex ?? false;
+    @endphp
+
+    <title>{{ $seo_title }}</title>
+    <meta name="description" content="{{ $seo_desc }}">
+    
+    <link rel="canonical" href="{{ $canonical }}">
+    @if(isset($hreflang_tr)) <link rel="alternate" hreflang="tr" href="{{ $hreflang_tr }}" /> @endif
+    @if(isset($hreflang_en)) <link rel="alternate" hreflang="en" href="{{ $hreflang_en }}" /> @endif
+    <link rel="alternate" hreflang="x-default" href="{{ $canonical }}" />
+
+    @if($noindex)
+    <meta name="robots" content="noindex, nofollow">
+    @else
+    <meta name="robots" content="index, follow">
+    @endif
+
+    <meta property="og:title" content="{{ $seo_title }}">
+    <meta property="og:description" content="{{ $seo_desc }}">
+    <meta property="og:image" content="{{ $og_image }}">
+    <meta property="og:url" content="{{ $canonical }}">
+    <meta property="og:type" content="{{ $og_type ?? 'website' }}">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $seo_title }}">
+    <meta name="twitter:description" content="{{ $seo_desc }}">
+    <meta name="twitter:image" content="{{ $og_image }}">
+
+    @if(isset($schema_json))
+    {!! $schema_json !!}
+    @endif
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Dioreal Dijital",
+      "url": "https://dioreal.com",
+      "logo": "https://dioreal.com/foto.img/dioreal_beyaz_logo.png",
+      "sameAs": [
+        "https://www.instagram.com/dioreal",
+        "https://www.linkedin.com/company/dioreal"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://dioreal.com",
+      "name": "Dioreal Dijital"
+    }
+    </script>
 </head>
 
 <body>
