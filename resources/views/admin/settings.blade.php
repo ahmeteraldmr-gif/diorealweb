@@ -657,5 +657,28 @@
         event.currentTarget.classList.add('active');
         document.getElementById(tabId).classList.add('active');
     }
+
+    // Instant Image Preview Script
+    document.addEventListener('DOMContentLoaded', function() {
+        const fileInputs = document.querySelectorAll('input[type="file"][accept^="image"]');
+        fileInputs.forEach(input => {
+            input.addEventListener('change', function(e) {
+                if (this.files && this.files[0]) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        // Find the nearest img preview element
+                        let container = input.closest('.img-preview-container');
+                        if (container) {
+                            let img = container.querySelector('.img-preview');
+                            if (img) {
+                                img.src = e.target.result;
+                            }
+                        }
+                    }
+                    reader.readAsDataURL(this.files[0]);
+                }
+            });
+        });
+    });
 </script>
 @endsection
