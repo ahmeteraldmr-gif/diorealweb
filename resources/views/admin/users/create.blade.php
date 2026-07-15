@@ -25,8 +25,8 @@
         </div>
 
         <div class="form-group" style="margin-bottom: 1.5rem;">
-            <label class="form-label" for="email">E-posta Adresi</label>
-            <input type="email" class="form-control" name="email" id="email" value="{{ old('email') }}" placeholder="user@dioreal.com" required style="width: 100%; padding: 0.8rem; background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border-color); border-radius: var(--radius-sm); color: var(--text-main); outline: none;">
+            <label class="form-label" for="email">E-posta veya Kullanc Ad</label>
+            <input type="text" class="form-control" name="email" id="email" value="{{ old('email') }}" placeholder="Kullanc Ad veya E-posta" required style="width: 100%; padding: 0.8rem; background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border-color); border-radius: var(--radius-sm); color: var(--text-main); outline: none;">
         </div>
 
         <div class="form-group" style="margin-bottom: 1.5rem;">

@@ -31,9 +31,7 @@ class AuthController extends Controller
         $password = $request->input('password');
 
         // 1. Try Database authentication (email login or username admin fallback)
-        $email = filter_var($username, FILTER_VALIDATE_EMAIL) ? $username : 'admin@dioreal.com';
-        
-        if (\Illuminate\Support\Facades\Auth::attempt(['email' => $email, 'password' => $password])) {
+        if (\Illuminate\Support\Facades\Auth::attempt(['email' => $username, 'password' => $password])) {
             $request->session()->put('is_admin', true);
             $request->session()->regenerate();
             return redirect()->route('admin.dashboard');
