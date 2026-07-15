@@ -4,8 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\SitemapController;
 
 // Public Front-end Routes (clean URLs + legacy .html support)
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 Route::get('/', [PageController::class, 'index'])->name('home');
 Route::get('/index.html', function() {
     return redirect()->route('home');
