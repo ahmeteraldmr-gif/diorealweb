@@ -37,10 +37,7 @@
 
         <div class="form-group" style="margin-bottom: 1.5rem;">
             <label class="form-label" for="email">E-posta veya Kullanc Ad</label>
-            <input type="text" class="form-control" name="email" id="email" value="{{ old('email', $user->email) }}" placeholder="Kullanc Ad veya E-posta" required style="width: 100%; padding: 0.8rem; background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border-color); border-radius: var(--radius-sm); color: var(--text-main); outline: none;" {{ $user->email === 'admin@dioreal.com' ? 'readonly style=opacity:0.6;' : '' }}>
-            @if($user->email === 'admin@dioreal.com')
-                <small style="color: var(--text-muted); display: block; margin-top: 0.5rem;"><i class="fas fa-info-circle"></i> Ana ynetici e-postas deitirilemez.</small>
-            @endif
+            <input type="text" class="form-control" name="email" id="email" value="{{ old('email', $user->email) }}" placeholder="Kullanc Ad veya E-posta" required style="width: 100%; padding: 0.8rem; background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border-color); border-radius: var(--radius-sm); color: var(--text-main); outline: none;">
         </div>
 
         <div class="form-group" style="margin-bottom: 1.5rem;">
@@ -50,14 +47,10 @@
 
         <div class="form-group" style="margin-bottom: 2rem;">
             <label class="form-label" for="role">Kullanıcı Rolü</label>
-            <select class="form-control" name="role" id="role" required style="width: 100%; padding: 0.8rem; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: var(--radius-sm); color: var(--text-main); outline: none;" {{ $user->email === 'admin@dioreal.com' ? 'disabled' : '' }}>
+            <select class="form-control" name="role" id="role" required style="width: 100%; padding: 0.8rem; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: var(--radius-sm); color: var(--text-main); outline: none;">
                 <option value="editor" {{ old('role', $user->role) === 'editor' ? 'selected' : '' }}>İçerik Editörü (Belirli yetkilerle kısıtlı)</option>
                 <option value="super_admin" {{ old('role', $user->role) === 'super_admin' ? 'selected' : '' }}>Süper Yönetici (Tüm yetkiler açık)</option>
             </select>
-            @if($user->email === 'admin@dioreal.com')
-                <input type="hidden" name="role" value="super_admin">
-                <small style="color: var(--text-muted); font-size: 0.8rem; display: block; margin-top: 0.25rem;">Birincil yönetici her zaman Süper Yönetici olmak zorundadır.</small>
-            @endif
         </div>
 
         <!-- Permissions Checkboxes -->
