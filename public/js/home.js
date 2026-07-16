@@ -51,6 +51,57 @@ const initHome = () => {
     document.addEventListener('langChanged', (e) => {
         handleDynamicLang(e.detail);
     });
+
+    /* ── INTERACTIVE MARQUEE SCROLL (MOBILE ONLY) ── */
+    const initMarqueeScroll = () => {
+        const containers = document.querySelectorAll('.marquee-container');
+        
+        containers.forEach(container => {
+            const track = container.querySelector('.marquee-track');
+            if (!track) return;
+            
+            // Detect touch capability
+            const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            if (!isTouchDevice) return; // Let desktop use native CSS marquee
+            
+            let speed = 0.8; // px per frame
+            
+            // Initialize scroll position in the middle for seamless two-way infinity
+            const initScrollPosition = () => {
+                const halfWidth = track.scrollWidth / 2;
+                if (halfWidth > 200) {
+                    container.scrollLeft = halfWidth;
+                }
+            };
+            
+            initScrollPosition();
+            setTimeout(initScrollPosition, 500);
+            window.addEventListener('load', initScrollPosition);
+
+            // Infinite loop warp on scroll (supports native touch swipe and auto scroll)
+            container.addEventListener('scroll', () => {
+                const halfWidth = track.scrollWidth / 2;
+                if (halfWidth <= 200) return; // Wait until track is fully loaded
+                
+                // Safe warp boundaries to prevent infinite loop event triggers
+                if (container.scrollLeft >= halfWidth + 100) {
+                    container.scrollLeft -= halfWidth;
+                } else if (container.scrollLeft <= 50) {
+                    container.scrollLeft += halfWidth;
+                }
+            });
+
+            // Auto Scroll Step (Runs continuously, touch swipes naturally override it)
+            const step = () => {
+                container.scrollLeft += speed;
+                requestAnimationFrame(step);
+            };
+            requestAnimationFrame(step);
+        });
+    };
+
+    // Initialize interactive marquee
+    initMarqueeScroll();
 };
 
 document.addEventListener('DOMContentLoaded', initHome);
