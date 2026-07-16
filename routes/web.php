@@ -117,6 +117,24 @@ Route::get('/view-index-1234', function() {
     return "<pre>" . e(file_get_contents($file)) . "</pre>";
 });
 
+Route::get('/git-status-1234', function() {
+    try {
+        $output = shell_exec('git status 2>&1');
+        return "<pre>Git Status:\n" . e($output) . "</pre>";
+    } catch (\Exception $e) {
+        return "Hata: " . $e->getMessage();
+    }
+});
+
+Route::get('/git-pull-1234', function() {
+    try {
+        $output = shell_exec('git pull origin main 2>&1');
+        return "<pre>Git Pull Output:\n" . e($output) . "</pre>";
+    } catch (\Exception $e) {
+        return "Hata: " . $e->getMessage();
+    }
+});
+
 // Protected Admin Routes Group
 Route::middleware(['admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
