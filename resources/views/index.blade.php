@@ -278,12 +278,12 @@
     
     <!-- NEW: Destinations (Türkiye) - BLACK TOMATO PHOTO 1 LAYOUT -->
     <section class="dest-section bt-horizontal-scroll" id="turkiye" style="background: var(--white); padding: 4rem 0 5rem 0; text-align: center; overflow: hidden; display: flex; flex-direction: column; align-items: center;">
-        <div style="width: 100%; display: flex; justify-content: space-between; align-items: flex-end; padding: 0 5rem; margin-bottom: 3rem;">
+        <div class="dest-section-header">
             <div style="text-align: left;">
                 <span style="font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid-gray);" data-i18n="dest_tr_eyebrow">SEYAHATLERİMİZİ KEŞFEDİN</span>
                 <h2 style="font-family: var(--font-display); font-size: 3rem; color: var(--near-black); margin-top: 0.5rem; font-weight: 400;"><span data-i18n="dest_tr_title">Türkiye'nin</span> <em style="font-style: italic; font-weight: 300;" data-i18n="dest_tr_it">Ruhu</em></h2>
             </div>
-            <p style="color: var(--dark-gray); max-width: 300px; text-align: right; font-size: 0.95rem; margin-bottom: 1rem;" data-i18n="dest_tr_desc">Benzersiz deneyimlerin ilham veren hikayesi</p>
+            <p class="dest-section-desc" data-i18n="dest_tr_desc">Benzersiz deneyimlerin ilham veren hikayesi</p>
         </div>
 
         @if(isset($destinations['turkiye']) && count($destinations['turkiye']) > 0)
@@ -353,9 +353,9 @@
 
     <!-- NEW: Destinations (Yurtdışı) - BLACK TOMATO PHOTO 1 LAYOUT (START YOUR JOURNEY) -->
     <section class="dest-section bt-horizontal-scroll" id="yurtdisi" style="background: var(--white); padding: 7rem 0 7rem 0; text-align: center; overflow: hidden; display: flex; flex-direction: column; align-items: center;">
-        <h2 style="font-family: var(--font-condensed); font-size: 3.5rem; text-transform: uppercase; font-weight: 500; letter-spacing: 0.05em; margin-bottom: 2rem; color: var(--near-black);" data-i18n="dest_en_main">YOLCULUĞUNUZA BAŞLAYIN</h2>
+        <h2 class="dest-main-title" data-i18n="dest_en_main">YOLCULUĞUNUZA BAŞLAYIN</h2>
         
-        <ul class="bt-tabs-nav" style="display: flex; justify-content: center; gap: 3rem; list-style: none; margin-bottom: 4rem; font-size: 0.8rem; font-family: var(--font-body); letter-spacing: 0.15em; text-transform: uppercase; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 1rem; width: 90%; margin-left: auto; margin-right: auto;">
+        <ul class="bt-tabs-nav">
             <li class="active" data-type="yurtdisi_popular" data-i18n="tab_popular">EN POPÜLER</li>
             <li data-type="yurtdisi_traveller" data-i18n="tab_traveller">GEZGİNE GÖRE</li>
             <li data-type="yurtdisi_month" data-i18n="tab_month">AYA GÖRE</li>

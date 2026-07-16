@@ -307,6 +307,51 @@
     width: 100%;
 }
 
+/* Destinations Layout Styles */
+.dest-section-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 5rem;
+    margin-bottom: 3rem;
+}
+
+.dest-section-desc {
+    color: var(--dark-gray);
+    max-width: 300px;
+    text-align: right;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.dest-main-title {
+    font-family: var(--font-condensed);
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    margin-bottom: 2rem;
+    color: var(--near-black);
+}
+
+.bt-tabs-nav {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    list-style: none;
+    margin-bottom: 4rem;
+    font-size: 0.8rem;
+    font-family: var(--font-body);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding-bottom: 1rem;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
     .bt-about-grid { grid-template-columns: repeat(2, 1fr); }
@@ -321,6 +366,56 @@
     .bt-logos-wrapper { gap: 2.5rem; }
     .bt-logo-img { max-width: 100px; }
     .dest-section { padding-left: 1.5rem; padding-right: 1.5rem; }
+    
+    .dest-section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+        padding: 0 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .dest-section-header > div {
+        text-align: left;
+    }
+    
+    .dest-section-header h2 {
+        font-size: 2.2rem !important;
+    }
+    
+    .dest-section-desc {
+        text-align: left;
+        max-width: 100%;
+        margin-bottom: 0;
+        font-size: 0.9rem;
+    }
+    
+    .dest-main-title {
+        font-size: 2.2rem !important;
+        padding: 0 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .bt-tabs-nav {
+        gap: 1.5rem !important;
+        overflow-x: auto;
+        justify-content: flex-start !important;
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+        padding-bottom: 0.75rem;
+        width: 100%;
+        white-space: nowrap;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    
+    .bt-tabs-nav::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .bt-tabs-nav li {
+        flex-shrink: 0;
+    }
 }
 
 /* ── DESTINATION EXPLORE BUTTON ── */
