@@ -149,6 +149,26 @@ Route::get('/compile-debug-1234', function() {
     return "<pre>PHP tags count:\n  Opens: $opens\n  Closes: $closes\n\nStructures:\n  ifs: $ifs\n  endifs: $endifs\n  elses: $elses\n  elseifs: $elseifs\n</pre>";
 });
 
+Route::get('/php-blocks-1234', function() {
+    $file = '/home/dioreal/public_html/storage/framework/views/cec1c651ff01e71cf9dcffd64e525a3f.php';
+    if (!file_exists($file)) {
+        return "Compiled view file not found";
+    }
+    $content = file_get_contents($file);
+    $tokens = token_get_all($content);
+    $out = "";
+    $line = 1;
+    foreach ($tokens as $token) {
+        if (is_array($token)) {
+            list($id, $text, $tokenLine) = $token;
+            if ($id === T_OPEN_TAG || $id === T_CLOSE_TAG || $id === T_IF || $id === T_ELSE || $id === T_ELSEIF || $id === T_ENDIF || $id === T_FOREACH || $id === T_ENDFOREACH) {
+                $out .= "Line $tokenLine: " . token_name($id) . " -> " . trim($text) . "\n";
+            }
+        }
+    }
+    return "<pre>$out</pre>";
+});
+
 Route::get('/view-index-1234', function() {
     $file = '/home/dioreal/public_html/resources/views/index.blade.php';
     if (!file_exists($file)) {
