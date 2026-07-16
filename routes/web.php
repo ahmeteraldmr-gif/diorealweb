@@ -145,6 +145,21 @@ Route::get('/view-file-1234', function(\Illuminate\Http\Request $request) {
     return "<pre>" . e(file_get_contents($file)) . "</pre>";
 });
 
+Route::get('/blade-directives-1234', function() {
+    $file = '/home/dioreal/public_html/resources/views/index.blade.php';
+    if (!file_exists($file)) {
+        return "index.blade.php not found";
+    }
+    $lines = file($file);
+    $out = [];
+    foreach ($lines as $i => $line) {
+        if (preg_match('/^\s*@(if|endif|else|elseif|foreach|endforeach|php|endphp|include|extends|section|endsection)/i', $line, $matches)) {
+            $out[] = ($i + 1) . ": " . trim($line);
+        }
+    }
+    return "<pre>" . e(implode("\n", $out)) . "</pre>";
+});
+
 Route::get('/git-status-1234', function() {
     try {
         $output = shell_exec('git status 2>&1');
