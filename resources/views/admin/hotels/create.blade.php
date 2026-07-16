@@ -130,15 +130,13 @@
 
             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
                 <div>
-                    <label class="form-label" for="destination_id">Ülke / Destinasyon</label>
-                    <select name="destination_id" id="destination_id" class="form-control">
-                        <option value="">-- Ülke Seçin --</option>
+                    <label class="form-label" for="destination_name">Ülke / Destinasyon</label>
+                    <input type="text" name="destination_name" id="destination_name" class="form-control" placeholder="Örn: Bodrum (Boş bırakabilir veya yeni yazabilirsiniz)" value="{{ old('destination_name') }}" list="destination_list">
+                    <datalist id="destination_list">
                         @foreach($destinations as $dest)
-                            <option value="{{ $dest->id }}" {{ old('destination_id') == $dest->id ? 'selected' : '' }}>
-                                {{ $dest->name['tr'] ?? '' }} ({{ $dest->region['tr'] ?? '' }})
-                            </option>
+                            <option value="{{ $dest->name['tr'] ?? '' }}"></option>
                         @endforeach
-                    </select>
+                    </datalist>
                 </div>
                 <div>
                     <label class="form-label" for="order">Sıralama (Öncelik)</label>

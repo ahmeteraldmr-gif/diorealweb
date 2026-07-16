@@ -36,7 +36,26 @@
                 
                 <div class="form-group">
                     <label class="form-label" for="tag_tr">Kategori / Etiket (TR)</label>
-                    <input type="text" name="tag[tr]" id="tag_tr" class="form-control" placeholder="Örn: Fine Dining & Japon" value="{{ old('tag.tr') }}">
+                    <input type="text" name="tag[tr]" id="tag_tr" class="form-control" placeholder="Örn: Fine Dining" value="{{ old('tag.tr') }}" list="category_list_tr">
+                    <datalist id="category_list_tr">
+                        <option value="Fine Dining"></option>
+                        <option value="Modern Anadolu"></option>
+                        <option value="Ege Meyhanesi"></option>
+                        <option value="Deniz Ürünleri"></option>
+                        <option value="Steakhouse"></option>
+                        <option value="İtalyan"></option>
+                        <option value="Fransız"></option>
+                        <option value="Akdeniz Mutfağı"></option>
+                        <option value="Asya Mutfağı"></option>
+                        <option value="Sushi"></option>
+                        <option value="Brasserie & Bistro"></option>
+                        <option value="Rooftop Dining"></option>
+                        <option value="Beach Club Restaurant"></option>
+                        <option value="Şef Restoranı"></option>
+                        <option value="Kahvaltı & Brunch"></option>
+                        <option value="Pastane & Artisan Bakery"></option>
+                        <option value="Kafe"></option>
+                    </datalist>
                 </div>
                 
                 <div class="form-group">
@@ -64,7 +83,26 @@
                 
                 <div class="form-group">
                     <label class="form-label" for="tag_en">Category / Tag (EN)</label>
-                    <input type="text" name="tag[en]" id="tag_en" class="form-control" placeholder="e.g. Fine Dining & Japanese" value="{{ old('tag.en') }}">
+                    <input type="text" name="tag[en]" id="tag_en" class="form-control" placeholder="e.g. Fine Dining" value="{{ old('tag.en') }}" list="category_list_en">
+                    <datalist id="category_list_en">
+                        <option value="Fine Dining"></option>
+                        <option value="Modern Anatolian"></option>
+                        <option value="Aegean Tavern"></option>
+                        <option value="Seafood"></option>
+                        <option value="Steakhouse"></option>
+                        <option value="Italian"></option>
+                        <option value="French"></option>
+                        <option value="Mediterranean Cuisine"></option>
+                        <option value="Asian Cuisine"></option>
+                        <option value="Sushi"></option>
+                        <option value="Brasserie & Bistro"></option>
+                        <option value="Rooftop Dining"></option>
+                        <option value="Beach Club Restaurant"></option>
+                        <option value="Chef's Restaurant"></option>
+                        <option value="Breakfast & Brunch"></option>
+                        <option value="Pastry & Artisan Bakery"></option>
+                        <option value="Cafe"></option>
+                    </datalist>
                 </div>
                 
                 <div class="form-group">
@@ -130,15 +168,13 @@
 
             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
                 <div>
-                    <label class="form-label" for="destination_id">Ülke / Destinasyon</label>
-                    <select name="destination_id" id="destination_id" class="form-control">
-                        <option value="">-- Ülke Seçin --</option>
+                    <label class="form-label" for="destination_name">Ülke / Destinasyon</label>
+                    <input type="text" name="destination_name" id="destination_name" class="form-control" placeholder="Örn: Bodrum (Boş bırakabilir veya yeni yazabilirsiniz)" value="{{ old('destination_name') }}" list="destination_list">
+                    <datalist id="destination_list">
                         @foreach($destinations as $dest)
-                            <option value="{{ $dest->id }}" {{ old('destination_id') == $dest->id ? 'selected' : '' }}>
-                                {{ $dest->name['tr'] ?? '' }} ({{ $dest->region['tr'] ?? '' }})
-                            </option>
+                            <option value="{{ $dest->name['tr'] ?? '' }}"></option>
                         @endforeach
-                    </select>
+                    </datalist>
                 </div>
                 <div>
                     <label class="form-label" for="order">Sıralama (Öncelik)</label>

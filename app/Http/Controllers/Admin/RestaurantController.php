@@ -35,7 +35,7 @@ class RestaurantController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-                        'slug_tr' => 'nullable|string|max:255',
+            'slug_tr' => 'nullable|string|max:255',
             'slug_en' => 'nullable|string|max:255',
             'seo_title_tr' => 'nullable|string|max:255',
             'seo_title_en' => 'nullable|string|max:255',
@@ -56,7 +56,7 @@ class RestaurantController extends Controller
             'img_file' => 'nullable|image|max:51200',
             'img_url' => 'nullable|string',
             'gallery_files.*' => 'nullable|image|max:51200',
-            'destination_id' => 'nullable|exists:destinations,id',
+            'destination_name' => 'nullable|string|max:255',
             'order' => 'nullable|integer',
             'is_archived' => 'nullable',
             'video_file' => 'nullable|file|max:204800',
@@ -65,12 +65,31 @@ class RestaurantController extends Controller
             'photo_layout' => 'nullable|string|in:left,right',
         ]);
 
-        $data = $request->only(['name', 'tag', 'location', 'desc', 'long_desc', 'destination_id', 'order', 'video_url', 'theme_color', 'photo_layout']);
+        $data = $request->only(['name', 'tag', 'location', 'desc', 'long_desc', 'order', 'video_url', 'theme_color', 'photo_layout']);
         $data['order'] = $data['order'] ?? 0;
         $data['is_archived'] = $request->has('is_archived') ? 1 : 0;
         $data['show_video_on_cover'] = $request->has('show_video_on_cover') ? 1 : 0;
 
-                $data['slug_tr'] = $request->input('slug_tr') ? \Illuminate\Support\Str::slug($request->input('slug_tr')) : \Illuminate\Support\Str::slug($request->input('name.tr'));
+        // Handle custom typed destination name
+        $destinationName = $request->input('destination_name');
+        if ($destinationName) {
+            $destination = \App\Models\Destination::where('name->tr', $destinationName)
+                ->orWhere('name->en', $destinationName)
+                ->first();
+            if (!$destination) {
+                $destination = \App\Models\Destination::create([
+                    'name' => ['tr' => $destinationName, 'en' => $destinationName],
+                    'slug_tr' => \Illuminate\Support\Str::slug($destinationName),
+                    'slug_en' => \Illuminate\Support\Str::slug($destinationName),
+                    'type' => 'turkiye',
+                ]);
+            }
+            $data['destination_id'] = $destination->id;
+        } else {
+            $data['destination_id'] = null;
+        }
+
+        $data['slug_tr'] = $request->input('slug_tr') ? \Illuminate\Support\Str::slug($request->input('slug_tr')) : \Illuminate\Support\Str::slug($request->input('name.tr'));
         $data['slug_en'] = $request->input('slug_en') ? \Illuminate\Support\Str::slug($request->input('slug_en')) : \Illuminate\Support\Str::slug($request->input('name.en'));
         $data['seo_title_tr'] = $request->input('seo_title_tr');
         $data['seo_title_en'] = $request->input('seo_title_en');
@@ -116,7 +135,7 @@ class RestaurantController extends Controller
     public function update(Request $request, Restaurant $restaurant)
     {
         $request->validate([
-                        'slug_tr' => 'nullable|string|max:255',
+            'slug_tr' => 'nullable|string|max:255',
             'slug_en' => 'nullable|string|max:255',
             'seo_title_tr' => 'nullable|string|max:255',
             'seo_title_en' => 'nullable|string|max:255',
@@ -137,7 +156,7 @@ class RestaurantController extends Controller
             'img_file' => 'nullable|image|max:51200',
             'img_url' => 'nullable|string',
             'gallery_files.*' => 'nullable|image|max:51200',
-            'destination_id' => 'nullable|exists:destinations,id',
+            'destination_name' => 'nullable|string|max:255',
             'order' => 'nullable|integer',
             'is_archived' => 'nullable',
             'video_file' => 'nullable|file|max:204800',
@@ -146,12 +165,31 @@ class RestaurantController extends Controller
             'photo_layout' => 'nullable|string|in:left,right',
         ]);
 
-        $data = $request->only(['name', 'tag', 'location', 'desc', 'long_desc', 'destination_id', 'order', 'video_url', 'theme_color', 'photo_layout']);
+        $data = $request->only(['name', 'tag', 'location', 'desc', 'long_desc', 'order', 'video_url', 'theme_color', 'photo_layout']);
         $data['order'] = $data['order'] ?? 0;
         $data['is_archived'] = $request->has('is_archived') ? 1 : 0;
         $data['show_video_on_cover'] = $request->has('show_video_on_cover') ? 1 : 0;
 
-                $data['slug_tr'] = $request->input('slug_tr') ? \Illuminate\Support\Str::slug($request->input('slug_tr')) : \Illuminate\Support\Str::slug($request->input('name.tr'));
+        // Handle custom typed destination name
+        $destinationName = $request->input('destination_name');
+        if ($destinationName) {
+            $destination = \App\Models\Destination::where('name->tr', $destinationName)
+                ->orWhere('name->en', $destinationName)
+                ->first();
+            if (!$destination) {
+                $destination = \App\Models\Destination::create([
+                    'name' => ['tr' => $destinationName, 'en' => $destinationName],
+                    'slug_tr' => \Illuminate\Support\Str::slug($destinationName),
+                    'slug_en' => \Illuminate\Support\Str::slug($destinationName),
+                    'type' => 'turkiye',
+                ]);
+            }
+            $data['destination_id'] = $destination->id;
+        } else {
+            $data['destination_id'] = null;
+        }
+
+        $data['slug_tr'] = $request->input('slug_tr') ? \Illuminate\Support\Str::slug($request->input('slug_tr')) : \Illuminate\Support\Str::slug($request->input('name.tr'));
         $data['slug_en'] = $request->input('slug_en') ? \Illuminate\Support\Str::slug($request->input('slug_en')) : \Illuminate\Support\Str::slug($request->input('name.en'));
         $data['seo_title_tr'] = $request->input('seo_title_tr');
         $data['seo_title_en'] = $request->input('seo_title_en');
