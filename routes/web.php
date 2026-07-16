@@ -100,15 +100,16 @@ Route::get('/view-log-1234', function() {
     return "<h3>Son 15 Hata:</h3><pre>" . e(implode("", $errors)) . "</pre>";
 });
 
-Route::get('/debug-view-1234', function() {
+Route::get('/debug-view-1234', function(\Illuminate\Http\Request $request) {
     $file = '/home/dioreal/public_html/storage/framework/views/cec1c651ff01e71cf9dcffd64e525a3f.php';
     if (!file_exists($file)) {
         return "Compiled view file not found at " . $file;
     }
     $content = file_get_contents($file);
-    // get first line
-    $firstLine = strtok($content, "\n");
-    return "<h3>First Line:</h3><pre>" . e($firstLine) . "</pre><h3>File Time:</h3><pre>" . date('Y-m-d H:i:s', filemtime($file)) . "</pre><h3>Around line 554:</h3><pre>" . e(implode("\n", array_slice(explode("\n", $content), 540, 30))) . "</pre>";
+    $start = (int) $request->query('start', 540);
+    $count = (int) $request->query('count', 30);
+    $lines = explode("\n", $content);
+    return "<h3>Lines $start to " . ($start + $count) . ":</h3><pre>" . e(implode("\n", array_slice($lines, $start - 1, $count))) . "</pre>";
 });
 
 Route::get('/file-info-1234', function() {
