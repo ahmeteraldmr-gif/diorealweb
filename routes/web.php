@@ -109,6 +109,14 @@ Route::get('/debug-view-1234', function() {
     return "<h3>First Line:</h3><pre>" . e($firstLine) . "</pre><h3>Around line 554:</h3><pre>" . e(implode("\n", array_slice(explode("\n", $content), 540, 30))) . "</pre>";
 });
 
+Route::get('/view-index-1234', function() {
+    $file = '/home/dioreal/public_html/resources/views/index.blade.php';
+    if (!file_exists($file)) {
+        return "index.blade.php not found";
+    }
+    return "<pre>" . e(file_get_contents($file)) . "</pre>";
+});
+
 // Protected Admin Routes Group
 Route::middleware(['admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
