@@ -108,7 +108,24 @@ Route::get('/debug-view-1234', function() {
     $content = file_get_contents($file);
     // get first line
     $firstLine = strtok($content, "\n");
-    return "<h3>First Line:</h3><pre>" . e($firstLine) . "</pre><h3>Around line 554:</h3><pre>" . e(implode("\n", array_slice(explode("\n", $content), 540, 30))) . "</pre>";
+    return "<h3>First Line:</h3><pre>" . e($firstLine) . "</pre><h3>File Time:</h3><pre>" . date('Y-m-d H:i:s', filemtime($file)) . "</pre><h3>Around line 554:</h3><pre>" . e(implode("\n", array_slice(explode("\n", $content), 540, 30))) . "</pre>";
+});
+
+Route::get('/file-info-1234', function() {
+    $files = [
+        'index.blade.php' => '/home/dioreal/public_html/resources/views/index.blade.php',
+        'compiled.php' => '/home/dioreal/public_html/storage/framework/views/cec1c651ff01e71cf9dcffd64e525a3f.php',
+        'footer.blade.php' => '/home/dioreal/public_html/resources/views/partials/footer.blade.php',
+    ];
+    $out = "";
+    foreach ($files as $name => $path) {
+        if (file_exists($path)) {
+            $out .= "$name:\n  Exists: Yes\n  Size: " . filesize($path) . "\n  Modified: " . date('Y-m-d H:i:s', filemtime($path)) . "\n  Perms: " . substr(sprintf('%o', fileperms($path)), -4) . "\n\n";
+        } else {
+            $out .= "$name:\n  Exists: No\n\n";
+        }
+    }
+    return "<pre>$out</pre>";
 });
 
 Route::get('/view-index-1234', function() {
