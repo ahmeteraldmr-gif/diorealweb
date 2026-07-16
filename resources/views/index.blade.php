@@ -55,7 +55,7 @@
     @endif
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
+      "@@context": "https://schema.org",
       "@type": "Organization",
       "name": "Dioreal Dijital",
       "url": "https://dioreal.com",
@@ -68,7 +68,7 @@
     </script>
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
+      "@@context": "https://schema.org",
       "@type": "WebSite",
       "url": "https://dioreal.com",
       "name": "Dioreal Dijital"
