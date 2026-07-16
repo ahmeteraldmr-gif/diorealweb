@@ -107,14 +107,15 @@
     <!-- Main Container -->
     <main class="admin-main">
         
-        <!-- Header -->
         <header class="admin-header">
-            <div>
+            <div class="header-left">
                 <button class="sidebar-toggle" id="sidebarToggle">
                     <i class="fas fa-bars"></i>
                 </button>
-                <h1 class="admin-title">@yield('page_title')</h1>
-                <p class="admin-subtitle">@yield('page_subtitle', 'Dioreal Dijital portal yönetimi')</p>
+                <div class="header-title-wrapper">
+                    <h1 class="admin-title">@yield('page_title')</h1>
+                    <p class="admin-subtitle">@yield('page_subtitle', 'Dioreal Dijital portal yönetimi')</p>
+                </div>
             </div>
             <div>
                 <a href="{{ route('home') }}" class="btn btn-outline" target="_blank">

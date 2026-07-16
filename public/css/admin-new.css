@@ -144,18 +144,37 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2.5rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.header-title-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
 }
 
 .admin-title {
     font-size: 1.75rem;
     font-weight: 700;
     color: var(--white);
+    line-height: 1.2;
 }
 
 .admin-subtitle {
     font-size: 0.9rem;
     color: var(--text-muted);
-    margin-top: 0.25rem;
+    margin-top: 0.35rem;
+    line-height: 1.4;
 }
 
 /* Stats Cards */
@@ -701,16 +720,19 @@ textarea.form-control {
         margin-bottom: 1.5rem;
     }
     
-    .admin-header > div {
+    .header-left {
         width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        align-items: flex-start;
+        gap: 0.85rem;
+    }
+    
+    .admin-header > div:last-child {
+        width: 100%;
     }
     
     .admin-header .btn {
-        width: auto;
-        padding: 0.5rem 1rem;
+        width: 100% !important;
+        justify-content: center !important;
     }
 
     /* Cards */
