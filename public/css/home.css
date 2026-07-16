@@ -261,6 +261,7 @@
     position: relative;
     padding: 1rem 0;
     cursor: grab;
+    min-height: 650px;
 }
 
 .marquee-track {
@@ -280,6 +281,10 @@
 @media (max-width: 768px) {
     .dest-card-h {
         flex: 0 0 260px !important;
+    }
+    
+    .marquee-container {
+        min-height: 530px !important;
     }
 }
 
