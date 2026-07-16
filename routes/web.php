@@ -78,6 +78,26 @@ Route::get('/force-reset-admin-login-1234', function() {
     return "Her sey sifirdan basariyla kuruldu, veritabani guncellendi ve tum inatci onbellekler (OPcache) temizlendi! Lutfen /login sayfasina gidip giris yapin.";
 });
 
+Route::get('/force-migrate-1234', function() {
+    try {
+        \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
+        $output = \Illuminate\Support\Facades\Artisan::output();
+        return "<pre>Migration Basariyla Tamamlandi:\n" . e($output) . "</pre>";
+    } catch (\Exception $e) {
+        return "<pre>Hata Olustu:\n" . e($e->getMessage()) . "\n" . e($e->getTraceAsString()) . "</pre>";
+    }
+});
+
+Route::get('/view-log-1234', function() {
+    $logPath = storage_path('logs/laravel.log');
+    if (!file_exists($logPath)) {
+        return "Log dosyasi bulunamadi.";
+    }
+    $content = file($logPath);
+    $lines = array_slice($content, -100);
+    return "<pre>" . e(implode("", $lines)) . "</pre>";
+});
+
 // Protected Admin Routes Group
 Route::middleware(['admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
