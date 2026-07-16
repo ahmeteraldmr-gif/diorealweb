@@ -40,6 +40,11 @@
                 </div>
                 
                 <div class="form-group">
+                    <label class="form-label" for="location_tr">Konum (TR)</label>
+                    <input type="text" name="location[tr]" id="location_tr" class="form-control" placeholder="Örn: Yalıkavak, Bodrum" value="{{ old('location.tr') }}">
+                </div>
+                
+                <div class="form-group">
                     <label class="form-label" for="desc_tr">Kısa Açıklama (TR)</label>
                     <textarea name="desc[tr]" id="desc_tr" class="form-control" placeholder="Kartta görünecek kısa açıklama..." required>{{ old('desc.tr') }}</textarea>
                 </div>
@@ -60,6 +65,11 @@
                 <div class="form-group">
                     <label class="form-label" for="tag_en">Category / Tag (EN)</label>
                     <input type="text" name="tag[en]" id="tag_en" class="form-control" placeholder="e.g. Fine Dining & Japanese" value="{{ old('tag.en') }}">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="location_en">Location (EN)</label>
+                    <input type="text" name="location[en]" id="location_en" class="form-control" placeholder="e.g. Yalikavak, Bodrum" value="{{ old('location.en') }}">
                 </div>
                 
                 <div class="form-group">

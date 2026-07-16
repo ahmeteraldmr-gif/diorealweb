@@ -46,6 +46,8 @@ class RestaurantController extends Controller
             'name.tr' => 'required|string|max:255',
             'name.en' => 'required|string|max:255',
             'tag.tr' => 'nullable|string|max:255',
+            'location.tr' => 'nullable|string|max:255',
+            'location.en' => 'nullable|string|max:255',
             'tag.en' => 'nullable|string|max:255',
             'desc.tr' => 'required|string',
             'desc.en' => 'required|string',
@@ -63,7 +65,7 @@ class RestaurantController extends Controller
             'photo_layout' => 'nullable|string|in:left,right',
         ]);
 
-        $data = $request->only(['name', 'tag', 'desc', 'long_desc', 'destination_id', 'order', 'video_url', 'theme_color', 'photo_layout']);
+        $data = $request->only(['name', 'tag', 'location', 'desc', 'long_desc', 'destination_id', 'order', 'video_url', 'theme_color', 'photo_layout']);
         $data['order'] = $data['order'] ?? 0;
         $data['is_archived'] = $request->has('is_archived') ? 1 : 0;
         $data['show_video_on_cover'] = $request->has('show_video_on_cover') ? 1 : 0;
@@ -125,6 +127,8 @@ class RestaurantController extends Controller
             'name.tr' => 'required|string|max:255',
             'name.en' => 'required|string|max:255',
             'tag.tr' => 'nullable|string|max:255',
+            'location.tr' => 'nullable|string|max:255',
+            'location.en' => 'nullable|string|max:255',
             'tag.en' => 'nullable|string|max:255',
             'desc.tr' => 'required|string',
             'desc.en' => 'required|string',
@@ -142,7 +146,7 @@ class RestaurantController extends Controller
             'photo_layout' => 'nullable|string|in:left,right',
         ]);
 
-        $data = $request->only(['name', 'tag', 'desc', 'long_desc', 'destination_id', 'order', 'video_url', 'theme_color', 'photo_layout']);
+        $data = $request->only(['name', 'tag', 'location', 'desc', 'long_desc', 'destination_id', 'order', 'video_url', 'theme_color', 'photo_layout']);
         $data['order'] = $data['order'] ?? 0;
         $data['is_archived'] = $request->has('is_archived') ? 1 : 0;
         $data['show_video_on_cover'] = $request->has('show_video_on_cover') ? 1 : 0;

@@ -429,8 +429,8 @@
                     <i class="fas fa-map-marker-alt"></i>
                     <div>
                         <div class="sidebar-info-label" data-i18n="label_location_region">Konum / Bölge</div>
-                        <div class="sidebar-info-value lang-text-tr">{{ $restoran->tag['tr'] ?? '' }}</div>
-                        <div class="sidebar-info-value lang-text-en">{{ $restoran->tag['en'] ?? '' }}</div>
+                        <div class="sidebar-info-value lang-text-tr">{{ $restoran->location['tr'] ?? ($restoran->destination->name['tr'] ?? ($restoran->tag['tr'] ?? '')) }}</div>
+                        <div class="sidebar-info-value lang-text-en">{{ $restoran->location['en'] ?? ($restoran->destination->name['en'] ?? ($restoran->tag['en'] ?? '')) }}</div>
                     </div>
                 </div>
 

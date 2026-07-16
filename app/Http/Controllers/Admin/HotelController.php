@@ -46,6 +46,8 @@ class HotelController extends Controller
             'name.tr' => 'required|string|max:255',
             'name.en' => 'nullable|string|max:255',
             'tag.tr' => 'nullable|string|max:255',
+            'location.tr' => 'nullable|string|max:255',
+            'location.en' => 'nullable|string|max:255',
             'tag.en' => 'nullable|string|max:255',
             'desc.tr' => 'required|string',
             'desc.en' => 'nullable|string',
@@ -61,7 +63,7 @@ class HotelController extends Controller
             'video_url' => 'nullable|string',
         ]);
 
-        $data = $request->only(['name', 'tag', 'desc', 'long_desc', 'destination_id', 'order', 'video_url']);
+        $data = $request->only(['name', 'tag', 'location', 'desc', 'long_desc', 'destination_id', 'order', 'video_url']);
         $data['order'] = $data['order'] ?? 0;
         $data['is_archived'] = $request->has('is_archived') ? 1 : 0;
         $data['show_video_on_cover'] = $request->has('show_video_on_cover') ? 1 : 0;
@@ -124,6 +126,8 @@ class HotelController extends Controller
             'name.tr' => 'required|string|max:255',
             'name.en' => 'nullable|string|max:255',
             'tag.tr' => 'nullable|string|max:255',
+            'location.tr' => 'nullable|string|max:255',
+            'location.en' => 'nullable|string|max:255',
             'tag.en' => 'nullable|string|max:255',
             'desc.tr' => 'required|string',
             'desc.en' => 'nullable|string',
@@ -139,7 +143,7 @@ class HotelController extends Controller
             'video_url' => 'nullable|string',
         ]);
 
-        $data = $request->only(['name', 'tag', 'desc', 'long_desc', 'destination_id', 'order', 'video_url']);
+        $data = $request->only(['name', 'tag', 'location', 'desc', 'long_desc', 'destination_id', 'order', 'video_url']);
         $data['order'] = $data['order'] ?? 0;
         $data['is_archived'] = $request->has('is_archived') ? 1 : 0;
         $data['show_video_on_cover'] = $request->has('show_video_on_cover') ? 1 : 0;
