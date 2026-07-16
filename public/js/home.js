@@ -60,6 +60,25 @@ const initHome = () => {
             const track = container.querySelector('.marquee-track');
             if (!track) return;
             
+            // Dynamically clone to ensure exactly 3 copies for seamless infinite scroll on wide screens
+            const originalContent = container.querySelector('.marquee-content');
+            if (originalContent) {
+                track.innerHTML = '';
+                
+                const copy1 = originalContent.cloneNode(true);
+                copy1.removeAttribute('aria-hidden');
+                
+                const copy2 = originalContent.cloneNode(true);
+                copy2.setAttribute('aria-hidden', 'true');
+                
+                const copy3 = originalContent.cloneNode(true);
+                copy3.setAttribute('aria-hidden', 'true');
+                
+                track.appendChild(copy1);
+                track.appendChild(copy2);
+                track.appendChild(copy3);
+            }
+            
             let currentX = 0;
             let speed = 0.8; // px per frame
             let isPaused = false;
@@ -75,11 +94,11 @@ const initHome = () => {
             // Auto-scroll loop
             const step = () => {
                 if (!isPaused && !isDragging) {
-                    const halfWidth = track.scrollWidth / 2;
-                    if (halfWidth > 0) {
+                    const oneCopyWidth = track.scrollWidth / 3;
+                    if (oneCopyWidth > 0) {
                         currentX -= speed;
-                        if (currentX <= -halfWidth) {
-                            currentX += halfWidth;
+                        if (currentX <= -oneCopyWidth) {
+                            currentX += oneCopyWidth;
                         }
                         track.style.transform = `translateX(${currentX}px)`;
                     }
@@ -111,19 +130,19 @@ const initHome = () => {
             container.addEventListener('touchmove', (e) => {
                 if (!isDragging) return;
                 const deltaX = e.touches[0].clientX - startTouchX;
-                const halfWidth = track.scrollWidth / 2;
-                if (halfWidth === 0) return;
+                const oneCopyWidth = track.scrollWidth / 3;
+                if (oneCopyWidth === 0) return;
 
                 currentX = startTranslateX + deltaX;
 
                 // Loop warp boundaries
-                if (currentX <= -halfWidth) {
-                    currentX += halfWidth;
-                    startTranslateX += halfWidth;
+                if (currentX <= -oneCopyWidth) {
+                    currentX += oneCopyWidth;
+                    startTranslateX += oneCopyWidth;
                     startTouchX = e.touches[0].clientX;
                 } else if (currentX > 0) {
-                    currentX -= halfWidth;
-                    startTranslateX -= halfWidth;
+                    currentX -= oneCopyWidth;
+                    startTranslateX -= oneCopyWidth;
                     startTouchX = e.touches[0].clientX;
                 }
 
@@ -147,19 +166,19 @@ const initHome = () => {
             container.addEventListener('mousemove', (e) => {
                 if (!isDragging) return;
                 const deltaX = e.clientX - startTouchX;
-                const halfWidth = track.scrollWidth / 2;
-                if (halfWidth === 0) return;
+                const oneCopyWidth = track.scrollWidth / 3;
+                if (oneCopyWidth === 0) return;
 
                 currentX = startTranslateX + deltaX;
 
                 // Loop warp boundaries
-                if (currentX <= -halfWidth) {
-                    currentX += halfWidth;
-                    startTranslateX += halfWidth;
+                if (currentX <= -oneCopyWidth) {
+                    currentX += oneCopyWidth;
+                    startTranslateX += oneCopyWidth;
                     startTouchX = e.clientX;
                 } else if (currentX > 0) {
-                    currentX -= halfWidth;
-                    startTranslateX -= halfWidth;
+                    currentX -= oneCopyWidth;
+                    startTranslateX -= oneCopyWidth;
                     startTouchX = e.clientX;
                 }
 
