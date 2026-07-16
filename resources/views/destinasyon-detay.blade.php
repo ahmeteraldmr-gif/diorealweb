@@ -298,7 +298,7 @@
 
     <!-- Description Introduction -->
     @if(!empty($destination->desc['tr']) || !empty($destination->desc['en']))
-        <section class="dest-intro reveal">
+        <section class="dest-intro">
             <div class="dest-intro-desc lang-text-tr">
                 {!! nl2br(e($destination->desc['tr'] ?? '')) !!}
             </div>

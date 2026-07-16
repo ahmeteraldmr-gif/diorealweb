@@ -8,7 +8,7 @@ const initCommon = () => {
                 observer.unobserve(e.target);
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.01 });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 };
