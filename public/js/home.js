@@ -52,7 +52,7 @@ const initHome = () => {
         handleDynamicLang(e.detail);
     });
 
-    /* ── INTERACTIVE MARQUEE SCROLL (MOBILE ONLY) ── */
+    /* ── INTERACTIVE MARQUEE SCROLL (MOBILE & DESKTOP) ── */
     const initMarqueeScroll = () => {
         const containers = document.querySelectorAll('.marquee-container');
         
@@ -60,43 +60,125 @@ const initHome = () => {
             const track = container.querySelector('.marquee-track');
             if (!track) return;
             
-            // Detect touch capability
-            const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-            if (!isTouchDevice) return; // Let desktop use native CSS marquee
-            
+            let currentX = 0;
             let speed = 0.8; // px per frame
+            let isPaused = false;
+            let resumeTimeout = null;
             
-            // Initialize scroll position in the middle for seamless two-way infinity
-            const initScrollPosition = () => {
-                const halfWidth = track.scrollWidth / 2;
-                if (halfWidth > 200) {
-                    container.scrollLeft = halfWidth;
-                }
-            };
-            
-            initScrollPosition();
-            setTimeout(initScrollPosition, 500);
-            window.addEventListener('load', initScrollPosition);
+            let startTouchX = 0;
+            let startTranslateX = 0;
+            let isDragging = false;
 
-            // Infinite loop warp on scroll (supports native touch swipe and auto scroll)
-            container.addEventListener('scroll', () => {
-                const halfWidth = track.scrollWidth / 2;
-                if (halfWidth <= 200) return; // Wait until track is fully loaded
-                
-                // Safe warp boundaries to prevent infinite loop event triggers
-                if (container.scrollLeft >= halfWidth + 100) {
-                    container.scrollLeft -= halfWidth;
-                } else if (container.scrollLeft <= 50) {
-                    container.scrollLeft += halfWidth;
-                }
-            });
+            // Disable CSS animation entirely so JS controls the translation
+            track.style.animation = 'none';
 
-            // Auto Scroll Step (Runs continuously, touch swipes naturally override it)
+            // Auto-scroll loop
             const step = () => {
-                container.scrollLeft += speed;
+                if (!isPaused && !isDragging) {
+                    const halfWidth = track.scrollWidth / 2;
+                    if (halfWidth > 0) {
+                        currentX -= speed;
+                        if (currentX <= -halfWidth) {
+                            currentX += halfWidth;
+                        }
+                        track.style.transform = `translateX(${currentX}px)`;
+                    }
+                }
                 requestAnimationFrame(step);
             };
             requestAnimationFrame(step);
+
+            const pauseScroll = () => {
+                isPaused = true;
+                if (resumeTimeout) clearTimeout(resumeTimeout);
+            };
+
+            const resumeScroll = () => {
+                if (resumeTimeout) clearTimeout(resumeTimeout);
+                resumeTimeout = setTimeout(() => {
+                    isPaused = false;
+                }, 2000); // Resume auto scroll after 2 seconds
+            };
+
+            // Touch events for Mobile
+            container.addEventListener('touchstart', (e) => {
+                isDragging = true;
+                pauseScroll();
+                startTouchX = e.touches[0].clientX;
+                startTranslateX = currentX;
+            }, { passive: true });
+
+            container.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                const deltaX = e.touches[0].clientX - startTouchX;
+                const halfWidth = track.scrollWidth / 2;
+                if (halfWidth === 0) return;
+
+                currentX = startTranslateX + deltaX;
+
+                // Loop warp boundaries
+                if (currentX <= -halfWidth) {
+                    currentX += halfWidth;
+                    startTranslateX += halfWidth;
+                    startTouchX = e.touches[0].clientX;
+                } else if (currentX > 0) {
+                    currentX -= halfWidth;
+                    startTranslateX -= halfWidth;
+                    startTouchX = e.touches[0].clientX;
+                }
+
+                track.style.transform = `translateX(${currentX}px)`;
+            }, { passive: true });
+
+            container.addEventListener('touchend', () => {
+                isDragging = false;
+                resumeScroll();
+            }, { passive: true });
+
+            // Mouse events for Desktop drag
+            container.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                pauseScroll();
+                startTouchX = e.clientX;
+                startTranslateX = currentX;
+                container.style.cursor = 'grabbing';
+            });
+
+            container.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                const deltaX = e.clientX - startTouchX;
+                const halfWidth = track.scrollWidth / 2;
+                if (halfWidth === 0) return;
+
+                currentX = startTranslateX + deltaX;
+
+                // Loop warp boundaries
+                if (currentX <= -halfWidth) {
+                    currentX += halfWidth;
+                    startTranslateX += halfWidth;
+                    startTouchX = e.clientX;
+                } else if (currentX > 0) {
+                    currentX -= halfWidth;
+                    startTranslateX -= halfWidth;
+                    startTouchX = e.clientX;
+                }
+
+                track.style.transform = `translateX(${currentX}px)`;
+            });
+
+            container.addEventListener('mouseup', () => {
+                isDragging = false;
+                container.style.cursor = 'grab';
+                resumeScroll();
+            });
+
+            container.addEventListener('mouseleave', () => {
+                if (isDragging) {
+                    isDragging = false;
+                    container.style.cursor = 'grab';
+                    resumeScroll();
+                }
+            });
         });
     };
 

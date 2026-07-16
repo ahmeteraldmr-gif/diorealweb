@@ -260,23 +260,27 @@
     overflow: hidden;
     position: relative;
     padding: 1rem 0;
+    cursor: grab;
 }
 
 .marquee-track {
     display: flex;
     width: max-content;
     animation: marquee-scroll 45s linear infinite;
-}
-
-/* Pause scroll on hover */
-.marquee-track:hover {
-    animation-play-state: paused;
+    align-items: flex-start;
 }
 
 .marquee-content {
     display: flex;
     gap: 2rem;
     padding-right: 2rem;
+    align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+    .dest-card-h {
+        flex: 0 0 260px !important;
+    }
 }
 
 @keyframes marquee-scroll {

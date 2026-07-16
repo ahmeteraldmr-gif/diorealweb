@@ -14,13 +14,6 @@ class PageController extends Controller
 {
     public function index()
     {
-        // Write destination data to a log file in public
-        $logData = [];
-        foreach (\App\Models\Destination::all() as $d) {
-            $logData[] = ($d->name['tr'] ?? 'unnamed') . ' -> ' . ($d->img ?? 'NO_IMAGE');
-        }
-        @file_put_contents(public_path('dest_log.txt'), implode(PHP_EOL, $logData));
-
         $destinations = \App\Models\Destination::orderBy('order')->get()->groupBy('type');
         return view("index", compact("destinations"));
     }
