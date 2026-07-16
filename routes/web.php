@@ -128,6 +128,27 @@ Route::get('/file-info-1234', function() {
     return "<pre>$out</pre>";
 });
 
+Route::get('/compile-debug-1234', function() {
+    $file = '/home/dioreal/public_html/storage/framework/views/cec1c651ff01e71cf9dcffd64e525a3f.php';
+    if (!file_exists($file)) {
+        return "Compiled view file not found";
+    }
+    $content = file_get_contents($file);
+    
+    // Count raw occurrences
+    $ifs = substr_count($content, '<?php if');
+    $endifs = substr_count($content, '<?php endif;');
+    $elses = substr_count($content, '<?php else: ?>');
+    $elseifs = substr_count($content, '<?php elseif');
+    
+    // Find all <?php tags that are not closed?
+    // Actually, let's just count all <?php and ?>
+    $opens = substr_count($content, '<?php');
+    $closes = substr_count($content, '?>');
+    
+    return "<pre>PHP tags count:\n  Opens: $opens\n  Closes: $closes\n\nStructures:\n  ifs: $ifs\n  endifs: $endifs\n  elses: $elses\n  elseifs: $elseifs\n</pre>";
+});
+
 Route::get('/view-index-1234', function() {
     $file = '/home/dioreal/public_html/resources/views/index.blade.php';
     if (!file_exists($file)) {
