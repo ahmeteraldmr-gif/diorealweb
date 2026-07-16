@@ -98,6 +98,17 @@ Route::get('/view-log-1234', function() {
     return "<pre>" . e(implode("", $lines)) . "</pre>";
 });
 
+Route::get('/debug-view-1234', function() {
+    $file = '/home/dioreal/public_html/storage/framework/views/cec1c651ff01e71cf9dcffd64e525a3f.php';
+    if (!file_exists($file)) {
+        return "Compiled view file not found at " . $file;
+    }
+    $content = file_get_contents($file);
+    // get first line
+    $firstLine = strtok($content, "\n");
+    return "<h3>First Line:</h3><pre>" . e($firstLine) . "</pre><h3>Around line 554:</h3><pre>" . e(implode("\n", array_slice(explode("\n", $content), 540, 30))) . "</pre>";
+});
+
 // Protected Admin Routes Group
 Route::middleware(['admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
