@@ -685,3 +685,91 @@ textarea.form-control {
     text-decoration: underline;
 }
 
+/* ── Mobile Responsiveness & Form Adjustments ── */
+@media (max-width: 768px) {
+    /* Main Layout */
+    .admin-main {
+        padding: 1rem;
+    }
+    
+    .admin-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .admin-header > div {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .admin-header .btn {
+        width: auto;
+        padding: 0.5rem 1rem;
+    }
+
+    /* Cards */
+    .panel-card {
+        padding: 1.25rem 1rem;
+        margin-bottom: 1.5rem;
+        border-radius: var(--radius-md);
+    }
+    
+    .panel-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 1.25rem;
+    }
+    
+    .panel-card-header .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Responsive Form Grids (Overrides Inline Grids) */
+    div[style*="display: grid"][style*="grid-template-columns"]:not([style*="auto-fill"]):not([style*="auto-fit"]),
+    div[style*="display:grid"][style*="grid-template-columns"]:not([style*="auto-fill"]):not([style*="auto-fit"]) {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    /* Cover Image and Gallery Layout */
+    div[style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    /* Stats Grid */
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Actions & Buttons */
+    div[style*="justify-content: flex-end"],
+    div[style*="justify-content:flex-end"] {
+        flex-direction: column-reverse !important;
+        width: 100% !important;
+        gap: 0.75rem !important;
+        display: flex !important;
+    }
+    
+    div[style*="justify-content: flex-end"] .btn,
+    div[style*="justify-content:flex-end"] .btn,
+    div[style*="justify-content: flex-end"] button,
+    div[style*="justify-content:flex-end"] button {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+
+    /* Tables action column scroll guard */
+    .premium-table td {
+        white-space: nowrap;
+    }
+}
+
