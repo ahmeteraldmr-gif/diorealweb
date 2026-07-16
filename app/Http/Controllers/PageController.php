@@ -106,20 +106,20 @@ class PageController extends Controller
 
     public function etkinlikDetay($slug_or_id)
     {
-        $etkinlik = Event::findOrFail($id);
+        $etkinlik = Event::where('id', $slug_or_id)->orWhere('slug_tr', $slug_or_id)->orWhere('slug_en', $slug_or_id)->firstOrFail();
         return view("etkinlik-detay", compact("etkinlik"));
     }
 
     public function rehberDetay($slug_or_id)
     {
-        $rehber = Guide::findOrFail($id);
-        $otherGuides = Guide::where('id', '!=', $journal->id)->get();
+        $rehber = Guide::where('id', $slug_or_id)->orWhere('slug_tr', $slug_or_id)->orWhere('slug_en', $slug_or_id)->firstOrFail();
+        $otherGuides = Guide::where('id', '!=', $rehber->id)->get();
         return view("rehber-detay", compact("rehber", "otherGuides"));
     }
 
     public function yatDetay($slug_or_id)
     {
-        $yat = Yacht::findOrFail($id);
+        $yat = Yacht::where('id', $slug_or_id)->orWhere('slug_tr', $slug_or_id)->orWhere('slug_en', $slug_or_id)->firstOrFail();
         return view("yat-detay", compact("yat"));
     }
 }
