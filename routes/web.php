@@ -93,9 +93,11 @@ Route::get('/view-log-1234', function() {
     if (!file_exists($logPath)) {
         return "Log dosyasi bulunamadi.";
     }
-    $content = file($logPath);
-    $lines = array_slice($content, -100);
-    return "<pre>" . e(implode("", $lines)) . "</pre>";
+    $content = file_get_contents($logPath);
+    // Find all occurrences of local.ERROR
+    preg_match_all('/\[\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\].*?local\.ERROR.*?\n/', $content, $matches);
+    $errors = array_slice($matches[0], -15);
+    return "<h3>Son 15 Hata:</h3><pre>" . e(implode("", $errors)) . "</pre>";
 });
 
 Route::get('/debug-view-1234', function() {
