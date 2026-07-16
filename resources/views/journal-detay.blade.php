@@ -28,7 +28,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    desc['tr'] ?? ''), 160) }}">
+    <title>{{ $seo_title }}</title>
+    <meta name="description" content="{{ $seo_desc }}">
+    
+    <link rel="canonical" href="{{ $canonical }}">
+    @if(isset($hreflang_tr)) <link rel="alternate" hreflang="tr" href="{{ $hreflang_tr }}" /> @endif
+    @if(isset($hreflang_en)) <link rel="alternate" hreflang="en" href="{{ $hreflang_en }}" /> @endif
+    <link rel="alternate" hreflang="x-default" href="{{ $canonical }}" />
+
+    @if($noindex)
+        <meta name="robots" content="noindex, nofollow">
+    @else
+        <meta name="robots" content="index, follow">
+    @endif
+    
+    <meta property="og:title" content="{{ $seo_title }}">
+    <meta property="og:description" content="{{ $seo_desc }}">
+    <meta property="og:image" content="{{ $og_image }}">
+    <meta property="og:url" content="{{ $canonical }}">
+    <meta property="og:type" content="{{ $og_type }}">
+    <meta property="og:site_name" content="Dioreal">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $seo_title }}">
+    <meta name="twitter:description" content="{{ $seo_desc }}">
+    <meta name="twitter:image" content="{{ $og_image }}">
+
+    @if(isset($schema_json))
+    {!! $schema_json !!}
+    @endif
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@200;300;400;500;600&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
