@@ -117,6 +117,15 @@ Route::get('/view-index-1234', function() {
     return "<pre>" . e(file_get_contents($file)) . "</pre>";
 });
 
+Route::get('/view-file-1234', function(\Illuminate\Http\Request $request) {
+    $path = $request->query('path');
+    $file = '/home/dioreal/public_html/' . $path;
+    if (!file_exists($file)) {
+        return "File not found: " . $file;
+    }
+    return "<pre>" . e(file_get_contents($file)) . "</pre>";
+});
+
 Route::get('/git-status-1234', function() {
     try {
         $output = shell_exec('git status 2>&1');
