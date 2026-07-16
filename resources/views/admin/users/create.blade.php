@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@yield('title', 'Yeni Kullanıcı Ekle')
+@section('title', 'Yeni Kullanıcı Ekle')
 
 @section('page_title', 'Yeni Kullanıcı Ekle')
 @section('page_subtitle', 'Sistem yönetimi veya içerik güncellemesi için yeni bir kullanıcı profili oluşturun.')

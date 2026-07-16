@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@yield('title', 'Kullanıcı Düzenle')
+@section('title', 'Kullanıcı Düzenle')
 
 @section('page_title', 'Kullanıcı Düzenle')
 @section('page_subtitle', 'Kullanıcı rolünü, şifresini ve erişim izinlerini buradan güncelleyebilirsiniz.')

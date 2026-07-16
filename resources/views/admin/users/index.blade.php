@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@yield('title', 'Kullanıcılar & Yetkiler')
+@section('title', 'Kullanıcılar & Yetkiler')
 
 @section('page_title', 'Kullanıcılar & Yetkiler')
 @section('page_subtitle', 'Sisteme erişebilen yöneticilerin ve içerik editörlerinin yönetimi.')

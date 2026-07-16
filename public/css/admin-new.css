@@ -532,6 +532,8 @@ textarea.form-control {
     .admin-main {
         margin-left: 0;
         padding: 1.5rem;
+        width: 100%;
+        max-width: 100%;
     }
     .sidebar-toggle {
         display: block;

@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@yield('title', 'Kontrol Paneli')
+@section('title', 'Kontrol Paneli')
 
 @section('page_title', 'Kontrol Paneli')
 @section('page_subtitle', 'Dioreal portal içeriklerinin genel özeti ve istatistikleri.')

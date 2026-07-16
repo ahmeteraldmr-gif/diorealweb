@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@yield('title', 'Genel Ayarlar')
+@section('title', 'Genel Ayarlar')
 
 @section('page_title', 'Genel Ayarlar')
 @section('page_subtitle', 'Sitenin iletişim bilgileri, sosyal ağ entegrasyonları, hero başlıkları, anasayfa/hakkımızda içerikleri ve marka referanslarının yönetimi.')
