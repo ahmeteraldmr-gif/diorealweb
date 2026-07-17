@@ -457,14 +457,12 @@
         .bt-logo-img {
             max-width: 140px;
             height: auto;
-            opacity: 0.3;
-            filter: grayscale(100%);
+            opacity: 0.8;
             transition: all 0.4s ease;
             cursor: pointer;
         }
         .bt-logo-img:hover {
             opacity: 1;
-            filter: grayscale(0%);
             transform: scale(1.05);
         }
         /* Mobile adjustment */
