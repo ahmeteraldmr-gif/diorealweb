@@ -77,6 +77,7 @@ Route::middleware(['admin'])->prefix('admin')->name('admin.')->group(function ()
         Route::post('settings', [App\Http\Controllers\Admin\SettingController::class, 'update'])->name('settings.update');
         Route::post('settings/brands', [App\Http\Controllers\Admin\SettingController::class, 'addBrand'])->name('settings.add_brand');
         Route::delete('settings/brands/{index}', [App\Http\Controllers\Admin\SettingController::class, 'deleteBrand'])->name('settings.delete_brand');
+        Route::put('settings/brands/{index}', [App\Http\Controllers\Admin\SettingController::class, 'updateBrand'])->name('settings.update_brand');
     });
 });
 

@@ -305,4 +305,44 @@ class SettingController extends Controller
 
         return redirect()->route('admin.settings.index')->with('success', 'Marka referansı başarıyla silindi.');
     }
+
+    /**
+     * Update an existing brand reference.
+     */
+    public function updateBrand(Request $request, int $index)
+    {
+        $request->validate([
+            'brand_name' => 'required|string|max:255',
+            'brand_logo' => 'nullable|image|max:2048',
+        ]);
+
+        $brands = Setting::get('brands', []);
+        if (!is_array($brands) || !isset($brands[$index])) {
+            return redirect()->route('admin.settings.index')->with('error', 'Düzenlenecek marka bulunamadı.');
+        }
+
+        $brand = $brands[$index];
+        $logoPath = $brand['img'];
+
+        if ($request->hasFile('brand_logo')) {
+            // Delete old file if physically stored and not seeded data SVG URL
+            if ($logoPath && !str_starts_with($logoPath, 'data:')) {
+                $filePath = public_path($logoPath);
+                if (File::exists($filePath)) {
+                    File::delete($filePath);
+                }
+            }
+
+            $logoPath = $this->handleFileUpload($request->file('brand_logo'));
+        }
+
+        $brands[$index] = [
+            'name' => $request->input('brand_name'),
+            'img' => $logoPath,
+        ];
+
+        Setting::set('brands', $brands);
+
+        return redirect()->route('admin.settings.index')->with('success', 'Marka referansı başarıyla güncellendi.');
+    }
 }

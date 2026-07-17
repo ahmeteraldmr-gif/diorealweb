@@ -603,6 +603,10 @@
                                 </div>
                                 <span style="font-size: 0.8rem; font-weight: 500; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; width: 100%;">{{ $brand['name'] }}</span>
                                 
+                                <button type="button" onclick="openEditModal({{ $index }}, '{{ addslashes($brand['name']) }}', '{{ asset($brand['img']) }}', '{{ route('admin.settings.update_brand', $index) }}')" style="position: absolute; top: 5px; right: 32px; background: rgba(59, 130, 246, 0.2); border: 1px solid rgba(59, 130, 246, 0.3); color: #93c5fd; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 0.7rem; transition: var(--transition);" title="Düzenle">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                
                                 <form action="{{ route('admin.settings.delete_brand', $index) }}" method="POST" onsubmit="return confirm('Bu markayı referanslardan kaldırmak istediğinizden emin misiniz?');" style="position: absolute; top: 5px; right: 5px;">
                                     @csrf
                                     @method('DELETE')
@@ -649,7 +653,59 @@
 
 </div>
 
+<!-- Edit Brand Modal -->
+<div id="editBrandModal" style="display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(8px); z-index: 9999; align-items: center; justify-content: center; padding: 2rem;">
+    <div style="background: #1e293b; border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); width: 100%; max-width: 450px; padding: 2rem; position: relative; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.55);">
+        <button onclick="closeEditModal()" style="position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 1.2rem; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--text-muted)'">
+            <i class="fas fa-times"></i>
+        </button>
+        <h4 style="color: var(--primary); font-size: 1.25rem; margin-bottom: 1.5rem; font-family: var(--font-display);"><i class="fas fa-edit"></i> Referansı Düzenle</h4>
+        
+        <form id="editBrandForm" action="" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
+            
+            <div class="form-group" style="margin-bottom: 1.25rem;">
+                <label class="form-label" style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; color: rgba(255,255,255,0.7);">Marka Adı</label>
+                <input type="text" class="form-control" name="brand_name" id="edit_brand_name" required style="width: 100%; padding: 0.75rem; background: rgba(15, 23, 42, 0.4); border: 1px solid var(--border-color); border-radius: var(--radius-md); color: white;">
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label class="form-label" style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; color: rgba(255,255,255,0.7);">Mevcut Logo</label>
+                <div style="height: 60px; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.2); border-radius: var(--radius-md); overflow: hidden; margin-bottom: 0.75rem; border: 1px solid rgba(255,255,255,0.05);">
+                    <img id="edit_brand_preview" src="" alt="Mevcut Logo" style="max-height: 80%; object-fit: contain; filter: brightness(0) invert(1);">
+                </div>
+                <label class="form-label" style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; color: rgba(255,255,255,0.7);">Yeni Logo (Opsiyonel)</label>
+                <input type="file" class="form-control" name="brand_logo" accept="image/*" style="width: 100%; padding: 0.5rem; background: rgba(15, 23, 42, 0.4); border: 1px solid var(--border-color); border-radius: var(--radius-md); color: white;">
+                <small style="color: var(--text-muted); display: block; margin-top: 0.25rem; font-size: 0.75rem;">Logo değiştirmek istemiyorsanız boş bırakın.</small>
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <button type="button" onclick="closeEditModal()" class="btn btn-secondary" style="flex: 1; justify-content: center; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 0.75rem; border-radius: var(--radius-md); cursor: pointer;">İptal</button>
+                <button type="submit" class="btn btn-primary" style="flex: 2; justify-content: center; padding: 0.75rem; border-radius: var(--radius-md);">Değişiklikleri Kaydet</button>
+            </div>
+        </form>
+    </div>
+</div>
+
 <script>
+    function openEditModal(index, name, imgUrl, updateUrl) {
+        const modal = document.getElementById('editBrandModal');
+        const nameInput = document.getElementById('edit_brand_name');
+        const previewImg = document.getElementById('edit_brand_preview');
+        const form = document.getElementById('editBrandForm');
+        
+        nameInput.value = name;
+        previewImg.src = imgUrl;
+        form.action = updateUrl;
+        
+        modal.style.display = 'flex';
+    }
+
+    function closeEditModal() {
+        document.getElementById('editBrandModal').style.display = 'none';
+    }
+
     function switchSettingTab(event, tabId) {
         document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
         document.querySelectorAll('.setting-tab-pane').forEach(pane => pane.classList.remove('active'));
