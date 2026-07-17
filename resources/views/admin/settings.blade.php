@@ -603,7 +603,14 @@
                                 </div>
                                 <span style="font-size: 0.8rem; font-weight: 500; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; width: 100%;">{{ $brand['name'] }}</span>
                                 
-                                <button type="button" onclick="openEditModal({{ $index }}, '{{ addslashes($brand['name']) }}', '{{ asset($brand['img']) }}', '{{ route('admin.settings.update_brand', $index) }}')" style="position: absolute; top: 5px; right: 32px; background: rgba(59, 130, 246, 0.2); border: 1px solid rgba(59, 130, 246, 0.3); color: #93c5fd; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 0.7rem; transition: var(--transition);" title="Düzenle">
+                                <button type="button" 
+                                        class="edit-brand-btn"
+                                        data-index="{{ $index }}" 
+                                        data-name="{{ $brand['name'] }}" 
+                                        data-img="{{ asset($brand['img']) }}" 
+                                        data-url="{{ route('admin.settings.update_brand', $index) }}"
+                                        style="position: absolute; top: 5px; right: 32px; background: rgba(59, 130, 246, 0.2); border: 1px solid rgba(59, 130, 246, 0.3); color: #93c5fd; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 0.7rem; transition: var(--transition);" 
+                                        title="Düzenle">
                                     <i class="fas fa-edit"></i>
                                 </button>
                                 
@@ -689,19 +696,6 @@
 </div>
 
 <script>
-    function openEditModal(index, name, imgUrl, updateUrl) {
-        const modal = document.getElementById('editBrandModal');
-        const nameInput = document.getElementById('edit_brand_name');
-        const previewImg = document.getElementById('edit_brand_preview');
-        const form = document.getElementById('editBrandForm');
-        
-        nameInput.value = name;
-        previewImg.src = imgUrl;
-        form.action = updateUrl;
-        
-        modal.style.display = 'flex';
-    }
-
     function closeEditModal() {
         document.getElementById('editBrandModal').style.display = 'none';
     }
@@ -716,6 +710,28 @@
 
     // Instant Image Preview Script
     document.addEventListener('DOMContentLoaded', function() {
+        // Bind edit brand buttons using data attributes (avoids string escape syntax errors)
+        const editButtons = document.querySelectorAll('.edit-brand-btn');
+        editButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const index = this.getAttribute('data-index');
+                const name = this.getAttribute('data-name');
+                const imgUrl = this.getAttribute('data-img');
+                const updateUrl = this.getAttribute('data-url');
+
+                const modal = document.getElementById('editBrandModal');
+                const nameInput = document.getElementById('edit_brand_name');
+                const previewImg = document.getElementById('edit_brand_preview');
+                const form = document.getElementById('editBrandForm');
+
+                nameInput.value = name;
+                previewImg.src = imgUrl;
+                form.action = updateUrl;
+
+                modal.style.display = 'flex';
+            });
+        });
+
         const fileInputs = document.querySelectorAll('input[type="file"][accept^="image"]');
         fileInputs.forEach(input => {
             input.addEventListener('change', function(e) {
