@@ -57,7 +57,58 @@
     justify-content: center;
     gap: 1.5rem;
     flex-wrap: wrap;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
+}
+
+.hero-cta-group .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    padding: 0 2.8rem;
+    border-radius: 30px;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.35s ease;
+    box-sizing: border-box;
+    white-space: nowrap;
+    min-width: 170px;
+    margin: 0;
+}
+
+.hero-cta-group .btn-hero-primary {
+    background: var(--near-black);
+    color: var(--white);
+    border: 1px solid var(--near-black);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.hero-cta-group .btn-hero-primary:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(200, 169, 110, 0.35);
+}
+
+.hero-cta-group .btn-hero-secondary {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.hero-cta-group .btn-hero-secondary:hover {
+    background: var(--white);
+    border-color: var(--white);
+    color: var(--near-black);
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
 }
 
 /* ── MANIFESTO & TRENDS ── */

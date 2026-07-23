@@ -148,9 +148,9 @@
             <span class="hero-eyebrow" data-i18n="hero_eyebrow">Bağımsız Medya & Lüks Yaşam Platformu</span>
             <h1 class="hero-title" data-i18n="hero_title">Keşfetmeye Değer <em>Dünyalar</em></h1>
             <p class="hero-desc" data-i18n="hero_desc">Seçkin destinasyonlar, küresel lüks markalar ve sıra dışı seyahat hikayeleri tek bir çatı altında.</p>
-            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
-                <a href="<?php echo e(route('gezi-rehberi')); ?>" class="btn btn-primary" data-i18n="btn_explore">Koleksiyonu Keşfet</a>
-                <a href="https://wa.me/<?php echo e(format_whatsapp($settings['whatsapp'] ?? '')); ?>" target="_blank" class="btn btn-outline whatsapp-cta" data-i18n="btn_contact">İletişime Geç</a>
+            <div class="hero-cta-group">
+                <a href="<?php echo e(route('gezi-rehberi')); ?>" class="btn btn-hero-primary" data-i18n="btn_explore">Koleksiyonu Keşfet</a>
+                <a href="https://wa.me/<?php echo e(format_whatsapp($settings['whatsapp'] ?? '')); ?>" target="_blank" class="btn btn-hero-secondary" data-i18n="btn_contact">İletişime Geç</a>
             </div>
         </div>
     </section>
