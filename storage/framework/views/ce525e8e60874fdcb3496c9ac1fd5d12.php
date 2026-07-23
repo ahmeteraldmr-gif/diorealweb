@@ -390,7 +390,7 @@
 
     <!-- Page Hero -->
     <?php
-        $showVideoCover = !empty($yat->show_video_on_cover) && (!empty($yat->video_file) || !empty($yat->video_url);
+        $showVideoCover = !empty($yat->show_video_on_cover) && (!empty($yat->video_file) || !empty($yat->video_url));
         $yatImg = !empty($yat->img) ? $yat->img : 'foto.img/yat_hero.jpg';
         $yatImgUrl = str_starts_with($yatImg, 'data:') || str_starts_with($yatImg, 'http') ? $yatImg : asset($yatImg);
     ?>

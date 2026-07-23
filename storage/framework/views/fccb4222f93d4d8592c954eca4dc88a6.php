@@ -371,7 +371,7 @@
 
     <!-- Hero Banner -->
     <?php
-        $showVideoCover = !empty($journal->show_video_on_cover) && (!empty($journal->video_file) || !empty($journal->video_url);
+        $showVideoCover = !empty($journal->show_video_on_cover) && (!empty($journal->video_file) || !empty($journal->video_url));
         $journalImg = !empty($journal->img) ? $journal->img : 'foto.img/etkinlik_hero.jpg';
         $journalImgUrl = str_starts_with($journalImg, 'data:') || str_starts_with($journalImg, 'http') ? $journalImg : asset($journalImg);
     ?>

@@ -344,7 +344,7 @@
 
     <!-- Hero Banner -->
     <?php
-        $showVideoCover = !empty($rehber->show_video_on_cover) && (!empty($rehber->video_file) || !empty($rehber->video_url);
+        $showVideoCover = !empty($rehber->show_video_on_cover) && (!empty($rehber->video_file) || !empty($rehber->video_url));
         $rehberImg = !empty($rehber->img) ? $rehber->img : 'foto.img/etkinlik_hero.jpg';
         $rehberImgUrl = str_starts_with($rehberImg, 'data:') || str_starts_with($rehberImg, 'http') ? $rehberImg : asset($rehberImg);
     ?>

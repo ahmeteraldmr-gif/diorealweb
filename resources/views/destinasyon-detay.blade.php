@@ -272,7 +272,7 @@
 
     <!-- Page Hero -->
     @php
-        $showVideoCover = !empty($destination->show_video_on_cover) && (!empty($destination->video_file) || !empty($destination->video_url);
+        $showVideoCover = !empty($destination->show_video_on_cover) && (!empty($destination->video_file) || !empty($destination->video_url));
         $destImg = !empty($destination->img) ? $destination->img : 'foto.img/etkinlik_hero.jpg';
         $destImgUrl = str_starts_with($destImg, 'data:') || str_starts_with($destImg, 'http') ? $destImg : asset($destImg);
     @endphp
