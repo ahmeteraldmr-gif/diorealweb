@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="<?php echo e(get_active_locale()); ?>">
+<head>
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
+    <meta name="base-url" content="<?php echo e(url('/')); ?>">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@200;300;400;500;600&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="<?php echo e(asset('css/base.css')); ?>?v=<?php echo e(time()); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('css/nav-footer.css')); ?>?v=<?php echo e(time()); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('css/components.css')); ?>?v=<?php echo e(time()); ?>">
+    <style>
+        body {
+            background-color: #0b0a09; /* Deep premium black to mirror Beautiful Destinations */
+            color: #f5f4f0; /* Off-white text */
+            font-family: var(--font-body), 'Jost', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        #mainNav {
+            background: rgba(11, 10, 9, 0.85);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.6) !important;
+        }
+        .nav-links a:hover, .nav-links a.active-page {
+            color: #ffffff !important;
+        }
+        .logo-text {
+            color: #ffffff !important;
+        }
+        
+        /* Fullscreen Hero Block */
+        .bd-hero {
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding-left: 8%;
+        }
+        .bd-hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('foto.img/otel_hero.jpg');
+            background-size: cover;
+            background-position: center;
+            transform: scale(1.03);
+            filter: brightness(0.55);
+            z-index: 1;
+            transition: transform 2.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .bd-hero:hover .bd-hero-bg {
+            transform: scale(1);
+        }
+        .bd-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+            padding-right: 2rem;
+        }
+        .bd-eyebrow {
+            font-family: var(--font-condensed), sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.45em;
+            text-transform: uppercase;
+            color: var(--accent, #c8a96e);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        .bd-title {
+            font-family: var(--font-display), Georgia, serif;
+            font-size: clamp(3.5rem, 8vw, 6.5rem);
+            font-weight: 300;
+            line-height: 0.95;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+        .bd-title em {
+            font-style: italic;
+            font-weight: 300;
+            color: var(--accent, #c8a96e);
+            text-transform: lowercase;
+        }
+
+        /* Editorial Container Grid */
+        .bd-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 10rem 4rem;
+        }
+        
+        .bd-intro {
+            margin-bottom: 12rem;
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 7rem;
+            align-items: center;
+        }
+        .bd-intro-title {
+            font-family: var(--font-display), Georgia, serif;
+            font-size: clamp(2.5rem, 5vw, 4.2rem);
+            line-height: 1.05;
+            font-weight: 300;
+        }
+        .bd-intro-title em {
+            font-style: italic;
+            color: var(--accent, #c8a96e);
+        }
+        .bd-intro-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #a09e9a;
+            font-weight: 300;
+        }
+
+        /* Alternate Staggered Rows */
+        .hotel-row {
+            display: flex;
+            align-items: center;
+            gap: 8rem;
+            margin-bottom: 15rem;
+        }
+        .hotel-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .hotel-image-col {
+            flex: 1.3;
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            aspect-ratio: 16/10;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            background: #161514;
+        }
+        .hotel-row-image {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .hotel-image-col:hover .hotel-row-image {
+            transform: scale(1.06);
+        }
+        
+        .hotel-info-col {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .hotel-num {
+            font-family: var(--font-condensed), sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.3em;
+            color: var(--accent, #c8a96e);
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .hotel-name {
+            font-family: var(--font-display), Georgia, serif;
+            font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+        .hotel-tag {
+            font-family: var(--font-body), sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent, #c8a96e);
+            margin-bottom: 2rem;
+            display: block;
+            font-weight: 500;
+        }
+        .hotel-desc {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #a09e9a;
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+        
+        .btn-bd {
+            display: inline-flex;
+            align-items: center;
+            gap: 1.2rem;
+            color: #ffffff;
+            text-decoration: none;
+            font-family: var(--font-condensed), sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: color 0.3s;
+            border-bottom: 2px solid var(--accent, #c8a96e);
+            padding-bottom: 0.6rem;
+            width: fit-content;
+        }
+        .btn-bd:hover {
+            color: var(--accent, #c8a96e);
+        }
+        .btn-bd i {
+            font-size: 0.8rem;
+            transition: transform 0.3s;
+        }
+        .btn-bd:hover i {
+            transform: translateX(6px);
+        }
+        
+        @media (max-width: 992px) {
+            .bd-intro {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                margin-bottom: 6rem;
+            }
+            .hotel-row {
+                flex-direction: column !important;
+                gap: 3.5rem;
+                margin-bottom: 8rem;
+            }
+            .hotel-image-col {
+                width: 100%;
+                aspect-ratio: 16/10;
+                flex: none;
+            }
+            .hotel-info-col {
+                width: 100%;
+                flex: none;
+            }
+            .bd-container {
+                padding: 6rem 2.5rem;
+            }
+            .bd-hero {
+                padding-left: 5%;
+            }
+        }
+    </style>
+    <?php
+        $locale = get_active_locale();
+        $seoData = get_page_seo('oteller');
+        $seo_title = $seo_title ?? ($locale === 'en' ? $seoData['title_en'] : $seoData['title_tr']);
+        $seo_desc = $seo_desc ?? ($locale === 'en' ? $seoData['desc_en'] : $seoData['desc_tr']);
+        $og_image = $og_image ?? asset('foto.img/otel_hero.jpg');
+        $canonical = $canonical ?? route('oteller');
+        $hreflang_tr = $hreflang_tr ?? route('oteller');
+        $hreflang_en = $hreflang_en ?? route('oteller');
+        $noindex = $noindex ?? false;
+    ?>
+
+    <title><?php echo e($seo_title); ?></title>
+    <meta name="description" content="<?php echo e($seo_desc); ?>">
+    
+    <link rel="canonical" href="<?php echo e($canonical); ?>">
+    <link rel="alternate" hreflang="tr" href="<?php echo e($hreflang_tr); ?>" />
+    <link rel="alternate" hreflang="en" href="<?php echo e($hreflang_en); ?>" />
+    <link rel="alternate" hreflang="x-default" href="<?php echo e($canonical); ?>" />
+
+    <?php if($noindex): ?>
+    <meta name="robots" content="noindex, nofollow">
+    <?php else: ?>
+    <meta name="robots" content="index, follow">
+    <?php endif; ?>
+
+    <meta property="og:title" content="<?php echo e($seo_title); ?>">
+    <meta property="og:description" content="<?php echo e($seo_desc); ?>">
+    <meta property="og:image" content="<?php echo e($og_image); ?>">
+    <meta property="og:url" content="<?php echo e($canonical); ?>">
+    <meta property="og:type" content="<?php echo e($og_type ?? 'website'); ?>">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<?php echo e($seo_title); ?>">
+    <meta name="twitter:description" content="<?php echo e($seo_desc); ?>">
+    <meta name="twitter:image" content="<?php echo e($og_image); ?>">
+
+    <?php if(isset($schema_json)): ?>
+    <?php echo $schema_json; ?>
+
+    <?php endif; ?>
+</head>
+
+<body>
+
+    <!-- Desktop Nav -->
+    <nav id="mainNav">
+        <div class="nav-logo-wrapper">
+            <a href="<?php echo e(route('home')); ?>" class="nav-logo">
+                <span class="logo-text">DIOREAL</span>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="<?php echo e(route('hakkimizda')); ?>" data-i18n="nav_about">Hakkımızda</a></li>
+            <li><a href="<?php echo e(route('oteller')); ?>" class="active-page" data-i18n="nav_hotels">Oteller</a></li>
+            <li><a href="<?php echo e(route('yatlar')); ?>" data-i18n="nav_yachts">Yatlar</a></li>
+            <li><a href="<?php echo e(route('restoranlar')); ?>" data-i18n="nav_restaurants">Restoranlar</a></li>
+            <li><a href="<?php echo e(route('gezi-rehberi')); ?>" data-i18n="nav_guide">Gezi Rehberi</a></li>
+            <li><a href="<?php echo e(route('etkinlikler')); ?>" data-i18n="nav_events">Etkinlikler</a></li>
+            <li><a href="<?php echo e(route('journal')); ?>" data-i18n="nav_journal">Journal</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="lang-switch desk-lang">
+                <span id="lang-tr" class="lang-btn">TR</span>
+                <span>|</span>
+                <span id="lang-en" class="lang-btn">EN</span>
+            </div>
+            <div class="hamburger" id="hamb">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Fullscreen Menu -->
+    <div class="fs-menu" id="fsMenu">
+        <ul class="fs-links">
+            <li><a href="<?php echo e(route('hakkimizda')); ?>" data-i18n="nav_about">Hakkımızda</a></li>
+            <li><a href="<?php echo e(route('oteller')); ?>" data-i18n="nav_hotels">Oteller</a></li>
+            <li><a href="<?php echo e(route('yatlar')); ?>" data-i18n="nav_yachts">Yatlar</a></li>
+            <li><a href="<?php echo e(route('restoranlar')); ?>" data-i18n="nav_restaurants">Restoranlar</a></li>
+            <div class="fs-divider"></div>
+            <li><a href="<?php echo e(route('gezi-rehberi')); ?>" data-i18n="nav_guide">Gezi Rehberi</a></li>
+            <li><a href="<?php echo e(route('etkinlikler')); ?>" data-i18n="nav_events">Etkinlikler</a></li>
+            <li><a href="<?php echo e(route('journal')); ?>" data-i18n="nav_journal">Journal</a></li>
+            <li class="lang-switch" style="font-size: 1.5rem; font-family: var(--font-display); justify-content: center; margin-top:3rem;">
+                <span id="lang-tr-fs" class="lang-btn">TR</span> | <span id="lang-en-fs" class="lang-btn">EN</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Page Hero -->
+    <div class="bd-hero">
+        <div class="bd-hero-bg"></div>
+        <div class="bd-hero-content">
+            <span class="bd-eyebrow" data-i18n="otel_hero_eye">Premium Konaklama</span>
+            <h1 class="bd-title lang-text-tr">Seçkin <br><em>Oteller</em></h1>
+            <h1 class="bd-title lang-text-en">EXCLUSIVE <br><em>Hotels</em></h1>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="bd-container">
+        
+        <!-- Intro Section -->
+        <section class="bd-intro">
+            <h2 class="bd-intro-title lang-text-tr">Her konaklamanın <br>bir <em>hikayesi</em> vardır.</h2>
+            <h2 class="bd-intro-title lang-text-en">Every luxury stay <br>has a <em>story</em> to tell.</h2>
+            
+            <p class="bd-intro-text lang-text-tr">Dünyaca ünlü butik oteller, tarihi yapılar ve ultra-lüks resort'lardan oluşan koleksiyonumuz, seyahatinizin her anını unutulmaz kılmak için özenle seçilmiştir. Sadece konaklama değil; bir vizyon, bir tutku sunuyoruz.</p>
+            <p class="bd-intro-text lang-text-en">Our curated collection of world-renowned boutique hotels, historic estates, and ultra-luxury resorts is selected to make every moment unforgettable. We don't just offer lodging; we share a lifestyle and a vision.</p>
+        </section>
+
+        <!-- Hotels Alternate Rows -->
+        <section id="hotelsList">
+            <?php $__currentLoopData = $oteller; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $otel): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <div class="hotel-row">
+                    <div class="hotel-image-col">
+                        <?php if($otel->show_video_on_cover && (!empty($otel->video_file) || !empty($otel->video_url))): ?>
+                            <?php if(!empty($otel->video_file)): ?>
+                                <video autoplay muted loop playsinline class="hotel-row-image" style="object-fit: cover; width:100%; height:100%;">
+                                    <source src="<?php echo e(asset($otel->video_file)); ?>" type="video/mp4">
+                                </video>
+                            <?php elseif(!empty($otel->video_url)): ?>
+                                <?php
+                                    $embedUrl = $otel->video_url;
+                                    if (preg_match('/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/', $otel->video_url, $matches)) {
+                                        $embedUrl = 'https://www.youtube.com/embed/' . $matches[1] . '?autoplay=1&mute=1&loop=1&playlist=' . $matches[1] . '&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3';
+                                    }
+                                ?>
+                                <iframe src="<?php echo e($embedUrl); ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none; transform: scale(1.35); position: absolute; inset: 0; border: none;"></iframe>
+                            <?php endif; ?>
+                        <?php else: ?>
+                            <div class="hotel-row-image" style="background-image: url('<?php echo e(asset($otel->img)); ?>');"></div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="hotel-info-col">
+                        <span class="hotel-num"><?php echo e(str_pad($index + 1, 2, '0', STR_PAD_LEFT)); ?></span>
+                        
+                        <h3 class="hotel-name lang-text-tr"><?php echo e($otel->name["tr"] ?? ""); ?></h3>
+                        <h3 class="hotel-name lang-text-en"><?php echo e($otel->name["en"] ?? ""); ?></h3>
+                        
+                        <span class="hotel-tag lang-text-tr"><?php echo e($otel->tag["tr"] ?? ""); ?></span>
+                        <span class="hotel-tag lang-text-en"><?php echo e($otel->tag["en"] ?? ""); ?></span>
+                        
+                        <p class="hotel-desc lang-text-tr"><?php echo e($otel->desc["tr"] ?? ""); ?></p>
+                        <p class="hotel-desc lang-text-en"><?php echo e($otel->desc["en"] ?? ""); ?></p>
+                        
+                        <a href="<?php echo e(route('otel.detay', $otel->slug_tr ?? $otel->slug_en ?? $otel->id)); ?>" class="btn-bd">
+                            <span class="lang-text-tr">Detayları İncele</span>
+                            <span class="lang-text-en">Explore Destination</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        </section>
+
+    </div>
+
+    <?php echo $__env->make('partials.footer', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+
+    <script src="<?php echo e(asset('js/i18n.js')); ?>?v=<?php echo e(time()); ?>"></script>
+    <script src="<?php echo e(asset('js/common.js')); ?>?v=<?php echo e(time()); ?>"></script>
+    <script src="<?php echo e(asset('js/nav.js')); ?>?v=<?php echo e(time()); ?>"></script>
+</body>
+</html>
+<?php /**PATH C:\Users\ahmet\Desktop\dioreal web\resources\views\oteller.blade.php ENDPATH**/ ?>

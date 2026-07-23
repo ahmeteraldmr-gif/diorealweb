@@ -225,6 +225,7 @@ class PageController extends Controller
         $result = $this->resolveDetailModel(Event::class, $slug_or_id, 'etkinlik.detay');
         if ($result instanceof \Illuminate\Http\RedirectResponse) return $result;
         $etkinlik = $result;
+        $event = $result;
 
         $slugTr = $etkinlik->slug_tr ?: $etkinlik->id;
         $slugEn = $etkinlik->slug_en ?: $slugTr;
@@ -236,7 +237,7 @@ class PageController extends Controller
         $hreflang_tr = route('etkinlik.detay', ['slug_or_id' => $slugTr, 'lang' => 'tr']);
         $hreflang_en = route('etkinlik.detay', ['slug_or_id' => $slugEn, 'lang' => 'en']);
 
-        return view("etkinlik-detay", compact("etkinlik", "canonical", "hreflang_tr", "hreflang_en"));
+        return view("etkinlik-detay", compact("etkinlik", "event", "canonical", "hreflang_tr", "hreflang_en"));
     }
 
     public function rehberDetay($slug_or_id)

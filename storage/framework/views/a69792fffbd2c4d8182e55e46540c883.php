@@ -1,4 +1,4 @@
-@php
+<?php
     $locale = get_active_locale();
     $seo_title = ($locale === 'en')
         ? ($event->seo_title_en ?: ($event->title['en'] ?? 'Detay') . ' - Dioreal')
@@ -24,53 +24,54 @@
       "url": "'.$canonical.'"
     }
     </script>';
-@endphp
+?>
 <!DOCTYPE html>
-<html lang="{{ get_active_locale() }}">
+<html lang="<?php echo e(get_active_locale()); ?>">
 <head>
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="base-url" content="{{ url('/') }}">
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
+    <meta name="base-url" content="<?php echo e(url('/')); ?>">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>{{ $seo_title }}</title>
-    <meta name="description" content="{{ $seo_desc }}">
+    <title><?php echo e($seo_title); ?></title>
+    <meta name="description" content="<?php echo e($seo_desc); ?>">
     
-    <link rel="canonical" href="{{ $canonical }}">
-    @if(isset($hreflang_tr)) <link rel="alternate" hreflang="tr" href="{{ $hreflang_tr }}" /> @endif
-    @if(isset($hreflang_en)) <link rel="alternate" hreflang="en" href="{{ $hreflang_en }}" /> @endif
-    <link rel="alternate" hreflang="x-default" href="{{ $canonical }}" />
+    <link rel="canonical" href="<?php echo e($canonical); ?>">
+    <?php if(isset($hreflang_tr)): ?> <link rel="alternate" hreflang="tr" href="<?php echo e($hreflang_tr); ?>" /> <?php endif; ?>
+    <?php if(isset($hreflang_en)): ?> <link rel="alternate" hreflang="en" href="<?php echo e($hreflang_en); ?>" /> <?php endif; ?>
+    <link rel="alternate" hreflang="x-default" href="<?php echo e($canonical); ?>" />
 
-    @if($noindex)
+    <?php if($noindex): ?>
         <meta name="robots" content="noindex, nofollow">
-    @else
+    <?php else: ?>
         <meta name="robots" content="index, follow">
-    @endif
+    <?php endif; ?>
     
-    <meta property="og:title" content="{{ $seo_title }}">
-    <meta property="og:description" content="{{ $seo_desc }}">
-    <meta property="og:image" content="{{ $og_image }}">
-    <meta property="og:url" content="{{ $canonical }}">
-    <meta property="og:type" content="{{ $og_type }}">
+    <meta property="og:title" content="<?php echo e($seo_title); ?>">
+    <meta property="og:description" content="<?php echo e($seo_desc); ?>">
+    <meta property="og:image" content="<?php echo e($og_image); ?>">
+    <meta property="og:url" content="<?php echo e($canonical); ?>">
+    <meta property="og:type" content="<?php echo e($og_type); ?>">
     <meta property="og:site_name" content="Dioreal">
     
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ $seo_title }}">
-    <meta name="twitter:description" content="{{ $seo_desc }}">
-    <meta name="twitter:image" content="{{ $og_image }}">
+    <meta name="twitter:title" content="<?php echo e($seo_title); ?>">
+    <meta name="twitter:description" content="<?php echo e($seo_desc); ?>">
+    <meta name="twitter:image" content="<?php echo e($og_image); ?>">
 
-    @if(isset($schema_json))
-    {!! $schema_json !!}
-    @endif
+    <?php if(isset($schema_json)): ?>
+    <?php echo $schema_json; ?>
+
+    <?php endif; ?>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@200;300;400;500;600&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="{{ asset('css/base.css') }}?v={{ time() }}">
-    <link rel="stylesheet" href="{{ asset('css/nav-footer.css') }}?v={{ time() }}">
-    <link rel="stylesheet" href="{{ asset('css/components.css') }}?v={{ time() }}">
-    <link rel="stylesheet" href="{{ asset('css/about.css') }}?v={{ time() }}">
+    <link rel="stylesheet" href="<?php echo e(asset('css/base.css')); ?>?v=<?php echo e(time()); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('css/nav-footer.css')); ?>?v=<?php echo e(time()); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('css/components.css')); ?>?v=<?php echo e(time()); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('css/about.css')); ?>?v=<?php echo e(time()); ?>">
     <style>
         body {
             background-color: var(--off-white);
@@ -258,60 +259,61 @@
             }
         }
     </style>
-    @php
+    <?php
         $seo_title = $seo_title ?? 'Dioreal Dijital - Global Deneyim & Medya Platformu';
         $seo_desc = $seo_desc ?? 'Türkiye ve dünyada seçkin deneyimlerin kapısını aralıyoruz. Lüks oteller, yatlar ve yaşam tarzı markaları için yeni nesil medya platformu.';
         $og_image = $og_image ?? asset('foto.img/hero_4k.jpg');
         $canonical = $canonical ?? url()->current();
         $noindex = $noindex ?? false;
-    @endphp
+    ?>
 
-    <title>{{ $seo_title }}</title>
-    <meta name="description" content="{{ $seo_desc }}">
+    <title><?php echo e($seo_title); ?></title>
+    <meta name="description" content="<?php echo e($seo_desc); ?>">
     
-    <link rel="canonical" href="{{ $canonical }}">
-    @if(isset($hreflang_tr)) <link rel="alternate" hreflang="tr" href="{{ $hreflang_tr }}" /> @endif
-    @if(isset($hreflang_en)) <link rel="alternate" hreflang="en" href="{{ $hreflang_en }}" /> @endif
-    <link rel="alternate" hreflang="x-default" href="{{ $canonical }}" />
+    <link rel="canonical" href="<?php echo e($canonical); ?>">
+    <?php if(isset($hreflang_tr)): ?> <link rel="alternate" hreflang="tr" href="<?php echo e($hreflang_tr); ?>" /> <?php endif; ?>
+    <?php if(isset($hreflang_en)): ?> <link rel="alternate" hreflang="en" href="<?php echo e($hreflang_en); ?>" /> <?php endif; ?>
+    <link rel="alternate" hreflang="x-default" href="<?php echo e($canonical); ?>" />
 
-    @if($noindex)
+    <?php if($noindex): ?>
     <meta name="robots" content="noindex, nofollow">
-    @else
+    <?php else: ?>
     <meta name="robots" content="index, follow">
-    @endif
+    <?php endif; ?>
 
-    <meta property="og:title" content="{{ $seo_title }}">
-    <meta property="og:description" content="{{ $seo_desc }}">
-    <meta property="og:image" content="{{ $og_image }}">
-    <meta property="og:url" content="{{ $canonical }}">
-    <meta property="og:type" content="{{ $og_type ?? 'website' }}">
+    <meta property="og:title" content="<?php echo e($seo_title); ?>">
+    <meta property="og:description" content="<?php echo e($seo_desc); ?>">
+    <meta property="og:image" content="<?php echo e($og_image); ?>">
+    <meta property="og:url" content="<?php echo e($canonical); ?>">
+    <meta property="og:type" content="<?php echo e($og_type ?? 'website'); ?>">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ $seo_title }}">
-    <meta name="twitter:description" content="{{ $seo_desc }}">
-    <meta name="twitter:image" content="{{ $og_image }}">
+    <meta name="twitter:title" content="<?php echo e($seo_title); ?>">
+    <meta name="twitter:description" content="<?php echo e($seo_desc); ?>">
+    <meta name="twitter:image" content="<?php echo e($og_image); ?>">
 
-    @if(isset($schema_json))
-    {!! $schema_json !!}
-    @endif
+    <?php if(isset($schema_json)): ?>
+    <?php echo $schema_json; ?>
+
+    <?php endif; ?>
 </head>
 <body>
 
     <!-- Desktop Nav -->
     <nav id="mainNav">
         <div class="nav-logo-wrapper">
-            <a href="{{ url('/') }}" class="nav-logo">
+            <a href="<?php echo e(url('/')); ?>" class="nav-logo">
                 <span class="logo-text">DIOREAL</span>
             </a>
         </div>
         <ul class="nav-links">
-            <li><a href="{{ url('/hakkimizda') }}" data-i18n="nav_about">Hakkımızda</a></li>
-            <li><a href="{{ url('/oteller') }}" data-i18n="nav_hotels">Oteller</a></li>
-            <li><a href="{{ url('/yatlar') }}" data-i18n="nav_yachts">Yatlar</a></li>
-            <li><a href="{{ url('/restoranlar') }}" data-i18n="nav_restaurants">Restoranlar</a></li>
-            <li><a href="{{ route('gezi-rehberi') }}" data-i18n="nav_guide">Destinasyonlar</a></li>
-            <li><a href="{{ url('/etkinlikler') }}" class="active-page" data-i18n="nav_events">Etkinlikler</a></li>
-            <li><a href="{{ url('/journal') }}" data-i18n="nav_journal">Journal</a></li>
+            <li><a href="<?php echo e(url('/hakkimizda')); ?>" data-i18n="nav_about">Hakkımızda</a></li>
+            <li><a href="<?php echo e(url('/oteller')); ?>" data-i18n="nav_hotels">Oteller</a></li>
+            <li><a href="<?php echo e(url('/yatlar')); ?>" data-i18n="nav_yachts">Yatlar</a></li>
+            <li><a href="<?php echo e(url('/restoranlar')); ?>" data-i18n="nav_restaurants">Restoranlar</a></li>
+            <li><a href="<?php echo e(route('gezi-rehberi')); ?>" data-i18n="nav_guide">Destinasyonlar</a></li>
+            <li><a href="<?php echo e(url('/etkinlikler')); ?>" class="active-page" data-i18n="nav_events">Etkinlikler</a></li>
+            <li><a href="<?php echo e(url('/journal')); ?>" data-i18n="nav_journal">Journal</a></li>
         </ul>
         <div class="nav-right">
             <div class="lang-switch desk-lang">
@@ -328,14 +330,14 @@
     <!-- Fullscreen Menu -->
     <div class="fs-menu" id="fsMenu">
         <ul class="fs-links">
-            <li><a href="{{ url('/hakkimizda') }}" data-i18n="nav_about">Hakkımızda</a></li>
-            <li><a href="{{ url('/oteller') }}" data-i18n="nav_hotels">Oteller</a></li>
-            <li><a href="{{ url('/yatlar') }}" data-i18n="nav_yachts">Yatlar</a></li>
-            <li><a href="{{ url('/restoranlar') }}" data-i18n="nav_restaurants">Restoranlar</a></li>
+            <li><a href="<?php echo e(url('/hakkimizda')); ?>" data-i18n="nav_about">Hakkımızda</a></li>
+            <li><a href="<?php echo e(url('/oteller')); ?>" data-i18n="nav_hotels">Oteller</a></li>
+            <li><a href="<?php echo e(url('/yatlar')); ?>" data-i18n="nav_yachts">Yatlar</a></li>
+            <li><a href="<?php echo e(url('/restoranlar')); ?>" data-i18n="nav_restaurants">Restoranlar</a></li>
             <div class="fs-divider"></div>
-            <li><a href="{{ route('gezi-rehberi') }}" data-i18n="nav_guide">Destinasyonlar</a></li>
-            <li><a href="{{ url('/etkinlikler') }}" data-i18n="nav_events">Etkinlikler</a></li>
-            <li><a href="{{ url('/journal') }}" data-i18n="nav_journal">Journal</a></li>
+            <li><a href="<?php echo e(route('gezi-rehberi')); ?>" data-i18n="nav_guide">Destinasyonlar</a></li>
+            <li><a href="<?php echo e(url('/etkinlikler')); ?>" data-i18n="nav_events">Etkinlikler</a></li>
+            <li><a href="<?php echo e(url('/journal')); ?>" data-i18n="nav_journal">Journal</a></li>
             <li class="lang-switch" style="font-size: 1.5rem; font-family: var(--font-display); justify-content: center; margin-top:3rem;">
                 <span id="lang-tr-fs" class="lang-btn">TR</span> | <span id="lang-en-fs" class="lang-btn">EN</span>
             </li>
@@ -343,33 +345,33 @@
     </div>
 
     <!-- Page Hero -->
-    @php
+    <?php
         $showVideoCover = !empty($etkinlik->show_video_on_cover) && (!empty($etkinlik->video_file) || !empty($etkinlik->video_url));
         $eventImg = !empty($etkinlik->img) ? $etkinlik->img : 'foto.img/etkinlik_hero.jpg';
         $eventImgUrl = str_starts_with($eventImg, 'data:') || str_starts_with($eventImg, 'http') ? $eventImg : asset($eventImg);
-    @endphp
-    <div class="page-hero" style="@if(!$showVideoCover) background-image: url('{{ $eventImgUrl }}'); @endif">
-        @if($showVideoCover)
+    ?>
+    <div class="page-hero" style="<?php if(!$showVideoCover): ?> background-image: url('<?php echo e($eventImgUrl); ?>'); <?php endif; ?>">
+        <?php if($showVideoCover): ?>
             <div class="hero-video-container" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; z-index: 0;">
-                @if(!empty($etkinlik->video_file))
-                    <video src="{{ asset($etkinlik->video_file) }}" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
-                @elseif(!empty($etkinlik->video_url))
-                    @php
+                <?php if(!empty($etkinlik->video_file)): ?>
+                    <video src="<?php echo e(asset($etkinlik->video_file)); ?>" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
+                <?php elseif(!empty($etkinlik->video_url)): ?>
+                    <?php
                         $embedUrl = $etkinlik->video_url;
                         if (preg_match('/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/', $etkinlik->video_url, $matches)) {
                             $embedUrl = 'https://www.youtube.com/embed/' . $matches[1] . '?autoplay=1&mute=1&loop=1&playlist=' . $matches[1] . '&controls=0&showinfo=0&rel=0&iv_load_policy=3&playsinline=1';
                         }
-                    @endphp
-                    <iframe src="{{ $embedUrl }}" frameborder="0" allow="autoplay; encrypted-media" style="position: absolute; top: 50%; left: 50%; width: 100vw; height: 56.25vw; min-width: 100%; min-height: 100%; transform: translate(-50%, -50%); pointer-events: none; object-fit: cover;"></iframe>
-                @endif
+                    ?>
+                    <iframe src="<?php echo e($embedUrl); ?>" frameborder="0" allow="autoplay; encrypted-media" style="position: absolute; top: 50%; left: 50%; width: 100vw; height: 56.25vw; min-width: 100%; min-height: 100%; transform: translate(-50%, -50%); pointer-events: none; object-fit: cover;"></iframe>
+                <?php endif; ?>
                 <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5); z-index: 1;"></div>
             </div>
-        @endif
+        <?php endif; ?>
         <div class="page-hero-content" style="position: relative; z-index: 2;">
-            <span class="page-eyebrow lang-text-tr">{{ $etkinlik->tag['tr'] ?? '' }}</span>
-            <span class="page-eyebrow lang-text-en">{{ $etkinlik->tag['en'] ?? '' }}</span>
-            <h1 class="page-title lang-text-tr">{{ $etkinlik->title['tr'] ?? '' }}</h1>
-            <h1 class="page-title lang-text-en">{{ $etkinlik->title['en'] ?? '' }}</h1>
+            <span class="page-eyebrow lang-text-tr"><?php echo e($etkinlik->tag['tr'] ?? ''); ?></span>
+            <span class="page-eyebrow lang-text-en"><?php echo e($etkinlik->tag['en'] ?? ''); ?></span>
+            <h1 class="page-title lang-text-tr"><?php echo e($etkinlik->title['tr'] ?? ''); ?></h1>
+            <h1 class="page-title lang-text-en"><?php echo e($etkinlik->title['en'] ?? ''); ?></h1>
         </div>
     </div>
 
@@ -383,14 +385,16 @@
                 
                 <div class="story-content-wrapper" style="display: flex; gap: 2.5rem; flex-direction: row; align-items: flex-start;">
                     <div class="story-photo" style="flex: 1; min-width: 280px; max-width: 45%;">
-                        <img src="{{ $eventImgUrl }}" alt="{{ $etkinlik->title['tr'] ?? '' }}" style="width: 100%; border-radius: 12px; object-fit: cover; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                        <img src="<?php echo e($eventImgUrl); ?>" alt="<?php echo e($etkinlik->title['tr'] ?? ''); ?>" style="width: 100%; border-radius: 12px; object-fit: cover; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
                     </div>
                     <div class="story-text" style="flex: 1.5;">
                         <div class="lang-text-tr">
-                            {!! nl2br(e(!empty($etkinlik->long_desc['tr']) ? $etkinlik->long_desc['tr'] : ($etkinlik->desc['tr'] ?? ''))) !!}
+                            <?php echo nl2br(e(!empty($etkinlik->long_desc['tr']) ? $etkinlik->long_desc['tr'] : ($etkinlik->desc['tr'] ?? ''))); ?>
+
                         </div>
                         <div class="lang-text-en">
-                            {!! nl2br(e(!empty($etkinlik->long_desc['en']) ? $etkinlik->long_desc['en'] : ($etkinlik->desc['en'] ?? ''))) !!}
+                            <?php echo nl2br(e(!empty($etkinlik->long_desc['en']) ? $etkinlik->long_desc['en'] : ($etkinlik->desc['en'] ?? ''))); ?>
+
                         </div>
                     </div>
                 </div>
@@ -405,9 +409,9 @@
                     <div>
                         <div class="sidebar-info-label">Tarih</div>
                         <div class="sidebar-info-value">
-                            {{ $etkinlik->day }} 
-                            <span class="lang-text-tr">{{ $etkinlik->month['tr'] ?? '' }}</span>
-                            <span class="lang-text-en">{{ $etkinlik->month['en'] ?? '' }}</span>
+                            <?php echo e($etkinlik->day); ?> 
+                            <span class="lang-text-tr"><?php echo e($etkinlik->month['tr'] ?? ''); ?></span>
+                            <span class="lang-text-en"><?php echo e($etkinlik->month['en'] ?? ''); ?></span>
                         </div>
                     </div>
                 </div>
@@ -416,8 +420,8 @@
                     <i class="fas fa-map-marker-alt"></i>
                     <div>
                         <div class="sidebar-info-label">Mekan / Lokasyon</div>
-                        <div class="sidebar-info-value lang-text-tr">{{ $etkinlik->loc['tr'] ?? '' }}</div>
-                        <div class="sidebar-info-value lang-text-en">{{ $etkinlik->loc['en'] ?? '' }}</div>
+                        <div class="sidebar-info-value lang-text-tr"><?php echo e($etkinlik->loc['tr'] ?? ''); ?></div>
+                        <div class="sidebar-info-value lang-text-en"><?php echo e($etkinlik->loc['en'] ?? ''); ?></div>
                     </div>
                 </div>
 
@@ -425,12 +429,12 @@
                     <i class="fas fa-tags"></i>
                     <div>
                         <div class="sidebar-info-label">Kategori</div>
-                        <div class="sidebar-info-value lang-text-tr">{{ $etkinlik->tag['tr'] ?? '' }}</div>
-                        <div class="sidebar-info-value lang-text-en">{{ $etkinlik->tag['en'] ?? '' }}</div>
+                        <div class="sidebar-info-value lang-text-tr"><?php echo e($etkinlik->tag['tr'] ?? ''); ?></div>
+                        <div class="sidebar-info-value lang-text-en"><?php echo e($etkinlik->tag['en'] ?? ''); ?></div>
                     </div>
                 </div>
 
-                <a href="https://wa.me/{{ format_whatsapp($settings['whatsapp'] ?? '') }}?text=Merhaba,%20{{ urlencode($etkinlik->title['tr'] ?? $etkinlik->title['en'] ?? 'Etkinlik') }}%20hakkında%20bilgi%20ve%20rezervasyon%20istiyorum." 
+                <a href="https://wa.me/<?php echo e(format_whatsapp($settings['whatsapp'] ?? '')); ?>?text=Merhaba,%20<?php echo e(urlencode($etkinlik->title['tr'] ?? $etkinlik->title['en'] ?? 'Etkinlik')); ?>%20hakkında%20bilgi%20ve%20rezervasyon%20istiyorum." 
                    target="_blank" 
                    class="btn-booking">
                     <i class="fab fa-whatsapp"></i>
@@ -441,11 +445,12 @@
         </div>
     </section>
 
-    @include('partials.footer')
+    <?php echo $__env->make('partials.footer', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/i18n.js') }}?v={{ time() }}"></script>
-    <script src="{{ asset('js/common.js') }}?v={{ time() }}"></script>
-    <script src="{{ asset('js/nav.js') }}?v={{ time() }}"></script>
+    <script src="<?php echo e(asset('js/i18n.js')); ?>?v=<?php echo e(time()); ?>"></script>
+    <script src="<?php echo e(asset('js/common.js')); ?>?v=<?php echo e(time()); ?>"></script>
+    <script src="<?php echo e(asset('js/nav.js')); ?>?v=<?php echo e(time()); ?>"></script>
 </body>
 </html>
+<?php /**PATH C:\Users\ahmet\Desktop\dioreal web\resources\views\etkinlik-detay.blade.php ENDPATH**/ ?>
