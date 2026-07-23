@@ -23,7 +23,9 @@ class PageController extends Controller
         // If accessed by numeric ID, 301 redirect to canonical slug URL
         if (is_numeric($slug_or_id)) {
             $canonicalSlug = $item->slug_tr ?: ($item->slug_en ?: $item->id);
-            return redirect()->route($routeName, $canonicalSlug, 301);
+            if ($canonicalSlug != $slug_or_id) {
+                return redirect()->route($routeName, $canonicalSlug, 301);
+            }
         }
 
         return $item;
