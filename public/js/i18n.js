@@ -159,7 +159,44 @@ const updateLang = (lang) => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Check initial language
-    const initialLang = localStorage.getItem('dioreal_lang') || 'tr';
-    updateLang(initialLang);
+    // Check URL query parameter first for search crawler / state persistence support
+    const urlParams = new URLSearchParams(window.location.search);
+    let lang = urlParams.get('lang');
+    
+    if (!lang) {
+        lang = localStorage.getItem('dioreal_lang');
+    }
+    
+    if (!lang) {
+        lang = document.documentElement.getAttribute('lang') || 'tr';
+    }
+    
+    updateLang(lang);
+
+    // Setup click handlers for TR/EN switches to follow alternate localized links if present
+    document.querySelectorAll('#lang-en, #lang-en-fs').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const altLink = document.querySelector('link[rel="alternate"][hreflang="en"]');
+            if (altLink && altLink.href) {
+                localStorage.setItem('dioreal_lang', 'en');
+                window.location.href = altLink.href;
+            } else {
+                updateLang('en');
+            }
+        });
+    });
+
+    document.querySelectorAll('#lang-tr, #lang-tr-fs').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const altLink = document.querySelector('link[rel="alternate"][hreflang="tr"]');
+            if (altLink && altLink.href) {
+                localStorage.setItem('dioreal_lang', 'tr');
+                window.location.href = altLink.href;
+            } else {
+                updateLang('tr');
+            }
+        });
+    });
 });

@@ -10,7 +10,7 @@
         <div class="panel-card-header">
             <h3 class="panel-card-title"><i class="fas fa-edit"></i> Journal Düzenleme Formu</h3>
             <div style="display:flex; gap:0.75rem;">
-                <a href="{{ route('journal.detay', $journal->id) }}" class="btn btn-outline" target="_blank">
+                <a href="{{ route('journal.detay', $journal->slug_tr ?? $journal->slug_en ?? $journal->id) }}" class="btn btn-outline" target="_blank">
                     <i class="fas fa-eye"></i> Görüntüle
                 </a>
                 <a href="{{ route('admin.journals.index') }}" class="btn btn-outline">

@@ -1,12 +1,17 @@
 @php
-    $seo_title = $journal->seo_title_tr ?: ($journal->title['tr'] ?? 'Detay') . ' - Dioreal';
-    $seo_desc = $journal->seo_description_tr ?: \Illuminate\Support\Str::limit(strip_tags($journal->desc['tr'] ?? ''), 155);
+    $locale = get_active_locale();
+    $seo_title = ($locale === 'en')
+        ? ($journal->seo_title_en ?: ($journal->title['en'] ?? 'Detay') . ' - Dioreal')
+        : ($journal->seo_title_tr ?: ($journal->title['tr'] ?? 'Detay') . ' - Dioreal');
+    $seo_desc = ($locale === 'en')
+        ? ($journal->seo_description_en ?: \Illuminate\Support\Str::limit(strip_tags($journal->desc['en'] ?? ''), 155))
+        : ($journal->seo_description_tr ?: \Illuminate\Support\Str::limit(strip_tags($journal->desc['tr'] ?? ''), 155));
     $og_image = $journal->og_image ? asset($journal->og_image) : asset($journal->img);
-    $canonical = route('journal.detay', $journal->slug_tr ?: $journal->id);
+    $canonical = $canonical ?? route('journal.detay', $journal->slug_tr ?: $journal->id);
     $noindex = $journal->seo_noindex;
     
-    $hreflang_tr = route('journal.detay', $journal->slug_tr ?: $journal->id);
-    $hreflang_en = $journal->slug_en ? route('journal.detay', $journal->slug_en) : null;
+    $hreflang_tr = $hreflang_tr ?? route('journal.detay', $journal->slug_tr ?: $journal->id);
+    $hreflang_en = $hreflang_en ?? ($journal->slug_en ? route('journal.detay', $journal->slug_en) : null);
     $og_type = 'Article' == 'Article' ? 'article' : 'website';
 
     $schema_json = '<script type="application/ld+json">
@@ -21,7 +26,7 @@
     </script>';
 @endphp
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="{{ get_active_locale() }}">
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="base-url" content="{{ url('/') }}">
@@ -364,7 +369,7 @@
 
     <!-- Hero Banner -->
     @php
-        $showVideoCover = !empty($journal->show_video_on_cover) && (!empty($journal->video_file) || !empty($journal->video_url));
+        $showVideoCover = !empty($journal->show_video_on_cover) && (!empty($journal->video_file) || !empty($journal->video_url);
         $journalImg = !empty($journal->img) ? $journal->img : 'foto.img/etkinlik_hero.jpg';
         $journalImgUrl = str_starts_with($journalImg, 'data:') || str_starts_with($journalImg, 'http') ? $journalImg : asset($journalImg);
     @endphp
@@ -443,7 +448,7 @@
                 </div>
 
                 @foreach($related as $item)
-                    <a href="{{ route('journal.detay', $item->id) }}" class="jd-related-item">
+                    <a href="{{ route('journal.detay', $item->slug_tr ?? $item->slug_en ?? $item->id) }}" class="jd-related-item">
                         <img src="{{ asset($item->img) }}" alt="{{ $item->title['tr'] ?? '' }}">
                         <div>
                             <span class="jd-related-date">{{ $item->date }}</span>

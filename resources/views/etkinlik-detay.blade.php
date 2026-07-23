@@ -1,12 +1,17 @@
 @php
-    $seo_title = $event->seo_title_tr ?: ($event->title['tr'] ?? 'Detay') . ' - Dioreal';
-    $seo_desc = $event->seo_description_tr ?: \Illuminate\Support\Str::limit(strip_tags($event->desc['tr'] ?? ''), 155);
+    $locale = get_active_locale();
+    $seo_title = ($locale === 'en')
+        ? ($event->seo_title_en ?: ($event->title['en'] ?? 'Detay') . ' - Dioreal')
+        : ($event->seo_title_tr ?: ($event->title['tr'] ?? 'Detay') . ' - Dioreal');
+    $seo_desc = ($locale === 'en')
+        ? ($event->seo_description_en ?: \Illuminate\Support\Str::limit(strip_tags($event->desc['en'] ?? ''), 155))
+        : ($event->seo_description_tr ?: \Illuminate\Support\Str::limit(strip_tags($event->desc['tr'] ?? ''), 155));
     $og_image = $event->og_image ? asset($event->og_image) : asset($event->img);
-    $canonical = route('etkinlik.detay', $event->slug_tr ?: $event->id);
+    $canonical = $canonical ?? route('etkinlik.detay', $event->slug_tr ?: $event->id);
     $noindex = $event->seo_noindex;
     
-    $hreflang_tr = route('etkinlik.detay', $event->slug_tr ?: $event->id);
-    $hreflang_en = $event->slug_en ? route('etkinlik.detay', $event->slug_en) : null;
+    $hreflang_tr = $hreflang_tr ?? route('etkinlik.detay', $event->slug_tr ?: $event->id);
+    $hreflang_en = $hreflang_en ?? ($event->slug_en ? route('etkinlik.detay', $event->slug_en) : null);
     $og_type = 'Event' == 'Article' ? 'article' : 'website';
 
     $schema_json = '<script type="application/ld+json">
@@ -21,7 +26,7 @@
     </script>';
 @endphp
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="{{ get_active_locale() }}">
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="base-url" content="{{ url('/') }}">
@@ -87,7 +92,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3);
             z-index: 1;
         }
         .page-hero-content {
@@ -339,7 +344,7 @@
 
     <!-- Page Hero -->
     @php
-        $showVideoCover = !empty($etkinlik->show_video_on_cover) && (!empty($etkinlik->video_file) || !empty($etkinlik->video_url));
+        $showVideoCover = !empty($etkinlik->show_video_on_cover) && (!empty($etkinlik->video_file) || !empty($etkinlik->video_url);
         $eventImg = !empty($etkinlik->img) ? $etkinlik->img : 'foto.img/etkinlik_hero.jpg';
         $eventImgUrl = str_starts_with($eventImg, 'data:') || str_starts_with($eventImg, 'http') ? $eventImg : asset($eventImg);
     @endphp
@@ -425,7 +430,7 @@
                     </div>
                 </div>
 
-                <a href="https://wa.me/{{ $settings['whatsapp'] ?? '905320000000' }}?text=Merhaba,%20{{ urlencode($etkinlik->title['tr'] ?? $etkinlik->title['en'] ?? 'Etkinlik') }}%20hakkında%20bilgi%20ve%20rezervasyon%20istiyorum." 
+                <a href="https://wa.me/{{ format_whatsapp($settings['whatsapp'] ?? '') }}?text=Merhaba,%20{{ urlencode($etkinlik->title['tr'] ?? $etkinlik->title['en'] ?? 'Etkinlik') }}%20hakkında%20bilgi%20ve%20rezervasyon%20istiyorum." 
                    target="_blank" 
                    class="btn-booking">
                     <i class="fab fa-whatsapp"></i>

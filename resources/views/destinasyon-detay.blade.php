@@ -1,12 +1,17 @@
 @php
-    $seo_title = $destination->seo_title_tr ?: ($destination->name['tr'] ?? 'Detay') . ' - Dioreal';
-    $seo_desc = $destination->seo_description_tr ?: \Illuminate\Support\Str::limit(strip_tags($destination->desc['tr'] ?? ''), 155);
+    $locale = get_active_locale();
+    $seo_title = ($locale === 'en')
+        ? ($destination->seo_title_en ?: ($destination->name['en'] ?? 'Detay') . ' - Dioreal')
+        : ($destination->seo_title_tr ?: ($destination->name['tr'] ?? 'Detay') . ' - Dioreal');
+    $seo_desc = ($locale === 'en')
+        ? ($destination->seo_description_en ?: \Illuminate\Support\Str::limit(strip_tags($destination->desc['en'] ?? ''), 155))
+        : ($destination->seo_description_tr ?: \Illuminate\Support\Str::limit(strip_tags($destination->desc['tr'] ?? ''), 155));
     $og_image = $destination->og_image ? asset($destination->og_image) : asset($destination->img);
-    $canonical = route('destinasyon.detay', $destination->slug_tr ?: $destination->id);
+    $canonical = $canonical ?? route('destinasyon.detay', $destination->slug_tr ?: $destination->id);
     $noindex = $destination->seo_noindex;
     
-    $hreflang_tr = route('destinasyon.detay', $destination->slug_tr ?: $destination->id);
-    $hreflang_en = $destination->slug_en ? route('destinasyon.detay', $destination->slug_en) : null;
+    $hreflang_tr = $hreflang_tr ?? route('destinasyon.detay', $destination->slug_tr ?: $destination->id);
+    $hreflang_en = $hreflang_en ?? ($destination->slug_en ? route('destinasyon.detay', $destination->slug_en) : null);
     $og_type = 'Place' == 'Article' ? 'article' : 'website';
 
     $schema_json = '<script type="application/ld+json">
@@ -21,7 +26,7 @@
     </script>';
 @endphp
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="{{ get_active_locale() }}">
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="base-url" content="{{ url('/') }}">
@@ -87,7 +92,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4);
             z-index: 1;
         }
         .page-hero-content {
@@ -147,7 +152,7 @@
         /* Square grid layout for country gallery */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr);
             gap: 1.5rem;
             max-width: 1200px;
             margin: 0 auto;
@@ -267,7 +272,7 @@
 
     <!-- Page Hero -->
     @php
-        $showVideoCover = !empty($destination->show_video_on_cover) && (!empty($destination->video_file) || !empty($destination->video_url));
+        $showVideoCover = !empty($destination->show_video_on_cover) && (!empty($destination->video_file) || !empty($destination->video_url);
         $destImg = !empty($destination->img) ? $destination->img : 'foto.img/etkinlik_hero.jpg';
         $destImgUrl = str_starts_with($destImg, 'data:') || str_starts_with($destImg, 'http') ? $destImg : asset($destImg);
     @endphp
@@ -367,7 +372,7 @@
                                 <p class="card-desc lang-text-tr">{{ $otel->desc["tr"] ?? "" }}</p>
                                 <p class="card-desc lang-text-en">{{ $otel->desc["en"] ?? "" }}</p>
                                 
-                                <a href="{{ url("/otel/" . $otel->id) }}" class="btn btn-primary" style="margin-top:1rem; padding: 0.5rem 1rem;">
+                                <a href="{{ route('otel.detay', $otel->slug_tr ?? $otel->slug_en ?? $otel->id) }}" class="btn btn-primary" style="margin-top:1rem; padding: 0.5rem 1rem;">
                                     <span class="lang-text-tr">Detayları İncele</span>
                                     <span class="lang-text-en">View Details</span>
                                 </a>
@@ -416,7 +421,7 @@
                                 <p class="card-desc lang-text-tr">{{ $restoran->desc["tr"] ?? "" }}</p>
                                 <p class="card-desc lang-text-en">{{ $restoran->desc["en"] ?? "" }}</p>
                                 
-                                <a href="{{ url("/restoran/" . $restoran->id) }}" class="btn btn-primary" style="margin-top:1rem; padding: 0.5rem 1rem;">
+                                <a href="{{ route('restoran.detay', $restoran->slug_tr ?? $restoran->slug_en ?? $restoran->id) }}" class="btn btn-primary" style="margin-top:1rem; padding: 0.5rem 1rem;">
                                     <span class="lang-text-tr">Detayları İncele</span>
                                     <span class="lang-text-en">View Details</span>
                                 </a>
@@ -446,7 +451,7 @@
                                 <p class="card-desc lang-text-tr">{{ $journal->desc["tr"] ?? "" }}</p>
                                 <p class="card-desc lang-text-en">{{ $journal->desc["en"] ?? "" }}</p>
                                 
-                                <a href="{{ url("/journal/" . $journal->id) }}" class="btn btn-primary" style="margin-top:1rem; padding: 0.5rem 1rem;">
+                                <a href="{{ route('journal.detay', $journal->slug_tr ?? $journal->slug_en ?? $journal->id) }}" class="btn btn-primary" style="margin-top:1rem; padding: 0.5rem 1rem;">
                                     <span class="lang-text-tr">Okumaya Başla</span>
                                     <span class="lang-text-en">Read More</span>
                                 </a>

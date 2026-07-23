@@ -6,41 +6,56 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\SitemapController;
 
-// Public Front-end Routes (clean URLs + legacy .html support)
+// Public Front-end Routes (clean URLs + legacy .html 301 redirects)
 Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
+
 Route::get('/', [PageController::class, 'index'])->name('home');
 Route::get('/index.html', function() {
-    return redirect()->route('home');
+    return redirect()->route('home', [], 301);
 });
 
 Route::get('/hakkimizda', [PageController::class, 'hakkimizda'])->name('hakkimizda');
-Route::get('/hakkimizda.html', [PageController::class, 'hakkimizda']);
+Route::get('/hakkimizda.html', function() {
+    return redirect()->route('hakkimizda', [], 301);
+});
 
 Route::get('/oteller', [PageController::class, 'oteller'])->name('oteller');
-Route::get('/oteller.html', [PageController::class, 'oteller']);
+Route::get('/oteller.html', function() {
+    return redirect()->route('oteller', [], 301);
+});
 
 Route::get('/yatlar', [PageController::class, 'yatlar'])->name('yatlar');
-Route::get('/yatlar.html', [PageController::class, 'yatlar']);
+Route::get('/yatlar.html', function() {
+    return redirect()->route('yatlar', [], 301);
+});
 
 Route::get('/restoranlar', [PageController::class, 'restoranlar'])->name('restoranlar');
-Route::get('/restoranlar.html', [PageController::class, 'restoranlar']);
-
-Route::get('/destinasyonlar', [PageController::class, 'geziRehberi'])->name('gezi-rehberi');
-Route::get('/destinasyonlar.html', [PageController::class, 'geziRehberi']);
-Route::get('/gezi-rehberi', function() {
-    return redirect()->route('gezi-rehberi');
+Route::get('/restoranlar.html', function() {
+    return redirect()->route('restoranlar', [], 301);
 });
+
+Route::get('/gezi-rehberi', [PageController::class, 'geziRehberi'])->name('gezi-rehberi');
 Route::get('/gezi-rehberi.html', function() {
-    return redirect()->route('gezi-rehberi');
+    return redirect()->route('gezi-rehberi', [], 301);
+});
+Route::get('/destinasyonlar', function() {
+    return redirect()->route('gezi-rehberi', [], 301);
+});
+Route::get('/destinasyonlar.html', function() {
+    return redirect()->route('gezi-rehberi', [], 301);
 });
 
 Route::get('/etkinlikler', [PageController::class, 'etkinlikler'])->name('etkinlikler');
-Route::get('/etkinlikler.html', [PageController::class, 'etkinlikler']);
+Route::get('/etkinlikler.html', function() {
+    return redirect()->route('etkinlikler', [], 301);
+});
 
 Route::get('/journal', [PageController::class, 'journal'])->name('journal');
-Route::get('/journal.html', [PageController::class, 'journal']);
+Route::get('/journal.html', function() {
+    return redirect()->route('journal', [], 301);
+});
 
-// Detail Pages
+// Detail Pages (Slug-first, ID fallback with 301 redirect to canonical slug)
 Route::get('/otel/{slug_or_id}', [PageController::class, 'otelDetay'])->name('otel.detay');
 Route::get('/restoran/{slug_or_id}', [PageController::class, 'restoranDetay'])->name('restoran.detay');
 Route::get('/journal/{slug_or_id}', [PageController::class, 'journalDetay'])->name('journal.detay');

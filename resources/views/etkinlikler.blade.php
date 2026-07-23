@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="{{ get_active_locale() }}">
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="base-url" content="{{ url('/') }}">
@@ -15,10 +15,14 @@
     <link rel="stylesheet" href="{{ asset('css/about.css') }}?v={{ time() }}">
     <link rel="stylesheet" href="{{ asset('css/events.css') }}?v={{ time() }}">
     @php
-        $seo_title = $seo_title ?? 'Dioreal Dijital - Global Deneyim & Medya Platformu';
-        $seo_desc = $seo_desc ?? 'Türkiye ve dünyada seçkin deneyimlerin kapısını aralıyoruz. Lüks oteller, yatlar ve yaşam tarzı markaları için yeni nesil medya platformu.';
-        $og_image = $og_image ?? asset('foto.img/hero_4k.jpg');
-        $canonical = $canonical ?? url()->current();
+        $locale = get_active_locale();
+        $seoData = get_page_seo('etkinlikler');
+        $seo_title = $seo_title ?? ($locale === 'en' ? $seoData['title_en'] : $seoData['title_tr']);
+        $seo_desc = $seo_desc ?? ($locale === 'en' ? $seoData['desc_en'] : $seoData['desc_tr']);
+        $og_image = $og_image ?? asset('foto.img/etkinlik_hero.jpg');
+        $canonical = $canonical ?? route('etkinlikler');
+        $hreflang_tr = $hreflang_tr ?? route('etkinlikler');
+        $hreflang_en = $hreflang_en ?? route('etkinlikler');
         $noindex = $noindex ?? false;
     @endphp
 
@@ -26,8 +30,8 @@
     <meta name="description" content="{{ $seo_desc }}">
     
     <link rel="canonical" href="{{ $canonical }}">
-    @if(isset($hreflang_tr)) <link rel="alternate" hreflang="tr" href="{{ $hreflang_tr }}" /> @endif
-    @if(isset($hreflang_en)) <link rel="alternate" hreflang="en" href="{{ $hreflang_en }}" /> @endif
+    <link rel="alternate" hreflang="tr" href="{{ $hreflang_tr }}" />
+    <link rel="alternate" hreflang="en" href="{{ $hreflang_en }}" />
     <link rel="alternate" hreflang="x-default" href="{{ $canonical }}" />
 
     @if($noindex)
@@ -54,18 +58,18 @@
 <body>
     <nav id="mainNav">
         <div class="nav-logo-wrapper">
-            <a href="index.html" class="nav-logo">
+            <a href="{{ route('home') }}" class="nav-logo">
                 <span class="logo-text">DIOREAL</span>
             </a>
         </div>
         <ul class="nav-links">
-            <li><a href="hakkimizda.html" data-i18n="nav_about">Hakkımızda</a></li>
-            <li><a href="oteller.html" data-i18n="nav_hotels">Oteller</a></li>
-            <li><a href="yatlar.html" data-i18n="nav_yachts">Yatlar</a></li>
-            <li><a href="restoranlar.html" data-i18n="nav_restaurants">Restoranlar</a></li>
-            <li><a href="destinasyonlar.html" data-i18n="nav_guide">Destinasyonlar</a></li>
-            <li><a href="etkinlikler.html" class="active-page" data-i18n="nav_events">Etkinlikler</a></li>
-            <li><a href="journal.html" data-i18n="nav_journal">Journal</a></li>
+            <li><a href="{{ route('hakkimizda') }}" data-i18n="nav_about">Hakkımızda</a></li>
+            <li><a href="{{ route('oteller') }}" data-i18n="nav_hotels">Oteller</a></li>
+            <li><a href="{{ route('yatlar') }}" data-i18n="nav_yachts">Yatlar</a></li>
+            <li><a href="{{ route('restoranlar') }}" data-i18n="nav_restaurants">Restoranlar</a></li>
+            <li><a href="{{ route('gezi-rehberi') }}" data-i18n="nav_guide">Gezi Rehberi</a></li>
+            <li><a href="{{ route('etkinlikler') }}" class="active-page" data-i18n="nav_events">Etkinlikler</a></li>
+            <li><a href="{{ route('journal') }}" data-i18n="nav_journal">Journal</a></li>
         </ul>
         <div class="nav-right">
             <div class="lang-switch desk-lang">
@@ -80,14 +84,14 @@
     </nav>
     <div class="fs-menu" id="fsMenu">
         <ul class="fs-links">
-            <li><a href="hakkimizda.html" data-i18n="nav_about">Hakkımızda</a></li>
-            <li><a href="oteller.html" data-i18n="nav_hotels">Oteller</a></li>
-            <li><a href="yatlar.html" data-i18n="nav_yachts">Yatlar</a></li>
-            <li><a href="restoranlar.html" data-i18n="nav_restaurants">Restoranlar</a></li>
+            <li><a href="{{ route('hakkimizda') }}" data-i18n="nav_about">Hakkımızda</a></li>
+            <li><a href="{{ route('oteller') }}" data-i18n="nav_hotels">Oteller</a></li>
+            <li><a href="{{ route('yatlar') }}" data-i18n="nav_yachts">Yatlar</a></li>
+            <li><a href="{{ route('restoranlar') }}" data-i18n="nav_restaurants">Restoranlar</a></li>
             <div class="fs-divider"></div>
-            <li><a href="destinasyonlar.html" data-i18n="nav_guide">Destinasyonlar</a></li>
-            <li><a href="etkinlikler.html" data-i18n="nav_events">Etkinlikler</a></li>
-            <li><a href="journal.html" data-i18n="nav_journal">Journal</a></li>
+            <li><a href="{{ route('gezi-rehberi') }}" data-i18n="nav_guide">Gezi Rehberi</a></li>
+            <li><a href="{{ route('etkinlikler') }}" data-i18n="nav_events">Etkinlikler</a></li>
+            <li><a href="{{ route('journal') }}" data-i18n="nav_journal">Journal</a></li>
             <li style="font-size:1.5rem;font-family:var(--font-display);margin-top:2rem;"><span id="lang-tr-fs" class="lang-btn active">TR</span> | <span id="lang-en-fs" class="lang-btn">EN</span></li>
         </ul>
     </div>
@@ -159,40 +163,34 @@
             font-weight: 300;
         }
         .event-card-month {
-            font-size: 0.65rem;
+            font-family: var(--font-condensed);
+            font-size: 0.75rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
             color: var(--accent);
-            display: block;
-            margin-top: 0.2rem;
-            font-weight: 500;
         }
         .event-card-content {
-            padding: 2.2rem;
+            padding: 2.5rem 2rem 2rem 2rem;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
         .event-card-tag {
-            font-size: 0.65rem;
-            letter-spacing: 0.2em;
+            font-family: var(--font-condensed);
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
             color: var(--accent);
             margin-bottom: 0.8rem;
             display: block;
-            font-weight: 600;
         }
         .event-card-title {
             font-family: var(--font-display);
             font-size: 1.6rem;
             font-weight: 400;
+            line-height: 1.3;
+            margin-bottom: 0.8rem;
             color: var(--near-black);
-            margin-bottom: 0.6rem;
-            line-height: 1.25;
-            transition: color 0.3s;
-        }
-        .event-card:hover .event-card-title {
-            color: var(--accent);
         }
         .event-card-location {
             font-size: 0.85rem;
@@ -200,21 +198,14 @@
             margin-bottom: 1.2rem;
             display: flex;
             align-items: center;
-            gap: 0.4rem;
-        }
-        .event-card-location i {
-            color: var(--accent);
+            gap: 0.5rem;
         }
         .event-card-desc {
             font-size: 0.95rem;
-            line-height: 1.65;
-            color: var(--dark-gray);
+            line-height: 1.7;
+            color: var(--mid-gray);
             margin-bottom: 2rem;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            height: 4.8em;
+            flex-grow: 1;
         }
         .event-card-btn-wrapper {
             margin-top: auto;
@@ -243,11 +234,9 @@
                         $eventImgUrl = str_starts_with($eventImg, 'data:') || str_starts_with($eventImg, 'http') ? $eventImg : asset($eventImg);
                     @endphp
                     <div class="event-card reveal visible">
-                        <!-- Photograph of the event -->
                         <div class="event-card-image-box">
                             <img src="{{ $eventImgUrl }}" alt="{{ $e->title['tr'] ?? '' }}">
                             
-                            <!-- Date Badge overlay on image -->
                             <div class="event-card-date-badge">
                                 <span class="event-card-day">{{ $e->day }}</span>
                                 <span class="event-card-month lang-text-tr">{{ $e->month["tr"] ?? "" }}</span>
@@ -255,7 +244,6 @@
                             </div>
                         </div>
 
-                        <!-- Card Content -->
                         <div class="event-card-content">
                             <span class="event-card-tag lang-text-tr">{{ $e->tag["tr"] ?? "" }}</span>
                             <span class="event-card-tag lang-text-en">{{ $e->tag["en"] ?? "" }}</span>
@@ -272,9 +260,8 @@
                             <p class="event-card-desc lang-text-tr">{{ $e->desc["tr"] ?? "" }}</p>
                             <p class="event-card-desc lang-text-en">{{ $e->desc["en"] ?? "" }}</p>
 
-                            <!-- Button under the photograph (at the bottom of the card) -->
                             <div class="event-card-btn-wrapper">
-                                <a href="{{ route('etkinlik.detay', $e->id) }}" class="btn btn-outline" style="display: block; text-align: center; text-decoration: none;">
+                                <a href="{{ route('etkinlik.detay', $e->slug_tr ?? $e->slug_en ?? $e->id) }}" class="btn btn-outline" style="display: block; text-align: center; text-decoration: none;">
                                     <span class="lang-text-tr">Etkinliği İncele</span>
                                     <span class="lang-text-en">Review Event</span>
                                 </a>

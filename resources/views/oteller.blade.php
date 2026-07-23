@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="{{ get_active_locale() }}">
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="base-url" content="{{ url('/') }}">
@@ -249,10 +249,14 @@
         }
     </style>
     @php
-        $seo_title = $seo_title ?? 'Dioreal Dijital - Global Deneyim & Medya Platformu';
-        $seo_desc = $seo_desc ?? 'Türkiye ve dünyada seçkin deneyimlerin kapısını aralıyoruz. Lüks oteller, yatlar ve yaşam tarzı markaları için yeni nesil medya platformu.';
-        $og_image = $og_image ?? asset('foto.img/hero_4k.jpg');
-        $canonical = $canonical ?? url()->current();
+        $locale = get_active_locale();
+        $seoData = get_page_seo('oteller');
+        $seo_title = $seo_title ?? ($locale === 'en' ? $seoData['title_en'] : $seoData['title_tr']);
+        $seo_desc = $seo_desc ?? ($locale === 'en' ? $seoData['desc_en'] : $seoData['desc_tr']);
+        $og_image = $og_image ?? asset('foto.img/otel_hero.jpg');
+        $canonical = $canonical ?? route('oteller');
+        $hreflang_tr = $hreflang_tr ?? route('oteller');
+        $hreflang_en = $hreflang_en ?? route('oteller');
         $noindex = $noindex ?? false;
     @endphp
 
@@ -260,8 +264,8 @@
     <meta name="description" content="{{ $seo_desc }}">
     
     <link rel="canonical" href="{{ $canonical }}">
-    @if(isset($hreflang_tr)) <link rel="alternate" hreflang="tr" href="{{ $hreflang_tr }}" /> @endif
-    @if(isset($hreflang_en)) <link rel="alternate" hreflang="en" href="{{ $hreflang_en }}" /> @endif
+    <link rel="alternate" hreflang="tr" href="{{ $hreflang_tr }}" />
+    <link rel="alternate" hreflang="en" href="{{ $hreflang_en }}" />
     <link rel="alternate" hreflang="x-default" href="{{ $canonical }}" />
 
     @if($noindex)
@@ -291,18 +295,18 @@
     <!-- Desktop Nav -->
     <nav id="mainNav">
         <div class="nav-logo-wrapper">
-            <a href="{{ url('/') }}" class="nav-logo">
+            <a href="{{ route('home') }}" class="nav-logo">
                 <span class="logo-text">DIOREAL</span>
             </a>
         </div>
         <ul class="nav-links">
-            <li><a href="{{ url('/hakkimizda') }}" data-i18n="nav_about">Hakkımızda</a></li>
-            <li><a href="{{ url('/oteller') }}" class="active-page" data-i18n="nav_hotels">Oteller</a></li>
-            <li><a href="{{ url('/yatlar') }}" data-i18n="nav_yachts">Yatlar</a></li>
-            <li><a href="{{ url('/restoranlar') }}" data-i18n="nav_restaurants">Restoranlar</a></li>
-            <li><a href="{{ url('/destinasyonlar') }}" data-i18n="nav_guide">Destinasyonlar</a></li>
-            <li><a href="{{ url('/etkinlikler') }}" data-i18n="nav_events">Etkinlikler</a></li>
-            <li><a href="{{ url('/journal') }}" data-i18n="nav_journal">Journal</a></li>
+            <li><a href="{{ route('hakkimizda') }}" data-i18n="nav_about">Hakkımızda</a></li>
+            <li><a href="{{ route('oteller') }}" class="active-page" data-i18n="nav_hotels">Oteller</a></li>
+            <li><a href="{{ route('yatlar') }}" data-i18n="nav_yachts">Yatlar</a></li>
+            <li><a href="{{ route('restoranlar') }}" data-i18n="nav_restaurants">Restoranlar</a></li>
+            <li><a href="{{ route('gezi-rehberi') }}" data-i18n="nav_guide">Gezi Rehberi</a></li>
+            <li><a href="{{ route('etkinlikler') }}" data-i18n="nav_events">Etkinlikler</a></li>
+            <li><a href="{{ route('journal') }}" data-i18n="nav_journal">Journal</a></li>
         </ul>
         <div class="nav-right">
             <div class="lang-switch desk-lang">
@@ -319,14 +323,14 @@
     <!-- Fullscreen Menu -->
     <div class="fs-menu" id="fsMenu">
         <ul class="fs-links">
-            <li><a href="{{ url('/hakkimizda') }}" data-i18n="nav_about">Hakkımızda</a></li>
-            <li><a href="{{ url('/oteller') }}" data-i18n="nav_hotels">Oteller</a></li>
-            <li><a href="{{ url('/yatlar') }}" data-i18n="nav_yachts">Yatlar</a></li>
-            <li><a href="{{ url('/restoranlar') }}" data-i18n="nav_restaurants">Restoranlar</a></li>
+            <li><a href="{{ route('hakkimizda') }}" data-i18n="nav_about">Hakkımızda</a></li>
+            <li><a href="{{ route('oteller') }}" data-i18n="nav_hotels">Oteller</a></li>
+            <li><a href="{{ route('yatlar') }}" data-i18n="nav_yachts">Yatlar</a></li>
+            <li><a href="{{ route('restoranlar') }}" data-i18n="nav_restaurants">Restoranlar</a></li>
             <div class="fs-divider"></div>
-            <li><a href="{{ url('/destinasyonlar') }}" data-i18n="nav_guide">Destinasyonlar</a></li>
-            <li><a href="{{ url('/etkinlikler') }}" data-i18n="nav_events">Etkinlikler</a></li>
-            <li><a href="{{ url('/journal') }}" data-i18n="nav_journal">Journal</a></li>
+            <li><a href="{{ route('gezi-rehberi') }}" data-i18n="nav_guide">Gezi Rehberi</a></li>
+            <li><a href="{{ route('etkinlikler') }}" data-i18n="nav_events">Etkinlikler</a></li>
+            <li><a href="{{ route('journal') }}" data-i18n="nav_journal">Journal</a></li>
             <li class="lang-switch" style="font-size: 1.5rem; font-family: var(--font-display); justify-content: center; margin-top:3rem;">
                 <span id="lang-tr-fs" class="lang-btn">TR</span> | <span id="lang-en-fs" class="lang-btn">EN</span>
             </li>
@@ -390,7 +394,7 @@
                         <p class="hotel-desc lang-text-tr">{{ $otel->desc["tr"] ?? "" }}</p>
                         <p class="hotel-desc lang-text-en">{{ $otel->desc["en"] ?? "" }}</p>
                         
-                        <a href="{{ url("/otel/" . $otel->id) }}" class="btn-bd">
+                        <a href="{{ route('otel.detay', $otel->slug_tr ?? $otel->slug_en ?? $otel->id) }}" class="btn-bd">
                             <span class="lang-text-tr">Detayları İncele</span>
                             <span class="lang-text-en">Explore Destination</span>
                             <i class="fas fa-chevron-right"></i>

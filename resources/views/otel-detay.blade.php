@@ -1,12 +1,17 @@
 @php
-    $seo_title = $otel->seo_title_tr ?: ($otel->name['tr'] ?? 'Detay') . ' - Dioreal';
-    $seo_desc = $otel->seo_description_tr ?: \Illuminate\Support\Str::limit(strip_tags($otel->desc['tr'] ?? ''), 155);
+    $locale = get_active_locale();
+    $seo_title = ($locale === 'en')
+        ? ($otel->seo_title_en ?: ($otel->name['en'] ?? 'Detay') . ' - Dioreal')
+        : ($otel->seo_title_tr ?: ($otel->name['tr'] ?? 'Detay') . ' - Dioreal');
+    $seo_desc = ($locale === 'en')
+        ? ($otel->seo_description_en ?: \Illuminate\Support\Str::limit(strip_tags($otel->desc['en'] ?? ''), 155))
+        : ($otel->seo_description_tr ?: \Illuminate\Support\Str::limit(strip_tags($otel->desc['tr'] ?? ''), 155));
     $og_image = $otel->og_image ? asset($otel->og_image) : asset($otel->img);
-    $canonical = route('otel.detay', $otel->slug_tr ?: $otel->id);
+    $canonical = $canonical ?? route('otel.detay', $otel->slug_tr ?: $otel->id);
     $noindex = $otel->seo_noindex;
     
-    $hreflang_tr = route('otel.detay', $otel->slug_tr ?: $otel->id);
-    $hreflang_en = $otel->slug_en ? route('otel.detay', $otel->slug_en) : null;
+    $hreflang_tr = $hreflang_tr ?? route('otel.detay', $otel->slug_tr ?: $otel->id);
+    $hreflang_en = $hreflang_en ?? ($otel->slug_en ? route('otel.detay', $otel->slug_en) : null);
     $og_type = 'Hotel' == 'Article' ? 'article' : 'website';
 
     $schema_json = '<script type="application/ld+json">
@@ -21,7 +26,7 @@
     </script>';
 @endphp
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="{{ get_active_locale() }}">
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="base-url" content="{{ url('/') }}">
@@ -87,7 +92,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3);
             z-index: 1;
         }
         .page-hero-content {
@@ -276,7 +281,7 @@
         /* Square grid layout */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr);
             gap: 1.5rem;
         }
         
@@ -406,7 +411,7 @@
 
     <!-- Page Hero -->
     @php
-        $showVideoCover = !empty($otel->show_video_on_cover) && (!empty($otel->video_file) || !empty($otel->video_url));
+        $showVideoCover = !empty($otel->show_video_on_cover) && (!empty($otel->video_file) || !empty($otel->video_url);
         $otelImg = !empty($otel->img) ? $otel->img : 'foto.img/etkinlik_hero.jpg';
         $otelImgUrl = str_starts_with($otelImg, 'data:') || str_starts_with($otelImg, 'http') ? $otelImg : asset($otelImg);
     @endphp
@@ -480,7 +485,7 @@
                     </div>
                 </div>
 
-                <a href="https://wa.me/{{ $settings['whatsapp'] ?? '905320000000' }}?text=Merhaba,%20{{ urlencode($otel->name['tr'] ?? $otel->name['en'] ?? 'Otel') }}%20hakkında%20detaylı%20bilgi%20ve%20rezervasyon%20talebinde%20bulunmak%20istiyorum." 
+                <a href="https://wa.me/{{ format_whatsapp($settings['whatsapp'] ?? '') }}?text=Merhaba,%20{{ urlencode($otel->name['tr'] ?? $otel->name['en'] ?? 'Otel') }}%20hakkında%20detaylı%20bilgi%20ve%20rezervasyon%20talebinde%20bulunmak%20istiyorum." 
                    target="_blank" 
                    class="btn-booking">
                     <i class="fab fa-whatsapp"></i>

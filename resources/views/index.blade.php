@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="{{ get_active_locale() }}">
 
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -18,10 +18,14 @@
     <link rel="stylesheet" href="{{ asset('css/components.css') }}?v={{ time() }}">
     <link rel="stylesheet" href="{{ asset('css/home.css') }}?v={{ time() }}">
     @php
-        $seo_title = $seo_title ?? 'Dioreal Dijital - Global Deneyim & Medya Platformu';
-        $seo_desc = $seo_desc ?? 'Türkiye ve dünyada seçkin deneyimlerin kapısını aralıyoruz. Lüks oteller, yatlar ve yaşam tarzı markaları için yeni nesil medya platformu.';
+        $locale = get_active_locale();
+        $seoData = get_page_seo('home');
+        $seo_title = $seo_title ?? ($locale === 'en' ? $seoData['title_en'] : $seoData['title_tr']);
+        $seo_desc = $seo_desc ?? ($locale === 'en' ? $seoData['desc_en'] : $seoData['desc_tr']);
         $og_image = $og_image ?? asset('foto.img/hero_4k.jpg');
-        $canonical = $canonical ?? url()->current();
+        $canonical = $canonical ?? route('home');
+        $hreflang_tr = $hreflang_tr ?? route('home');
+        $hreflang_en = $hreflang_en ?? route('home');
         $noindex = $noindex ?? false;
     @endphp
 
@@ -29,8 +33,8 @@
     <meta name="description" content="{{ $seo_desc }}">
     
     <link rel="canonical" href="{{ $canonical }}">
-    @if(isset($hreflang_tr)) <link rel="alternate" hreflang="tr" href="{{ $hreflang_tr }}" /> @endif
-    @if(isset($hreflang_en)) <link rel="alternate" hreflang="en" href="{{ $hreflang_en }}" /> @endif
+    <link rel="alternate" hreflang="tr" href="{{ $hreflang_tr }}" />
+    <link rel="alternate" hreflang="en" href="{{ $hreflang_en }}" />
     <link rel="alternate" hreflang="x-default" href="{{ $canonical }}" />
 
     @if($noindex)
@@ -53,9 +57,10 @@
     @if(isset($schema_json))
     {!! $schema_json !!}
     @endif
+    @verbatim
     <script type="application/ld+json">
     {
-      "@@context": "https://schema.org",
+      "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Dioreal Dijital",
       "url": "https://dioreal.com",
@@ -68,12 +73,13 @@
     </script>
     <script type="application/ld+json">
     {
-      "@@context": "https://schema.org",
+      "@context": "https://schema.org",
       "@type": "WebSite",
       "url": "https://dioreal.com",
       "name": "Dioreal Dijital"
     }
     </script>
+    @endverbatim
 </head>
 
 <body>
@@ -81,18 +87,18 @@
     <!-- Desktop Nav -->
     <nav id="mainNav">
         <div class="nav-logo-wrapper">
-            <a href="index.html" class="nav-logo">
+            <a href="{{ route('home') }}" class="nav-logo">
                 <span class="logo-text">DIOREAL</span>
             </a>
         </div>
         <ul class="nav-links">
-            <li><a href="hakkimizda.html" data-i18n="nav_about">Hakkımızda</a></li>
-            <li><a href="oteller.html" data-i18n="nav_hotels">Oteller</a></li>
-            <li><a href="yatlar.html" data-i18n="nav_yachts">Yatlar</a></li>
-            <li><a href="restoranlar.html" data-i18n="nav_restaurants">Restoranlar</a></li>
-            <li><a href="destinasyonlar.html" data-i18n="nav_guide">Destinasyonlar</a></li>
-            <li><a href="etkinlikler.html" data-i18n="nav_events">Etkinlikler</a></li>
-            <li><a href="journal.html" data-i18n="nav_journal">Journal</a></li>
+            <li><a href="{{ route('hakkimizda') }}" data-i18n="nav_about">Hakkımızda</a></li>
+            <li><a href="{{ route('oteller') }}" data-i18n="nav_hotels">Oteller</a></li>
+            <li><a href="{{ route('yatlar') }}" data-i18n="nav_yachts">Yatlar</a></li>
+            <li><a href="{{ route('restoranlar') }}" data-i18n="nav_restaurants">Restoranlar</a></li>
+            <li><a href="{{ route('gezi-rehberi') }}" data-i18n="nav_guide">Gezi Rehberi</a></li>
+            <li><a href="{{ route('etkinlikler') }}" data-i18n="nav_events">Etkinlikler</a></li>
+            <li><a href="{{ route('journal') }}" data-i18n="nav_journal">Journal</a></li>
         </ul>
         <div class="nav-right">
             <div class="lang-switch desk-lang">
@@ -109,14 +115,14 @@
     <!-- Fullscreen Nav -->
     <div class="fs-menu" id="fsMenu">
         <ul class="fs-links">
-            <li><a href="hakkimizda.html" data-i18n="nav_about">Hakkımızda</a></li>
-            <li><a href="oteller.html" data-i18n="nav_hotels">Oteller</a></li>
-            <li><a href="yatlar.html" data-i18n="nav_yachts">Yatlar</a></li>
-            <li><a href="restoranlar.html" data-i18n="nav_restaurants">Restoranlar</a></li>
+            <li><a href="{{ route('hakkimizda') }}" data-i18n="nav_about">Hakkımızda</a></li>
+            <li><a href="{{ route('oteller') }}" data-i18n="nav_hotels">Oteller</a></li>
+            <li><a href="{{ route('yatlar') }}" data-i18n="nav_yachts">Yatlar</a></li>
+            <li><a href="{{ route('restoranlar') }}" data-i18n="nav_restaurants">Restoranlar</a></li>
             <div class="fs-divider"></div>
-            <li><a href="destinasyonlar.html" data-i18n="nav_guide">Destinasyonlar</a></li>
-            <li><a href="etkinlikler.html" data-i18n="nav_events">Etkinlikler</a></li>
-            <li><a href="journal.html" data-i18n="nav_journal">Journal</a></li>
+            <li><a href="{{ route('gezi-rehberi') }}" data-i18n="nav_guide">Gezi Rehberi</a></li>
+            <li><a href="{{ route('etkinlikler') }}" data-i18n="nav_events">Etkinlikler</a></li>
+            <li><a href="{{ route('journal') }}" data-i18n="nav_journal">Journal</a></li>
             <li class="lang-switch" style="font-size: 1.5rem; font-family: var(--font-display); justify-content: center; margin-top:3rem;">
                 <span id="lang-tr-fs" class="lang-btn active">TR</span> | <span id="lang-en-fs" class="lang-btn">EN</span>
             </li>
@@ -138,12 +144,12 @@
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title reveal">
-                <span class="lang-text-tr">{!! nl2br(e($settings['hero_title_tr'] ?? 'Türkiye ve dünyada seçkin deneyimlerin kapısını aralıyoruz.')) !!}</span>
-                <span class="lang-text-en">{!! nl2br(e($settings['hero_title_en'] ?? 'Opening doors to exclusive experiences globally.')) !!}</span>
-            </h1>
-            <div class="hero-cta-group reveal" style="transition-delay: 0.2s;">
-                <a href="https://wa.me/{{ $settings['whatsapp'] ?? '905320000000' }}" class="btn btn-outline whatsapp-cta" data-i18n="btn_contact">İletişime Geç</a>
+            <span class="hero-eyebrow" data-i18n="hero_eyebrow">Bağımsız Medya & Lüks Yaşam Platformu</span>
+            <h1 class="hero-title" data-i18n="hero_title">Keşfetmeye Değer <em>Dünyalar</em></h1>
+            <p class="hero-desc" data-i18n="hero_desc">Seçkin destinasyonlar, küresel lüks markalar ve sıra dışı seyahat hikayeleri tek bir çatı altında.</p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                <a href="{{ route('gezi-rehberi') }}" class="btn btn-primary" data-i18n="btn_explore">Koleksiyonu Keşfet</a>
+                <a href="https://wa.me/{{ format_whatsapp($settings['whatsapp'] ?? '') }}" target="_blank" class="btn btn-outline whatsapp-cta" data-i18n="btn_contact">İletişime Geç</a>
             </div>
         </div>
     </section>
@@ -291,7 +297,7 @@
                 <div class="marquee-track">
                     <div class="marquee-content">
                         @foreach($destinations['turkiye'] as $dest)
-                            <a href="{{ route('destinasyon.detay', $dest->id) }}" class="dest-card-h" style="display: block; text-decoration: none; color: inherit;">
+                            <a href="{{ route('destinasyon.detay', $dest->slug_tr ?? $dest->slug_en ?? $dest->id) }}" class="dest-card-h" style="display: block; text-decoration: none; color: inherit;">
                                 <div class="dest-img-container">
                                     <div class="dest-img" style="background-image:url('{{ asset($dest->img) }}'); position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);"></div>
                                 </div>
@@ -317,7 +323,7 @@
                     </div>
                     <div class="marquee-content" aria-hidden="true">
                         @foreach($destinations['turkiye'] as $dest)
-                            <a href="{{ route('destinasyon.detay', $dest->id) }}" class="dest-card-h" style="display: block; text-decoration: none; color: inherit;">
+                            <a href="{{ route('destinasyon.detay', $dest->slug_tr ?? $dest->slug_en ?? $dest->id) }}" class="dest-card-h" style="display: block; text-decoration: none; color: inherit;">
                                 <div class="dest-img-container">
                                     <div class="dest-img" style="background-image:url('{{ asset($dest->img) }}'); position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);"></div>
                                 </div>
@@ -378,7 +384,7 @@
                         <div class="marquee-track">
                             <div class="marquee-content">
                                 @foreach($destinations[$type] as $dest)
-                                    <a href="{{ route('destinasyon.detay', $dest->id) }}" class="dest-card-h" style="display: block; text-decoration: none; color: inherit;">
+                                    <a href="{{ route('destinasyon.detay', $dest->slug_tr ?? $dest->slug_en ?? $dest->id) }}" class="dest-card-h" style="display: block; text-decoration: none; color: inherit;">
                                         <div class="dest-img-container">
                                             <div class="dest-img" style="background-image:url('{{ asset($dest->img) }}'); position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);"></div>
                                         </div>
@@ -404,7 +410,7 @@
                             </div>
                             <div class="marquee-content" aria-hidden="true">
                                 @foreach($destinations[$type] as $dest)
-                                    <a href="{{ route('destinasyon.detay', $dest->id) }}" class="dest-card-h" style="display: block; text-decoration: none; color: inherit;">
+                                    <a href="{{ route('destinasyon.detay', $dest->slug_tr ?? $dest->slug_en ?? $dest->id) }}" class="dest-card-h" style="display: block; text-decoration: none; color: inherit;">
                                         <div class="dest-img-container">
                                             <div class="dest-img" style="background-image:url('{{ asset($dest->img) }}'); position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);"></div>
                                         </div>

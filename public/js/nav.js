@@ -23,18 +23,6 @@ const initNav = () => {
             document.body.style.overflow = '';
         }));
     }
-
-    // Language Switchers
-    document.querySelectorAll('#lang-en, #lang-en-fs').forEach(btn =>
-        btn.addEventListener('click', () => { updateLang('en'); document.dispatchEvent(new CustomEvent('langChanged', { detail: 'en' })); })
-    );
-    document.querySelectorAll('#lang-tr, #lang-tr-fs').forEach(btn =>
-        btn.addEventListener('click', () => { updateLang('tr'); document.dispatchEvent(new CustomEvent('langChanged', { detail: 'tr' })); })
-    );
-
-    // Initial Language Load
-    const savedLang = localStorage.getItem('dioreal_lang') || 'tr';
-    updateLang(savedLang);
 };
 
 document.addEventListener('DOMContentLoaded', initNav);

@@ -32,25 +32,7 @@ const initHome = () => {
         });
     }
 
-    // ── DYNAMIC LANGUAGE TOGGLE FOR DB FIELDS ──
-    const handleDynamicLang = (lang) => {
-        if (lang === 'tr') {
-            document.querySelectorAll('.lang-tr-text').forEach(el => el.style.display = '');
-            document.querySelectorAll('.lang-en-text').forEach(el => el.style.display = 'none');
-        } else {
-            document.querySelectorAll('.lang-tr-text').forEach(el => el.style.display = 'none');
-            document.querySelectorAll('.lang-en-text').forEach(el => el.style.display = '');
-        }
-    };
 
-    // Check initial language
-    const currentLang = localStorage.getItem('dioreal_lang') || 'tr';
-    handleDynamicLang(currentLang);
-
-    // Listen for custom langChanged event from central i18n
-    document.addEventListener('langChanged', (e) => {
-        handleDynamicLang(e.detail);
-    });
 
     /* ── INTERACTIVE MARQUEE SCROLL (MOBILE & DESKTOP) ── */
     const initMarqueeScroll = () => {

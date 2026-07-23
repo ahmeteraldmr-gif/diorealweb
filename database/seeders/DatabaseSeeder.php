@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
         Setting::set('contact_address_en', 'Istanbul, Turkey');
         Setting::set('instagram', 'https://instagram.com');
         Setting::set('linkedin', 'https://linkedin.com');
-        Setting::set('whatsapp', '905320000000');
+        Setting::set('whatsapp', '905449157011');
         Setting::set('footer_copy', '© 2026 Dioreal Dijital. All Rights Reserved.');
         Setting::set('hero_title_tr', "Türkiye ve dünyada seçkin\ndeneyimlerin kapısını aralıyoruz.");
         Setting::set('hero_title_en', "Opening doors to exclusive\nexperiences globally.");

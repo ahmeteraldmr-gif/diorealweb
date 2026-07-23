@@ -50,5 +50,5 @@ body {
 }
 
 /* ── Language Switcher CSS-based display rules ── */
-html[lang="tr"] .lang-text-en { display: none !important; }
-html[lang="en"] .lang-text-tr { display: none !important; }
+html[lang="tr"] .lang-text-en, html[lang="tr"] .lang-en-text { display: none !important; }
+html[lang="en"] .lang-text-tr, html[lang="en"] .lang-tr-text { display: none !important; }

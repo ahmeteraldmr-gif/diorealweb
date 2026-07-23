@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="{{ get_active_locale() }}">
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="base-url" content="{{ url('/') }}">
@@ -15,10 +15,14 @@
     <link rel="stylesheet" href="{{ asset('css/about.css') }}?v={{ time() }}">
     <link rel="stylesheet" href="{{ asset('css/journal.css') }}?v={{ time() }}">
     @php
-        $seo_title = $seo_title ?? 'Dioreal Dijital - Global Deneyim & Medya Platformu';
-        $seo_desc = $seo_desc ?? 'Türkiye ve dünyada seçkin deneyimlerin kapısını aralıyoruz. Lüks oteller, yatlar ve yaşam tarzı markaları için yeni nesil medya platformu.';
-        $og_image = $og_image ?? asset('foto.img/hero_4k.jpg');
-        $canonical = $canonical ?? url()->current();
+        $locale = get_active_locale();
+        $seoData = get_page_seo('journal');
+        $seo_title = $seo_title ?? ($locale === 'en' ? $seoData['title_en'] : $seoData['title_tr']);
+        $seo_desc = $seo_desc ?? ($locale === 'en' ? $seoData['desc_en'] : $seoData['desc_tr']);
+        $og_image = $og_image ?? asset('foto.img/amalfi.jpg');
+        $canonical = $canonical ?? route('journal');
+        $hreflang_tr = $hreflang_tr ?? route('journal');
+        $hreflang_en = $hreflang_en ?? route('journal');
         $noindex = $noindex ?? false;
     @endphp
 
@@ -26,8 +30,8 @@
     <meta name="description" content="{{ $seo_desc }}">
     
     <link rel="canonical" href="{{ $canonical }}">
-    @if(isset($hreflang_tr)) <link rel="alternate" hreflang="tr" href="{{ $hreflang_tr }}" /> @endif
-    @if(isset($hreflang_en)) <link rel="alternate" hreflang="en" href="{{ $hreflang_en }}" /> @endif
+    <link rel="alternate" hreflang="tr" href="{{ $hreflang_tr }}" />
+    <link rel="alternate" hreflang="en" href="{{ $hreflang_en }}" />
     <link rel="alternate" hreflang="x-default" href="{{ $canonical }}" />
 
     @if($noindex)
@@ -54,7 +58,7 @@
 <body>
     <nav id="mainNav">
         <div class="nav-logo-wrapper">
-            <a href="index.html" class="nav-logo">
+            <a href="{{ route('home') }}" class="nav-logo">
                 <span class="logo-text">DIOREAL</span>
             </a>
         </div>
@@ -63,7 +67,7 @@
             <li><a href="{{ route('oteller') }}" data-i18n="nav_hotels">Oteller</a></li>
             <li><a href="{{ route('yatlar') }}" data-i18n="nav_yachts">Yatlar</a></li>
             <li><a href="{{ route('restoranlar') }}" data-i18n="nav_restaurants">Restoranlar</a></li>
-            <li><a href="{{ route('gezi-rehberi') }}" data-i18n="nav_guide">Destinasyonlar</a></li>
+            <li><a href="{{ route('gezi-rehberi') }}" data-i18n="nav_guide">Gezi Rehberi</a></li>
             <li><a href="{{ route('etkinlikler') }}" data-i18n="nav_events">Etkinlikler</a></li>
             <li><a href="{{ route('journal') }}" class="active-page" data-i18n="nav_journal">Journal</a></li>
         </ul>
@@ -85,7 +89,7 @@
             <li><a href="{{ route('yatlar') }}" data-i18n="nav_yachts">Yatlar</a></li>
             <li><a href="{{ route('restoranlar') }}" data-i18n="nav_restaurants">Restoranlar</a></li>
             <div class="fs-divider"></div>
-            <li><a href="{{ route('gezi-rehberi') }}" data-i18n="nav_guide">Destinasyonlar</a></li>
+            <li><a href="{{ route('gezi-rehberi') }}" data-i18n="nav_guide">Gezi Rehberi</a></li>
             <li><a href="{{ route('etkinlikler') }}" data-i18n="nav_events">Etkinlikler</a></li>
             <li><a href="{{ route('journal') }}" data-i18n="nav_journal">Journal</a></li>
             <li style="font-size:1.5rem;font-family:var(--font-display);margin-top:2rem;"><span id="lang-tr-fs" class="lang-btn active">TR</span> | <span id="lang-en-fs" class="lang-btn">EN</span></li>
@@ -118,7 +122,7 @@
                             <span class="lang-text-tr">{{ $featured->desc['tr'] ?? '' }}</span>
                             <span class="lang-text-en">{{ $featured->desc['en'] ?? '' }}</span>
                         </p>
-                        <a href="{{ route('journal.detay', $featured->id) }}" class="btn btn-outline">
+                        <a href="{{ route('journal.detay', $featured->slug_tr ?? $featured->slug_en ?? $featured->id) }}" class="btn btn-outline">
                             <span class="lang-text-tr">Okumaya Devam Et</span>
                             <span class="lang-text-en">Continue Reading</span>
                         </a>
@@ -128,7 +132,7 @@
 
             <div class="journal-side">
                 @foreach($journals->slice(1, 4) as $sideItem)
-                    <div class="journal-side-item" onclick="window.location='{{ route('journal.detay', $sideItem->id) }}'" style="cursor:pointer;">
+                    <div class="journal-side-item" onclick="window.location='{{ route('journal.detay', $sideItem->slug_tr ?? $sideItem->slug_en ?? $sideItem->id) }}'" style="cursor:pointer;">
                         <img src="{{ asset($sideItem->img) }}" alt="{{ $sideItem->title['tr'] ?? '' }}">
                         <div>
                             <span class="journal-date">{{ $sideItem->date }}</span>
@@ -136,7 +140,7 @@
                                 <span class="lang-text-tr">{{ $sideItem->title['tr'] ?? '' }}</span>
                                 <span class="lang-text-en">{{ $sideItem->title['en'] ?? '' }}</span>
                             </div>
-                            <a href="{{ route('journal.detay', $sideItem->id) }}" class="journal-read-more">
+                            <a href="{{ route('journal.detay', $sideItem->slug_tr ?? $sideItem->slug_en ?? $sideItem->id) }}" class="journal-read-more">
                                 <span class="lang-text-tr">Oku &rarr;</span>
                                 <span class="lang-text-en">Read &rarr;</span>
                             </a>
@@ -151,7 +155,7 @@
             <h2 class="content-title reveal" style="margin-bottom:2.5rem;" data-i18n="journal_latest_title">Son <em>Yazılar</em></h2>
             <div class="card-grid">
                 @foreach($journals->slice(5) as $index => $item)
-                    <a href="{{ route('journal.detay', $item->id) }}" class="card reveal" style="transition-delay:{{ ($index % 3) * 0.1 }}s; text-decoration: none; color: inherit; display: block;">
+                    <a href="{{ route('journal.detay', $item->slug_tr ?? $item->slug_en ?? $item->id) }}" class="card reveal" style="transition-delay:{{ ($index % 3) * 0.1 }}s; text-decoration: none; color: inherit; display: block;">
                         <div class="card-img" style="background-image:url('{{ asset($item->img) }}');"></div>
                         <div class="card-body">
                             <span class="card-tag">

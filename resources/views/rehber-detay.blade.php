@@ -1,12 +1,17 @@
 @php
-    $seo_title = $rehber->seo_title_tr ?: ($rehber->title['tr'] ?? 'Detay') . ' - Dioreal';
-    $seo_desc = $rehber->seo_description_tr ?: \Illuminate\Support\Str::limit(strip_tags($rehber->desc['tr'] ?? ''), 155);
+    $locale = get_active_locale();
+    $seo_title = ($locale === 'en')
+        ? ($rehber->seo_title_en ?: ($rehber->title['en'] ?? 'Detay') . ' - Dioreal')
+        : ($rehber->seo_title_tr ?: ($rehber->title['tr'] ?? 'Detay') . ' - Dioreal');
+    $seo_desc = ($locale === 'en')
+        ? ($rehber->seo_description_en ?: \Illuminate\Support\Str::limit(strip_tags($rehber->desc['en'] ?? ''), 155))
+        : ($rehber->seo_description_tr ?: \Illuminate\Support\Str::limit(strip_tags($rehber->desc['tr'] ?? ''), 155));
     $og_image = $rehber->og_image ? asset($rehber->og_image) : asset($rehber->img);
-    $canonical = route('rehber.detay', $rehber->slug_tr ?: $rehber->id);
+    $canonical = $canonical ?? route('rehber.detay', $rehber->slug_tr ?: $rehber->id);
     $noindex = $rehber->seo_noindex;
     
-    $hreflang_tr = route('rehber.detay', $rehber->slug_tr ?: $rehber->id);
-    $hreflang_en = $rehber->slug_en ? route('rehber.detay', $rehber->slug_en) : null;
+    $hreflang_tr = $hreflang_tr ?? route('rehber.detay', $rehber->slug_tr ?: $rehber->id);
+    $hreflang_en = $hreflang_en ?? ($rehber->slug_en ? route('rehber.detay', $rehber->slug_en) : null);
     $og_type = 'Article' == 'Article' ? 'article' : 'website';
 
     $schema_json = '<script type="application/ld+json">
@@ -21,7 +26,7 @@
     </script>';
 @endphp
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="{{ get_active_locale() }}">
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="base-url" content="{{ url('/') }}">
@@ -337,7 +342,7 @@
 
     <!-- Hero Banner -->
     @php
-        $showVideoCover = !empty($rehber->show_video_on_cover) && (!empty($rehber->video_file) || !empty($rehber->video_url));
+        $showVideoCover = !empty($rehber->show_video_on_cover) && (!empty($rehber->video_file) || !empty($rehber->video_url);
         $rehberImg = !empty($rehber->img) ? $rehber->img : 'foto.img/etkinlik_hero.jpg';
         $rehberImgUrl = str_starts_with($rehberImg, 'data:') || str_starts_with($rehberImg, 'http') ? $rehberImg : asset($rehberImg);
     @endphp
@@ -395,7 +400,7 @@
                 </div>
 
                 @foreach($otherGuides as $item)
-                    <a href="{{ route('rehber.detay', $item->id) }}" class="jd-related-item">
+                    <a href="{{ route('rehber.detay', $item->slug_tr ?? $item->slug_en ?? $item->id) }}" class="jd-related-item">
                         <img src="{{ asset($item->img) }}" alt="{{ $item->title['tr'] ?? '' }}">
                         <div>
                             <div class="jd-related-name">

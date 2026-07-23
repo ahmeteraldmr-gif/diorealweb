@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="{{ get_active_locale() }}">
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="base-url" content="{{ url('/') }}">
@@ -114,10 +114,14 @@
         }
     </style>
     @php
-        $seo_title = $seo_title ?? 'Dioreal Dijital - Global Deneyim & Medya Platformu';
-        $seo_desc = $seo_desc ?? 'Türkiye ve dünyada seçkin deneyimlerin kapısını aralıyoruz. Lüks oteller, yatlar ve yaşam tarzı markaları için yeni nesil medya platformu.';
-        $og_image = $og_image ?? asset('foto.img/hero_4k.jpg');
-        $canonical = $canonical ?? url()->current();
+        $locale = get_active_locale();
+        $seoData = get_page_seo('yatlar');
+        $seo_title = $seo_title ?? ($locale === 'en' ? $seoData['title_en'] : $seoData['title_tr']);
+        $seo_desc = $seo_desc ?? ($locale === 'en' ? $seoData['desc_en'] : $seoData['desc_tr']);
+        $og_image = $og_image ?? asset('foto.img/yat_manzara.jpg');
+        $canonical = $canonical ?? route('yatlar');
+        $hreflang_tr = $hreflang_tr ?? route('yatlar');
+        $hreflang_en = $hreflang_en ?? route('yatlar');
         $noindex = $noindex ?? false;
     @endphp
 
@@ -125,8 +129,8 @@
     <meta name="description" content="{{ $seo_desc }}">
     
     <link rel="canonical" href="{{ $canonical }}">
-    @if(isset($hreflang_tr)) <link rel="alternate" hreflang="tr" href="{{ $hreflang_tr }}" /> @endif
-    @if(isset($hreflang_en)) <link rel="alternate" hreflang="en" href="{{ $hreflang_en }}" /> @endif
+    <link rel="alternate" hreflang="tr" href="{{ $hreflang_tr }}" />
+    <link rel="alternate" hreflang="en" href="{{ $hreflang_en }}" />
     <link rel="alternate" hreflang="x-default" href="{{ $canonical }}" />
 
     @if($noindex)
@@ -154,18 +158,18 @@
 
     <nav id="mainNav">
         <div class="nav-logo-wrapper">
-            <a href="index.html" class="nav-logo">
+            <a href="{{ route('home') }}" class="nav-logo">
                 <span class="logo-text">DIOREAL</span>
             </a>
         </div>
         <ul class="nav-links">
-            <li><a href="hakkimizda.html" data-i18n="nav_about">Hakkımızda</a></li>
-            <li><a href="oteller.html" data-i18n="nav_hotels">Oteller</a></li>
-            <li><a href="yatlar.html" class="active-page" data-i18n="nav_yachts">Yatlar</a></li>
-            <li><a href="restoranlar.html" data-i18n="nav_restaurants">Restoranlar</a></li>
-            <li><a href="destinasyonlar.html" data-i18n="nav_guide">Destinasyonlar</a></li>
-            <li><a href="etkinlikler.html" data-i18n="nav_events">Etkinlikler</a></li>
-            <li><a href="journal.html" data-i18n="nav_journal">Journal</a></li>
+            <li><a href="{{ route('hakkimizda') }}" data-i18n="nav_about">Hakkımızda</a></li>
+            <li><a href="{{ route('oteller') }}" data-i18n="nav_hotels">Oteller</a></li>
+            <li><a href="{{ route('yatlar') }}" class="active-page" data-i18n="nav_yachts">Yatlar</a></li>
+            <li><a href="{{ route('restoranlar') }}" data-i18n="nav_restaurants">Restoranlar</a></li>
+            <li><a href="{{ route('gezi-rehberi') }}" data-i18n="nav_guide">Gezi Rehberi</a></li>
+            <li><a href="{{ route('etkinlikler') }}" data-i18n="nav_events">Etkinlikler</a></li>
+            <li><a href="{{ route('journal') }}" data-i18n="nav_journal">Journal</a></li>
         </ul>
         <div class="nav-right">
             <div class="lang-switch desk-lang">
@@ -181,14 +185,14 @@
 
     <div class="fs-menu" id="fsMenu">
         <ul class="fs-links">
-            <li><a href="hakkimizda.html" data-i18n="nav_about">Hakkımızda</a></li>
-            <li><a href="oteller.html" data-i18n="nav_hotels">Oteller</a></li>
-            <li><a href="yatlar.html" data-i18n="nav_yachts">Yatlar</a></li>
-            <li><a href="restoranlar.html" data-i18n="nav_restaurants">Restoranlar</a></li>
+            <li><a href="{{ route('hakkimizda') }}" data-i18n="nav_about">Hakkımızda</a></li>
+            <li><a href="{{ route('oteller') }}" data-i18n="nav_hotels">Oteller</a></li>
+            <li><a href="{{ route('yatlar') }}" data-i18n="nav_yachts">Yatlar</a></li>
+            <li><a href="{{ route('restoranlar') }}" data-i18n="nav_restaurants">Restoranlar</a></li>
             <div class="fs-divider"></div>
-            <li><a href="destinasyonlar.html" data-i18n="nav_guide">Destinasyonlar</a></li>
-            <li><a href="etkinlikler.html" data-i18n="nav_events">Etkinlikler</a></li>
-            <li><a href="journal.html" data-i18n="nav_journal">Journal</a></li>
+            <li><a href="{{ route('gezi-rehberi') }}" data-i18n="nav_guide">Gezi Rehberi</a></li>
+            <li><a href="{{ route('etkinlikler') }}" data-i18n="nav_events">Etkinlikler</a></li>
+            <li><a href="{{ route('journal') }}" data-i18n="nav_journal">Journal</a></li>
             <li style="font-size: 1.5rem; font-family: var(--font-display); margin-top: 2rem;">
                 <span id="lang-tr-fs" class="lang-btn active">TR</span> | <span id="lang-en-fs" class="lang-btn">EN</span>
             </li>
@@ -238,7 +242,7 @@
                         <p class="card-desc lang-text-en">{{ $y->desc["en"] ?? "" }}</p>
                         
                         <div class="yacht-card-footer">
-                            <a href="{{ route('yat.detay', $y->id) }}" class="btn-yacht-detail">
+                            <a href="{{ route('yat.detay', $y->slug_tr ?? $y->slug_en ?? $y->id) }}" class="btn-yacht-detail">
                                 <span class="lang-text-tr">Detayları İncele</span>
                                 <span class="lang-text-en">View Details</span>
                                 <i class="fas fa-arrow-right"></i>
@@ -256,7 +260,7 @@
                 <span class="content-eyebrow" data-i18n="yacht_route_eye">Güzergah Planlaması</span>
                 <h2 class="content-title" data-i18n="yacht_route_title">Her yolculuk <em>size özel</em></h2>
                 <p class="content-body" data-i18n="yacht_route_p1">Bodrum'dan Marmaris'e mavi yolculuk, Ege adaları turu ya da Akdeniz'den Adriyatik'e uzanan epik rotalar — siz hayal edin, biz planlayalım. Deneyimli kaptanlarımız ve özel aşçılarımızla konfor ve lüks güvencesinde.</p>
-                <a href="#" class="btn btn-outline" data-i18n="btn_plan_route">Rota Planlat</a>
+                <a href="https://wa.me/{{ format_whatsapp($settings['whatsapp'] ?? '') }}" target="_blank" class="btn btn-outline" data-i18n="btn_plan_route">Rota Planlat</a>
             </div>
             <div class="reveal" style="transition-delay: 0.2s;">
                 <img src="foto.img/yat_rota.jpg" alt="Yat Rotası" style="width:100%; aspect-ratio: 4/3; object-fit: cover;">

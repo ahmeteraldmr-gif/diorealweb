@@ -1,12 +1,17 @@
 @php
-    $seo_title = $restoran->seo_title_tr ?: ($restoran->name['tr'] ?? 'Detay') . ' - Dioreal';
-    $seo_desc = $restoran->seo_description_tr ?: \Illuminate\Support\Str::limit(strip_tags($restoran->desc['tr'] ?? ''), 155);
+    $locale = get_active_locale();
+    $seo_title = ($locale === 'en')
+        ? ($restoran->seo_title_en ?: ($restoran->name['en'] ?? 'Detay') . ' - Dioreal')
+        : ($restoran->seo_title_tr ?: ($restoran->name['tr'] ?? 'Detay') . ' - Dioreal');
+    $seo_desc = ($locale === 'en')
+        ? ($restoran->seo_description_en ?: \Illuminate\Support\Str::limit(strip_tags($restoran->desc['en'] ?? ''), 155))
+        : ($restoran->seo_description_tr ?: \Illuminate\Support\Str::limit(strip_tags($restoran->desc['tr'] ?? ''), 155));
     $og_image = $restoran->og_image ? asset($restoran->og_image) : asset($restoran->img);
-    $canonical = route('restoran.detay', $restoran->slug_tr ?: $restoran->id);
+    $canonical = $canonical ?? route('restoran.detay', $restoran->slug_tr ?: $restoran->id);
     $noindex = $restoran->seo_noindex;
     
-    $hreflang_tr = route('restoran.detay', $restoran->slug_tr ?: $restoran->id);
-    $hreflang_en = $restoran->slug_en ? route('restoran.detay', $restoran->slug_en) : null;
+    $hreflang_tr = $hreflang_tr ?? route('restoran.detay', $restoran->slug_tr ?: $restoran->id);
+    $hreflang_en = $hreflang_en ?? ($restoran->slug_en ? route('restoran.detay', $restoran->slug_en) : null);
     $og_type = 'Restaurant' == 'Article' ? 'article' : 'website';
 
     $schema_json = '<script type="application/ld+json">
@@ -21,7 +26,7 @@
     </script>';
 @endphp
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="{{ get_active_locale() }}">
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="base-url" content="{{ url('/') }}">
@@ -87,7 +92,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3);
             z-index: 1;
         }
         .page-hero-content {
@@ -276,7 +281,7 @@
         /* Square grid layout */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr);
             gap: 1.5rem;
         }
         
@@ -406,7 +411,7 @@
 
     <!-- Page Hero -->
     @php
-        $showVideoCover = !empty($restoran->show_video_on_cover) && (!empty($restoran->video_file) || !empty($restoran->video_url));
+        $showVideoCover = !empty($restoran->show_video_on_cover) && (!empty($restoran->video_file) || !empty($restoran->video_url);
         $restImg = !empty($restoran->img) ? $restoran->img : 'foto.img/etkinlik_hero.jpg';
         $restImgUrl = str_starts_with($restImg, 'data:') || str_starts_with($restImg, 'http') ? $restImg : asset($restImg);
     @endphp
@@ -480,7 +485,7 @@
                     </div>
                 </div>
 
-                <a href="https://wa.me/{{ $settings['whatsapp'] ?? '905320000000' }}?text=Merhaba,%20{{ urlencode($restoran->name['tr'] ?? $restoran->name['en'] ?? 'Restoran') }}%20hakkında%20detaylı%20bilgi%20ve%20masa%20rezervasyon%20talebinde%20bulunmak%20istiyorum." 
+                <a href="https://wa.me/{{ format_whatsapp($settings['whatsapp'] ?? '') }}?text=Merhaba,%20{{ urlencode($restoran->name['tr'] ?? $restoran->name['en'] ?? 'Restoran') }}%20hakkında%20detaylı%20bilgi%20ve%20masa%20rezervasyon%20talebinde%20bulunmak%20istiyorum." 
                    target="_blank" 
                    class="btn-booking">
                     <i class="fab fa-whatsapp"></i>

@@ -15,13 +15,13 @@ class SitemapController extends Controller
 {
     public function index()
     {
-        $hotels = Hotel::all();
-        $restaurants = Restaurant::all();
-        $yachts = Yacht::all();
-        $destinations = Destination::all();
-        $events = Event::all();
-        $journals = Journal::all();
-        $guides = Guide::all();
+        $hotels = Hotel::where('seo_noindex', 0)->orWhereNull('seo_noindex')->get();
+        $restaurants = Restaurant::where('seo_noindex', 0)->orWhereNull('seo_noindex')->get();
+        $yachts = Yacht::where('seo_noindex', 0)->orWhereNull('seo_noindex')->get();
+        $destinations = Destination::where('seo_noindex', 0)->orWhereNull('seo_noindex')->get();
+        $events = Event::where('seo_noindex', 0)->orWhereNull('seo_noindex')->get();
+        $journals = Journal::where('seo_noindex', 0)->orWhereNull('seo_noindex')->get();
+        $guides = Guide::where('seo_noindex', 0)->orWhereNull('seo_noindex')->get();
 
         return response()->view('sitemap', compact(
             'hotels',

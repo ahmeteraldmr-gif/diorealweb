@@ -1,12 +1,17 @@
 @php
-    $seo_title = $yat->seo_title_tr ?: ($yat->name['tr'] ?? 'Detay') . ' - Dioreal';
-    $seo_desc = $yat->seo_description_tr ?: \Illuminate\Support\Str::limit(strip_tags($yat->desc['tr'] ?? ''), 155);
+    $locale = get_active_locale();
+    $seo_title = ($locale === 'en')
+        ? ($yat->seo_title_en ?: ($yat->name['en'] ?? 'Detay') . ' - Dioreal')
+        : ($yat->seo_title_tr ?: ($yat->name['tr'] ?? 'Detay') . ' - Dioreal');
+    $seo_desc = ($locale === 'en')
+        ? ($yat->seo_description_en ?: \Illuminate\Support\Str::limit(strip_tags($yat->desc['en'] ?? ''), 155))
+        : ($yat->seo_description_tr ?: \Illuminate\Support\Str::limit(strip_tags($yat->desc['tr'] ?? ''), 155));
     $og_image = $yat->og_image ? asset($yat->og_image) : asset($yat->img);
-    $canonical = route('yat.detay', $yat->slug_tr ?: $yat->id);
+    $canonical = $canonical ?? route('yat.detay', $yat->slug_tr ?: $yat->id);
     $noindex = $yat->seo_noindex;
     
-    $hreflang_tr = route('yat.detay', $yat->slug_tr ?: $yat->id);
-    $hreflang_en = $yat->slug_en ? route('yat.detay', $yat->slug_en) : null;
+    $hreflang_tr = $hreflang_tr ?? route('yat.detay', $yat->slug_tr ?: $yat->id);
+    $hreflang_en = $hreflang_en ?? ($yat->slug_en ? route('yat.detay', $yat->slug_en) : null);
     $og_type = 'Product' == 'Article' ? 'article' : 'website';
 
     $schema_json = '<script type="application/ld+json">
@@ -21,7 +26,7 @@
     </script>';
 @endphp
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="{{ get_active_locale() }}">
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="base-url" content="{{ url('/') }}">
@@ -87,7 +92,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3);
             z-index: 1;
         }
         .page-hero-content {
@@ -383,7 +388,7 @@
 
     <!-- Page Hero -->
     @php
-        $showVideoCover = !empty($yat->show_video_on_cover) && (!empty($yat->video_file) || !empty($yat->video_url));
+        $showVideoCover = !empty($yat->show_video_on_cover) && (!empty($yat->video_file) || !empty($yat->video_url);
         $yatImg = !empty($yat->img) ? $yat->img : 'foto.img/yat_hero.jpg';
         $yatImgUrl = str_starts_with($yatImg, 'data:') || str_starts_with($yatImg, 'http') ? $yatImg : asset($yatImg);
     @endphp
@@ -457,7 +462,7 @@
                     </div>
                 </div>
 
-                <a href="https://wa.me/{{ $settings['whatsapp'] ?? '905320000000' }}?text=Merhaba,%20{{ urlencode($yat->name['tr'] ?? $yat->name['en'] ?? 'Yat') }}%20hakkında%20detaylı%20bilgi%20ve%20kiralama%20koşullarını%20öğrenmek%20istiyorum." 
+                <a href="https://wa.me/{{ format_whatsapp($settings['whatsapp'] ?? '') }}?text=Merhaba,%20{{ urlencode($yat->name['tr'] ?? $yat->name['en'] ?? 'Yat') }}%20hakkında%20detaylı%20bilgi%20ve%20kiralama%20koşullarını%20öğrenmek%20istiyorum." 
                    target="_blank" 
                    class="btn-booking">
                     <i class="fab fa-whatsapp"></i>
