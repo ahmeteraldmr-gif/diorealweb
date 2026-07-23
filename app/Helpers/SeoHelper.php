@@ -97,7 +97,7 @@ if (!function_exists('get_page_seo')) {
                 'desc_en'  => 'Comprehensive destination guides, travel itineraries, and cultural stories from Bodrum to Kyoto.',
             ],
             'etkinlikler' => [
-                'title_tr' => 'Küresel Etkinlikler & Özel Festival Calendar — Dioreal Dijital',
+                'title_tr' => 'Küresel Etkinlikler & Özel Festival Takvimi — Dioreal Dijital',
                 'title_en' => 'Global Events & Exclusive Festivals Calendar — Dioreal Digital',
                 'desc_tr'  => 'Dünyanın en saygın kültür, sanat, film festivalleri ve yat şovlarından güncel etkinlik takvimi.',
                 'desc_en'  => 'Curated calendar of prestigious international art festivals, film galas, yacht shows, and cultural gatherings.',
@@ -110,6 +110,16 @@ if (!function_exists('get_page_seo')) {
             ],
         ];
 
-        return $seoMap[$pageKey] ?? $seoMap['home'];
+        $default = $seoMap[$pageKey] ?? $seoMap['home'];
+
+        try {
+            $settings = view()->shared('settings') ?? [];
+            if (!empty($settings["seo_title_{$pageKey}_tr"])) $default['title_tr'] = $settings["seo_title_{$pageKey}_tr"];
+            if (!empty($settings["seo_title_{$pageKey}_en"])) $default['title_en'] = $settings["seo_title_{$pageKey}_en"];
+            if (!empty($settings["seo_desc_{$pageKey}_tr"]))  $default['desc_tr']  = $settings["seo_desc_{$pageKey}_tr"];
+            if (!empty($settings["seo_desc_{$pageKey}_en"]))  $default['desc_en']  = $settings["seo_desc_{$pageKey}_en"];
+        } catch (\Throwable $e) {}
+
+        return $default;
     }
 }
