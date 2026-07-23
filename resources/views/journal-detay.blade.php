@@ -1,24 +1,39 @@
 @php
     $locale = get_active_locale();
+
+    $titleTr = is_array($journal->title) ? ($journal->title['tr'] ?? '') : (string)$journal->title;
+    $titleEn = is_array($journal->title) ? ($journal->title['en'] ?? $titleTr) : (string)$journal->title;
+
+    $descTr = is_array($journal->desc) ? ($journal->desc['tr'] ?? '') : (string)$journal->desc;
+    $descEn = is_array($journal->desc) ? ($journal->desc['en'] ?? $descTr) : (string)$journal->desc;
+
+    $tagTr = is_array($journal->tag) ? ($journal->tag['tr'] ?? 'Journal') : (string)($journal->tag ?: 'Journal');
+    $tagEn = is_array($journal->tag) ? ($journal->tag['en'] ?? $tagTr) : (string)($journal->tag ?: 'Journal');
+
+    $contentTr = is_array($journal->content) ? ($journal->content['tr'] ?? '') : (string)$journal->content;
+    $contentEn = is_array($journal->content) ? ($journal->content['en'] ?? $contentTr) : (string)$journal->content;
+
     $seo_title = ($locale === 'en')
-        ? ($journal->seo_title_en ?: ($journal->title['en'] ?? 'Detay') . ' - Dioreal')
-        : ($journal->seo_title_tr ?: ($journal->title['tr'] ?? 'Detay') . ' - Dioreal');
+        ? ($journal->seo_title_en ?: ($titleEn ?: 'Detay') . ' - Dioreal')
+        : ($journal->seo_title_tr ?: ($titleTr ?: 'Detay') . ' - Dioreal');
+
     $seo_desc = ($locale === 'en')
-        ? ($journal->seo_description_en ?: \Illuminate\Support\Str::limit(strip_tags($journal->desc['en'] ?? ''), 155))
-        : ($journal->seo_description_tr ?: \Illuminate\Support\Str::limit(strip_tags($journal->desc['tr'] ?? ''), 155));
-    $og_image = $journal->og_image ? asset($journal->og_image) : asset($journal->img);
-    $canonical = $canonical ?? route('journal.detay', $journal->slug_tr ?: $journal->id);
+        ? ($journal->seo_description_en ?: \Illuminate\Support\Str::limit(strip_tags($descEn), 155))
+        : ($journal->seo_description_tr ?: \Illuminate\Support\Str::limit(strip_tags($descTr), 155));
+
+    $og_image = $journal->og_image ? asset($journal->og_image) : asset($journal->img ?: 'foto.img/amalfi.jpg');
+    $canonical = $canonical ?? route('journal.detay', $journal->slug_tr ?: ($journal->slug_en ?: $journal->id));
     $noindex = $journal->seo_noindex;
-    
-    $hreflang_tr = $hreflang_tr ?? route('journal.detay', $journal->slug_tr ?: $journal->id);
+
+    $hreflang_tr = $hreflang_tr ?? route('journal.detay', $journal->slug_tr ?: ($journal->slug_en ?: $journal->id));
     $hreflang_en = $hreflang_en ?? ($journal->slug_en ? route('journal.detay', $journal->slug_en) : null);
-    $og_type = 'Article' == 'Article' ? 'article' : 'website';
+    $og_type = 'article';
 
     $schema_json = '<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "name": "'.addslashes($journal->title['tr'] ?? '').'",
+      "name": "'.addslashes($titleTr).'",
       "description": "'.addslashes($seo_desc).'",
       "image": "'.$og_image.'",
       "url": "'.$canonical.'"
@@ -392,8 +407,8 @@
         @endif
         <div class="jd-hero-content" style="position: relative; z-index: 2;">
             <div class="jd-eyebrow">
-                <span class="lang-text-tr">{{ $journal->tag['tr'] ?? 'Journal' }}</span>
-                <span class="lang-text-en">{{ $journal->tag['en'] ?? 'Journal' }}</span>
+                <span class="lang-text-tr">{{ $tagTr }}</span>
+                <span class="lang-text-en">{{ $tagEn }}</span>
                 <span>|</span>
                 {{ $journal->date }}
                 @if($journal->read_time)
@@ -403,8 +418,8 @@
                 @endif
             </div>
             <h1 class="jd-title">
-                <span class="lang-text-tr">{{ $journal->title['tr'] ?? '' }}</span>
-                <span class="lang-text-en">{{ $journal->title['en'] ?? '' }}</span>
+                <span class="lang-text-tr">{{ $titleTr }}</span>
+                <span class="lang-text-en">{{ $titleEn }}</span>
             </h1>
         </div>
     </div>
@@ -415,15 +430,15 @@
         <article class="jd-article">
             <!-- Lead / Summary -->
             <div class="jd-lead">
-                <span class="lang-text-tr">{{ $journal->desc['tr'] ?? '' }}</span>
-                <span class="lang-text-en">{{ $journal->desc['en'] ?? '' }}</span>
+                <span class="lang-text-tr">{{ $descTr }}</span>
+                <span class="lang-text-en">{{ $descEn }}</span>
             </div>
 
             <!-- Full Content -->
-            @if($journal->content && (($journal->content['tr'] ?? '') || ($journal->content['en'] ?? '')))
+            @if(!empty($contentTr) || !empty($contentEn))
                 <div class="jd-content">
-                    <div class="lang-text-tr">{!! $journal->content['tr'] ?? '' !!}</div>
-                    <div class="lang-text-en">{!! $journal->content['en'] ?? '' !!}</div>
+                    <div class="lang-text-tr">{!! $contentTr !!}</div>
+                    <div class="lang-text-en">{!! $contentEn !!}</div>
                 </div>
             @else
                 <div class="jd-content" style="color: var(--mid-gray); text-align: center; padding: 4rem 0;">
