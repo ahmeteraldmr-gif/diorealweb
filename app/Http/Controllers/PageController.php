@@ -18,7 +18,11 @@ class PageController extends Controller
         $item = $modelClass::where('slug_tr', $slug_or_id)
             ->orWhere('slug_en', $slug_or_id)
             ->orWhere('id', $slug_or_id)
-            ->firstOrFail();
+            ->first();
+
+        if (!$item) {
+            abort(404);
+        }
 
         // If accessed by numeric ID, 301 redirect to canonical slug URL
         if (is_numeric($slug_or_id)) {
