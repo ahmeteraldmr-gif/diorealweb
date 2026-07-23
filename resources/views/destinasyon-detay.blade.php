@@ -372,7 +372,7 @@
                                 <p class="card-desc lang-text-tr">{{ $otel->desc["tr"] ?? "" }}</p>
                                 <p class="card-desc lang-text-en">{{ $otel->desc["en"] ?? "" }}</p>
                                 
-                                <a href="{{ route('otel.detay', $otel->slug_tr ?? $otel->slug_en ?? $otel->id) }}" class="btn btn-primary" style="margin-top:1rem; padding: 0.5rem 1rem;">
+                                <a href="{{ route('otel.detay', $otel->slug_tr ?: ($otel->slug_en ?: $otel->id)) }}" class="btn btn-primary" style="margin-top:1rem; padding: 0.5rem 1rem;">
                                     <span class="lang-text-tr">Detayları İncele</span>
                                     <span class="lang-text-en">View Details</span>
                                 </a>
@@ -421,7 +421,7 @@
                                 <p class="card-desc lang-text-tr">{{ $restoran->desc["tr"] ?? "" }}</p>
                                 <p class="card-desc lang-text-en">{{ $restoran->desc["en"] ?? "" }}</p>
                                 
-                                <a href="{{ route('restoran.detay', $restoran->slug_tr ?? $restoran->slug_en ?? $restoran->id) }}" class="btn btn-primary" style="margin-top:1rem; padding: 0.5rem 1rem;">
+                                <a href="{{ route('restoran.detay', $restoran->slug_tr ?: ($restoran->slug_en ?: $restoran->id)) }}" class="btn btn-primary" style="margin-top:1rem; padding: 0.5rem 1rem;">
                                     <span class="lang-text-tr">Detayları İncele</span>
                                     <span class="lang-text-en">View Details</span>
                                 </a>
@@ -451,7 +451,7 @@
                                 <p class="card-desc lang-text-tr">{{ $journal->desc["tr"] ?? "" }}</p>
                                 <p class="card-desc lang-text-en">{{ $journal->desc["en"] ?? "" }}</p>
                                 
-                                <a href="{{ route('journal.detay', $journal->slug_tr ?? $journal->slug_en ?? $journal->id) }}" class="btn btn-primary" style="margin-top:1rem; padding: 0.5rem 1rem;">
+                                <a href="{{ route('journal.detay', $journal->slug_tr ?: ($journal->slug_en ?: $journal->id)) }}" class="btn btn-primary" style="margin-top:1rem; padding: 0.5rem 1rem;">
                                     <span class="lang-text-tr">Okumaya Başla</span>
                                     <span class="lang-text-en">Read More</span>
                                 </a>

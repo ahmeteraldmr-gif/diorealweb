@@ -8,7 +8,7 @@
         <div class="panel-card-header">
             <h3 class="panel-card-title"><i class="fas fa-edit"></i> Journal Düzenleme Formu</h3>
             <div style="display:flex; gap:0.75rem;">
-                <a href="<?php echo e(route('journal.detay', $journal->slug_tr ?? $journal->slug_en ?? $journal->id)); ?>" class="btn btn-outline" target="_blank">
+                <a href="<?php echo e(route('journal.detay', $journal->slug_tr ?: ($journal->slug_en ?: $journal->id))); ?>" class="btn btn-outline" target="_blank">
                     <i class="fas fa-eye"></i> Görüntüle
                 </a>
                 <a href="<?php echo e(route('admin.journals.index')); ?>" class="btn btn-outline">

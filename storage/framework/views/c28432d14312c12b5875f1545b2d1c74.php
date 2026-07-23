@@ -298,7 +298,7 @@
                 <div class="marquee-track">
                     <div class="marquee-content">
                         <?php $__currentLoopData = $destinations['turkiye']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dest): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <a href="<?php echo e(route('destinasyon.detay', $dest->slug_tr ?? $dest->slug_en ?? $dest->id)); ?>" class="dest-card-h" style="display: block; text-decoration: none; color: inherit;">
+                            <a href="<?php echo e(route('destinasyon.detay', $dest->slug_tr ?: ($dest->slug_en ?: $dest->id))); ?>" class="dest-card-h" style="display: block; text-decoration: none; color: inherit;">
                                 <div class="dest-img-container">
                                     <div class="dest-img" style="background-image:url('<?php echo e(asset($dest->img)); ?>'); position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);"></div>
                                 </div>
@@ -324,7 +324,7 @@
                     </div>
                     <div class="marquee-content" aria-hidden="true">
                         <?php $__currentLoopData = $destinations['turkiye']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dest): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <a href="<?php echo e(route('destinasyon.detay', $dest->slug_tr ?? $dest->slug_en ?? $dest->id)); ?>" class="dest-card-h" style="display: block; text-decoration: none; color: inherit;">
+                            <a href="<?php echo e(route('destinasyon.detay', $dest->slug_tr ?: ($dest->slug_en ?: $dest->id))); ?>" class="dest-card-h" style="display: block; text-decoration: none; color: inherit;">
                                 <div class="dest-img-container">
                                     <div class="dest-img" style="background-image:url('<?php echo e(asset($dest->img)); ?>'); position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);"></div>
                                 </div>
@@ -385,7 +385,7 @@
                         <div class="marquee-track">
                             <div class="marquee-content">
                                 <?php $__currentLoopData = $destinations[$type]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dest): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <a href="<?php echo e(route('destinasyon.detay', $dest->slug_tr ?? $dest->slug_en ?? $dest->id)); ?>" class="dest-card-h" style="display: block; text-decoration: none; color: inherit;">
+                                    <a href="<?php echo e(route('destinasyon.detay', $dest->slug_tr ?: ($dest->slug_en ?: $dest->id))); ?>" class="dest-card-h" style="display: block; text-decoration: none; color: inherit;">
                                         <div class="dest-img-container">
                                             <div class="dest-img" style="background-image:url('<?php echo e(asset($dest->img)); ?>'); position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);"></div>
                                         </div>
@@ -411,7 +411,7 @@
                             </div>
                             <div class="marquee-content" aria-hidden="true">
                                 <?php $__currentLoopData = $destinations[$type]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dest): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <a href="<?php echo e(route('destinasyon.detay', $dest->slug_tr ?? $dest->slug_en ?? $dest->id)); ?>" class="dest-card-h" style="display: block; text-decoration: none; color: inherit;">
+                                    <a href="<?php echo e(route('destinasyon.detay', $dest->slug_tr ?: ($dest->slug_en ?: $dest->id))); ?>" class="dest-card-h" style="display: block; text-decoration: none; color: inherit;">
                                         <div class="dest-img-container">
                                             <div class="dest-img" style="background-image:url('<?php echo e(asset($dest->img)); ?>'); position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);"></div>
                                         </div>

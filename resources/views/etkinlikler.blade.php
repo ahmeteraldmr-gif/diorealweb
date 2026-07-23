@@ -261,7 +261,7 @@
                             <p class="event-card-desc lang-text-en">{{ $e->desc["en"] ?? "" }}</p>
 
                             <div class="event-card-btn-wrapper">
-                                <a href="{{ route('etkinlik.detay', $e->slug_tr ?? $e->slug_en ?? $e->id) }}" class="btn btn-outline" style="display: block; text-align: center; text-decoration: none;">
+                                <a href="{{ route('etkinlik.detay', $e->slug_tr ?: ($e->slug_en ?: $e->id)) }}" class="btn btn-outline" style="display: block; text-align: center; text-decoration: none;">
                                     <span class="lang-text-tr">Etkinliği İncele</span>
                                     <span class="lang-text-en">Review Event</span>
                                 </a>

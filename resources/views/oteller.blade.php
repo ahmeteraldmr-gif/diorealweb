@@ -394,7 +394,7 @@
                         <p class="hotel-desc lang-text-tr">{{ $otel->desc["tr"] ?? "" }}</p>
                         <p class="hotel-desc lang-text-en">{{ $otel->desc["en"] ?? "" }}</p>
                         
-                        <a href="{{ route('otel.detay', $otel->slug_tr ?? $otel->slug_en ?? $otel->id) }}" class="btn-bd">
+                        <a href="{{ route('otel.detay', $otel->slug_tr ?: ($otel->slug_en ?: $otel->id)) }}" class="btn-bd">
                             <span class="lang-text-tr">Detayları İncele</span>
                             <span class="lang-text-en">Explore Destination</span>
                             <i class="fas fa-chevron-right"></i>

@@ -400,7 +400,7 @@
                 </div>
 
                 @foreach($otherGuides as $item)
-                    <a href="{{ route('rehber.detay', $item->slug_tr ?? $item->slug_en ?? $item->id) }}" class="jd-related-item">
+                    <a href="{{ route('rehber.detay', $item->slug_tr ?: ($item->slug_en ?: $item->id)) }}" class="jd-related-item">
                         <img src="{{ asset($item->img) }}" alt="{{ $item->title['tr'] ?? '' }}">
                         <div>
                             <div class="jd-related-name">

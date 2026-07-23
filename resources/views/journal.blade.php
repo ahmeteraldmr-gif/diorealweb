@@ -108,21 +108,25 @@
         <div class="journal-grid reveal">
             @if($featured = $journals->first())
                 <div class="journal-featured">
-                    <img src="{{ asset($featured->img) }}" alt="{{ $featured->title['tr'] ?? '' }}">
+                    <a href="{{ route('journal.detay', $featured->slug_tr ?: ($featured->slug_en ?: $featured->id)) }}">
+                        <img src="{{ asset($featured->img) }}" alt="{{ $featured->title['tr'] ?? '' }}" style="cursor: pointer;">
+                    </a>
                     <div class="journal-featured-info">
                         <span class="card-tag">
                             <span class="lang-text-tr">{{ $featured->tag['tr'] ?? '' }}</span>
                             <span class="lang-text-en">{{ $featured->tag['en'] ?? '' }}</span>
                         </span>
-                        <div class="journal-title" style="font-family: var(--font-display); font-size: 2rem; font-weight: 300; margin: 1rem 0;">
-                            <span class="lang-text-tr">{{ $featured->title['tr'] ?? '' }}</span>
-                            <span class="lang-text-en">{{ $featured->title['en'] ?? '' }}</span>
-                        </div>
+                        <a href="{{ route('journal.detay', $featured->slug_tr ?: ($featured->slug_en ?: $featured->id)) }}" style="text-decoration: none; color: inherit;">
+                            <div class="journal-title" style="font-family: var(--font-display); font-size: 2rem; font-weight: 300; margin: 1rem 0;">
+                                <span class="lang-text-tr">{{ $featured->title['tr'] ?? '' }}</span>
+                                <span class="lang-text-en">{{ $featured->title['en'] ?? '' }}</span>
+                            </div>
+                        </a>
                         <p style="color:var(--dark-gray);font-size:.95rem;line-height:1.8;margin-bottom:1.5rem;">
                             <span class="lang-text-tr">{{ $featured->desc['tr'] ?? '' }}</span>
                             <span class="lang-text-en">{{ $featured->desc['en'] ?? '' }}</span>
                         </p>
-                        <a href="{{ route('journal.detay', $featured->slug_tr ?? $featured->slug_en ?? $featured->id) }}" class="btn btn-outline">
+                        <a href="{{ route('journal.detay', $featured->slug_tr ?: ($featured->slug_en ?: $featured->id)) }}" class="btn btn-outline">
                             <span class="lang-text-tr">Okumaya Devam Et</span>
                             <span class="lang-text-en">Continue Reading</span>
                         </a>
@@ -132,7 +136,7 @@
 
             <div class="journal-side">
                 @foreach($journals->slice(1, 4) as $sideItem)
-                    <div class="journal-side-item" onclick="window.location='{{ route('journal.detay', $sideItem->slug_tr ?? $sideItem->slug_en ?? $sideItem->id) }}'" style="cursor:pointer;">
+                    <div class="journal-side-item" onclick="window.location='{{ route('journal.detay', $sideItem->slug_tr ?: ($sideItem->slug_en ?: $sideItem->id)) }}'" style="cursor:pointer;">
                         <img src="{{ asset($sideItem->img) }}" alt="{{ $sideItem->title['tr'] ?? '' }}">
                         <div>
                             <span class="journal-date">{{ $sideItem->date }}</span>
@@ -140,7 +144,7 @@
                                 <span class="lang-text-tr">{{ $sideItem->title['tr'] ?? '' }}</span>
                                 <span class="lang-text-en">{{ $sideItem->title['en'] ?? '' }}</span>
                             </div>
-                            <a href="{{ route('journal.detay', $sideItem->slug_tr ?? $sideItem->slug_en ?? $sideItem->id) }}" class="journal-read-more">
+                            <a href="{{ route('journal.detay', $sideItem->slug_tr ?: ($sideItem->slug_en ?: $sideItem->id)) }}" class="journal-read-more">
                                 <span class="lang-text-tr">Oku &rarr;</span>
                                 <span class="lang-text-en">Read &rarr;</span>
                             </a>
@@ -155,7 +159,7 @@
             <h2 class="content-title reveal" style="margin-bottom:2.5rem;" data-i18n="journal_latest_title">Son <em>Yazılar</em></h2>
             <div class="card-grid">
                 @foreach($journals->slice(5) as $index => $item)
-                    <a href="{{ route('journal.detay', $item->slug_tr ?? $item->slug_en ?? $item->id) }}" class="card reveal" style="transition-delay:{{ ($index % 3) * 0.1 }}s; text-decoration: none; color: inherit; display: block;">
+                    <a href="{{ route('journal.detay', $item->slug_tr ?: ($item->slug_en ?: $item->id)) }}" class="card reveal" style="transition-delay:{{ ($index % 3) * 0.1 }}s; text-decoration: none; color: inherit; display: block;">
                         <div class="card-img" style="background-image:url('{{ asset($item->img) }}');"></div>
                         <div class="card-body">
                             <span class="card-tag">

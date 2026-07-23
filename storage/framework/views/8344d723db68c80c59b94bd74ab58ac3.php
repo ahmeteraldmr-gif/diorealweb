@@ -376,7 +376,7 @@
                                 <p class="card-desc lang-text-tr"><?php echo e($otel->desc["tr"] ?? ""); ?></p>
                                 <p class="card-desc lang-text-en"><?php echo e($otel->desc["en"] ?? ""); ?></p>
                                 
-                                <a href="<?php echo e(route('otel.detay', $otel->slug_tr ?? $otel->slug_en ?? $otel->id)); ?>" class="btn btn-primary" style="margin-top:1rem; padding: 0.5rem 1rem;">
+                                <a href="<?php echo e(route('otel.detay', $otel->slug_tr ?: ($otel->slug_en ?: $otel->id))); ?>" class="btn btn-primary" style="margin-top:1rem; padding: 0.5rem 1rem;">
                                     <span class="lang-text-tr">Detayları İncele</span>
                                     <span class="lang-text-en">View Details</span>
                                 </a>
@@ -425,7 +425,7 @@
                                 <p class="card-desc lang-text-tr"><?php echo e($restoran->desc["tr"] ?? ""); ?></p>
                                 <p class="card-desc lang-text-en"><?php echo e($restoran->desc["en"] ?? ""); ?></p>
                                 
-                                <a href="<?php echo e(route('restoran.detay', $restoran->slug_tr ?? $restoran->slug_en ?? $restoran->id)); ?>" class="btn btn-primary" style="margin-top:1rem; padding: 0.5rem 1rem;">
+                                <a href="<?php echo e(route('restoran.detay', $restoran->slug_tr ?: ($restoran->slug_en ?: $restoran->id))); ?>" class="btn btn-primary" style="margin-top:1rem; padding: 0.5rem 1rem;">
                                     <span class="lang-text-tr">Detayları İncele</span>
                                     <span class="lang-text-en">View Details</span>
                                 </a>
@@ -455,7 +455,7 @@
                                 <p class="card-desc lang-text-tr"><?php echo e($journal->desc["tr"] ?? ""); ?></p>
                                 <p class="card-desc lang-text-en"><?php echo e($journal->desc["en"] ?? ""); ?></p>
                                 
-                                <a href="<?php echo e(route('journal.detay', $journal->slug_tr ?? $journal->slug_en ?? $journal->id)); ?>" class="btn btn-primary" style="margin-top:1rem; padding: 0.5rem 1rem;">
+                                <a href="<?php echo e(route('journal.detay', $journal->slug_tr ?: ($journal->slug_en ?: $journal->id))); ?>" class="btn btn-primary" style="margin-top:1rem; padding: 0.5rem 1rem;">
                                     <span class="lang-text-tr">Okumaya Başla</span>
                                     <span class="lang-text-en">Read More</span>
                                 </a>

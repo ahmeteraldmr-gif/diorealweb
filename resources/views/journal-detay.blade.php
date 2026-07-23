@@ -448,7 +448,7 @@
                 </div>
 
                 @foreach($related as $item)
-                    <a href="{{ route('journal.detay', $item->slug_tr ?? $item->slug_en ?? $item->id) }}" class="jd-related-item">
+                    <a href="{{ route('journal.detay', $item->slug_tr ?: ($item->slug_en ?: $item->id)) }}" class="jd-related-item">
                         <img src="{{ asset($item->img) }}" alt="{{ $item->title['tr'] ?? '' }}">
                         <div>
                             <span class="jd-related-date">{{ $item->date }}</span>

@@ -451,7 +451,7 @@
                 </div>
 
                 <?php $__currentLoopData = $related; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <a href="<?php echo e(route('journal.detay', $item->slug_tr ?? $item->slug_en ?? $item->id)); ?>" class="jd-related-item">
+                    <a href="<?php echo e(route('journal.detay', $item->slug_tr ?: ($item->slug_en ?: $item->id))); ?>" class="jd-related-item">
                         <img src="<?php echo e(asset($item->img)); ?>" alt="<?php echo e($item->title['tr'] ?? ''); ?>">
                         <div>
                             <span class="jd-related-date"><?php echo e($item->date); ?></span>

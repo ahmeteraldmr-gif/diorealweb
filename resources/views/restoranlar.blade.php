@@ -153,7 +153,7 @@
                         <p class="card-desc lang-text-tr">{{ $r->desc["tr"] ?? "" }}</p>
                         <p class="card-desc lang-text-en">{{ $r->desc["en"] ?? "" }}</p>
                         
-                        <a href="{{ route('restoran.detay', $r->slug_tr ?? $r->slug_en ?? $r->id) }}" class="btn btn-primary" style="margin-top:1rem; padding: 0.5rem 1rem;">
+                        <a href="{{ route('restoran.detay', $r->slug_tr ?: ($r->slug_en ?: $r->id)) }}" class="btn btn-primary" style="margin-top:1rem; padding: 0.5rem 1rem;">
                             <span class="lang-text-tr">Detayları İncele</span>
                             <span class="lang-text-en">View Details</span>
                         </a>

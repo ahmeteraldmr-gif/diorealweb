@@ -44,7 +44,7 @@
                             </td>
                             <td>
                                 <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
-                                    <a href="{{ route('journal.detay', $journal->slug_tr ?? $journal->slug_en ?? $journal->id) }}" class="btn btn-outline btn-sm" target="_blank" title="Sayfayı Görüntüle">
+                                    <a href="{{ route('journal.detay', $journal->slug_tr ?: ($journal->slug_en ?: $journal->id)) }}" class="btn btn-outline btn-sm" target="_blank" title="Sayfayı Görüntüle">
                                         <i class="fas fa-eye"></i>
                                     </a>
                                     <a href="{{ route('admin.journals.edit', $journal->id) }}" class="btn btn-outline btn-sm">

@@ -109,21 +109,25 @@
         <div class="journal-grid reveal">
             <?php if($featured = $journals->first()): ?>
                 <div class="journal-featured">
-                    <img src="<?php echo e(asset($featured->img)); ?>" alt="<?php echo e($featured->title['tr'] ?? ''); ?>">
+                    <a href="<?php echo e(route('journal.detay', $featured->slug_tr ?: ($featured->slug_en ?: $featured->id))); ?>">
+                        <img src="<?php echo e(asset($featured->img)); ?>" alt="<?php echo e($featured->title['tr'] ?? ''); ?>" style="cursor: pointer;">
+                    </a>
                     <div class="journal-featured-info">
                         <span class="card-tag">
                             <span class="lang-text-tr"><?php echo e($featured->tag['tr'] ?? ''); ?></span>
                             <span class="lang-text-en"><?php echo e($featured->tag['en'] ?? ''); ?></span>
                         </span>
-                        <div class="journal-title" style="font-family: var(--font-display); font-size: 2rem; font-weight: 300; margin: 1rem 0;">
-                            <span class="lang-text-tr"><?php echo e($featured->title['tr'] ?? ''); ?></span>
-                            <span class="lang-text-en"><?php echo e($featured->title['en'] ?? ''); ?></span>
-                        </div>
+                        <a href="<?php echo e(route('journal.detay', $featured->slug_tr ?: ($featured->slug_en ?: $featured->id))); ?>" style="text-decoration: none; color: inherit;">
+                            <div class="journal-title" style="font-family: var(--font-display); font-size: 2rem; font-weight: 300; margin: 1rem 0;">
+                                <span class="lang-text-tr"><?php echo e($featured->title['tr'] ?? ''); ?></span>
+                                <span class="lang-text-en"><?php echo e($featured->title['en'] ?? ''); ?></span>
+                            </div>
+                        </a>
                         <p style="color:var(--dark-gray);font-size:.95rem;line-height:1.8;margin-bottom:1.5rem;">
                             <span class="lang-text-tr"><?php echo e($featured->desc['tr'] ?? ''); ?></span>
                             <span class="lang-text-en"><?php echo e($featured->desc['en'] ?? ''); ?></span>
                         </p>
-                        <a href="<?php echo e(route('journal.detay', $featured->slug_tr ?? $featured->slug_en ?? $featured->id)); ?>" class="btn btn-outline">
+                        <a href="<?php echo e(route('journal.detay', $featured->slug_tr ?: ($featured->slug_en ?: $featured->id))); ?>" class="btn btn-outline">
                             <span class="lang-text-tr">Okumaya Devam Et</span>
                             <span class="lang-text-en">Continue Reading</span>
                         </a>
@@ -133,7 +137,7 @@
 
             <div class="journal-side">
                 <?php $__currentLoopData = $journals->slice(1, 4); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $sideItem): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <div class="journal-side-item" onclick="window.location='<?php echo e(route('journal.detay', $sideItem->slug_tr ?? $sideItem->slug_en ?? $sideItem->id)); ?>'" style="cursor:pointer;">
+                    <div class="journal-side-item" onclick="window.location='<?php echo e(route('journal.detay', $sideItem->slug_tr ?: ($sideItem->slug_en ?: $sideItem->id))); ?>'" style="cursor:pointer;">
                         <img src="<?php echo e(asset($sideItem->img)); ?>" alt="<?php echo e($sideItem->title['tr'] ?? ''); ?>">
                         <div>
                             <span class="journal-date"><?php echo e($sideItem->date); ?></span>
@@ -141,7 +145,7 @@
                                 <span class="lang-text-tr"><?php echo e($sideItem->title['tr'] ?? ''); ?></span>
                                 <span class="lang-text-en"><?php echo e($sideItem->title['en'] ?? ''); ?></span>
                             </div>
-                            <a href="<?php echo e(route('journal.detay', $sideItem->slug_tr ?? $sideItem->slug_en ?? $sideItem->id)); ?>" class="journal-read-more">
+                            <a href="<?php echo e(route('journal.detay', $sideItem->slug_tr ?: ($sideItem->slug_en ?: $sideItem->id))); ?>" class="journal-read-more">
                                 <span class="lang-text-tr">Oku &rarr;</span>
                                 <span class="lang-text-en">Read &rarr;</span>
                             </a>
@@ -156,7 +160,7 @@
             <h2 class="content-title reveal" style="margin-bottom:2.5rem;" data-i18n="journal_latest_title">Son <em>Yazılar</em></h2>
             <div class="card-grid">
                 <?php $__currentLoopData = $journals->slice(5); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <a href="<?php echo e(route('journal.detay', $item->slug_tr ?? $item->slug_en ?? $item->id)); ?>" class="card reveal" style="transition-delay:<?php echo e(($index % 3) * 0.1); ?>s; text-decoration: none; color: inherit; display: block;">
+                    <a href="<?php echo e(route('journal.detay', $item->slug_tr ?: ($item->slug_en ?: $item->id))); ?>" class="card reveal" style="transition-delay:<?php echo e(($index % 3) * 0.1); ?>s; text-decoration: none; color: inherit; display: block;">
                         <div class="card-img" style="background-image:url('<?php echo e(asset($item->img)); ?>');"></div>
                         <div class="card-body">
                             <span class="card-tag">

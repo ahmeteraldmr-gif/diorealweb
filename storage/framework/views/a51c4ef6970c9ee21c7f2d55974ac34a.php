@@ -395,7 +395,7 @@
                         <p class="hotel-desc lang-text-tr"><?php echo e($otel->desc["tr"] ?? ""); ?></p>
                         <p class="hotel-desc lang-text-en"><?php echo e($otel->desc["en"] ?? ""); ?></p>
                         
-                        <a href="<?php echo e(route('otel.detay', $otel->slug_tr ?? $otel->slug_en ?? $otel->id)); ?>" class="btn-bd">
+                        <a href="<?php echo e(route('otel.detay', $otel->slug_tr ?: ($otel->slug_en ?: $otel->id))); ?>" class="btn-bd">
                             <span class="lang-text-tr">Detayları İncele</span>
                             <span class="lang-text-en">Explore Destination</span>
                             <i class="fas fa-chevron-right"></i>

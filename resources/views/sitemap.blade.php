@@ -46,7 +46,7 @@
     <!-- Dynamic Content -->
     @foreach ($hotels as $hotel)
     <url>
-        <loc>{{ route('otel.detay', $hotel->slug_tr ?? $hotel->slug_en ?? $hotel->id) }}</loc>
+        <loc>{{ route('otel.detay', $hotel->slug_tr ?: ($hotel->slug_en ?: $hotel->id)) }}</loc>
         <lastmod>{{ $hotel->updated_at->tz('UTC')->toAtomString() }}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -55,7 +55,7 @@
 
     @foreach ($restaurants as $restaurant)
     <url>
-        <loc>{{ route('restoran.detay', $restaurant->slug_tr ?? $restaurant->slug_en ?? $restaurant->id) }}</loc>
+        <loc>{{ route('restoran.detay', $restaurant->slug_tr ?: ($restaurant->slug_en ?: $restaurant->id)) }}</loc>
         <lastmod>{{ $restaurant->updated_at->tz('UTC')->toAtomString() }}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -64,7 +64,7 @@
 
     @foreach ($yachts as $yacht)
     <url>
-        <loc>{{ route('yat.detay', $yacht->slug_tr ?? $yacht->slug_en ?? $yacht->id) }}</loc>
+        <loc>{{ route('yat.detay', $yacht->slug_tr ?: ($yacht->slug_en ?: $yacht->id)) }}</loc>
         <lastmod>{{ $yacht->updated_at->tz('UTC')->toAtomString() }}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -73,7 +73,7 @@
 
     @foreach ($destinations as $destination)
     <url>
-        <loc>{{ route('destinasyon.detay', $destination->slug_tr ?? $destination->slug_en ?? $destination->id) }}</loc>
+        <loc>{{ route('destinasyon.detay', $destination->slug_tr ?: ($destination->slug_en ?: $destination->id)) }}</loc>
         <lastmod>{{ $destination->updated_at->tz('UTC')->toAtomString() }}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -82,7 +82,7 @@
     
     @foreach ($guides as $guide)
     <url>
-        <loc>{{ route('rehber.detay', $guide->slug_tr ?? $guide->slug_en ?? $guide->id) }}</loc>
+        <loc>{{ route('rehber.detay', $guide->slug_tr ?: ($guide->slug_en ?: $guide->id)) }}</loc>
         <lastmod>{{ $guide->updated_at->tz('UTC')->toAtomString() }}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -91,7 +91,7 @@
 
     @foreach ($events as $event)
     <url>
-        <loc>{{ route('etkinlik.detay', $event->slug_tr ?? $event->slug_en ?? $event->id) }}</loc>
+        <loc>{{ route('etkinlik.detay', $event->slug_tr ?: ($event->slug_en ?: $event->id)) }}</loc>
         <lastmod>{{ $event->updated_at->tz('UTC')->toAtomString() }}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -100,7 +100,7 @@
 
     @foreach ($journals as $journal)
     <url>
-        <loc>{{ route('journal.detay', $journal->slug_tr ?? $journal->slug_en ?? $journal->id) }}</loc>
+        <loc>{{ route('journal.detay', $journal->slug_tr ?: ($journal->slug_en ?: $journal->id)) }}</loc>
         <lastmod>{{ $journal->updated_at->tz('UTC')->toAtomString() }}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>

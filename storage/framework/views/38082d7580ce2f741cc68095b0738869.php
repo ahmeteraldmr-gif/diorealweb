@@ -402,7 +402,7 @@
                 </div>
 
                 <?php $__currentLoopData = $otherGuides; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <a href="<?php echo e(route('rehber.detay', $item->slug_tr ?? $item->slug_en ?? $item->id)); ?>" class="jd-related-item">
+                    <a href="<?php echo e(route('rehber.detay', $item->slug_tr ?: ($item->slug_en ?: $item->id))); ?>" class="jd-related-item">
                         <img src="<?php echo e(asset($item->img)); ?>" alt="<?php echo e($item->title['tr'] ?? ''); ?>">
                         <div>
                             <div class="jd-related-name">

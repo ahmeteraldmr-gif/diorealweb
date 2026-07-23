@@ -242,7 +242,7 @@
                         <p class="card-desc lang-text-en">{{ $y->desc["en"] ?? "" }}</p>
                         
                         <div class="yacht-card-footer">
-                            <a href="{{ route('yat.detay', $y->slug_tr ?? $y->slug_en ?? $y->id) }}" class="btn-yacht-detail">
+                            <a href="{{ route('yat.detay', $y->slug_tr ?: ($y->slug_en ?: $y->id)) }}" class="btn-yacht-detail">
                                 <span class="lang-text-tr">Detayları İncele</span>
                                 <span class="lang-text-en">View Details</span>
                                 <i class="fas fa-arrow-right"></i>

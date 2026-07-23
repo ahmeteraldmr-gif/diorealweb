@@ -262,7 +262,7 @@
                             <p class="event-card-desc lang-text-en"><?php echo e($e->desc["en"] ?? ""); ?></p>
 
                             <div class="event-card-btn-wrapper">
-                                <a href="<?php echo e(route('etkinlik.detay', $e->slug_tr ?? $e->slug_en ?? $e->id)); ?>" class="btn btn-outline" style="display: block; text-align: center; text-decoration: none;">
+                                <a href="<?php echo e(route('etkinlik.detay', $e->slug_tr ?: ($e->slug_en ?: $e->id))); ?>" class="btn btn-outline" style="display: block; text-align: center; text-decoration: none;">
                                     <span class="lang-text-tr">Etkinliği İncele</span>
                                     <span class="lang-text-en">Review Event</span>
                                 </a>

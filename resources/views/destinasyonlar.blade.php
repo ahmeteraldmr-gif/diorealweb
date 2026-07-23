@@ -153,7 +153,7 @@
                             <p class="card-desc lang-text-en">{{ $g->desc["en"] ?? "" }}</p>
                         </div>
                         <div class="card-btn-wrapper" style="margin-top: 1.25rem;">
-                            <a href="{{ route('rehber.detay', $g->slug_tr ?? $g->slug_en ?? $g->id) }}" class="read-more-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
+                            <a href="{{ route('rehber.detay', $g->slug_tr ?: ($g->slug_en ?: $g->id)) }}" class="read-more-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
                                 <span class="lang-text-tr">Detayları İncele</span>
                                 <span class="lang-text-en">View Details</span>
                                 <i class="fas fa-chevron-right" style="font-size: 0.75rem;"></i>
