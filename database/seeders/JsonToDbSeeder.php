@@ -27,6 +27,7 @@ class JsonToDbSeeder extends Seeder
             'dioreal_events_data.json' => Event::class,
             'dioreal_guide_data.json' => Guide::class,
             'dioreal_journal_data.json' => Journal::class,
+            'dioreal_destinations_data.json' => \App\Models\Destination::class,
         ];
 
         foreach ($mappings as $file => $modelClass) {
