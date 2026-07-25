@@ -366,12 +366,12 @@
         @endif
         <div class="jd-hero-content" style="position: relative; z-index: 2;">
             <div class="jd-eyebrow">
-                <span class="lang-text-tr">{{ $rehber->tag['tr'] ?? 'Destinasyon Rehberi' }}</span>
-                <span class="lang-text-en">{{ $rehber->tag['en'] ?? 'Destination Guide' }}</span>
+                <span class="lang-text-tr">{{ !empty($rehber->tag['tr']) ? $rehber->tag['tr'] : ($rehber->tag['en'] ?? 'Destinasyon Rehberi') }}</span>
+                <span class="lang-text-en">{{ !empty($rehber->tag['en']) ? $rehber->tag['en'] : ($rehber->tag['tr'] ?? 'Destination Guide') }}</span>
             </div>
             <h1 class="jd-title">
-                <span class="lang-text-tr">{{ $rehber->title['tr'] ?? '' }}</span>
-                <span class="lang-text-en">{{ $rehber->title['en'] ?? '' }}</span>
+                <span class="lang-text-tr">{{ !empty($rehber->title['tr']) ? $rehber->title['tr'] : ($rehber->title['en'] ?? '') }}</span>
+                <span class="lang-text-en">{{ !empty($rehber->title['en']) ? $rehber->title['en'] : ($rehber->title['tr'] ?? '') }}</span>
             </h1>
         </div>
     </div>
@@ -382,8 +382,8 @@
         <article class="jd-article">
             <div class="jd-content">
                 <!-- We render long descriptions with paragraphs -->
-                <div class="lang-text-tr">{!! nl2br($rehber->desc['tr'] ?? '') !!}</div>
-                <div class="lang-text-en">{!! nl2br($rehber->desc['en'] ?? '') !!}</div>
+                <div class="lang-text-tr">{!! nl2br(!empty($rehber->desc['tr']) ? $rehber->desc['tr'] : ($rehber->desc['en'] ?? '')) !!}</div>
+                <div class="lang-text-en">{!! nl2br(!empty($rehber->desc['en']) ? $rehber->desc['en'] : ($rehber->desc['tr'] ?? '')) !!}</div>
             </div>
         </article>
 

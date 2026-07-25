@@ -1,54 +1,62 @@
 [
     {
         "id": 4,
+        "title": {
+            "tr": "Bodrum",
+            "en": "🇹🇷 Bodrum Destination Guide"
+        },
         "tag": {
             "tr": "Ege'nin Zamansız Yarımadası",
             "en": "The Timeless Peninsula of the Aegean"
         },
         "img": "uploads\/guides\/1783977097_6a555489ef0ed.png",
         "desc": {
-            "tr": "",
+            "tr": "Birçok ziyaretçi doğrudan Yalıkavak Marina veya popüler plaj kulüplerine yönelir. Ancak Bodrum'un hikayesi çok daha derindir. Yaklaşık 2.500 yıldır bu yarımada Akdeniz'in en önemli denizcilik merkezlerinden biri olmuştur. Halikarnas'ın antik taşlarından St. Peter Kalesi'ne kadar nesiller bu turkuaz sulara hayran kalmıştır. Bodrum'u keşfetmek; beyaz badanalı köyleri, zeytinlikleri, gizli koyları ve dünya standartlarında süper yat marinalarını keşfetmek demektir.",
             "en": "Many first-time visitors head straight to Yalıkavak Marina or popular beach clubs. Yet Bodrum's story goes far deeper.\n\nFor nearly 2,500 years, this peninsula has been one of the Mediterranean's most vital maritime hubs. From the ancient stones of Halicarnassus to the medieval Castle of St. Peter, generations have marveled at these crystal-clear turquoise waters.\n\nExploring Bodrum means discovering white-washed villages, olive groves, secluded coves, and world-class superyacht marinas."
         },
+        "created_at": "2026-07-25T11:25:57.000000Z",
+        "updated_at": "2026-07-25T13:03:37.000000Z",
+        "gallery": [],
+        "video_file": null,
+        "video_url": null,
+        "show_video_on_cover": false,
         "slug_tr": "bodrum",
         "slug_en": "bodrum-destination-guide",
-        "created_at": "2026-07-25 11:25:57",
-        "updated_at": "2026-07-25 11:25:57",
-        "title": {
-            "tr": "Bodrum",
-            "en": "🇹🇷 Bodrum Destination Guide"
-        },
-        "gallery": [],
         "seo_title_tr": "Bodrum | Dioreal Dijital Lüks Yaşam Platformu",
         "seo_title_en": "🇹🇷 Bodrum Destination Guide | Dioreal Digital Luxury Platform",
-        "seo_description_tr": "",
+        "seo_description_tr": "Birçok ziyaretçi doğrudan Yalıkavak Marina veya popüler plaj kulüplerine yönelir. Ancak Bodrum'un hikayesi çok daha derindir. Yaklaşık 2.500 yıldır bu yarı...",
         "seo_description_en": "Many first-time visitors head straight to Yalıkavak Marina or popular beach clubs. Yet Bodrum's story goes far deeper.\n\nFor nearly 2,500 years, this penins...",
+        "og_image": null,
         "seo_noindex": 0
     },
     {
         "id": 5,
+        "title": {
+            "tr": "Yalıkavak",
+            "en": "Yalıkavak"
+        },
         "tag": {
             "tr": "Bodrum",
             "en": "Bodrum"
         },
         "img": "uploads\/guides\/1783977470_6a5555fe5e2a6.png",
         "desc": {
-            "tr": "",
+            "tr": "Yalıkavak, sakin bir balıkçı köyünden Akdeniz'in önde gelen süper yat destinasyonlarından birine dönüştü. Yalıkavak Marina'ya, üst düzey gastronomiye ve lüks butiklere ev sahipliği yapan belde, modern ihtişamı Ege mirasıyla sorunsuz bir şekilde harmanlıyor. Yakındaki Sandima köyü taş evlerini, tarihi rüzgar değirmenlerini ve bakir kıyı koylarını keşfedin.",
             "en": "Yalıkavak has transformed from a quiet fishing village into one of the Mediterranean's premier superyacht destinations.\n\nHome to Yalıkavak Marina, high-end gastronomy, and luxury boutiques, it seamlessly blends modern glamour with Aegean heritage.\n\nExplore nearby Sandima village stone houses, historic windmills, and pristine coastal coves."
         },
+        "created_at": "2026-07-25T11:25:58.000000Z",
+        "updated_at": "2026-07-25T13:03:37.000000Z",
+        "gallery": [],
+        "video_file": null,
+        "video_url": null,
+        "show_video_on_cover": false,
         "slug_tr": "yalikavak",
         "slug_en": "yalikavak",
-        "created_at": "2026-07-25 11:25:58",
-        "updated_at": "2026-07-25 11:25:58",
-        "title": {
-            "tr": "Yalıkavak",
-            "en": "Yalıkavak"
-        },
-        "gallery": [],
         "seo_title_tr": "Yalıkavak | Dioreal Dijital Lüks Yaşam Platformu",
         "seo_title_en": "Yalıkavak | Dioreal Digital Luxury Platform",
-        "seo_description_tr": "",
+        "seo_description_tr": "Yalıkavak, sakin bir balıkçı köyünden Akdeniz'in önde gelen süper yat destinasyonlarından birine dönüştü. Yalıkavak Marina'ya, üst düzey gastronomiye ve lü...",
         "seo_description_en": "Yalıkavak has transformed from a quiet fishing village into one of the Mediterranean's premier superyacht destinations.\n\nHome to Yalıkavak Marina, high-end...",
+        "og_image": null,
         "seo_noindex": 0
     }
 ]

@@ -143,15 +143,15 @@
                 <div class="card reveal visible">
                     <div class="card-img" style="background-image:url('{{ asset($g->img) }}');"></div>
                     <div class="card-body">
-                        <span class="card-tag lang-text-tr">{{ $g->tag["tr"] ?? "" }}</span>
-                        <span class="card-tag lang-text-en">{{ $g->tag["en"] ?? "" }}</span>
+                        <span class="card-tag lang-text-tr">{{ !empty($g->tag["tr"]) ? $g->tag["tr"] : ($g->tag["en"] ?? "") }}</span>
+                        <span class="card-tag lang-text-en">{{ !empty($g->tag["en"]) ? $g->tag["en"] : ($g->tag["tr"] ?? "") }}</span>
                         
-                        <h3 class="card-title lang-text-tr">{{ $g->title["tr"] ?? "" }}</h3>
-                        <h3 class="card-title lang-text-en">{{ $g->title["en"] ?? "" }}</h3>
+                        <h3 class="card-title lang-text-tr">{{ !empty($g->title["tr"]) ? $g->title["tr"] : ($g->title["en"] ?? "") }}</h3>
+                        <h3 class="card-title lang-text-en">{{ !empty($g->title["en"]) ? $g->title["en"] : ($g->title["tr"] ?? "") }}</h3>
                         
                         <div class="card-desc-container">
-                            <p class="card-desc lang-text-tr">{{ $g->desc["tr"] ?? "" }}</p>
-                            <p class="card-desc lang-text-en">{{ $g->desc["en"] ?? "" }}</p>
+                            <p class="card-desc lang-text-tr">{{ !empty($g->desc["tr"]) ? $g->desc["tr"] : ($g->desc["en"] ?? "") }}</p>
+                            <p class="card-desc lang-text-en">{{ !empty($g->desc["en"]) ? $g->desc["en"] : ($g->desc["tr"] ?? "") }}</p>
                         </div>
                         <div class="card-btn-wrapper" style="margin-top: 1.25rem;">
                             <a href="{{ route('rehber.detay', $g->slug_tr ?: ($g->slug_en ?: $g->id)) }}" class="read-more-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
