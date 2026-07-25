@@ -71,6 +71,7 @@
             background: var(--white);
         }
     </style>
+    <link rel="stylesheet" href="<?php echo e(asset('css/responsive.css')); ?>?v=<?php echo e(time()); ?>">
 </head>
 <body>
     <nav id="mainNav" style="background: transparent;">
