@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta name="csrf-token" content="Sy3TEaQo0J5fP2xDTPVLgyvMmpzGHHyq1LAbepEu">
+    <meta name="base-url" content="https://demo.acboz.com.tr/dioreal/public">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İyi Bir Gezgin ile Sadece Turist Arasındaki Fark — Dioreal Dijital</title>
+    <meta name="description" content="Her yolculuk yalnızca yeni yerler keşfetmek değil, aynı zamanda misafir olduğumuz coğrafyalara saygı göstermektir. İyi bir gezgin, geride yalnızca ayak izini bı...">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@200;300;400;500;600&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://demo.acboz.com.tr/dioreal/public/css/base.css?v=1784978490">
+    <link rel="stylesheet" href="https://demo.acboz.com.tr/dioreal/public/css/nav-footer.css?v=1784978490">
+    <link rel="stylesheet" href="https://demo.acboz.com.tr/dioreal/public/css/components.css?v=1784978490">
+    <link rel="stylesheet" href="https://demo.acboz.com.tr/dioreal/public/css/about.css?v=1784978490">
+    <style>
+        /* ── JOURNAL DETAIL PAGE ── */
+        .jd-hero {
+            position: relative;
+            height: 70vh;
+            min-height: 480px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+        }
+        .jd-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(13,12,11,0.1) 0%,
+                rgba(13,12,11,0.6) 50%,
+                rgba(13,12,11,0.95) 100%
+            );
+        }
+        .jd-hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 4rem 8rem;
+            color: var(--white);
+            max-width: 900px;
+        }
+        .jd-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-family: var(--font-condensed);
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+        .jd-eyebrow span { color: rgba(255,255,255,0.4); }
+        .jd-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 300;
+            line-height: 1.15;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+        .jd-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            color: rgba(255,255,255,0.6);
+        }
+        .jd-meta i { margin-right: 0.4rem; color: var(--accent); }
+
+        /* Article layout */
+        .jd-body {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 4rem;
+        }
+
+        /* Article content */
+        .jd-article {
+            color: var(--dark-gray);
+        }
+        .jd-lead {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--near-black);
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        .jd-content {
+            font-size: 1.05rem;
+            line-height: 2;
+            color: var(--dark-gray);
+        }
+        .jd-content p {
+            margin-bottom: 1.8rem;
+        }
+        .jd-content h2, .jd-content h3 {
+            font-family: var(--font-display);
+            color: var(--near-black);
+            margin: 2.5rem 0 1rem;
+            font-weight: 400;
+        }
+        .jd-content blockquote {
+            border-left: 3px solid var(--accent);
+            padding: 1rem 2rem;
+            margin: 2rem 0;
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--near-black);
+            background: var(--off-white);
+        }
+        .jd-content img {
+            width: 100%;
+            height: auto;
+            margin: 2rem 0;
+        }
+
+        /* Sidebar */
+        .jd-sidebar { }
+
+        .jd-back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--mid-gray);
+            text-decoration: none;
+            transition: color 0.3s;
+            margin-bottom: 3rem;
+        }
+        .jd-back-btn:hover { color: var(--near-black); }
+
+        .jd-sidebar-title {
+            font-family: var(--font-condensed);
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--mid-gray);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .jd-related-item {
+            display: grid;
+            grid-template-columns: 90px 1fr;
+            gap: 1.2rem;
+            align-items: center;
+            cursor: pointer;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid var(--light-gray);
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        .jd-related-item:hover { opacity: 0.7; }
+        .jd-related-item img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+        .jd-related-date {
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--mid-gray);
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+        .jd-related-name {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            color: var(--near-black);
+            line-height: 1.3;
+        }
+
+        .jd-share {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--light-gray);
+        }
+        .jd-share-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--mid-gray);
+            display: block;
+            margin-bottom: 1rem;
+        }
+        .jd-share-btns {
+            display: flex;
+            gap: 0.8rem;
+        }
+        .jd-share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            border: 1px solid var(--light-gray);
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: none;
+            color: var(--dark-gray);
+            text-decoration: none;
+        }
+        .jd-share-btn:hover {
+            background: var(--near-black);
+            color: var(--white);
+            border-color: var(--near-black);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .jd-body { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 2rem; }
+            .jd-hero-content { padding: 3rem 2rem; }
+            .jd-title { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav id="mainNav">
+        <div class="nav-logo-wrapper">
+            <a href="https://demo.acboz.com.tr/dioreal/public" class="nav-logo">
+                <span class="logo-text">DIOREAL</span>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="https://demo.acboz.com.tr/dioreal/public/hakkimizda" data-i18n="nav_about">Hakkımızda</a></li>
+            <li><a href="https://demo.acboz.com.tr/dioreal/public/oteller" data-i18n="nav_hotels">Oteller</a></li>
+            <li><a href="https://demo.acboz.com.tr/dioreal/public/yatlar" data-i18n="nav_yachts">Yatlar</a></li>
+            <li><a href="https://demo.acboz.com.tr/dioreal/public/restoranlar" data-i18n="nav_restaurants">Restoranlar</a></li>
+            <li><a href="https://demo.acboz.com.tr/dioreal/public/gezi-rehberi" data-i18n="nav_guide">Gezi Rehberi</a></li>
+            <li><a href="https://demo.acboz.com.tr/dioreal/public/etkinlikler" data-i18n="nav_events">Etkinlikler</a></li>
+            <li><a href="https://demo.acboz.com.tr/dioreal/public/journal" class="active-page" data-i18n="nav_journal">Journal</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="lang-switch desk-lang">
+                <span id="lang-tr" class="lang-btn active">TR</span>
+                <span>|</span>
+                <span id="lang-en" class="lang-btn">EN</span>
+            </div>
+            <div class="hamburger" id="hamb">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+    <div class="fs-menu" id="fsMenu">
+        <ul class="fs-links">
+            <li><a href="https://demo.acboz.com.tr/dioreal/public/hakkimizda" data-i18n="nav_about">Hakkımızda</a></li>
+            <li><a href="https://demo.acboz.com.tr/dioreal/public/oteller" data-i18n="nav_hotels">Oteller</a></li>
+            <li><a href="https://demo.acboz.com.tr/dioreal/public/yatlar" data-i18n="nav_yachts">Yatlar</a></li>
+            <li><a href="https://demo.acboz.com.tr/dioreal/public/restoranlar" data-i18n="nav_restaurants">Restoranlar</a></li>
+            <div class="fs-divider"></div>
+            <li><a href="https://demo.acboz.com.tr/dioreal/public/gezi-rehberi" data-i18n="nav_guide">Gezi Rehberi</a></li>
+            <li><a href="https://demo.acboz.com.tr/dioreal/public/etkinlikler" data-i18n="nav_events">Etkinlikler</a></li>
+            <li><a href="https://demo.acboz.com.tr/dioreal/public/journal" data-i18n="nav_journal">Journal</a></li>
+            <li style="font-size:1.5rem;font-family:var(--font-display);margin-top:2rem;"><span id="lang-tr-fs" class="lang-btn active">TR</span> | <span id="lang-en-fs" class="lang-btn">EN</span></li>
+        </ul>
+    </div>
+
+    <!-- Hero Banner -->
+        <div class="jd-hero" style=" background-image: url('https://demo.acboz.com.tr/dioreal/public/uploads/journals/1784022025_6a560409b71a0.png'); ">
+                <div class="jd-hero-content" style="position: relative; z-index: 2;">
+            <div class="jd-eyebrow">
+                <span class="lang-text-tr">Seyahat Felsefesi</span>
+                <span class="lang-text-en">Travel Philosophy</span>
+                <span>|</span>
+                TEMMUZ 2026
+                            </div>
+            <h1 class="jd-title">
+                <span class="lang-text-tr">İyi Bir Gezgin ile Sadece Turist Arasındaki Fark</span>
+                <span class="lang-text-en">The Difference Between a Traveler and a Tourist</span>
+            </h1>
+        </div>
+    </div>
+
+    <!-- Article Body -->
+    <div class="jd-body">
+        <!-- Main Article Content -->
+        <article class="jd-article">
+            <!-- Lead / Summary -->
+            <div class="jd-lead">
+                <span class="lang-text-tr">Her yolculuk yalnızca yeni yerler keşfetmek değil, aynı zamanda misafir olduğumuz coğrafyalara saygı göstermektir. İyi bir gezgin, geride yalnızca ayak izini bırakır; gittiği yere ise daima değer katar.</span>
+                <span class="lang-text-en">Every journey is more than discovering new places—it&#039;s about respecting the places that welcome us. A thoughtful traveler leaves little behind except footprints and takes away far more than photographs.</span>
+            </div>
+
+            <!-- Full Content -->
+                            <div class="jd-content">
+                    <div class="lang-text-tr">Dünyayı görmek kolaydır.
+
+Dünyaya saygı duymak ise öğrenilen bir davranıştır.
+
+Her yıl milyonlarca insan aynı şehirlere, aynı plajlara ve aynı tarihi yapılara gidiyor. Fakat herkes o yerlerden aynı izlenimle ayrılmıyor. Çünkü bir destinasyona nasıl baktığımız kadar, ona nasıl davrandığımız da önemlidir.
+
+Turist, bir yeri tüketir.
+
+Gezgin ise onu anlamaya çalışır.
+
+Aradaki fark bazen çok küçük ayrıntılarda saklıdır.
+
+Yerel halkın yaşadığı mahalleleri yalnızca fotoğraf çekilecek dekorlar olarak görmemek...
+
+Sessiz olunması gereken bir ibadethanede fısıldayarak konuşmak...
+
+Doğada hiçbir iz bırakmadan ayrılmak...
+
+Yerel üreticiden alışveriş yapmak...
+
+Bir restoranda acele etmek yerine o mutfağın hikâyesini merak etmek...
+
+İşte bütün bunlar, iyi bir gezginin karakterini oluşturur.
+
+Bir destinasyon bize ait değildir.
+
+Biz yalnızca kısa süreliğine onun misafiriyiz.
+
+Bu nedenle her yolculuk küçük bir sorumluluk da taşır.
+
+Bir patikada yere çöp atmamak...
+
+Tarihi yapılara isim kazımamak...
+
+Yerel kültürü kendi alışkanlıklarımıza benzetmeye çalışmamak...
+
+Doğayı yalnızca güzel bir manzara olarak değil, korunması gereken ortak bir miras olarak görmek...
+
+Gerçek seyahat kültürü tam da burada başlar.
+
+İyi bir gezgin gittiği yerde iz bırakmaya çalışmaz.
+
+Aksine, bulunduğu yere mümkün olduğunca az yük olur.
+
+Çünkü dünyanın en güzel destinasyonları, onları ziyaret eden insanların gösterdiği özen sayesinde varlığını sürdürebilir.
+
+DIOREAL'in yolculuğa bakışı da budur.
+
+Bir destinasyon yalnızca görülecek bir yer değildir.
+
+Korunması gereken bir kültür, paylaşılması gereken bir hikâye ve gelecek nesillere aktarılması gereken ortak bir mirastır.
+
+İyi yolculuklar yalnızca güzel anılar bırakmaz.
+
+Gidilen yerlere de saygı bırakır.</div>
+                    <div class="lang-text-en">Seeing the world is easy.
+
+Respecting it is something we learn.
+
+Every year, millions of people visit the same cities, beaches, and historic landmarks. Yet no two people leave with the same experience. Because how we treat a destination is just as important as what we see there.
+
+A tourist consumes a place.
+
+A traveler seeks to understand it.
+
+The difference often lies in the smallest details.
+
+Viewing local neighborhoods as communities rather than photo backdrops.
+
+Speaking quietly in places of worship.
+
+Leaving nature exactly as it was found.
+
+Supporting local artisans and businesses.
+
+Taking time to understand the story behind a meal instead of rushing through it.
+
+These simple choices define a thoughtful traveler.
+
+No destination belongs to us.
+
+We are only temporary guests.
+
+Every journey therefore carries a quiet responsibility.
+
+Leave no litter behind.
+
+Protect historic sites instead of marking them.
+
+Respect local customs rather than expecting them to reflect your own.
+
+See nature not only as scenery, but as a shared heritage that deserves care.
+
+This is where meaningful travel begins.
+
+A thoughtful traveler does not try to leave a mark.
+
+Instead, they try to leave as little impact as possible.
+
+The world's most extraordinary destinations continue to exist because generations of travelers have chosen to protect them.
+
+This is the philosophy that guides DIOREAL.
+
+A destination is never just a place to visit.
+
+It is a culture to respect, a story to share, and a legacy to preserve for those who will arrive after us.
+
+The finest journeys leave behind more than memories.
+
+They leave behind respect.</div>
+                </div>
+                    </article>
+
+        <!-- Sidebar -->
+        <aside class="jd-sidebar">
+            <a href="https://demo.acboz.com.tr/dioreal/public/journal" class="jd-back-btn">
+                ← <span class="lang-text-tr">Journal'a Dön</span>
+                <span class="lang-text-en">Back to Journal</span>
+            </a>
+
+                            <div class="jd-sidebar-title">
+                    <span class="lang-text-tr">Son Yazılar</span>
+                    <span class="lang-text-en">Recent Articles</span>
+                </div>
+
+                                    <a href="https://demo.acboz.com.tr/dioreal/public/journal/23" class="jd-related-item">
+                        <img src="https://demo.acboz.com.tr/dioreal/public/uploads/journals/1784035093_6a5637159c380.png" alt="Bir Otelin Kalbi, Lobisidir.">
+                        <div>
+                            <span class="jd-related-date">TEMMUZ 2026</span>
+                            <div class="jd-related-name">
+                                <span class="lang-text-tr">Bir Otelin Kalbi, Lobisidir.</span>
+                                <span class="lang-text-en">The Heart of a Hotel Is Its Lobby</span>
+                            </div>
+                        </div>
+                    </a>
+                                    <a href="https://demo.acboz.com.tr/dioreal/public/journal/22" class="jd-related-item">
+                        <img src="https://demo.acboz.com.tr/dioreal/public/uploads/journals/1784034809_6a5635f93082f.png" alt="Her Pencere Aynı Şehre Bakmaz.">
+                        <div>
+                            <span class="jd-related-date">TEMMUZ 2026</span>
+                            <div class="jd-related-name">
+                                <span class="lang-text-tr">Her Pencere Aynı Şehre Bakmaz.</span>
+                                <span class="lang-text-en">Not Every Window Looks at the Same City</span>
+                            </div>
+                        </div>
+                    </a>
+                                    <a href="https://demo.acboz.com.tr/dioreal/public/journal/21" class="jd-related-item">
+                        <img src="https://demo.acboz.com.tr/dioreal/public/uploads/journals/1784024240_6a560cb053653.png" alt="Aynı Şehir, Dört Farklı Hikâye">
+                        <div>
+                            <span class="jd-related-date">TEMMUZ 2026</span>
+                            <div class="jd-related-name">
+                                <span class="lang-text-tr">Aynı Şehir, Dört Farklı Hikâye</span>
+                                <span class="lang-text-en">One City, Four Different Stories</span>
+                            </div>
+                        </div>
+                    </a>
+                                    <a href="https://demo.acboz.com.tr/dioreal/public/journal/20" class="jd-related-item">
+                        <img src="https://demo.acboz.com.tr/dioreal/public/uploads/journals/1784023554_6a560a0216b8a.png" alt="İyi Yolculuklar, İyi Seçimlerle Başlar">
+                        <div>
+                            <span class="jd-related-date">TEMMUZ 2026</span>
+                            <div class="jd-related-name">
+                                <span class="lang-text-tr">İyi Yolculuklar, İyi Seçimlerle Başlar</span>
+                                <span class="lang-text-en">Every Great Journey Begins with Thoughtful Choices</span>
+                            </div>
+                        </div>
+                    </a>
+                            
+            <!-- Share -->
+            <div class="jd-share">
+                <span class="jd-share-label">
+                    <span class="lang-text-tr">Paylaş</span>
+                    <span class="lang-text-en">Share</span>
+                </span>
+                <div class="jd-share-btns">
+                    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdemo.acboz.com.tr%2Fdioreal%2Fpublic%2Fjournal%2F14&text=%C4%B0yi+Bir+Gezgin+ile+Sadece+Turist+Aras%C4%B1ndaki+Fark"
+                       target="_blank" class="jd-share-btn">
+                        <i class="fab fa-x-twitter"></i> X
+                    </a>
+                    <a href="https://wa.me/?text=%C4%B0yi+Bir+Gezgin+ile+Sadece+Turist+Aras%C4%B1ndaki+Fark+https%3A%2F%2Fdemo.acboz.com.tr%2Fdioreal%2Fpublic%2Fjournal%2F14"
+                       target="_blank" class="jd-share-btn">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <footer id="iletisim">
+    <div class="footer-top">
+        <div class="footer-brand">
+            <div class="footer-logo">DIOREAL</div>
+            <p class="footer-p" data-i18n="footer_p">Seçkin destinasyonları ve premium markaları doğru kitleyle buluşturan medya platformu.</p>
+            <a href="https://wa.me/905320000000" class="whatsapp-cta">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+                </svg>
+                <span data-i18n="btn_contact_wa">WhatsApp İletişim</span>
+            </a>
+        </div>
+        <div class="footer-col">
+            <h4 data-i18n="footer_pages">Sayfalar</h4>
+            <ul class="footer-links">
+                <li><a href="https://demo.acboz.com.tr/dioreal/public/hakkimizda" data-i18n="nav_about">Hakkımızda</a></li>
+                <li><a href="https://demo.acboz.com.tr/dioreal/public/oteller" data-i18n="nav_hotels">Oteller</a></li>
+                <li><a href="https://demo.acboz.com.tr/dioreal/public/yatlar" data-i18n="nav_yachts">Yatlar</a></li>
+                <li><a href="https://demo.acboz.com.tr/dioreal/public/restoranlar" data-i18n="nav_restaurants">Restoranlar</a></li>
+                <li><a href="https://demo.acboz.com.tr/dioreal/public/gezi-rehberi" data-i18n="nav_guide">Gezi Rehberi</a></li>
+                <li><a href="https://demo.acboz.com.tr/dioreal/public/etkinlikler" data-i18n="nav_events">Etkinlikler</a></li>
+                <li><a href="https://demo.acboz.com.tr/dioreal/public/journal" data-i18n="nav_journal">Journal</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4 data-i18n="footer_serv">Hizmetler</h4>
+            <ul class="footer-links">
+                <li><a href="#">Balayı Paketleri</a></li>
+                <li><a href="#">Aile Tatilleri</a></li>
+                <li><a href="#">Macera Turları</a></li>
+                <li><a href="#">Kültür Gezileri</a></li>
+                <li><a href="#">Özel Jet Hizmetleri</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4 data-i18n="footer_contact">İletişim</h4>
+            <ul class="footer-links">
+                                    <li><a href="mailto:info@diorealdijital.com">info@diorealdijital.com</a></li>
+                                                    <li><a href="tel:+902125550100">+90 212 555 0100</a></li>
+                                <li>
+                    <span class="lang-text-tr">İstanbul, Türkiye</span>
+                    <span class="lang-text-en">Istanbul, Turkey</span>
+                </li>
+                                    <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+                                                    <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+                            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 Dioreal Dijital. All Rights Reserved.</span>
+        <span>Est. 15 Years of Experience</span>
+    </div>
+</footer>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://demo.acboz.com.tr/dioreal/public/js/i18n.js?v=1784978490"></script>
+    <script src="https://demo.acboz.com.tr/dioreal/public/js/common.js?v=1784978490"></script>
+    <script src="https://demo.acboz.com.tr/dioreal/public/js/nav.js?v=1784978490"></script>
+</body>
+</html>

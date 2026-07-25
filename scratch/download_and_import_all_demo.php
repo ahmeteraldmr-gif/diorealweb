@@ -60,14 +60,36 @@ function parseMultiLangText($node, $xpath) {
     $trSpan = $xpath->query('.//*[contains(@class, "lang-text-tr")]', $node);
     $enSpan = $xpath->query('.//*[contains(@class, "lang-text-en")]', $node);
 
-    $tr = $trSpan->length ? trim($trSpan->item(0)->nodeValue) : trim($node->nodeValue);
-    $en = $enSpan->length ? trim($enSpan->item(0)->nodeValue) : $tr;
-    return ['tr' => $tr, 'en' => $en];
+    $tr = '';
+    $en = '';
+
+    if ($trSpan->length) {
+        $trNode = $trSpan->item(0);
+        $dom = $trNode->ownerDocument;
+        $tr = trim($dom->saveHTML($trNode));
+        $tr = preg_replace('/^<div[^>]*>(.*)<\/div>$/is', '$1', $tr);
+        $tr = preg_replace('/^<span[^>]*>(.*)<\/span>$/is', '$1', $tr);
+    } else {
+        $tr = trim($node->nodeValue);
+    }
+
+    if ($enSpan->length) {
+        $enNode = $enSpan->item(0);
+        $dom = $enNode->ownerDocument;
+        $en = trim($dom->saveHTML($enNode));
+        $en = preg_replace('/^<div[^>]*>(.*)<\/div>$/is', '$1', $en);
+        $en = preg_replace('/^<span[^>]*>(.*)<\/span>$/is', '$1', $en);
+    } else {
+        $en = $tr;
+    }
+
+    // Clean up unwanted tags or trim
+    return ['tr' => trim(strip_tags($tr, '<p><br><b><i><strong><em><h2><h3><h4><ul><li><a><div>')), 'en' => trim(strip_tags($en, '<p><br><b><i><strong><em><h2><h3><h4><ul><li><a><div>'))];
 }
 
 function scrapeModule($moduleName, $listUrlSlug, $detailRegex, $modelClass, $jsonFile, $modelType) {
     global $baseUrl;
-    echo "\n--- SCRAPING {$moduleName} ---\n";
+    echo "\n--- SCRAPING {$moduleName} WITH FULL HTML CONTENT ---\n";
     $listHtml = fetchPage("{$baseUrl}/{$listUrlSlug}");
     preg_match_all($detailRegex, $listHtml, $mLinks);
     $urls = array_values(array_unique($mLinks[1] ?? []));
@@ -107,9 +129,13 @@ function scrapeModule($moduleName, $listUrlSlug, $detailRegex, $modelClass, $jso
         }
         $localImg = downloadImage($imgUrl);
 
-        // Story / Desc
-        $storyNode = $xpath->query('//div[contains(@class, "detail-story")] | //div[contains(@class, "jd-lead")] | //article');
-        $desc = parseMultiLangText($storyNode->length ? $storyNode->item(0) : null, $xpath);
+        // Lead / Short Desc
+        $leadNode = $xpath->query('//div[contains(@class, "jd-lead")] | //div[contains(@class, "detail-story")]');
+        $desc = parseMultiLangText($leadNode->length ? $leadNode->item(0) : null, $xpath);
+
+        // Full Body Content
+        $contentNode = $xpath->query('//div[contains(@class, "jd-content")] | //div[contains(@class, "detail-story")] | //article');
+        $fullContent = parseMultiLangText($contentNode->length ? $contentNode->item(0) : null, $xpath);
 
         // Gallery
         $galleryNodes = $xpath->query('//div[contains(@class, "gallery-grid")]//img | //div[contains(@class, "jd-content")]//img');
@@ -143,11 +169,11 @@ function scrapeModule($moduleName, $listUrlSlug, $detailRegex, $modelClass, $jso
 
         if ($modelType === 'journal') {
             $itemData['title'] = $name;
-            $itemData['content'] = $desc;
+            $itemData['content'] = $fullContent;
             $itemData['date'] = date('Y-m-d');
         } elseif ($modelType === 'event') {
             $itemData['title'] = $name;
-            $itemData['long_desc'] = $desc;
+            $itemData['long_desc'] = $fullContent;
             $itemData['month'] = ['tr' => 'Temmuz', 'en' => 'July'];
             $itemData['loc'] = ['tr' => 'Türkiye', 'en' => 'Turkey'];
         } elseif ($modelType === 'guide') {
@@ -155,7 +181,7 @@ function scrapeModule($moduleName, $listUrlSlug, $detailRegex, $modelClass, $jso
             $itemData['gallery'] = array_values(array_unique($gallery));
         } else { // hotel, yacht, restaurant
             $itemData['name'] = $name;
-            $itemData['long_desc'] = $desc;
+            $itemData['long_desc'] = $fullContent;
             $itemData['gallery'] = array_values(array_unique($gallery));
         }
 
@@ -170,7 +196,7 @@ function scrapeModule($moduleName, $listUrlSlug, $detailRegex, $modelClass, $jso
     }
 }
 
-// SCRAPE ALL MODULES WITH EXACT SCHEMAS
+// SCRAPE ALL MODULES WITH FULL HTML PARAGRAPH CONTENT
 scrapeModule('Hotels', 'oteller.html', '/href=["\']([^"\']*\/otel\/[0-9]+)["\']/i', Hotel::class, 'dioreal_hotels_data.json', 'standard');
 scrapeModule('Yachts', 'yatlar.html', '/href=["\']([^"\']*\/yat\/[0-9]+)["\']/i', Yacht::class, 'dioreal_yachts_data.json', 'standard');
 scrapeModule('Restaurants', 'restoranlar.html', '/href=["\']([^"\']*\/restoran\/[0-9]+)["\']/i', Restaurant::class, 'dioreal_restaurants_data.json', 'standard');
@@ -178,4 +204,4 @@ scrapeModule('Guides', 'destinasyonlar.html', '/href=["\']([^"\']*\/rehber\/[0-9
 scrapeModule('Events', 'etkinlikler.html', '/href=["\']([^"\']*\/etkinlik\/[0-9]+)["\']/i', Event::class, 'dioreal_events_data.json', 'event');
 scrapeModule('Journals', 'journal.html', '/href=["\']([^"\']*\/journal\/[0-9]+)["\']/i', Journal::class, 'dioreal_journal_data.json', 'journal');
 
-echo "\n=== ALL MODULES SCRAPED AND SEEDED SUCCESSFULLY ===\n";
+echo "\n=== ALL MODULES WITH FULL HTML PARAGRAPH CONTENT IMPORTED SUCCESSFULLY ===\n";
