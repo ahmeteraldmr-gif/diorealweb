@@ -305,16 +305,16 @@
                                 <div class="dest-info-ext">
                                     <div class="dest-region">
                                         <span class="lang-tr-text"><?php echo e($dest->region['tr'] ?? ''); ?></span>
-                                        <span class="lang-en-text" style="display:none;"><?php echo e($dest->region['en'] ?? ''); ?></span>
+                                        <span class="lang-en-text"><?php echo e($dest->region['en'] ?? ''); ?></span>
                                     </div>
                                     <div class="dest-name-grid">
                                         <span class="lang-tr-text"><?php echo e($dest->name['tr'] ?? ''); ?></span>
-                                        <span class="lang-en-text" style="display:none;"><?php echo e($dest->name['en'] ?? ''); ?></span>
+                                        <span class="lang-en-text"><?php echo e($dest->name['en'] ?? ''); ?></span>
                                     </div>
                                     <div class="dest-btn-wrapper" style="margin-top: 0.8rem;">
                                         <span class="btn-dest-explore">
                                             <span class="lang-tr-text">İncele</span>
-                                            <span class="lang-en-text" style="display:none;">View</span>
+                                            <span class="lang-en-text">View</span>
                                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                                         </span>
                                     </div>
@@ -331,16 +331,16 @@
                                 <div class="dest-info-ext">
                                     <div class="dest-region">
                                         <span class="lang-tr-text"><?php echo e($dest->region['tr'] ?? ''); ?></span>
-                                        <span class="lang-en-text" style="display:none;"><?php echo e($dest->region['en'] ?? ''); ?></span>
+                                        <span class="lang-en-text"><?php echo e($dest->region['en'] ?? ''); ?></span>
                                     </div>
                                     <div class="dest-name-grid">
                                         <span class="lang-tr-text"><?php echo e($dest->name['tr'] ?? ''); ?></span>
-                                        <span class="lang-en-text" style="display:none;"><?php echo e($dest->name['en'] ?? ''); ?></span>
+                                        <span class="lang-en-text"><?php echo e($dest->name['en'] ?? ''); ?></span>
                                     </div>
                                     <div class="dest-btn-wrapper" style="margin-top: 0.8rem;">
                                         <span class="btn-dest-explore">
                                             <span class="lang-tr-text">İncele</span>
-                                            <span class="lang-en-text" style="display:none;">View</span>
+                                            <span class="lang-en-text">View</span>
                                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                                         </span>
                                     </div>
@@ -353,7 +353,7 @@
         <?php else: ?>
             <div style="color: var(--mid-gray); padding: 2rem;">
                 <span class="lang-tr-text">Henüz destinasyon eklenmedi.</span>
-                <span class="lang-en-text" style="display:none;">No destinations added yet.</span>
+                <span class="lang-en-text">No destinations added yet.</span>
             </div>
         <?php endif; ?>
     </section>
@@ -392,16 +392,16 @@
                                         <div class="dest-info-ext">
                                             <div class="dest-region">
                                                 <span class="lang-tr-text"><?php echo e($dest->region['tr'] ?? ''); ?></span>
-                                                <span class="lang-en-text" style="display:none;"><?php echo e($dest->region['en'] ?? ''); ?></span>
+                                                <span class="lang-en-text"><?php echo e($dest->region['en'] ?? ''); ?></span>
                                             </div>
                                             <div class="dest-name-grid">
                                                 <span class="lang-tr-text"><?php echo e($dest->name['tr'] ?? ''); ?></span>
-                                                <span class="lang-en-text" style="display:none;"><?php echo e($dest->name['en'] ?? ''); ?></span>
+                                                <span class="lang-en-text"><?php echo e($dest->name['en'] ?? ''); ?></span>
                                             </div>
                                             <div class="dest-btn-wrapper" style="margin-top: 0.8rem;">
                                                 <span class="btn-dest-explore">
                                                     <span class="lang-tr-text">İncele</span>
-                                                    <span class="lang-en-text" style="display:none;">View</span>
+                                                    <span class="lang-en-text">View</span>
                                                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                                                 </span>
                                             </div>
@@ -418,16 +418,16 @@
                                         <div class="dest-info-ext">
                                             <div class="dest-region">
                                                 <span class="lang-tr-text"><?php echo e($dest->region['tr'] ?? ''); ?></span>
-                                                <span class="lang-en-text" style="display:none;"><?php echo e($dest->region['en'] ?? ''); ?></span>
+                                                <span class="lang-en-text"><?php echo e($dest->region['en'] ?? ''); ?></span>
                                             </div>
                                             <div class="dest-name-grid">
                                                 <span class="lang-tr-text"><?php echo e($dest->name['tr'] ?? ''); ?></span>
-                                                <span class="lang-en-text" style="display:none;"><?php echo e($dest->name['en'] ?? ''); ?></span>
+                                                <span class="lang-en-text"><?php echo e($dest->name['en'] ?? ''); ?></span>
                                             </div>
                                             <div class="dest-btn-wrapper" style="margin-top: 0.8rem;">
                                                 <span class="btn-dest-explore">
                                                     <span class="lang-tr-text">İncele</span>
-                                                    <span class="lang-en-text" style="display:none;">View</span>
+                                                    <span class="lang-en-text">View</span>
                                                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                                                 </span>
                                             </div>
@@ -440,7 +440,7 @@
                 <?php else: ?>
                     <div style="color: var(--mid-gray); padding: 2rem;">
                         <span class="lang-tr-text">Henüz destinasyon eklenmedi.</span>
-                        <span class="lang-en-text" style="display:none;">No destinations added yet.</span>
+                        <span class="lang-en-text">No destinations added yet.</span>
                     </div>
                 <?php endif; ?>
             </div>
