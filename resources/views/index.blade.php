@@ -144,12 +144,12 @@
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <span class="hero-eyebrow" data-i18n="hero_eyebrow">Bağımsız Medya & Lüks Yaşam Platformu</span>
-            <h1 class="hero-title" data-i18n="hero_title">Keşfetmeye Değer <em>Dünyalar</em></h1>
-            <p class="hero-desc" data-i18n="hero_desc">Seçkin destinasyonlar, küresel lüks markalar ve sıra dışı seyahat hikayeleri tek bir çatı altında.</p>
-            <div class="hero-cta-group">
-                <a href="{{ route('gezi-rehberi') }}" class="btn btn-hero-primary" data-i18n="btn_explore">Koleksiyonu Keşfet</a>
-                <a href="https://wa.me/{{ format_whatsapp($settings['whatsapp'] ?? '') }}" target="_blank" class="btn btn-hero-secondary" data-i18n="btn_contact">İletişime Geç</a>
+            <h1 class="hero-title reveal">
+                <span class="lang-text-tr">Türkiye ve dünyada seçkin<br />deneyimlerin kapısını aralıyoruz.</span>
+                <span class="lang-text-en">Opening doors to exclusive<br />experiences globally.</span>
+            </h1>
+            <div class="hero-cta-group reveal" style="transition-delay: 0.2s;">
+                <a href="https://wa.me/{{ format_whatsapp($settings['whatsapp'] ?? '905320000000') }}" target="_blank" class="btn btn-outline whatsapp-cta" data-i18n="btn_contact">İletişime Geç</a>
             </div>
         </div>
     </section>

@@ -307,11 +307,11 @@
     <?php if(!empty($destination->desc['tr']) || !empty($destination->desc['en'])): ?>
         <section class="dest-intro">
             <div class="dest-intro-desc lang-text-tr">
-                <?php echo nl2br(e($destination->desc['tr'] ?? '')); ?>
+                <?php echo nl2br(e(preg_replace('/<br\s*\/?>/i', "\n", $destination->desc['tr'] ?? ''))); ?>
 
             </div>
             <div class="dest-intro-desc lang-text-en">
-                <?php echo nl2br(e($destination->desc['en'] ?? '')); ?>
+                <?php echo nl2br(e(preg_replace('/<br\s*\/?>/i', "\n", $destination->desc['en'] ?? ''))); ?>
 
             </div>
         </section>

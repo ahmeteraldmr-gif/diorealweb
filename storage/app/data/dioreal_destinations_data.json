@@ -18,7 +18,8 @@
         "slug_tr": "istanbul",
         "slug_en": "istanbul",
         "created_at": "2026-07-25 11:32:31",
-        "updated_at": "2026-07-25 11:32:31"
+        "updated_at": "2026-07-25 11:32:31",
+        "type": "turkiye"
     },
     {
         "id": 2,
@@ -39,7 +40,8 @@
         "slug_tr": "bodrum",
         "slug_en": "bodrum",
         "created_at": "2026-07-25 11:32:31",
-        "updated_at": "2026-07-25 11:32:31"
+        "updated_at": "2026-07-25 11:32:31",
+        "type": "turkiye"
     },
     {
         "id": 3,
@@ -60,7 +62,8 @@
         "slug_tr": "fethiye",
         "slug_en": "fethiye",
         "created_at": "2026-07-25 11:32:31",
-        "updated_at": "2026-07-25 11:32:31"
+        "updated_at": "2026-07-25 11:32:31",
+        "type": "turkiye"
     },
     {
         "id": 4,
@@ -81,7 +84,8 @@
         "slug_tr": "kapadokya",
         "slug_en": "kapadokya",
         "created_at": "2026-07-25 11:32:32",
-        "updated_at": "2026-07-25 11:32:32"
+        "updated_at": "2026-07-25 11:32:32",
+        "type": "turkiye"
     },
     {
         "id": 5,
@@ -102,7 +106,8 @@
         "slug_tr": "cesme",
         "slug_en": "cesme",
         "created_at": "2026-07-25 11:32:32",
-        "updated_at": "2026-07-25 11:32:32"
+        "updated_at": "2026-07-25 11:32:32",
+        "type": "turkiye"
     },
     {
         "id": 6,
@@ -123,7 +128,8 @@
         "slug_tr": "kas",
         "slug_en": "kas",
         "created_at": "2026-07-25 11:32:32",
-        "updated_at": "2026-07-25 11:32:32"
+        "updated_at": "2026-07-25 11:32:32",
+        "type": "turkiye"
     },
     {
         "id": 7,
@@ -144,7 +150,8 @@
         "slug_tr": "datca",
         "slug_en": "datca",
         "created_at": "2026-07-25 11:32:33",
-        "updated_at": "2026-07-25 11:32:33"
+        "updated_at": "2026-07-25 11:32:33",
+        "type": "turkiye"
     },
     {
         "id": 8,
@@ -165,7 +172,8 @@
         "slug_tr": "maldivler",
         "slug_en": "maldivler",
         "created_at": "2026-07-25 11:32:33",
-        "updated_at": "2026-07-25 11:32:33"
+        "updated_at": "2026-07-25 11:32:33",
+        "type": "yurtdisi_popular"
     },
     {
         "id": 9,
@@ -186,7 +194,8 @@
         "slug_tr": "japonya",
         "slug_en": "japonya",
         "created_at": "2026-07-25 11:32:33",
-        "updated_at": "2026-07-25 11:32:33"
+        "updated_at": "2026-07-25 11:32:33",
+        "type": "yurtdisi_popular"
     },
     {
         "id": 10,
@@ -207,7 +216,8 @@
         "slug_tr": "patagonya",
         "slug_en": "patagonya",
         "created_at": "2026-07-25 11:32:34",
-        "updated_at": "2026-07-25 11:32:34"
+        "updated_at": "2026-07-25 11:32:34",
+        "type": "yurtdisi_popular"
     },
     {
         "id": 11,
@@ -228,7 +238,8 @@
         "slug_tr": "amalfi-kiyisi",
         "slug_en": "amalfi-kiyisi",
         "created_at": "2026-07-25 11:32:34",
-        "updated_at": "2026-07-25 11:32:34"
+        "updated_at": "2026-07-25 11:32:34",
+        "type": "yurtdisi_popular"
     },
     {
         "id": 12,
@@ -249,7 +260,8 @@
         "slug_tr": "norvec-fiyortlari",
         "slug_en": "norvec-fiyortlari",
         "created_at": "2026-07-25 11:32:34",
-        "updated_at": "2026-07-25 11:32:34"
+        "updated_at": "2026-07-25 11:32:34",
+        "type": "yurtdisi_popular"
     },
     {
         "id": 13,
@@ -270,7 +282,8 @@
         "slug_tr": "sahra-colu",
         "slug_en": "sahra-colu",
         "created_at": "2026-07-25 11:32:35",
-        "updated_at": "2026-07-25 11:32:35"
+        "updated_at": "2026-07-25 11:32:35",
+        "type": "yurtdisi_popular"
     },
     {
         "id": 14,
@@ -291,7 +304,8 @@
         "slug_tr": "isvicre-alpleri",
         "slug_en": "isvicre-alpleri",
         "created_at": "2026-07-25 11:32:35",
-        "updated_at": "2026-07-25 11:32:35"
+        "updated_at": "2026-07-25 11:32:35",
+        "type": "yurtdisi_traveller"
     },
     {
         "id": 15,
@@ -312,7 +326,8 @@
         "slug_tr": "izlanda",
         "slug_en": "izlanda",
         "created_at": "2026-07-25 11:32:35",
-        "updated_at": "2026-07-25 11:32:35"
+        "updated_at": "2026-07-25 11:32:35",
+        "type": "yurtdisi_traveller"
     },
     {
         "id": 16,
@@ -333,7 +348,8 @@
         "slug_tr": "kosta-rika",
         "slug_en": "kosta-rika",
         "created_at": "2026-07-25 11:32:36",
-        "updated_at": "2026-07-25 11:32:36"
+        "updated_at": "2026-07-25 11:32:36",
+        "type": "yurtdisi_traveller"
     },
     {
         "id": 17,
@@ -354,7 +370,8 @@
         "slug_tr": "toskana",
         "slug_en": "toskana",
         "created_at": "2026-07-25 11:32:36",
-        "updated_at": "2026-07-25 11:32:36"
+        "updated_at": "2026-07-25 11:32:36",
+        "type": "yurtdisi_month"
     },
     {
         "id": 18,
@@ -375,7 +392,8 @@
         "slug_tr": "kyoto",
         "slug_en": "kyoto",
         "created_at": "2026-07-25 11:32:36",
-        "updated_at": "2026-07-25 11:32:36"
+        "updated_at": "2026-07-25 11:32:36",
+        "type": "yurtdisi_month"
     },
     {
         "id": 19,
@@ -396,7 +414,8 @@
         "slug_tr": "lapland",
         "slug_en": "lapland",
         "created_at": "2026-07-25 11:32:37",
-        "updated_at": "2026-07-25 11:32:37"
+        "updated_at": "2026-07-25 11:32:37",
+        "type": "yurtdisi_spotlight"
     },
     {
         "id": 20,
@@ -417,7 +436,8 @@
         "slug_tr": "seyseller",
         "slug_en": "seyseller",
         "created_at": "2026-07-25 11:32:37",
-        "updated_at": "2026-07-25 11:32:37"
+        "updated_at": "2026-07-25 11:32:37",
+        "type": "yurtdisi_spotlight"
     },
     {
         "id": 21,
@@ -438,7 +458,8 @@
         "slug_tr": "petra-antik-kenti",
         "slug_en": "petra-antik-kenti",
         "created_at": "2026-07-25 11:32:37",
-        "updated_at": "2026-07-25 11:32:37"
+        "updated_at": "2026-07-25 11:32:37",
+        "type": "yurtdisi_spotlight"
     },
     {
         "id": 22,
@@ -459,6 +480,7 @@
         "slug_tr": "paris",
         "slug_en": "paris",
         "created_at": "2026-07-25 11:32:38",
-        "updated_at": "2026-07-25 11:32:38"
+        "updated_at": "2026-07-25 11:32:38",
+        "type": "yurtdisi_spotlight"
     }
 ]
