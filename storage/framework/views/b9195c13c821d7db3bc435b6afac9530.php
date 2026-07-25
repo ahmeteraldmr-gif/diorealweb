@@ -188,11 +188,17 @@
         }
         .event-card-title {
             font-family: var(--font-display);
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 400;
             line-height: 1.3;
             margin-bottom: 0.8rem;
             color: var(--near-black);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            min-height: 3.9rem;
         }
         .event-card-location {
             font-size: 0.85rem;
@@ -204,9 +210,15 @@
         }
         .event-card-desc {
             font-size: 0.95rem;
-            line-height: 1.7;
+            line-height: 1.6;
             color: var(--mid-gray);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-height: 4.8em;
             flex-grow: 1;
         }
         .event-card-btn-wrapper {
@@ -247,20 +259,20 @@
                         </div>
 
                         <div class="event-card-content">
-                            <span class="event-card-tag lang-text-tr"><?php echo e($e->tag["tr"] ?? ""); ?></span>
-                            <span class="event-card-tag lang-text-en"><?php echo e($e->tag["en"] ?? ""); ?></span>
+                            <span class="event-card-tag lang-text-tr"><?php echo e(!empty($e->tag["tr"]) ? $e->tag["tr"] : ($e->tag["en"] ?? "")); ?></span>
+                            <span class="event-card-tag lang-text-en"><?php echo e(!empty($e->tag["en"]) ? $e->tag["en"] : ($e->tag["tr"] ?? "")); ?></span>
                             
-                            <h3 class="event-card-title lang-text-tr"><?php echo e($e->title["tr"] ?? ""); ?></h3>
-                            <h3 class="event-card-title lang-text-en"><?php echo e($e->title["en"] ?? ""); ?></h3>
+                            <h3 class="event-card-title lang-text-tr"><?php echo e(!empty($e->title["tr"]) ? $e->title["tr"] : ($e->title["en"] ?? "")); ?></h3>
+                            <h3 class="event-card-title lang-text-en"><?php echo e(!empty($e->title["en"]) ? $e->title["en"] : ($e->title["tr"] ?? "")); ?></h3>
                             
                             <div class="event-card-location">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span class="lang-text-tr"><?php echo e($e->loc["tr"] ?? ""); ?></span>
-                                <span class="lang-text-en"><?php echo e($e->loc["en"] ?? ""); ?></span>
+                                <span class="lang-text-tr"><?php echo e(!empty($e->loc["tr"]) ? $e->loc["tr"] : ($e->loc["en"] ?? "")); ?></span>
+                                <span class="lang-text-en"><?php echo e(!empty($e->loc["en"]) ? $e->loc["en"] : ($e->loc["tr"] ?? "")); ?></span>
                             </div>
 
-                            <p class="event-card-desc lang-text-tr"><?php echo e($e->desc["tr"] ?? ""); ?></p>
-                            <p class="event-card-desc lang-text-en"><?php echo e($e->desc["en"] ?? ""); ?></p>
+                            <p class="event-card-desc lang-text-tr"><?php echo e(\Illuminate\Support\Str::limit(strip_tags(!empty($e->desc["tr"]) ? $e->desc["tr"] : ($e->desc["en"] ?? "")), 150)); ?></p>
+                            <p class="event-card-desc lang-text-en"><?php echo e(\Illuminate\Support\Str::limit(strip_tags(!empty($e->desc["en"]) ? $e->desc["en"] : ($e->desc["tr"] ?? "")), 150)); ?></p>
 
                             <div class="event-card-btn-wrapper">
                                 <a href="<?php echo e(route('etkinlik.detay', $e->slug_tr ?: ($e->slug_en ?: $e->id))); ?>" class="btn btn-outline" style="display: block; text-align: center; text-decoration: none;">
