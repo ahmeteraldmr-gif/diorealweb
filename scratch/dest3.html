@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta name="csrf-token" content="xLVfvNXKvxbjs7OBZFtPtX14L7CcagPdB4rmn4VQ">
+    <meta name="base-url" content="https://demo.acboz.com.tr/dioreal/public">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fethiye — Dioreal Dijital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@200;300;400;500;600&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://demo.acboz.com.tr/dioreal/public/css/base.css?v=1784979024">
+    <link rel="stylesheet" href="https://demo.acboz.com.tr/dioreal/public/css/nav-footer.css?v=1784979024">
+    <link rel="stylesheet" href="https://demo.acboz.com.tr/dioreal/public/css/components.css?v=1784979024">
+    <link rel="stylesheet" href="https://demo.acboz.com.tr/dioreal/public/css/about.css?v=1784979024">
+    <style>
+        body {
+            background-color: var(--off-white);
+            color: var(--dark-gray);
+        }
+        .page-hero {
+            position: relative;
+            height: 70vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            overflow: hidden;
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+            z-index: 1;
+        }
+        .page-hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 2rem;
+            max-width: 900px;
+        }
+        .page-eyebrow {
+            font-family: var(--font-condensed);
+            font-size: 0.9rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        .page-title {
+            font-family: var(--font-display);
+            font-size: clamp(3.2rem, 7vw, 5rem);
+            line-height: 1.1;
+            font-weight: 300;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .dest-intro {
+            max-width: 900px;
+            margin: 6rem auto 4rem;
+            text-align: center;
+            padding: 0 2rem;
+        }
+        .dest-intro-desc {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            line-height: 1.6;
+            color: var(--near-black);
+            font-weight: 300;
+        }
+        .dest-section-title {
+            font-family: var(--font-display);
+            font-size: 2.8rem;
+            color: var(--near-black);
+            margin-bottom: 2.5rem;
+            text-align: center;
+            font-weight: 400;
+        }
+        .dest-section-title em {
+            font-style: italic;
+            font-weight: 300;
+            color: var(--accent);
+        }
+        .dest-section {
+            padding: 5rem 0;
+        }
+        .dest-section.alt {
+            background-color: var(--light-gray);
+        }
+        /* Square grid layout for country gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .gallery-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            aspect-ratio: 1/1;
+            box-shadow: 0 15px 35px rgba(29, 27, 26, 0.06);
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+            cursor: pointer;
+        }
+        .gallery-img-wrapper:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(29, 27, 26, 0.12);
+        }
+        .gallery-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .gallery-img-wrapper:hover img {
+            transform: scale(1.05);
+        }
+        .inner-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Desktop Nav -->
+    <nav id="mainNav">
+        <div class="nav-logo-wrapper">
+            <a href="https://demo.acboz.com.tr/dioreal/public" class="nav-logo">
+                <span class="logo-text">DIOREAL</span>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="https://demo.acboz.com.tr/dioreal/public/hakkimizda" data-i18n="nav_about">Hakkımızda</a></li>
+            <li><a href="https://demo.acboz.com.tr/dioreal/public/oteller" data-i18n="nav_hotels">Oteller</a></li>
+            <li><a href="https://demo.acboz.com.tr/dioreal/public/yatlar" data-i18n="nav_yachts">Yatlar</a></li>
+            <li><a href="https://demo.acboz.com.tr/dioreal/public/restoranlar" data-i18n="nav_restaurants">Restoranlar</a></li>
+            <li><a href="https://demo.acboz.com.tr/dioreal/public/destinasyonlar" data-i18n="nav_guide">Gezi Rehberi</a></li>
+            <li><a href="https://demo.acboz.com.tr/dioreal/public/etkinlikler" data-i18n="nav_events">Etkinlikler</a></li>
+            <li><a href="https://demo.acboz.com.tr/dioreal/public/journal" data-i18n="nav_journal">Journal</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="lang-switch desk-lang">
+                <span id="lang-tr" class="lang-btn">TR</span>
+                <span>|</span>
+                <span id="lang-en" class="lang-btn">EN</span>
+            </div>
+            <div class="hamburger" id="hamb">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Fullscreen Menu -->
+    <div class="fs-menu" id="fsMenu">
+        <ul class="fs-links">
+            <li><a href="https://demo.acboz.com.tr/dioreal/public/hakkimizda" data-i18n="nav_about">Hakkımızda</a></li>
+            <li><a href="https://demo.acboz.com.tr/dioreal/public/oteller" data-i18n="nav_hotels">Oteller</a></li>
+            <li><a href="https://demo.acboz.com.tr/dioreal/public/yatlar" data-i18n="nav_yachts">Yatlar</a></li>
+            <li><a href="https://demo.acboz.com.tr/dioreal/public/restoranlar" data-i18n="nav_restaurants">Restoranlar</a></li>
+            <div class="fs-divider"></div>
+            <li><a href="https://demo.acboz.com.tr/dioreal/public/destinasyonlar" data-i18n="nav_guide">Gezi Rehberi</a></li>
+            <li><a href="https://demo.acboz.com.tr/dioreal/public/etkinlikler" data-i18n="nav_events">Etkinlikler</a></li>
+            <li><a href="https://demo.acboz.com.tr/dioreal/public/journal" data-i18n="nav_journal">Journal</a></li>
+            <li class="lang-switch" style="font-size: 1.5rem; font-family: var(--font-display); justify-content: center; margin-top:3rem;">
+                <span id="lang-tr-fs" class="lang-btn">TR</span> | <span id="lang-en-fs" class="lang-btn">EN</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Page Hero -->
+        <div class="page-hero" style=" background-image: url('https://demo.acboz.com.tr/dioreal/public/foto.img/fethiye.jpg'); ">
+                <div class="page-hero-content" style="position: relative; z-index: 2;">
+            <span class="page-eyebrow lang-text-tr">Doğa &amp; Yatçılık</span>
+            <span class="page-eyebrow lang-text-en">Nature &amp; Yachting</span>
+            <h1 class="page-title lang-text-tr">Fethiye</h1>
+            <h1 class="page-title lang-text-en">Fethiye</h1>
+        </div>
+    </div>
+
+    <!-- Description Introduction -->
+            <section class="dest-intro reveal">
+            <div class="dest-intro-desc lang-text-tr">
+                Fethiye&#039;ye ilk baktığınızda gözünüze önce deniz çarpar. Birkaç dakika sonra onu çevreleyen çam ormanları, yüksek dağlar ve adalar görünmeye başlar. Ardından fark edersiniz ki burada manzara hiçbir zaman tek katmanlı değildir. Aynı karede turkuaz koyları, antik kaya mezarlarını, yamaç paraşütlerini, yelkenlileri ve Akdeniz&#039;in en güçlü doğal peyzajlarından birini görebilirsiniz.<br />
+<br />
+Bugünkü Fethiye, binlerce yıl önce Likya Uygarlığı&#039;nın Telmessos kenti olarak kurulmuştu. Antik çağda kehanetleriyle tanınan şehir, daha sonra Persler, Romalılar, Bizans ve Osmanlı dönemlerini yaşayarak Akdeniz&#039;in önemli limanlarından biri hâline geldi. Şehrin merkezindeki kayalara oyulmuş görkemli Amintas Kaya Mezarları, bu uzun tarihin en etkileyici tanıkları arasında yer alır. Gün batımında buradan Fethiye Körfezi&#039;ne bakmak, şehrin geçmişi ile bugünü aynı manzarada buluşturur.<br />
+<br />
+Fethiye&#039;nin en büyük zenginliği ise doğasının çeşitliliğidir. Burada deniz yalnızca kıyıda başlamaz; dağların arasına kadar girer. Çam ormanları kumsallarla birleşir, kanyonlar berrak nehirlerle buluşur, küçük adalar ise körfezin içine dağılmış doğal bir mozaik oluşturur. Bu nedenle Fethiye, yalnızca sahil tatili yapanların değil; doğa yürüyüşü, kamp, dalış, yelken ve fotoğraf tutkunlarının da vazgeçilmez rotalarından biridir.<br />
+<br />
+Şehrin simgesi hâline gelen Ölüdeniz, dünyanın en çok fotoğraflanan kıyılarından biridir. Sabah saatlerinde neredeyse cam kadar durgun olan lagün, gün ilerledikçe gökyüzünden süzülen rengârenk yamaç paraşütleriyle bambaşka bir atmosfere dönüşür. Babadağ&#039;ın zirvesinden başlayan uçuşlar yalnızca adrenalin değil, Akdeniz&#039;in en etkileyici panoramalarından birini de sunar.<br />
+<br />
+Fethiye&#039;nin çevresi keşfedildikçe güzelleşir. Kayaköy, terk edilmiş taş evleriyle Anadolu&#039;nun en dokunaklı tarihî yerleşimlerinden biridir. Saklıkent Kanyonu, yaz sıcağında buz gibi suların arasında yürüyebileceğiniz eşsiz bir doğa deneyimi sunar. Kelebekler Vadisi, yalnızca tekneyle ya da zorlu bir patikayla ulaşılabilen vahşi güzelliğiyle öne çıkar. Göcek Adaları, Gemiler Adası, Kabak Koyu, İnlice, Çalış Plajı ve Akvaryum Koyu ise Fethiye&#039;nin farklı yüzlerini keşfetmek isteyenlere birbirinden farklı deneyimler sunar.<br />
+<br />
+Burası aynı zamanda Türkiye&#039;nin en önemli yürüyüş rotalarından biri olan Likya Yolu&#039;nun başlangıç noktalarından biridir. Antik kentler, deniz manzaralı patikalar ve çam ormanları arasında ilerleyen bu rota, dünyanın en güzel uzun mesafe yürüyüş parkurlarından biri kabul edilir. Bir sabah yürüyüşe başlayıp öğleden sonra turkuaz bir koyda denize girmek, Fethiye&#039;de oldukça sıradan bir gündür.<br />
+<br />
+Deniz yaşamı Fethiye&#039;de güçlüdür. Günlük tekne turları On İki Adalar çevresinde dolaşırken, daha uzun mavi yolculuklar Göcek Körfezi&#039;nden Kekova&#039;ya kadar uzanır. Sessiz koylarda geçirilen birkaç saat, Fethiye&#039;nin neden Akdeniz&#039;in en önemli yatçılık merkezlerinden biri olduğunu kolayca anlatır.<br />
+<br />
+Fethiye&#039;nin mutfağı da coğrafyasını yansıtır. Taze deniz ürünleri, Ege ve Akdeniz otları, zeytinyağlılar, narenciye ve köy pazarlarından gelen doğal ürünler sofraların temelini oluşturur. Şehir merkezindeki balık restoranlarından sahil kasabalarındaki küçük aile işletmelerine kadar uzanan gastronomi kültürü, gösterişten çok malzemenin kalitesine dayanır.<br />
+<br />
+Fethiye&#039;yi keşfetmenin en güzel yolu zamana yaymaktır. Sabah Amintas Kaya Mezarları&#039;ndan şehri seyredip kahvaltınızı eski çarşıda yapabilir, öğleden sonra Ölüdeniz&#039;in turkuaz sularına inebilir, akşamüstü Kayaköy&#039;ün sessiz taş sokaklarında yürüyebilir, gün batımını ise Çalış Plajı&#039;nda izleyebilirsiniz. Bir sonraki gün rotayı Saklıkent&#039;e, Kabak&#039;a ya da Göcek koylarına çevirdiğinizde bambaşka bir Fethiye ile karşılaşırsınız.<br />
+<br />
+Fethiye&#039;nin en etkileyici yanı, doğasının hiçbir zaman gösterişe ihtiyaç duymamasıdır. Burada dağlar denize yalnızca eşlik etmez; onunla birlikte aynı manzarayı oluşturur. Tarih, doğa ve Akdeniz yaşamı birbirinden ayrılmaz. Bu yüzden Fethiye, yalnızca güzel bir sahil kasabası değil; Türkiye&#039;nin en bütünlüklü doğal destinasyonlarından biridir.<br />
+<br />
+DIOREAL Editör Notu<br />
+<br />
+Fethiye için en az 5 gün ayırın. Bir gününüzü Ölüdeniz ve Babadağ&#039;a, bir gününüzü tekneyle koylara, bir gününüzü Kayaköy ve Likya mirasına, bir gününüzü ise Saklıkent ve çevresindeki doğal alanlara ayırın. Fethiye&#039;nin gerçek karakteri tek bir plajda değil; dağ, deniz, tarih ve doğanın aynı yolculukta birleştiği anlarda ortaya çıkar.
+            </div>
+            <div class="dest-intro-desc lang-text-en">
+                Fethiye&#039;ye ilk baktığınızda gözünüze önce deniz çarpar. Birkaç dakika sonra onu çevreleyen çam ormanları, yüksek dağlar ve adalar görünmeye başlar. Ardından fark edersiniz ki burada manzara hiçbir zaman tek katmanlı değildir. Aynı karede turkuaz koyları, antik kaya mezarlarını, yamaç paraşütlerini, yelkenlileri ve Akdeniz&#039;in en güçlü doğal peyzajlarından birini görebilirsiniz.<br />
+<br />
+Bugünkü Fethiye, binlerce yıl önce Likya Uygarlığı&#039;nın Telmessos kenti olarak kurulmuştu. Antik çağda kehanetleriyle tanınan şehir, daha sonra Persler, Romalılar, Bizans ve Osmanlı dönemlerini yaşayarak Akdeniz&#039;in önemli limanlarından biri hâline geldi. Şehrin merkezindeki kayalara oyulmuş görkemli Amintas Kaya Mezarları, bu uzun tarihin en etkileyici tanıkları arasında yer alır. Gün batımında buradan Fethiye Körfezi&#039;ne bakmak, şehrin geçmişi ile bugünü aynı manzarada buluşturur.<br />
+<br />
+Fethiye&#039;nin en büyük zenginliği ise doğasının çeşitliliğidir. Burada deniz yalnızca kıyıda başlamaz; dağların arasına kadar girer. Çam ormanları kumsallarla birleşir, kanyonlar berrak nehirlerle buluşur, küçük adalar ise körfezin içine dağılmış doğal bir mozaik oluşturur. Bu nedenle Fethiye, yalnızca sahil tatili yapanların değil; doğa yürüyüşü, kamp, dalış, yelken ve fotoğraf tutkunlarının da vazgeçilmez rotalarından biridir.<br />
+<br />
+Şehrin simgesi hâline gelen Ölüdeniz, dünyanın en çok fotoğraflanan kıyılarından biridir. Sabah saatlerinde neredeyse cam kadar durgun olan lagün, gün ilerledikçe gökyüzünden süzülen rengârenk yamaç paraşütleriyle bambaşka bir atmosfere dönüşür. Babadağ&#039;ın zirvesinden başlayan uçuşlar yalnızca adrenalin değil, Akdeniz&#039;in en etkileyici panoramalarından birini de sunar.<br />
+<br />
+Fethiye&#039;nin çevresi keşfedildikçe güzelleşir. Kayaköy, terk edilmiş taş evleriyle Anadolu&#039;nun en dokunaklı tarihî yerleşimlerinden biridir. Saklıkent Kanyonu, yaz sıcağında buz gibi suların arasında yürüyebileceğiniz eşsiz bir doğa deneyimi sunar. Kelebekler Vadisi, yalnızca tekneyle ya da zorlu bir patikayla ulaşılabilen vahşi güzelliğiyle öne çıkar. Göcek Adaları, Gemiler Adası, Kabak Koyu, İnlice, Çalış Plajı ve Akvaryum Koyu ise Fethiye&#039;nin farklı yüzlerini keşfetmek isteyenlere birbirinden farklı deneyimler sunar.<br />
+<br />
+Burası aynı zamanda Türkiye&#039;nin en önemli yürüyüş rotalarından biri olan Likya Yolu&#039;nun başlangıç noktalarından biridir. Antik kentler, deniz manzaralı patikalar ve çam ormanları arasında ilerleyen bu rota, dünyanın en güzel uzun mesafe yürüyüş parkurlarından biri kabul edilir. Bir sabah yürüyüşe başlayıp öğleden sonra turkuaz bir koyda denize girmek, Fethiye&#039;de oldukça sıradan bir gündür.<br />
+<br />
+Deniz yaşamı Fethiye&#039;de güçlüdür. Günlük tekne turları On İki Adalar çevresinde dolaşırken, daha uzun mavi yolculuklar Göcek Körfezi&#039;nden Kekova&#039;ya kadar uzanır. Sessiz koylarda geçirilen birkaç saat, Fethiye&#039;nin neden Akdeniz&#039;in en önemli yatçılık merkezlerinden biri olduğunu kolayca anlatır.<br />
+<br />
+Fethiye&#039;nin mutfağı da coğrafyasını yansıtır. Taze deniz ürünleri, Ege ve Akdeniz otları, zeytinyağlılar, narenciye ve köy pazarlarından gelen doğal ürünler sofraların temelini oluşturur. Şehir merkezindeki balık restoranlarından sahil kasabalarındaki küçük aile işletmelerine kadar uzanan gastronomi kültürü, gösterişten çok malzemenin kalitesine dayanır.<br />
+<br />
+Fethiye&#039;yi keşfetmenin en güzel yolu zamana yaymaktır. Sabah Amintas Kaya Mezarları&#039;ndan şehri seyredip kahvaltınızı eski çarşıda yapabilir, öğleden sonra Ölüdeniz&#039;in turkuaz sularına inebilir, akşamüstü Kayaköy&#039;ün sessiz taş sokaklarında yürüyebilir, gün batımını ise Çalış Plajı&#039;nda izleyebilirsiniz. Bir sonraki gün rotayı Saklıkent&#039;e, Kabak&#039;a ya da Göcek koylarına çevirdiğinizde bambaşka bir Fethiye ile karşılaşırsınız.<br />
+<br />
+Fethiye&#039;nin en etkileyici yanı, doğasının hiçbir zaman gösterişe ihtiyaç duymamasıdır. Burada dağlar denize yalnızca eşlik etmez; onunla birlikte aynı manzarayı oluşturur. Tarih, doğa ve Akdeniz yaşamı birbirinden ayrılmaz. Bu yüzden Fethiye, yalnızca güzel bir sahil kasabası değil; Türkiye&#039;nin en bütünlüklü doğal destinasyonlarından biridir.<br />
+<br />
+DIOREAL Editör Notu<br />
+<br />
+Fethiye için en az 5 gün ayırın. Bir gününüzü Ölüdeniz ve Babadağ&#039;a, bir gününüzü tekneyle koylara, bir gününüzü Kayaköy ve Likya mirasına, bir gününüzü ise Saklıkent ve çevresindeki doğal alanlara ayırın. Fethiye&#039;nin gerçek karakteri tek bir plajda değil; dağ, deniz, tarih ve doğanın aynı yolculukta birleştiği anlarda ortaya çıkar.
+            </div>
+        </section>
+    
+    <!-- Videos Section -->
+    
+    <!-- Hotels Section -->
+    
+    <!-- Restaurants Section -->
+    
+    <!-- Journal Section -->
+    
+    <!-- Gallery Section -->
+    
+    <footer id="iletisim">
+    <div class="footer-top">
+        <div class="footer-brand">
+            <div class="footer-logo">DIOREAL</div>
+            <p class="footer-p" data-i18n="footer_p">Seçkin destinasyonları ve premium markaları doğru kitleyle buluşturan medya platformu.</p>
+            <a href="https://wa.me/905320000000" class="whatsapp-cta">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+                </svg>
+                <span data-i18n="btn_contact_wa">WhatsApp İletişim</span>
+            </a>
+        </div>
+        <div class="footer-col">
+            <h4 data-i18n="footer_pages">Sayfalar</h4>
+            <ul class="footer-links">
+                <li><a href="https://demo.acboz.com.tr/dioreal/public/hakkimizda" data-i18n="nav_about">Hakkımızda</a></li>
+                <li><a href="https://demo.acboz.com.tr/dioreal/public/oteller" data-i18n="nav_hotels">Oteller</a></li>
+                <li><a href="https://demo.acboz.com.tr/dioreal/public/yatlar" data-i18n="nav_yachts">Yatlar</a></li>
+                <li><a href="https://demo.acboz.com.tr/dioreal/public/restoranlar" data-i18n="nav_restaurants">Restoranlar</a></li>
+                <li><a href="https://demo.acboz.com.tr/dioreal/public/gezi-rehberi" data-i18n="nav_guide">Gezi Rehberi</a></li>
+                <li><a href="https://demo.acboz.com.tr/dioreal/public/etkinlikler" data-i18n="nav_events">Etkinlikler</a></li>
+                <li><a href="https://demo.acboz.com.tr/dioreal/public/journal" data-i18n="nav_journal">Journal</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4 data-i18n="footer_serv">Hizmetler</h4>
+            <ul class="footer-links">
+                <li><a href="#">Balayı Paketleri</a></li>
+                <li><a href="#">Aile Tatilleri</a></li>
+                <li><a href="#">Macera Turları</a></li>
+                <li><a href="#">Kültür Gezileri</a></li>
+                <li><a href="#">Özel Jet Hizmetleri</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4 data-i18n="footer_contact">İletişim</h4>
+            <ul class="footer-links">
+                                    <li><a href="mailto:info@diorealdijital.com">info@diorealdijital.com</a></li>
+                                                    <li><a href="tel:+902125550100">+90 212 555 0100</a></li>
+                                <li>
+                    <span class="lang-text-tr">İstanbul, Türkiye</span>
+                    <span class="lang-text-en">Istanbul, Turkey</span>
+                </li>
+                                    <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+                                                    <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+                            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 Dioreal Dijital. All Rights Reserved.</span>
+        <span>Est. 15 Years of Experience</span>
+    </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="https://demo.acboz.com.tr/dioreal/public/js/i18n.js?v=1784979024"></script>
+    <script src="https://demo.acboz.com.tr/dioreal/public/js/common.js?v=1784979024"></script>
+    <script src="https://demo.acboz.com.tr/dioreal/public/js/nav.js?v=1784979024"></script>
+</body>
+</html>
+
