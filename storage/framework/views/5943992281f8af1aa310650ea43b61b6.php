@@ -340,7 +340,7 @@
     <?php endif; ?>
 
     <!-- Hotels Section -->
-    <?php if(count($hotels) > 0): ?>
+    <?php if(!empty($hotels) && count($hotels) > 0): ?>
         <section class="dest-section alt">
             <h2 class="dest-section-title">Lüks <em>Oteller</em></h2>
             <div class="inner-container">
@@ -389,7 +389,7 @@
     <?php endif; ?>
 
     <!-- Restaurants Section -->
-    <?php if(count($restaurants) > 0): ?>
+    <?php if(!empty($restaurants) && count($restaurants) > 0): ?>
         <section class="dest-section">
             <h2 class="dest-section-title">Seçkin <em>Restoranlar</em></h2>
             <div class="inner-container">
@@ -438,7 +438,7 @@
     <?php endif; ?>
 
     <!-- Journal Section -->
-    <?php if(count($journals) > 0): ?>
+    <?php if(!empty($journals) && count($journals) > 0): ?>
         <section class="dest-section alt">
             <h2 class="dest-section-title">İlgili <em>Yazılar & Blog</em></h2>
             <div class="inner-container">
@@ -468,7 +468,7 @@
     <?php endif; ?>
 
     <!-- Gallery Section -->
-    <?php if(!empty($destination->gallery) && is_array($destination->gallery)): ?>
+    <?php if(!empty($destination->gallery) && is_array($destination->gallery) && count($destination->gallery) > 0): ?>
         <section class="dest-section reveal">
             <h2 class="dest-section-title">Fotoğraf <em>Galerisi</em></h2>
             <div class="gallery-grid">

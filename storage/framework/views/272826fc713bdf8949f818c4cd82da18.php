@@ -239,7 +239,7 @@
             <form action="<?php echo e(route('login')); ?>" method="POST">
                 <?php echo csrf_field(); ?>
 
-                <?php if($errors->has('login_error')): ?>
+                <?php if(isset($errors) && $errors->has('login_error')): ?>
                     <div class="error-container">
                         <i class="fas fa-exclamation-circle"></i>
                         <span><?php echo e($errors->first('login_error')); ?></span>

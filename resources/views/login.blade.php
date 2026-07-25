@@ -239,7 +239,7 @@
             <form action="{{ route('login') }}" method="POST">
                 @csrf
 
-                @if ($errors->has('login_error'))
+                @if (isset($errors) && $errors->has('login_error'))
                     <div class="error-container">
                         <i class="fas fa-exclamation-circle"></i>
                         <span>{{ $errors->first('login_error') }}</span>
