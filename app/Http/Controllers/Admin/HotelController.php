@@ -71,9 +71,11 @@ class HotelController extends Controller
         // Handle custom typed destination name
         $destinationName = $request->input('destination_name');
         if ($destinationName) {
-            $destination = \App\Models\Destination::where('name->tr', $destinationName)
-                ->orWhere('name->en', $destinationName)
-                ->first();
+            $destination = \App\Models\Destination::all()->first(function($d) use ($destinationName) {
+                $tr = is_array($d->name) ? ($d->name['tr'] ?? '') : $d->name;
+                $en = is_array($d->name) ? ($d->name['en'] ?? '') : $d->name;
+                return $tr === $destinationName || $en === $destinationName;
+            });
             if (!$destination) {
                 $destination = \App\Models\Destination::create([
                     'name' => ['tr' => $destinationName, 'en' => $destinationName],
@@ -206,9 +208,11 @@ class HotelController extends Controller
         // Handle custom typed destination name
         $destinationName = $request->input('destination_name');
         if ($destinationName) {
-            $destination = \App\Models\Destination::where('name->tr', $destinationName)
-                ->orWhere('name->en', $destinationName)
-                ->first();
+            $destination = \App\Models\Destination::all()->first(function($d) use ($destinationName) {
+                $tr = is_array($d->name) ? ($d->name['tr'] ?? '') : $d->name;
+                $en = is_array($d->name) ? ($d->name['en'] ?? '') : $d->name;
+                return $tr === $destinationName || $en === $destinationName;
+            });
             if (!$destination) {
                 $destination = \App\Models\Destination::create([
                     'name' => ['tr' => $destinationName, 'en' => $destinationName],

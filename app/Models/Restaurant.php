@@ -12,6 +12,7 @@ class Restaurant extends Model
     protected $casts = [
         "name" => "array",
         "tag" => "array",
+        "location" => "array",
         "desc" => "array",
         "long_desc" => "array",
         "gallery" => "array",
