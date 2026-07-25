@@ -1,98 +1,158 @@
 [
     {
-        "id": 1,
-        "name": {
-            "tr": "Mikla",
-            "en": "Mikla"
-        },
-        "tag": {
-            "tr": "İstanbul · Fine Dining",
-            "en": "Istanbul · Fine Dining"
-        },
-        "img": "foto.img/rest_mikla.jpg",
-        "desc": {
-            "tr": "Boğaz manzarasına hâkim terası ve Türk-İskandinav mutfağı füzyonuyla İstanbul'un efsanevi adresi.",
-            "en": "Istanbul's legendary address with its Bosphorus terrace and Turkish-Scandinavian fusion cuisine."
-        }
-    },
-    {
-        "id": 2,
-        "name": {
-            "tr": "Zuma Bodrum",
-            "en": "Zuma Bodrum"
-        },
-        "tag": {
-            "tr": "Bodrum · Deniz Kenarı",
-            "en": "Bodrum · Seaside"
-        },
-        "img": "foto.img/rest_zuma.jpg",
-        "desc": {
-            "tr": "Japon Izakaya geleneğini modern lüksle buluşturan, Bodrum Marina'nın en prestijli restoranı.",
-            "en": "Bodrum Marina's most prestigious restaurant, blending Japanese Izakaya tradition with modern luxury."
-        }
-    },
-    {
-        "id": 3,
-        "name": {
-            "tr": "Melengeç Restaurant",
-            "en": "Melengeç Restaurant"
-        },
-        "tag": {
-            "tr": "Çeşme · Meyhane",
-            "en": "Cesme · Tavern"
-        },
-        "img": "foto.img/rest_melengec.jpg",
-        "desc": {
-            "tr": "Ege'nin en taze deniz ürünleri, nefis zeytinyağlılar ve muhteşem Alaçatı manzarasıyla unutulmaz bir sofra.",
-            "en": "An unforgettable table with Aegean's freshest seafood, delicious olive oil dishes and Alaçatı views."
-        }
-    },
-    {
-        "id": 4,
-        "name": {
-            "tr": "Hideaway",
-            "en": "Hideaway"
-        },
-        "tag": {
-            "tr": "Kaş · Teras",
-            "en": "Kas · Terrace"
-        },
-        "img": "foto.img/rest_hideaway.jpg",
-        "desc": {
-            "tr": "Denize 10 metre yukarıdan bakan terası ve yaratıcı Akdeniz menüsüyle Kaş'ın en romantik adresi.",
-            "en": "Kas's most romantic address with its terrace overlooking the sea and creative Mediterranean menu."
-        }
-    },
-    {
-        "id": 5,
-        "name": {
-            "tr": "Seki Restaurant",
-            "en": "Seki Restaurant"
-        },
-        "tag": {
-            "tr": "Kapadokya · Şarap & Yemek",
-            "en": "Cappadocia · Wine & Dine"
-        },
-        "img": "foto.img/rest_seki.jpg",
-        "desc": {
-            "tr": "Çardak altında Kapadokya üzüm bağlarından derlenmiş yerel şaraplar ve Anadolu mutfağının en güzel yorumu.",
-            "en": "Local wines from Cappadocia vineyards and the finest interpretation of Anatolian cuisine under a pergola."
-        }
-    },
-    {
-        "id": 6,
-        "name": {
-            "tr": "Ölüdeniz Terrace",
-            "en": "Ölüdeniz Terrace"
-        },
+        "id": 11,
         "tag": {
             "tr": "Fethiye · Beach Club",
             "en": "Fethiye · Beach Club"
         },
-        "img": "foto.img/rest_oludeniz.jpg",
+        "img": "uploads\/restaurants\/1783936590_6a54b64e57e13.jpg",
         "desc": {
-            "tr": "Dünyaca ünlü Ölüdeniz lagünüyle iç içe geçmiş sahil restoranı, taze balık ve kokteyller.",
-            "en": "Beachfront restaurant intertwined with the world-famous Ölüdeniz lagoon, fresh fish and cocktails."
-        }
+            "tr": "Fethiye’nin dünyaca ünlü turkuaz sularıyla çevrili Ölüdeniz kıyısında yer alan Ölüdeniz Terrace, sahil şıklığı ile gurme lezzetleri buluşturuyor. Kumsala sıfır konumuyla denizin esintisini hissederken, Akdeniz ve dünya mutfağının seçkin örneklerini tatma imkanı sunuyor. Gündüz plaj keyfinin ardından akşam mum ışığında şık bir akşam yemeğine dönüşen mekan; taze deniz ürünleri, ızgara çeşitleri ve ferahlatıcı tropikal kokteylleriyle ünlüdür. Eşsiz Babadağ manzarası eşliğinde dalgaların sesini dinleyerek yemek yemek isteyenler için Ölüdeniz'in en seçkin adresidir.",
+            "en": "Located on the shore of Ölüdeniz, surrounded by Fethiye's world-famous turquoise waters, Ölüdeniz Terrace blends beachfront elegance with gourmet flavors. Positioned right on the beach, it offers the opportunity to taste selected examples of Mediterranean and world cuisine while feeling the sea breeze. Transforming from a daytime beach club into a candlelit dinner venue in the evening, the restaurant is famous for its fresh seafood, grilled selections, and refreshing tropical cocktails. It is the most distinguished address in Ölüdeniz for those who want to dine listening to the sound of waves accompanied by the unique Babadağ view."
+        },
+        "slug_tr": "oludeniz-terrace",
+        "slug_en": "oludeniz-terrace",
+        "created_at": "2026-07-25 11:04:05",
+        "updated_at": "2026-07-25 11:04:05",
+        "name": {
+            "tr": "Ölüdeniz Terrace",
+            "en": "Ölüdeniz Terrace"
+        },
+        "long_desc": {
+            "tr": "Fethiye’nin dünyaca ünlü turkuaz sularıyla çevrili Ölüdeniz kıyısında yer alan Ölüdeniz Terrace, sahil şıklığı ile gurme lezzetleri buluşturuyor. Kumsala sıfır konumuyla denizin esintisini hissederken, Akdeniz ve dünya mutfağının seçkin örneklerini tatma imkanı sunuyor. Gündüz plaj keyfinin ardından akşam mum ışığında şık bir akşam yemeğine dönüşen mekan; taze deniz ürünleri, ızgara çeşitleri ve ferahlatıcı tropikal kokteylleriyle ünlüdür. Eşsiz Babadağ manzarası eşliğinde dalgaların sesini dinleyerek yemek yemek isteyenler için Ölüdeniz'in en seçkin adresidir.",
+            "en": "Located on the shore of Ölüdeniz, surrounded by Fethiye's world-famous turquoise waters, Ölüdeniz Terrace blends beachfront elegance with gourmet flavors. Positioned right on the beach, it offers the opportunity to taste selected examples of Mediterranean and world cuisine while feeling the sea breeze. Transforming from a daytime beach club into a candlelit dinner venue in the evening, the restaurant is famous for its fresh seafood, grilled selections, and refreshing tropical cocktails. It is the most distinguished address in Ölüdeniz for those who want to dine listening to the sound of waves accompanied by the unique Babadağ view."
+        },
+        "gallery": []
+    },
+    {
+        "id": 10,
+        "tag": {
+            "tr": "Çeşme · Meyhane",
+            "en": "Çeşme · Meyhane"
+        },
+        "img": "uploads\/restaurants\/1783933377_6a54a9c192a2f.jpg",
+        "desc": {
+            "tr": "Ege'nin en taze deniz ürünleri, nefis zeytinyağlılar ve muhteşem Alaçatı manzarasıyla unutulmaz bir sofra.",
+            "en": "An unforgettable table with Aegean's freshest seafood, delicious olive oil dishes and Alaçatı views."
+        },
+        "slug_tr": "melengec-restaurant",
+        "slug_en": "melengec-restaurant",
+        "created_at": "2026-07-25 11:04:05",
+        "updated_at": "2026-07-25 11:04:05",
+        "name": {
+            "tr": "Melengeç Restaurant",
+            "en": "Melengeç Restaurant"
+        },
+        "long_desc": {
+            "tr": "Ege'nin en taze deniz ürünleri, nefis zeytinyağlılar ve muhteşem Alaçatı manzarasıyla unutulmaz bir sofra.",
+            "en": "An unforgettable table with Aegean's freshest seafood, delicious olive oil dishes and Alaçatı views."
+        },
+        "gallery": []
+    },
+    {
+        "id": 9,
+        "tag": {
+            "tr": "Kapadokya · Şarap & Yemek",
+            "en": "Kapadokya · Şarap & Yemek"
+        },
+        "img": "uploads\/restaurants\/1783933311_6a54a97f4e3cd.jpg",
+        "desc": {
+            "tr": "Çardak altında Kapadokya üzüm bağlarından derlenmiş yerel şaraplar ve Anadolu mutfağının en güzel yorumu.",
+            "en": "Local wines from Cappadocia vineyards and the finest interpretation of Anatolian cuisine under a pergola."
+        },
+        "slug_tr": "seki-restaurant",
+        "slug_en": "seki-restaurant",
+        "created_at": "2026-07-25 11:04:06",
+        "updated_at": "2026-07-25 11:04:06",
+        "name": {
+            "tr": "Seki Restaurant",
+            "en": "Seki Restaurant"
+        },
+        "long_desc": {
+            "tr": "Çardak altında Kapadokya üzüm bağlarından derlenmiş yerel şaraplar ve Anadolu mutfağının en güzel yorumu.",
+            "en": "Local wines from Cappadocia vineyards and the finest interpretation of Anatolian cuisine under a pergola."
+        },
+        "gallery": []
+    },
+    {
+        "id": 8,
+        "tag": {
+            "tr": "İstanbul · Fine Dining",
+            "en": "İstanbul · Fine Dining"
+        },
+        "img": "uploads\/restaurants\/1783933260_6a54a94c92013.jpg",
+        "desc": {
+            "tr": "Boğaz manzarasına hâkim terası ve Türk-İskandinav mutfağı füzyonuyla İstanbul'un efsanevi adresi.",
+            "en": "Istanbul's legendary address with its Bosphorus terrace and Turkish-Scandinavian fusion cuisine."
+        },
+        "slug_tr": "mikla",
+        "slug_en": "mikla",
+        "created_at": "2026-07-25 11:04:07",
+        "updated_at": "2026-07-25 11:04:07",
+        "name": {
+            "tr": "Mikla",
+            "en": "Mikla"
+        },
+        "long_desc": {
+            "tr": "Boğaz manzarasına hâkim terası ve Türk-İskandinav mutfağı füzyonuyla İstanbul'un efsanevi adresi.",
+            "en": "Istanbul's legendary address with its Bosphorus terrace and Turkish-Scandinavian fusion cuisine."
+        },
+        "gallery": []
+    },
+    {
+        "id": 3,
+        "tag": {
+            "tr": "Bodrum· Meyhane",
+            "en": "Bodrum· Meyhane"
+        },
+        "img": "uploads\/restaurants\/1783866475_6a53a46ba1c48.jpeg",
+        "desc": {
+            "tr": "Ege'nin en taze deniz ürünleri, nefis zeytinyağlılar ve muhteşem Alaçatı manzarasıyla unutulmaz bir sofra.",
+            "en": "An unforgettable table with Aegean's freshest seafood, delicious olive oil dishes and Alaçatı views."
+        },
+        "slug_tr": "melengec-restaurant-3",
+        "slug_en": "melengec-restaurant-3",
+        "created_at": "2026-07-25 11:04:07",
+        "updated_at": "2026-07-25 11:04:07",
+        "name": {
+            "tr": "Melengeç Restaurant",
+            "en": "Melengeç Restaurant"
+        },
+        "long_desc": {
+            "tr": "Ege'nin en taze deniz ürünleri, nefis zeytinyağlılar ve muhteşem Alaçatı manzarasıyla unutulmaz bir sofra.",
+            "en": "An unforgettable table with Aegean's freshest seafood, delicious olive oil dishes and Alaçatı views."
+        },
+        "gallery": [
+            "uploads\/restaurants\/1783880772_6a53dc44b58a1.jpeg",
+            "uploads\/restaurants\/1783880805_6a53dc6540389.jpeg",
+            "uploads\/restaurants\/1783880839_6a53dc87adb88.jpeg",
+            "uploads\/restaurants\/1783880889_6a53dcb94c98a.jpeg",
+            "uploads\/restaurants\/1783880889_6a53dcb95050a.jpeg"
+        ]
+    },
+    {
+        "id": 2,
+        "tag": {
+            "tr": "Bodrum · Deniz Kenarı",
+            "en": "Bodrum · Deniz Kenarı"
+        },
+        "img": "foto.img\/rest_zuma.jpg",
+        "desc": {
+            "tr": "Japon Izakaya geleneğini modern lüksle buluşturan, Bodrum Marina'nın en prestijli restoranı.",
+            "en": "Bodrum Marina's most prestigious restaurant, blending Japanese Izakaya tradition with modern luxury."
+        },
+        "slug_tr": "zuma-bodrum",
+        "slug_en": "zuma-bodrum",
+        "created_at": "2026-07-25 11:04:08",
+        "updated_at": "2026-07-25 11:04:08",
+        "name": {
+            "tr": "Zuma Bodrum",
+            "en": "Zuma Bodrum"
+        },
+        "long_desc": {
+            "tr": "Japon Izakaya geleneğini modern lüksle buluşturan, Bodrum Marina'nın en prestijli restoranı.",
+            "en": "Bodrum Marina's most prestigious restaurant, blending Japanese Izakaya tradition with modern luxury."
+        },
+        "gallery": []
     }
 ]

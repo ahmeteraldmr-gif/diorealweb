@@ -1,194 +1,178 @@
 [
     {
-        "id": 1248642333,
-        "name": {
-            "tr": "Bizim Ev Datça",
-            "en": "Bizim Ev Datça"
-        },
+        "id": 6,
         "tag": {
-            "tr": "Otel",
-            "en": "Hotel"
+            "tr": "Toskana, İtalya",
+            "en": "Toskana, İtalya"
         },
-        "img": "foto.img/otel_maxx_royal.jpg",
+        "img": "uploads\/hotels\/1783853064_6a5370081fe9b.jpeg",
         "desc": {
-            "tr": "Bizim Ev Datça\r\n\r\nDatça’nın yavaş akan ruhunu taşıyan Bizim Ev Datça, doğanın ritmini bozmadan modern bir sadelik hissi sunuyor. Kargı Koyu’nun makili...",
-            "en": "..."
+            "tr": "Positano'nun ikonik manzarası karşısında, denizi ve bougainvillea'ları izleyen efsanevi butik otel.",
+            "en": "Legendary boutique hotel overlooking the sea and bougainvilleas, facing Positano's iconic view."
+        },
+        "slug_tr": "reschio",
+        "slug_en": "reschio",
+        "created_at": "2026-07-25 11:04:01",
+        "updated_at": "2026-07-25 11:04:01",
+        "name": {
+            "tr": "Reschio",
+            "en": "Reschio"
         },
         "long_desc": {
-            "tr": "Bizim Ev Datça<br />\r\n<br />\r\nDatça’nın yavaş akan ruhunu taşıyan Bizim Ev Datça, doğanın ritmini bozmadan modern bir sadelik hissi sunuyor. Kargı Koyu’nun makiliklerle çevrili yamaçlarında konumlanan bu özel yaşam alanı, taş mimarisi, dingin atmosferi ve zamandan uzak hissiyle Datça’nın en huzurlu kaçış noktalarından biri.<br />\r\n<br />\r\nYıllar önce küçük bir çoban evinin yeniden hayat bulmasıyla başlayan hikaye, bugün hala aynı ruhu koruyor. Doğayla uyum içinde konumlanan taş odalar, zeytin ağaçlarının gölgesi ve denizden gelen tuz kokulu rüzgar eşliğinde burada her detay, sakinleşmeyi, yavaşlamayı ve anın içinde kalmayı hatırlatıyor.<br />\r\n<br />\r\nSabahları bahçeden gelen doğal yaşamın sesiyle uyanmak, gün batımında Kargı’nın ışığını izlemek ve taş duvarların arasında Datça’nın gerçek atmosferini hissetmek… Bizim Ev Datça’nın sunduğu deneyim tam olarak bu yalın lüks anlayışında saklı.<br />\r\n<br />\r\nGösterişten uzak ama karakter sahibi atmosferiyle burası yalnızca bir konaklama deneyimi değil,kendinizi gerçekten ait hissedebileceğiniz, Datça’yı yaşamaya davet eden zamansız bir durak.",
-            "en": ""
+            "tr": "Positano'nun ikonik manzarası karşısında, denizi ve bougainvillea'ları izleyen efsanevi butik otel.",
+            "en": "Legendary boutique hotel overlooking the sea and bougainvilleas, facing Positano's iconic view."
         },
         "gallery": [
-            "foto.img/otel_museum.jpg",
-            "foto.img/otel_hillside.jpg"
-        ],
-        "created_at": "2026-07-10 12:41:52",
-        "updated_at": "2026-07-10 12:41:52",
-        "destination_id": null,
-        "order": 0,
-        "is_archived": 0,
-        "video_file": null,
-        "video_url": null,
-        "show_video_on_cover": 0
+            "uploads\/hotels\/1783853810_6a5372f2c05ef.jpeg",
+            "uploads\/hotels\/1783853810_6a5372f2c2470.jpeg",
+            "uploads\/hotels\/1783854436_6a53756451f91.jpeg"
+        ]
     },
     {
-        "id": 1248642334,
-        "name": {
-            "tr": "Nautical Hotel",
-            "en": "Nautical Hotel"
-        },
+        "id": 5,
         "tag": {
-            "tr": "Otel",
-            "en": "Hotel"
+            "tr": "Tuscany, İtalya",
+            "en": "Tuscany, İtalya"
         },
-        "img": "foto.img/otel_museum.jpg",
+        "img": "uploads\/hotels\/1783856805_6a537ea5a8f5d.jpeg",
         "desc": {
-            "tr": "Denizin sonsuz maviliğiyle çam ormanlarının yeşili arasında konumlanan Nautical Hotel, doğayla uyum içinde şekillenen sakin ve zamansız bir Akdeniz de...",
-            "en": "..."
+            "tr": "Japon wabi-sabi felsefesini modern lüksle harmanlayan, orman içinde saklı benzersiz bir sığınak.",
+            "en": "A unique retreat hidden in the forest, blending Japan's wabi-sabi philosophy with modern luxury."
+        },
+        "slug_tr": "tenuta-di-murlo",
+        "slug_en": "tenuta-di-murlo",
+        "created_at": "2026-07-25 11:04:01",
+        "updated_at": "2026-07-25 11:04:01",
+        "name": {
+            "tr": "Tenuta di Murlo",
+            "en": "Tenuta di Murlo"
         },
         "long_desc": {
-            "tr": "Denizin sonsuz maviliğiyle çam ormanlarının yeşili arasında konumlanan Nautical Hotel, doğayla uyum içinde şekillenen sakin ve zamansız bir Akdeniz deneyimi sunuyor. Gösterişten uzak ama karakter sahibi atmosferiyle burası, modern konforu doğanın yalın güzelliğiyle bir araya getiriyor.<br />\r\n<br />\r\nGün boyunca masmavi koylarda serinlemek, ağaç gölgelerinde yavaşlayan zamanın tadını çıkarmak ve Akdeniz’in dingin ritmini hissetmek burada yaşamın doğal bir parçasına dönüşüyor. Gün batımında ise denizden gelen hafif esinti ve doğanın sessizliği, Nautical’ın huzurlu atmosferini daha da derinleştiriyor.<br />\r\n<br />\r\nAkdeniz mutfağından ilham alan lezzetler, bulunduğu coğrafyanın doğal ruhunu sofralara taşırken; her mevsim burada farklı bir hikâye anlatıyor. İlkbaharın tazeliği, yazın enerjisi ve sonbaharın sakin romantizmi… Nautical Hotel’de doğa, zamanı kendi ritminde yaşatıyor.<br />\r\n<br />\r\nDalgaların sesiyle uyanıp yıldızların altında günü tamamladığınız bu atmosfer, yalnızca bir tatil deneyimi değil,şehirden uzaklaşıp doğayla ve kendinizle yeniden bağ kurabildiğiniz özel bir kaçış hissi sunuyor.",
-            "en": ""
+            "tr": "Japon wabi-sabi felsefesini modern lüksle harmanlayan, orman içinde saklı benzersiz bir sığınak.",
+            "en": "A unique retreat hidden in the forest, blending Japan's wabi-sabi philosophy with modern luxury."
         },
         "gallery": [
-            "foto.img/otel_hillside.jpg",
-            "foto.img/otel_soneva.jpg"
-        ],
-        "created_at": "2026-07-10 12:41:51",
-        "updated_at": "2026-07-10 12:41:51",
-        "destination_id": null,
-        "order": 0,
-        "is_archived": 0,
-        "video_file": null,
-        "video_url": null,
-        "show_video_on_cover": 0
+            "uploads\/hotels\/1783858086_6a5383a6409bf.jpeg",
+            "uploads\/hotels\/1783858589_6a53859d70965.jpeg",
+            "uploads\/hotels\/1783858767_6a53864fc74d5.jpeg",
+            "uploads\/hotels\/1783858803_6a538673a3ac0.jpeg",
+            "uploads\/hotels\/1783858836_6a538694b30ab.jpeg"
+        ]
     },
     {
-        "id": 1248642335,
-        "name": {
-            "tr": "Perdue Otel",
-            "en": "Perdue Hotel"
-        },
+        "id": 4,
         "tag": {
-            "tr": "Otel",
-            "en": "Hotel"
+            "tr": "Toskana",
+            "en": "Toskana"
         },
-        "img": "foto.img/otel_hillside.jpg",
+        "img": "uploads\/hotels\/1783859751_6a538a27b51aa.jpeg",
         "desc": {
-            "tr": "Akdeniz’in berrak sularıyla çevrili Faralya kıyılarında konumlanan Perdue, doğanın ritmini bozmadan şekillenen sakin ve özel bir atmosfer sunuyor. Zey...",
-            "en": "..."
+            "tr": "Su üstü villalar, kristal berraklığında lagün ve sonsuz gökyüzü altında rüya konaklama.",
+            "en": "Overwater villas, crystal-clear lagoon and dream accommodation under endless skies."
+        },
+        "slug_tr": "castello-di-velona",
+        "slug_en": "castello-di-velona",
+        "created_at": "2026-07-25 11:04:01",
+        "updated_at": "2026-07-25 11:04:01",
+        "name": {
+            "tr": "Castello di Velona",
+            "en": "Castello di Velona"
         },
         "long_desc": {
-            "tr": "Akdeniz’in berrak sularıyla çevrili Faralya kıyılarında konumlanan Perdue, doğanın ritmini bozmadan şekillenen sakin ve özel bir atmosfer sunuyor. Zeytin ağaçları, çam ormanları ve denize açılan sonsuz manzara eşliğinde burada zaman, şehir hayatının telaşından uzak başka bir akışta ilerliyor.<br />\r\n<br />\r\nDoğayla iç içe konumlanan yaşam alanları, yalın detaylarla bütünleşirken; denizden gelen hafif meltem ve dalgaların ritmik sesi günün her anına huzurlu bir sakinlik katıyor. Sabahın ilk ışıklarından gün batımına kadar Perdue’nün atmosferi, bulunduğu coğrafyanın doğal ruhunu hissettiriyor.<br />\r\n<br />\r\nGün boyunca Akdeniz’in serin sularında vakit geçirmek, doğanın sessizliğinde dinlenmek ve yıldızların altında yavaşlayan akşamların tadını çıkarmak burada deneyimin bir parçasına dönüşüyor.<br />\r\n<br />\r\nGösterişten uzak ama güçlü bir atmosfere sahip Perdue, doğayla, sessizlikle ve anın kendisiyle yeniden bağ kurabildiğiniz özel bir kaçış hissi sunuyor.",
-            "en": ""
+            "tr": "Su üstü villalar, kristal berraklığında lagün ve sonsuz gökyüzü altında rüya konaklama.",
+            "en": "Overwater villas, crystal-clear lagoon and dream accommodation under endless skies."
         },
         "gallery": [
-            "foto.img/otel_soneva.jpg",
-            "foto.img/otel_aman.jpg"
-        ],
-        "created_at": "2026-07-10 12:41:51",
-        "updated_at": "2026-07-10 12:41:51",
-        "destination_id": null,
-        "order": 0,
-        "is_archived": 0,
-        "video_file": null,
-        "video_url": null,
-        "show_video_on_cover": 0
+            "uploads\/hotels\/1783860054_6a538b567b812.jpeg",
+            "uploads\/hotels\/1783860605_6a538d7dbdb06.jpeg",
+            "uploads\/hotels\/1783860605_6a538d7dd0dd5.jpeg"
+        ]
     },
     {
-        "id": 1248642336,
-        "name": {
-            "tr": "Kargilos Hotel & Beach",
-            "en": "Kargilos Hotel & Beach"
-        },
+        "id": 3,
         "tag": {
-            "tr": "Otel & Beach",
-            "en": "Hotel & Beach"
+            "tr": "Toskana",
+            "en": "Toskana"
         },
-        "img": "foto.img/otel_soneva.jpg",
+        "img": "uploads\/hotels\/1783861129_6a538f894711a.jpeg",
         "desc": {
-            "tr": "Datça’nın en özel koylarından biri olan Kargı Koyu’nda konumlanan Kargilos Hotel & Beach, doğanın yalın güzelliğiyle şekillenen sakin bir Akdeniz atmo...",
-            "en": "..."
+            "tr": "Özel plajı, eşsiz koyu ve lüks hizmetleriyle Türkiye'nin en prestijli tatil köyü.",
+            "en": "Turkey's most prestigious resort with its private beach, unique bay and luxury services."
+        },
+        "slug_tr": "villa-di-piazzano",
+        "slug_en": "villa-di-piazzano",
+        "created_at": "2026-07-25 11:04:02",
+        "updated_at": "2026-07-25 11:04:02",
+        "name": {
+            "tr": "Villa di Piazzano",
+            "en": "Villa di Piazzano"
         },
         "long_desc": {
-            "tr": "Datça’nın en özel koylarından biri olan Kargı Koyu’nda konumlanan Kargilos Hotel & Beach, doğanın yalın güzelliğiyle şekillenen sakin bir Akdeniz atmosferi sunuyor. Kekik kokulu tepeler, masmavi deniz ve gün boyunca değişen Datça ışığı burada yaşamın ritmini belirliyor.<br />\r\n<br />\r\nYeşilin ve mavinin iç içe geçtiği bu özel noktada, günler denizin berrak sularında serinleyerek, kıyının huzurlu sessizliğinde yavaşlayarak geçiyor. Sabah saatlerinde doğanın dinginliği hissedilirken, gün batımında Kargı’nın sıcak tonları tüm atmosfere farklı bir sakinlik katıyor.<br />\r\n<br />\r\nDoğayla uyum içinde şekillenen atmosferiyle Kargilos, gösterişten uzak ama karakter sahibi bir deneyim sunuyor. Burada her detay; Datça’nın doğal ruhunu, sade yaşam hissini ve Akdeniz’in yavaş akan ritmini hissettiriyor.<br />\r\n<br />\r\nKargilos Hotel & Beach yalnızca bir konaklama noktası değil; şehirden uzaklaşıp denizle, doğayla ve zamanın daha sakin aktığı bir yaşam hissiyle yeniden buluşabildiğiniz özel bir kaçış noktası.",
-            "en": ""
+            "tr": "Özel plajı, eşsiz koyu ve lüks hizmetleriyle Türkiye'nin en prestijli tatil köyü.",
+            "en": "Turkey's most prestigious resort with its private beach, unique bay and luxury services."
         },
         "gallery": [
-            "foto.img/otel_aman.jpg",
-            "foto.img/otel_sirenuse.jpg"
-        ],
-        "created_at": "2026-07-10 12:41:51",
-        "updated_at": "2026-07-10 12:41:51",
-        "destination_id": null,
-        "order": 0,
-        "is_archived": 0,
-        "video_file": null,
-        "video_url": null,
-        "show_video_on_cover": 0
+            "uploads\/hotels\/1783861291_6a53902b09b59.jpeg",
+            "uploads\/hotels\/1783861447_6a5390c7c051a.jpeg"
+        ]
     },
     {
-        "id": 1248642337,
-        "name": {
-            "tr": "Mehtap Kaleköy",
-            "en": "Mehtap Kaleköy"
-        },
+        "id": 2,
         "tag": {
-            "tr": "Otel",
-            "en": "Hotel"
+            "tr": "Fethiye",
+            "en": "Fethiye"
         },
-        "img": "foto.img/otel_aman.jpg",
+        "img": "uploads\/hotels\/1783861773_6a53920d2bb36.jpeg",
         "desc": {
-            "tr": "Simena Antik Kenti’nin izlerini taşıyan Kaleköy kıyılarında konumlanan Mehtap Kaleköy, Akdeniz’in doğal güzelliğini tarihi atmosferle bir araya getire...",
-            "en": "..."
+            "tr": "Antik kaya oymaları içinde, tarihin derinliklerinde unutulmaz bir konaklama deneyimi.",
+            "en": "An unforgettable stay deep in history, inside ancient rock carvings."
+        },
+        "slug_tr": "nautical",
+        "slug_en": "nautical",
+        "created_at": "2026-07-25 11:04:03",
+        "updated_at": "2026-07-25 11:04:03",
+        "name": {
+            "tr": "Nautical",
+            "en": "Nautical"
         },
         "long_desc": {
-            "tr": "Simena Antik Kenti’nin izlerini taşıyan Kaleköy kıyılarında konumlanan Mehtap Kaleköy, Akdeniz’in doğal güzelliğini tarihi atmosferle bir araya getiren sakin ve zamansız bir konaklama deneyimi sunuyor. Denize sıfır konumu, taş mimarisi ve dingin atmosferiyle burası, Kaleköy’ün ruhunu hissettiren özel adreslerden biri.<br />\r\n<br />\r\nLikya lahitleriyle çevrili kıyılar, berrak Akdeniz suları ve gün boyunca değişen ışık burada yaşamın ritmini belirliyor. Sabahları denizin huzurlu sesiyle başlayan günler, gün batımında Kaleköy’ün taş sokaklarına yayılan sıcak tonlarla bambaşka bir atmosfere dönüşüyor.<br />\r\n<br />\r\nGeleneksel taş mimarisini modern detaylarla buluşturan yaşam alanları, doğayla uyum içinde sakin bir deneyim sunarken; verandalar, denize açılan manzaralar ve kıyının dinginliği burada zamanı yavaşlatıyor.<br />\r\n<br />\r\nMehtap Kaleköy yalnızca bir konaklama noktası değil; tarih, deniz ve doğanın aynı manzarada buluştuğu, şehirden uzaklaşıp Akdeniz’in sade ritmine karışabildiğiniz özel bir kaçış hissi sunuyor.",
-            "en": ""
+            "tr": "Antik kaya oymaları içinde, tarihin derinliklerinde unutulmaz bir konaklama deneyimi.",
+            "en": "An unforgettable stay deep in history, inside ancient rock carvings."
         },
         "gallery": [
-            "foto.img/otel_sirenuse.jpg",
-            "foto.img/otel_oda.jpg"
-        ],
-        "created_at": "2026-07-10 12:41:50",
-        "updated_at": "2026-07-10 12:41:50",
-        "destination_id": null,
-        "order": 0,
-        "is_archived": 0,
-        "video_file": null,
-        "video_url": null,
-        "show_video_on_cover": 0
+            "uploads\/hotels\/1783863013_6a5396e5e8328.jpeg",
+            "uploads\/hotels\/1783863047_6a539707e4e98.jpeg",
+            "uploads\/hotels\/1783863120_6a5397507f3fb.jpeg",
+            "uploads\/hotels\/1783863148_6a53976c929b4.jpeg",
+            "uploads\/hotels\/1783863189_6a53979569dcd.jpeg"
+        ]
     },
     {
-        "id": 1248642339,
-        "name": {
-            "tr": "Mendelle",
-            "en": "Mendelle Hotel"
-        },
+        "id": 1,
         "tag": {
-            "tr": "otel",
-            "en": "Hotel"
+            "tr": "Fethiye",
+            "en": "Fethiye"
         },
-        "img": "foto.img/otel_sirenuse.jpg",
+        "img": "uploads\/hotels\/1783864529_6a539cd1410b8.jpeg",
         "desc": {
-            "tr": "Doğa bir ilham kaynağına dönüştüğünde ve düşleyen insanlar bir araya geldiğinde, sihir doğar. Her şey Datça'nın ikonik güzelliğindeki sessiz bir koyda...",
-            "en": "..."
+            "tr": "Eşsiz Ege manzarası ve ultra-lüks tesisleriyle benzersiz bir deneyim sunan 5 yıldızlı resort.",
+            "en": "A 5-star resort offering a unique experience with stunning Aegean views and ultra-luxury facilities."
+        },
+        "slug_tr": "perdue",
+        "slug_en": "perdue",
+        "created_at": "2026-07-25 11:04:03",
+        "updated_at": "2026-07-25 11:04:03",
+        "name": {
+            "tr": "Perdue",
+            "en": "Perdue"
         },
         "long_desc": {
-            "tr": "Doğa bir ilham kaynağına dönüştüğünde ve düşleyen insanlar bir araya geldiğinde, sihir doğar. Her şey Datça'nın ikonik güzelliğindeki sessiz bir koyda başladı. Kargı kıyısında Mendelle doğdu.",
-            "en": ""
+            "tr": "Eşsiz Ege manzarası ve ultra-lüks tesisleriyle benzersiz bir deneyim sunan 5 yıldızlı resort.",
+            "en": "A 5-star resort offering a unique experience with stunning Aegean views and ultra-luxury facilities."
         },
         "gallery": [
-            "foto.img/otel_oda.jpg",
-            "foto.img/otel_maxx_royal.jpg"
-        ],
-        "created_at": "2026-07-10 12:41:50",
-        "updated_at": "2026-07-10 12:41:50",
-        "destination_id": null,
-        "order": 0,
-        "is_archived": 0,
-        "video_file": null,
-        "video_url": null,
-        "show_video_on_cover": 0
+            "uploads\/hotels\/1783864888_6a539e3803a9d.jpeg",
+            "uploads\/hotels\/1783864985_6a539e9979861.jpeg"
+        ]
     }
 ]

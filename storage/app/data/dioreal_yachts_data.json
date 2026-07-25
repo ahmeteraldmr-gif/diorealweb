@@ -1,50 +1,31 @@
 [
     {
         "id": 1,
-        "name": {
-            "tr": "Bodrum Blue",
-            "en": "Bodrum Blue"
-        },
         "tag": {
             "tr": "Gulet · 24m",
             "en": "Gulet · 24m"
         },
-        "img": "foto.img/yat_bodrum_blue.jpg",
+        "img": "uploads\/yachts\/1783881686_6a53dfd6985c1.jpeg",
         "desc": {
             "tr": "8 misafir kapasiteli, teak güverteli, Türk el sanatlarıyla donatılmış geleneksel Bodrum gulet'i.",
             "en": "Traditional Bodrum gulet for 8 guests, with teak deck and Turkish handicrafts."
-        }
-    },
-    {
-        "id": 2,
+        },
+        "slug_tr": "blue-voyage-yatch",
+        "slug_en": "blue-voyage-yatch",
+        "created_at": "2026-07-25 11:04:04",
+        "updated_at": "2026-07-25 11:04:04",
         "name": {
-            "tr": "Azure Dream",
-            "en": "Azure Dream"
+            "tr": "Blue Voyage Yatch",
+            "en": "Blue Voyage Yatch"
         },
-        "tag": {
-            "tr": "Motor Yat · 35m",
-            "en": "Motor Yacht · 35m"
+        "long_desc": {
+            "tr": "8 misafir kapasiteli, teak güverteli, Türk el sanatlarıyla donatılmış geleneksel Bodrum gulet'i.",
+            "en": "Traditional Bodrum gulet for 8 guests, with teak deck and Turkish handicrafts."
         },
-        "img": "foto.img/yat_azure_dream.jpg",
-        "desc": {
-            "tr": "12 misafir kapasiteli, helikopter pisti, jakuzi ve tam donanımlı modern süper yat deneyimi.",
-            "en": "Modern super yacht for 12 guests, featuring helipad, jacuzzi and full equipment."
-        }
-    },
-    {
-        "id": 3,
-        "name": {
-            "tr": "Aegean Wind",
-            "en": "Aegean Wind"
-        },
-        "tag": {
-            "tr": "Yelkenli · 18m",
-            "en": "Sailing Yacht · 18m"
-        },
-        "img": "foto.img/yat_aegean_wind.jpg",
-        "desc": {
-            "tr": "6 misafir için özel, rüzgarın gücüyle Ege'yi keşfetmek isteyenler için premium yelkenli yat.",
-            "en": "Premium sailing yacht for 6 guests, for those who want to explore the Aegean with wind power."
-        }
+        "gallery": [
+            "uploads\/yachts\/1783881559_6a53df5796181.jpeg",
+            "uploads\/yachts\/1783881739_6a53e00bc0f41.jpeg",
+            "uploads\/yachts\/1783882021_6a53e1254a909.jpeg"
+        ]
     }
 ]

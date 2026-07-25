@@ -1,62 +1,322 @@
 [
     {
-        "id": 1,
-        "title": {
-            "tr": "İstanbul Yemek Festivali 2026",
-            "en": "Istanbul Food Festival 2026"
-        },
+        "id": 5,
         "tag": {
-            "tr": "Gastronomi",
-            "en": "Gastronomy"
+            "tr": "Kültür, Sanat & Klasik Müzik",
+            "en": "Kültür, Sanat & Klasik Müzik"
         },
-        "day": 15,
+        "img": "uploads\/events\/1783955404_6a54ffccafd7e.png",
+        "desc": {
+            "tr": "Her yaz temmuz ayının ikinci yarısından itibaren Avusturya'nın tarihi şehri Salzburg, yaklaşık altı hafta boyunca dünyanın en prestijli klasik müzik ve opera festivallerinden birine ev sahipliği yapıyor. Mozart'ın doğduğu şehirde düzenlenen Salzburg Festival, yalnızca konserlerden oluşan bir program değil; müziğin, tiyatronun ve sanatın bütün bir şehrin ritmini değiştirdiği kültürel bir deneyim sunuyor.\r\n\r\n1920 yılından bu yana düzenlenen festival, bugün Berlin Filarmoni, Viyana Filarmoni, dünyanın önde gelen orkestra şefleri, opera sanatçıları ve tiyatro topluluklarını aynı sahnede buluşturuyor. Festspielhaus başta olmak üzere Salzburg'un tarihi konser salonları, kiliseleri ve tiyatroları festival boyunca birbirinden seçkin prodüksiyonlara ev sahipliği yaparken, şehrin meydanları ve sokakları da bu atmosferin doğal bir parçasına dönüşüyor.\r\n\r\nFestival süresince ziyaretçiler sabah Mozart'ın izlerini taşıyan tarihi sokakları keşfedebilir, öğleden sonra müzeleri ve saray bahçelerini gezebilir, akşam ise dünyanın en önemli opera ve senfoni performanslarından birini izleyebilir. Gösteri sonrasında eski şehrin taş sokaklarında yürümek, Salzach Nehri kıyısında geceyi tamamlamak ve aynı tutkuyu paylaşan sanatseverlerle aynı atmosferi solumak, Salzburg Festivali'ni yalnızca bir etkinlik olmaktan çıkarıp unutulmaz bir seyahat deneyimine dönüştürüyor.\r\n\r\nKlasik müziğe ilgi duyanlar için Salzburg Festival bir hayalin gerçekleştiği yer olarak görülür. Ancak festival, yalnızca müzik tutkunlarına değil; Avrupa'nın kültürel mirasını, zarif yaşam tarzını ve tarihî atmosferini en etkileyici döneminde deneyimlemek isteyen herkes için yılın en özel seyahat nedenlerinden biridir.",
+            "en": "Every summer, the historic city of Salzburg transforms into one of the world's leading destinations for classical music and the performing arts. Held in the birthplace of Wolfgang Amadeus Mozart, the Salzburg Festival brings together internationally acclaimed orchestras, conductors, opera singers, and theatre companies for nearly six weeks of exceptional performances.\r\n\r\nHosted across the city's magnificent concert halls, theatres, churches, and historic venues, the festival offers an outstanding program of opera, symphonic concerts, chamber music, and drama. Beyond the performances, Salzburg itself becomes part of the experience, with its UNESCO-listed Old Town, elegant Baroque architecture, charming cafés, and vibrant cultural atmosphere creating an unforgettable setting.\r\n\r\nWhether you are a devoted classical music enthusiast or simply looking to experience one of Europe's finest cultural events, the Salzburg Festival offers a unique opportunity to immerse yourself in world-class artistry while exploring one of Austria's most beautiful cities."
+        },
+        "slug_tr": "salzburg-festival",
+        "slug_en": "salzburg-festival",
+        "created_at": "2026-07-25 11:04:10",
+        "updated_at": "2026-07-25 11:04:10",
+        "title": {
+            "tr": "Salzburg Festival",
+            "en": "Salzburg Festival"
+        },
+        "long_desc": {
+            "tr": "Her yaz temmuz ayının ikinci yarısından itibaren Avusturya'nın tarihi şehri Salzburg, yaklaşık altı hafta boyunca dünyanın en prestijli klasik müzik ve opera festivallerinden birine ev sahipliği yapıyor. Mozart'ın doğduğu şehirde düzenlenen Salzburg Festival, yalnızca konserlerden oluşan bir program değil; müziğin, tiyatronun ve sanatın bütün bir şehrin ritmini değiştirdiği kültürel bir deneyim sunuyor.\r\n\r\n1920 yılından bu yana düzenlenen festival, bugün Berlin Filarmoni, Viyana Filarmoni, dünyanın önde gelen orkestra şefleri, opera sanatçıları ve tiyatro topluluklarını aynı sahnede buluşturuyor. Festspielhaus başta olmak üzere Salzburg'un tarihi konser salonları, kiliseleri ve tiyatroları festival boyunca birbirinden seçkin prodüksiyonlara ev sahipliği yaparken, şehrin meydanları ve sokakları da bu atmosferin doğal bir parçasına dönüşüyor.\r\n\r\nFestival süresince ziyaretçiler sabah Mozart'ın izlerini taşıyan tarihi sokakları keşfedebilir, öğleden sonra müzeleri ve saray bahçelerini gezebilir, akşam ise dünyanın en önemli opera ve senfoni performanslarından birini izleyebilir. Gösteri sonrasında eski şehrin taş sokaklarında yürümek, Salzach Nehri kıyısında geceyi tamamlamak ve aynı tutkuyu paylaşan sanatseverlerle aynı atmosferi solumak, Salzburg Festivali'ni yalnızca bir etkinlik olmaktan çıkarıp unutulmaz bir seyahat deneyimine dönüştürüyor.\r\n\r\nKlasik müziğe ilgi duyanlar için Salzburg Festival bir hayalin gerçekleştiği yer olarak görülür. Ancak festival, yalnızca müzik tutkunlarına değil; Avrupa'nın kültürel mirasını, zarif yaşam tarzını ve tarihî atmosferini en etkileyici döneminde deneyimlemek isteyen herkes için yılın en özel seyahat nedenlerinden biridir.",
+            "en": "Every summer, the historic city of Salzburg transforms into one of the world's leading destinations for classical music and the performing arts. Held in the birthplace of Wolfgang Amadeus Mozart, the Salzburg Festival brings together internationally acclaimed orchestras, conductors, opera singers, and theatre companies for nearly six weeks of exceptional performances.\r\n\r\nHosted across the city's magnificent concert halls, theatres, churches, and historic venues, the festival offers an outstanding program of opera, symphonic concerts, chamber music, and drama. Beyond the performances, Salzburg itself becomes part of the experience, with its UNESCO-listed Old Town, elegant Baroque architecture, charming cafés, and vibrant cultural atmosphere creating an unforgettable setting.\r\n\r\nWhether you are a devoted classical music enthusiast or simply looking to experience one of Europe's finest cultural events, the Salzburg Festival offers a unique opportunity to immerse yourself in world-class artistry while exploring one of Austria's most beautiful cities."
+        },
         "month": {
-            "tr": "Mayıs",
-            "en": "May"
+            "tr": "Temmuz",
+            "en": "July"
         },
         "loc": {
-            "tr": "📍 Beşiktaş Meydanı, İstanbul",
-            "en": "📍 Besiktas Square, Istanbul"
+            "tr": "Türkiye",
+            "en": "Turkey"
         }
     },
     {
-        "id": 2,
-        "title": {
-            "tr": "Bodrum Uluslararası Bale Festivali",
-            "en": "Bodrum International Ballet Festival"
-        },
+        "id": 13,
         "tag": {
-            "tr": "Kültür & Sanat",
-            "en": "Culture & Art"
+            "tr": "Tiyatro • Komedi • Sahne Sanatları",
+            "en": "Tiyatro • Komedi • Sahne Sanatları"
         },
-        "day": 22,
+        "img": "uploads\/events\/1783956280_6a55033837d67.png",
+        "desc": {
+            "tr": "1947 yılında başlayan Edinburgh Festival Fringe, bugün dünyanın en büyük ve en özgür sanat festivali olarak kabul ediliyor. Her yıl binlerce sanatçı, tiyatro toplulukları, müzisyenler, dansçılar ve komedyenler kendi gösterilerini sergilemek için Edinburgh'da bir araya geliyor.\r\n\r\nFestival boyunca tarihi tiyatrolar, kiliseler, publar, üniversite binaları ve hatta sokaklar performans mekânına dönüşüyor. Klasik tiyatro oyunlarından deneysel sahne sanatlarına, stand-up gösterilerinden canlı müziğe kadar on binlerce etkinlik, şehrin her köşesinde ziyaretçilerle buluşuyor.\r\n\r\nEdinburgh Festival Fringe'i diğer festivallerden ayıran en önemli özellik ise açık katılımlı yapısı. Dünyanın dört bir yanından profesyonel sanatçılar kadar kariyerlerinin başındaki genç yetenekler de aynı sahnelerde performans sergileyebiliyor. Bu nedenle festival, yeni fikirlerin ve geleceğin sanatçılarının keşfedildiği en önemli kültür platformlarından biri olarak görülüyor.\r\n\r\nFestival döneminde Edinburgh yalnızca gezilecek bir şehir değil; her sokağında yeni bir gösterinin başladığı, sanatın günün her saatinde yaşandığı dev bir açık hava sahnesine dönüşüyor.",
+            "en": "Founded in 1947, the Edinburgh Festival Fringe has grown into the world's largest and most open-access arts festival. Every summer, thousands of actors, musicians, comedians, dancers, and theatre companies gather in Edinburgh to present an extraordinary variety of performances.\r\n\r\nThroughout the festival, historic theatres, churches, pubs, university buildings, and even the city's streets become performance venues. Visitors can experience everything from classical theatre and experimental productions to stand-up comedy, live music, circus acts, and contemporary dance, with thousands of events taking place across the city.\r\n\r\nWhat truly sets the Fringe apart is its open-access philosophy. Established performers and emerging artists share the same stage, making the festival one of the world's most important platforms for discovering new talent and original ideas.\r\n\r\nDuring the Fringe, Edinburgh becomes far more than a historic city—it transforms into a living stage where creativity can be found around every corner, from sunrise until long after sunset."
+        },
+        "slug_tr": "edinburgh-festival-fringe",
+        "slug_en": "edinburgh-festival-fringe",
+        "created_at": "2026-07-25 11:04:11",
+        "updated_at": "2026-07-25 11:04:11",
+        "title": {
+            "tr": "🇬🇧 Edinburgh Festival Fringe",
+            "en": "🇬🇧 Edinburgh Festival Fringe"
+        },
+        "long_desc": {
+            "tr": "1947 yılında başlayan Edinburgh Festival Fringe, bugün dünyanın en büyük ve en özgür sanat festivali olarak kabul ediliyor. Her yıl binlerce sanatçı, tiyatro toplulukları, müzisyenler, dansçılar ve komedyenler kendi gösterilerini sergilemek için Edinburgh'da bir araya geliyor.\r\n\r\nFestival boyunca tarihi tiyatrolar, kiliseler, publar, üniversite binaları ve hatta sokaklar performans mekânına dönüşüyor. Klasik tiyatro oyunlarından deneysel sahne sanatlarına, stand-up gösterilerinden canlı müziğe kadar on binlerce etkinlik, şehrin her köşesinde ziyaretçilerle buluşuyor.\r\n\r\nEdinburgh Festival Fringe'i diğer festivallerden ayıran en önemli özellik ise açık katılımlı yapısı. Dünyanın dört bir yanından profesyonel sanatçılar kadar kariyerlerinin başındaki genç yetenekler de aynı sahnelerde performans sergileyebiliyor. Bu nedenle festival, yeni fikirlerin ve geleceğin sanatçılarının keşfedildiği en önemli kültür platformlarından biri olarak görülüyor.\r\n\r\nFestival döneminde Edinburgh yalnızca gezilecek bir şehir değil; her sokağında yeni bir gösterinin başladığı, sanatın günün her saatinde yaşandığı dev bir açık hava sahnesine dönüşüyor.",
+            "en": "Founded in 1947, the Edinburgh Festival Fringe has grown into the world's largest and most open-access arts festival. Every summer, thousands of actors, musicians, comedians, dancers, and theatre companies gather in Edinburgh to present an extraordinary variety of performances.\r\n\r\nThroughout the festival, historic theatres, churches, pubs, university buildings, and even the city's streets become performance venues. Visitors can experience everything from classical theatre and experimental productions to stand-up comedy, live music, circus acts, and contemporary dance, with thousands of events taking place across the city.\r\n\r\nWhat truly sets the Fringe apart is its open-access philosophy. Established performers and emerging artists share the same stage, making the festival one of the world's most important platforms for discovering new talent and original ideas.\r\n\r\nDuring the Fringe, Edinburgh becomes far more than a historic city—it transforms into a living stage where creativity can be found around every corner, from sunrise until long after sunset."
+        },
         "month": {
-            "tr": "Mayıs",
-            "en": "May"
+            "tr": "Temmuz",
+            "en": "July"
         },
         "loc": {
-            "tr": "📍 Bodrum Kalesi Açık Hava Sahnesi",
-            "en": "📍 Bodrum Castle Open Air Stage"
+            "tr": "Türkiye",
+            "en": "Turkey"
         }
     },
     {
-        "id": 3,
-        "title": {
-            "tr": "Alaçatı Rüzgar Sörfü Festivali",
-            "en": "Alacati Windsurfing Festival"
-        },
+        "id": 14,
         "tag": {
-            "tr": "Spor & Macera",
-            "en": "Sport & Adventure"
+            "tr": "Deneyim • Sanat • Alternatif Kültür",
+            "en": "Deneyim • Sanat • Alternatif Kültür"
         },
-        "day": 8,
+        "img": "uploads\/events\/1783956627_6a550493e55af.png",
+        "desc": {
+            "tr": "Burning Man, geleneksel anlamda bir festival değil; katılımcılar tarafından birlikte inşa edilen geçici bir şehrin deneyimidir. Her yıl Black Rock Desert'ın uçsuz bucaksız çölünde kurulan Black Rock City, sekiz gün boyunca sanat, özgür ifade ve topluluk kültürü etrafında yaşayan on binlerce insanı bir araya getiriyor.\r\n\r\nFestival boyunca çöl, onlarca metre yüksekliğindeki sanat enstalasyonları, ışık gösterileri, deneysel mimari yapılar ve interaktif performanslarla açık hava sanat galerisine dönüşüyor. Gündüzleri bisikletle çölü keşfetmek, dev sanat eserlerinin arasında dolaşmak ve katılımcılar tarafından hazırlanan etkinliklere katılmak mümkünken; gün batımından sonra Black Rock City bambaşka bir atmosfere bürünüyor. Müzik, ateş gösterileri ve ışık enstalasyonları sabaha kadar çöle hayat veriyor.\r\n\r\nBurning Man'in en dikkat çekici özelliği, izleyici kavramının neredeyse olmaması. Burada herkes etkinliğin bir parçasıdır. Kimi bir sanat eseri inşa eder, kimi bir performans düzenler, kimi ise sadece kurduğu kamp ile topluluğa katkı sağlar. Bu nedenle Burning Man, izlenen değil, birlikte yaşanan bir deneyim olarak tanımlanır.\r\n\r\nFestival, son gecelerde gerçekleştirilen ikonik The Man heykelinin yakılmasıyla doruk noktasına ulaşır. Binlerce kişinin çölün ortasında aynı anda bu ritüele tanıklık etmesi, Burning Man'in unutulmaz simgelerinden biri olarak kabul edilir.",
+            "en": "Burning Man is far more than a traditional festival—it's a temporary city created entirely by its participants. Rising from the vast expanse of Nevada's Black Rock Desert, Black Rock City welcomes tens of thousands of people each year for eight days dedicated to art, radical creativity, and community.\r\n\r\nThroughout the event, the desert transforms into an open-air gallery filled with monumental art installations, experimental architecture, immersive performances, and interactive experiences. Days are spent cycling across the playa, discovering large-scale artworks, and exploring participant-created camps, while nights come alive with light installations, fire performances, and music beneath an endless desert sky.\r\n\r\nOne of Burning Man's defining principles is participation. There are no spectators—everyone contributes to the city in their own way, whether through art, performance, volunteering, or simply helping build the community. This collective spirit is what makes Burning Man unlike any other event in the world.\r\n\r\nThe experience reaches its emotional climax with the ceremonial burning of The Man, a towering wooden effigy that has become the festival's defining symbol. Witnessing thousands of people gather in the desert for this moment is considered one of the most unforgettable experiences of the event."
+        },
+        "slug_tr": "burning-man",
+        "slug_en": "burning-man",
+        "created_at": "2026-07-25 11:04:11",
+        "updated_at": "2026-07-25 11:04:11",
+        "title": {
+            "tr": "🇺🇸 Burning Man",
+            "en": "🇺🇸 Burning Man"
+        },
+        "long_desc": {
+            "tr": "Burning Man, geleneksel anlamda bir festival değil; katılımcılar tarafından birlikte inşa edilen geçici bir şehrin deneyimidir. Her yıl Black Rock Desert'ın uçsuz bucaksız çölünde kurulan Black Rock City, sekiz gün boyunca sanat, özgür ifade ve topluluk kültürü etrafında yaşayan on binlerce insanı bir araya getiriyor.\r\n\r\nFestival boyunca çöl, onlarca metre yüksekliğindeki sanat enstalasyonları, ışık gösterileri, deneysel mimari yapılar ve interaktif performanslarla açık hava sanat galerisine dönüşüyor. Gündüzleri bisikletle çölü keşfetmek, dev sanat eserlerinin arasında dolaşmak ve katılımcılar tarafından hazırlanan etkinliklere katılmak mümkünken; gün batımından sonra Black Rock City bambaşka bir atmosfere bürünüyor. Müzik, ateş gösterileri ve ışık enstalasyonları sabaha kadar çöle hayat veriyor.\r\n\r\nBurning Man'in en dikkat çekici özelliği, izleyici kavramının neredeyse olmaması. Burada herkes etkinliğin bir parçasıdır. Kimi bir sanat eseri inşa eder, kimi bir performans düzenler, kimi ise sadece kurduğu kamp ile topluluğa katkı sağlar. Bu nedenle Burning Man, izlenen değil, birlikte yaşanan bir deneyim olarak tanımlanır.\r\n\r\nFestival, son gecelerde gerçekleştirilen ikonik The Man heykelinin yakılmasıyla doruk noktasına ulaşır. Binlerce kişinin çölün ortasında aynı anda bu ritüele tanıklık etmesi, Burning Man'in unutulmaz simgelerinden biri olarak kabul edilir.",
+            "en": "Burning Man is far more than a traditional festival—it's a temporary city created entirely by its participants. Rising from the vast expanse of Nevada's Black Rock Desert, Black Rock City welcomes tens of thousands of people each year for eight days dedicated to art, radical creativity, and community.\r\n\r\nThroughout the event, the desert transforms into an open-air gallery filled with monumental art installations, experimental architecture, immersive performances, and interactive experiences. Days are spent cycling across the playa, discovering large-scale artworks, and exploring participant-created camps, while nights come alive with light installations, fire performances, and music beneath an endless desert sky.\r\n\r\nOne of Burning Man's defining principles is participation. There are no spectators—everyone contributes to the city in their own way, whether through art, performance, volunteering, or simply helping build the community. This collective spirit is what makes Burning Man unlike any other event in the world.\r\n\r\nThe experience reaches its emotional climax with the ceremonial burning of The Man, a towering wooden effigy that has become the festival's defining symbol. Witnessing thousands of people gather in the desert for this moment is considered one of the most unforgettable experiences of the event."
+        },
         "month": {
-            "tr": "Haziran",
-            "en": "June"
+            "tr": "Temmuz",
+            "en": "July"
         },
         "loc": {
-            "tr": "📍 Alaçatı Limanı, Çeşme",
-            "en": "📍 Alacati Port, Cesme"
+            "tr": "Türkiye",
+            "en": "Turkey"
+        }
+    },
+    {
+        "id": 15,
+        "tag": {
+            "tr": "Sinema • Sanat • Kültür",
+            "en": "Sinema • Sanat • Kültür"
+        },
+        "img": "uploads\/events\/1783957155_6a5506a3ca72a.png",
+        "desc": {
+            "tr": "Dünyanın en eski uluslararası film festivali olarak kabul edilen Venice International Film Festival, her yıl eylül ayında Venedik'in sakin Lido Adası'nı küresel sinema dünyasının buluşma noktasına dönüştürüyor. Yaklaşık on gün boyunca Oscar sezonunun en merak edilen yapımları, bağımsız sinemanın dikkat çeken filmleri ve dünyanın önde gelen yönetmenleri ilk kez burada izleyiciyle buluşuyor.\r\n\r\nFestival yalnızca kırmızı halıdan ibaret değil. Gün boyunca farklı salonlarda film gösterimleri, yönetmen söyleşileri, basın gösterimleri ve özel etkinlikler düzenlenirken; akşam saatlerinde Lido kıyısı dünyanın dört bir yanından gelen sinemaseverler, yapımcılar ve sanatçılarla dolup taşıyor. Bir yanda yeni filmler keşfedilirken, diğer yanda Venedik'in tarihi kanalları ve meydanları festival deneyiminin doğal bir parçasına dönüşüyor.\r\n\r\nVenedik Film Festivali'nin en büyük ayrıcalıklarından biri, sinemayı yalnızca izlemek değil, doğduğu atmosferin içinde deneyimleyebilmek. Gündüz bir dünya prömiyerine katıldıktan sonra vaporetto ile Büyük Kanal'a geçebilir, gün batımında San Marco Meydanı'nda yürüyebilir ve akşam İtalya'nın en romantik şehirlerinden birinde günü tamamlayabilirsiniz.\r\n\r\nSinema tutkunları için bu festival yeni sezonun başlangıcı anlamına gelir. Seyahat severler için ise Venedik'i kültür, sanat ve zarafetin en yoğun yaşandığı dönemde keşfetmenin en özel yollarından biridir.",
+            "en": "Recognized as the world's oldest international film festival, the Venice International Film Festival transforms the peaceful island of Lido into the global capital of cinema each September. For ten days, the festival presents highly anticipated world premieres, acclaimed independent productions, and the latest works from some of the industry's most celebrated filmmakers.\r\n\r\nThe experience extends far beyond the famous red carpet. Throughout the day, visitors can attend film screenings, director talks, industry events, and public premieres before stepping outside to discover the timeless beauty of Venice itself. As evening falls, the waterfront of Lido comes alive with filmmakers, actors, critics, and cinema enthusiasts from around the world.\r\n\r\nOne of the festival's greatest attractions is the opportunity to combine world-class cinema with one of Europe's most enchanting cities. After watching a premiere, you can cross the lagoon by vaporetto, wander through St. Mark's Square at sunset, and end the evening beside Venice's historic canals.\r\n\r\nFor film lovers, the Venice International Film Festival marks the beginning of awards season. For travelers, it is one of the most elegant times of the year to experience Venice, where cinema, history, and Italian culture come together in a truly unforgettable setting."
+        },
+        "slug_tr": "venice-international-film-festival",
+        "slug_en": "venice-international-film-festival",
+        "created_at": "2026-07-25 11:04:11",
+        "updated_at": "2026-07-25 11:04:11",
+        "title": {
+            "tr": "🇮🇹 Venice International Film Festival",
+            "en": "🇮🇹 Venice International Film Festival"
+        },
+        "long_desc": {
+            "tr": "Dünyanın en eski uluslararası film festivali olarak kabul edilen Venice International Film Festival, her yıl eylül ayında Venedik'in sakin Lido Adası'nı küresel sinema dünyasının buluşma noktasına dönüştürüyor. Yaklaşık on gün boyunca Oscar sezonunun en merak edilen yapımları, bağımsız sinemanın dikkat çeken filmleri ve dünyanın önde gelen yönetmenleri ilk kez burada izleyiciyle buluşuyor.\r\n\r\nFestival yalnızca kırmızı halıdan ibaret değil. Gün boyunca farklı salonlarda film gösterimleri, yönetmen söyleşileri, basın gösterimleri ve özel etkinlikler düzenlenirken; akşam saatlerinde Lido kıyısı dünyanın dört bir yanından gelen sinemaseverler, yapımcılar ve sanatçılarla dolup taşıyor. Bir yanda yeni filmler keşfedilirken, diğer yanda Venedik'in tarihi kanalları ve meydanları festival deneyiminin doğal bir parçasına dönüşüyor.\r\n\r\nVenedik Film Festivali'nin en büyük ayrıcalıklarından biri, sinemayı yalnızca izlemek değil, doğduğu atmosferin içinde deneyimleyebilmek. Gündüz bir dünya prömiyerine katıldıktan sonra vaporetto ile Büyük Kanal'a geçebilir, gün batımında San Marco Meydanı'nda yürüyebilir ve akşam İtalya'nın en romantik şehirlerinden birinde günü tamamlayabilirsiniz.\r\n\r\nSinema tutkunları için bu festival yeni sezonun başlangıcı anlamına gelir. Seyahat severler için ise Venedik'i kültür, sanat ve zarafetin en yoğun yaşandığı dönemde keşfetmenin en özel yollarından biridir.",
+            "en": "Recognized as the world's oldest international film festival, the Venice International Film Festival transforms the peaceful island of Lido into the global capital of cinema each September. For ten days, the festival presents highly anticipated world premieres, acclaimed independent productions, and the latest works from some of the industry's most celebrated filmmakers.\r\n\r\nThe experience extends far beyond the famous red carpet. Throughout the day, visitors can attend film screenings, director talks, industry events, and public premieres before stepping outside to discover the timeless beauty of Venice itself. As evening falls, the waterfront of Lido comes alive with filmmakers, actors, critics, and cinema enthusiasts from around the world.\r\n\r\nOne of the festival's greatest attractions is the opportunity to combine world-class cinema with one of Europe's most enchanting cities. After watching a premiere, you can cross the lagoon by vaporetto, wander through St. Mark's Square at sunset, and end the evening beside Venice's historic canals.\r\n\r\nFor film lovers, the Venice International Film Festival marks the beginning of awards season. For travelers, it is one of the most elegant times of the year to experience Venice, where cinema, history, and Italian culture come together in a truly unforgettable setting."
+        },
+        "month": {
+            "tr": "Temmuz",
+            "en": "July"
+        },
+        "loc": {
+            "tr": "Türkiye",
+            "en": "Turkey"
+        }
+    },
+    {
+        "id": 16,
+        "tag": {
+            "tr": "Lüks Yaşam • Yatçılık • Tasarım",
+            "en": "Lüks Yaşam • Yatçılık • Tasarım"
+        },
+        "img": "uploads\/events\/1783962527_6a551b9fba69c.png",
+        "desc": {
+            "tr": "Akdeniz'in en prestijli marinalarından biri olan Port Hercule, dört gün boyunca dünyanın en yeni ve en dikkat çekici süper yatlarına ev sahipliği yapıyor. Monaco Yacht Show, yalnızca yatların sergilendiği bir fuar değil; tasarım, mühendislik, inovasyon ve lüks yaşam kültürünün geleceğini şekillendiren küresel bir buluşma noktası.\r\n\r\nFestival boyunca ziyaretçiler 100 metrenin üzerindeki süper yatları yakından inceleyebilir, dünyanın önde gelen yat üreticileriyle tanışabilir ve özel havacılık, deniz oyuncakları, lüks otomobiller ve premium yaşam markalarının en yeni koleksiyonlarını keşfedebilir. Birçok yeni yat modeli ilk kez burada tanıtılırken, sektörün en önemli iş birlikleri de bu organizasyonda kuruluyor.\r\n\r\nMonaco Yacht Show'un en büyük ayrıcalığı ise bu atmosferin yalnızca fuar alanıyla sınırlı kalmaması. Sabah Port Hercule boyunca yürüyüş yapabilir, öğleden sonra Monte Carlo'nun seçkin restoranlarında vakit geçirebilir, akşam ise Akdeniz'in en ikonik limanlarından birinde gün batımını izleyebilirsiniz.\r\n\r\nYatçılıkla ilgilenenler için bu etkinlik sektörün zirvesini temsil ediyor. Seyahat severler için ise Monaco'yu yılın en hareketli ve en zarif döneminde deneyimleme fırsatı sunuyor.",
+            "en": "For four days each September, Port Hercule transforms into the global showcase of superyacht excellence. More than a boat exhibition, the Monaco Yacht Show is where world-class yacht builders, designers, naval architects, and luxury lifestyle brands come together to unveil the latest innovations shaping the future of yachting.\r\n\r\nVisitors can step aboard some of the world's most impressive superyachts, discover cutting-edge marine technology, and explore exhibitions featuring private aviation, luxury automobiles, bespoke craftsmanship, and premium lifestyle products. Many of the industry's most anticipated yacht launches make their global debut here, while key partnerships and business opportunities are created throughout the event.\r\n\r\nThe experience extends well beyond the marina. Spend the morning strolling along Port Hercule, enjoy lunch overlooking the Mediterranean, and end the day watching the sunset surrounded by one of the world's most prestigious collections of superyachts.\r\n\r\nFor yachting enthusiasts, the Monaco Yacht Show represents the pinnacle of the industry. For travelers, it offers a rare opportunity to experience Monaco at its most sophisticated, where luxury, innovation, and the Mediterranean lifestyle come together in an unforgettable setting."
+        },
+        "slug_tr": "monaco-yacht-show",
+        "slug_en": "monaco-yacht-show",
+        "created_at": "2026-07-25 11:04:12",
+        "updated_at": "2026-07-25 11:04:12",
+        "title": {
+            "tr": "🇲🇨 Monaco Yacht Show",
+            "en": "🇲🇨 Monaco Yacht Show"
+        },
+        "long_desc": {
+            "tr": "Akdeniz'in en prestijli marinalarından biri olan Port Hercule, dört gün boyunca dünyanın en yeni ve en dikkat çekici süper yatlarına ev sahipliği yapıyor. Monaco Yacht Show, yalnızca yatların sergilendiği bir fuar değil; tasarım, mühendislik, inovasyon ve lüks yaşam kültürünün geleceğini şekillendiren küresel bir buluşma noktası.\r\n\r\nFestival boyunca ziyaretçiler 100 metrenin üzerindeki süper yatları yakından inceleyebilir, dünyanın önde gelen yat üreticileriyle tanışabilir ve özel havacılık, deniz oyuncakları, lüks otomobiller ve premium yaşam markalarının en yeni koleksiyonlarını keşfedebilir. Birçok yeni yat modeli ilk kez burada tanıtılırken, sektörün en önemli iş birlikleri de bu organizasyonda kuruluyor.\r\n\r\nMonaco Yacht Show'un en büyük ayrıcalığı ise bu atmosferin yalnızca fuar alanıyla sınırlı kalmaması. Sabah Port Hercule boyunca yürüyüş yapabilir, öğleden sonra Monte Carlo'nun seçkin restoranlarında vakit geçirebilir, akşam ise Akdeniz'in en ikonik limanlarından birinde gün batımını izleyebilirsiniz.\r\n\r\nYatçılıkla ilgilenenler için bu etkinlik sektörün zirvesini temsil ediyor. Seyahat severler için ise Monaco'yu yılın en hareketli ve en zarif döneminde deneyimleme fırsatı sunuyor.",
+            "en": "For four days each September, Port Hercule transforms into the global showcase of superyacht excellence. More than a boat exhibition, the Monaco Yacht Show is where world-class yacht builders, designers, naval architects, and luxury lifestyle brands come together to unveil the latest innovations shaping the future of yachting.\r\n\r\nVisitors can step aboard some of the world's most impressive superyachts, discover cutting-edge marine technology, and explore exhibitions featuring private aviation, luxury automobiles, bespoke craftsmanship, and premium lifestyle products. Many of the industry's most anticipated yacht launches make their global debut here, while key partnerships and business opportunities are created throughout the event.\r\n\r\nThe experience extends well beyond the marina. Spend the morning strolling along Port Hercule, enjoy lunch overlooking the Mediterranean, and end the day watching the sunset surrounded by one of the world's most prestigious collections of superyachts.\r\n\r\nFor yachting enthusiasts, the Monaco Yacht Show represents the pinnacle of the industry. For travelers, it offers a rare opportunity to experience Monaco at its most sophisticated, where luxury, innovation, and the Mediterranean lifestyle come together in an unforgettable setting."
+        },
+        "month": {
+            "tr": "Temmuz",
+            "en": "July"
+        },
+        "loc": {
+            "tr": "Türkiye",
+            "en": "Turkey"
+        }
+    },
+    {
+        "id": 17,
+        "tag": {
+            "tr": "Tradition • Gastronomy • Culture",
+            "en": "Tradition • Gastronomy • Culture"
+        },
+        "img": "uploads\/events\/1783962763_6a551c8b9518f.png",
+        "desc": {
+            "tr": "İlk kez 1810 yılında Bavyera Veliaht Prensi Ludwig'in düğün kutlamalarıyla başlayan Oktoberfest, bugün dünyanın en büyük ve en köklü halk festivallerinden biri olarak kabul ediliyor. Her yıl milyonlarca ziyaretçi Münih'teki Theresienwiese alanında kurulan dev festival çadırlarında Bavyera kültürünü yakından deneyimlemek için bir araya geliyor.\r\n\r\nFestival boyunca geleneksel Lederhosen ve Dirndl kıyafetleriyle dolaşan ziyaretçiler, canlı halk müzikleri eşliğinde Bavyera mutfağının en sevilen lezzetlerini tadabiliyor. Izgara sosisler, dev pretzeller, kızarmış tavuk, elmalı tatlılar ve Münih'in köklü bira üreticileri tarafından hazırlanan özel festival biraları etkinliğin en önemli parçalarını oluşturuyor.\r\n\r\nOktoberfest yalnızca gastronomiyle sınırlı değil. Lunaparklar, tarihi dönme dolaplar, geleneksel geçit törenleri, aile etkinlikleri ve kültürel gösteriler festival boyunca şehrin enerjisini sürekli canlı tutuyor. Sabah başlayan hareketlilik, gece geç saatlere kadar müzik ve eğlenceyle devam ediyor.\r\n\r\nAlmanya'nın geleneksel yaşam kültürünü en canlı hâliyle görmek isteyenler için Oktoberfest eşsiz bir deneyim sunuyor. Münih'in tarihi meydanları, bira bahçeleri ve festival atmosferi birleştiğinde, sonbaharın Avrupa'daki en unutulmaz seyahatlerinden biri ortaya çıkıyor.",
+            "en": "Originally held in 1810 to celebrate the wedding of Bavarian Crown Prince Ludwig, Oktoberfest has evolved into the world's largest and most celebrated folk festival. Every year, millions of visitors gather at Theresienwiese to experience authentic Bavarian culture in enormous festival tents filled with music, tradition, and hospitality.\r\n\r\nThroughout the festival, guests dressed in traditional Lederhosen and Dirndl enjoy classic Bavarian cuisine, including grilled sausages, giant pretzels, roasted chicken, apple desserts, and the famous festival beers brewed exclusively by Munich's historic breweries.\r\n\r\nBeyond its culinary traditions, Oktoberfest offers amusement rides, historic Ferris wheels, colourful parades, family-friendly attractions, and live folk performances that keep the festival lively from morning until late at night.\r\n\r\nFor travelers seeking an authentic taste of Bavaria, Oktoberfest is far more than a beer festival. It is one of Europe's greatest cultural celebrations, where tradition, gastronomy, and the welcoming spirit of Munich come together to create an unforgettable autumn experience."
+        },
+        "slug_tr": "oktoberfest",
+        "slug_en": "oktoberfest",
+        "created_at": "2026-07-25 11:04:12",
+        "updated_at": "2026-07-25 11:04:12",
+        "title": {
+            "tr": "🇩🇪 Oktoberfest",
+            "en": "🇩🇪 Oktoberfest"
+        },
+        "long_desc": {
+            "tr": "İlk kez 1810 yılında Bavyera Veliaht Prensi Ludwig'in düğün kutlamalarıyla başlayan Oktoberfest, bugün dünyanın en büyük ve en köklü halk festivallerinden biri olarak kabul ediliyor. Her yıl milyonlarca ziyaretçi Münih'teki Theresienwiese alanında kurulan dev festival çadırlarında Bavyera kültürünü yakından deneyimlemek için bir araya geliyor.\r\n\r\nFestival boyunca geleneksel Lederhosen ve Dirndl kıyafetleriyle dolaşan ziyaretçiler, canlı halk müzikleri eşliğinde Bavyera mutfağının en sevilen lezzetlerini tadabiliyor. Izgara sosisler, dev pretzeller, kızarmış tavuk, elmalı tatlılar ve Münih'in köklü bira üreticileri tarafından hazırlanan özel festival biraları etkinliğin en önemli parçalarını oluşturuyor.\r\n\r\nOktoberfest yalnızca gastronomiyle sınırlı değil. Lunaparklar, tarihi dönme dolaplar, geleneksel geçit törenleri, aile etkinlikleri ve kültürel gösteriler festival boyunca şehrin enerjisini sürekli canlı tutuyor. Sabah başlayan hareketlilik, gece geç saatlere kadar müzik ve eğlenceyle devam ediyor.\r\n\r\nAlmanya'nın geleneksel yaşam kültürünü en canlı hâliyle görmek isteyenler için Oktoberfest eşsiz bir deneyim sunuyor. Münih'in tarihi meydanları, bira bahçeleri ve festival atmosferi birleştiğinde, sonbaharın Avrupa'daki en unutulmaz seyahatlerinden biri ortaya çıkıyor.",
+            "en": "Originally held in 1810 to celebrate the wedding of Bavarian Crown Prince Ludwig, Oktoberfest has evolved into the world's largest and most celebrated folk festival. Every year, millions of visitors gather at Theresienwiese to experience authentic Bavarian culture in enormous festival tents filled with music, tradition, and hospitality.\r\n\r\nThroughout the festival, guests dressed in traditional Lederhosen and Dirndl enjoy classic Bavarian cuisine, including grilled sausages, giant pretzels, roasted chicken, apple desserts, and the famous festival beers brewed exclusively by Munich's historic breweries.\r\n\r\nBeyond its culinary traditions, Oktoberfest offers amusement rides, historic Ferris wheels, colourful parades, family-friendly attractions, and live folk performances that keep the festival lively from morning until late at night.\r\n\r\nFor travelers seeking an authentic taste of Bavaria, Oktoberfest is far more than a beer festival. It is one of Europe's greatest cultural celebrations, where tradition, gastronomy, and the welcoming spirit of Munich come together to create an unforgettable autumn experience."
+        },
+        "month": {
+            "tr": "Temmuz",
+            "en": "July"
+        },
+        "loc": {
+            "tr": "Türkiye",
+            "en": "Turkey"
+        }
+    },
+    {
+        "id": 18,
+        "tag": {
+            "tr": "Kültür • Gelenek • Miras",
+            "en": "Kültür • Gelenek • Miras"
+        },
+        "img": "uploads\/events\/1783963040_6a551da04d99c.png",
+        "desc": {
+            "tr": "Day of the Dead, ilk bakışta bir anma günü gibi görünse de aslında yaşamı, aile bağlarını ve anıları kutlayan köklü bir Meksika geleneğidir. Her yıl 1 ve 2 Kasım'da kutlanan festival boyunca şehirler kadife çiçekleri, mumlar ve rengârenk ofrenda adı verilen sunaklarla süslenirken, aileler sevdiklerini geleneksel ritüellerle anmak için bir araya gelir.\r\n\r\nFestival süresince Mexico City'nin tarihi caddeleri dev geçit törenlerine ev sahipliği yapar. Geleneksel kostümler, iskelet figürleri, canlı müzik performansları ve el sanatları stantları şehri adeta açık hava kültür sahnesine dönüştürür. Gün boyunca kurulan pazarları gezebilir, geleneksel Pan de Muerto ve yerel lezzetleri deneyebilir, akşam ise mumlarla aydınlatılan meydanlarda festivalin eşsiz atmosferini yaşayabilirsiniz.\r\n\r\nFestivalin en etkileyici yanı ise ölümün hüzün yerine sevgiyle hatırlanmasıdır. Mezarlar çiçeklerle süslenir, aileler sevdikleriyle birlikte vakit geçirir gibi mezarlıklarda toplanır ve geçmiş nesillerin anıları müzik, yemek ve sohbet eşliğinde yaşatılır. UNESCO tarafından Somut Olmayan Kültürel Miras olarak kabul edilen bu gelenek, Meksika kültürünün en güçlü simgelerinden biri olmaya devam ediyor.",
+            "en": "Although it may appear to be a day of mourning, the Day of the Dead is a joyful celebration of life, family, and remembrance. Held on 1 and 2 November, the festival fills homes and public spaces with beautifully decorated ofrendas, marigold flowers, candles, and traditional offerings prepared to welcome the spirits of loved ones.\r\n\r\nThroughout the festival, the streets of Mexico City come alive with vibrant parades, traditional costumes, live music, and artisan markets. Visitors can explore local food stalls, taste the iconic Pan de Muerto, admire handcrafted decorations, and experience a city where every neighborhood embraces this extraordinary tradition.\r\n\r\nWhat makes the celebration truly unique is its perspective on death—not as an ending, but as a continuation of life and memory. Families gather in cemeteries to decorate graves with flowers and candles, sharing stories, music, and meals in honor of those who came before them. Recognized by UNESCO as an Intangible Cultural Heritage of Humanity, the Day of the Dead remains one of the world's most meaningful cultural celebrations."
+        },
+        "slug_tr": "day-of-the-dead-dia-de-los-muertos",
+        "slug_en": "day-of-the-dead-dia-de-los-muertos",
+        "created_at": "2026-07-25 11:04:12",
+        "updated_at": "2026-07-25 11:04:12",
+        "title": {
+            "tr": "🇲🇽 Day of the Dead (Día de los Muertos)",
+            "en": "🇲🇽 Day of the Dead (Día de los Muertos)"
+        },
+        "long_desc": {
+            "tr": "Day of the Dead, ilk bakışta bir anma günü gibi görünse de aslında yaşamı, aile bağlarını ve anıları kutlayan köklü bir Meksika geleneğidir. Her yıl 1 ve 2 Kasım'da kutlanan festival boyunca şehirler kadife çiçekleri, mumlar ve rengârenk ofrenda adı verilen sunaklarla süslenirken, aileler sevdiklerini geleneksel ritüellerle anmak için bir araya gelir.\r\n\r\nFestival süresince Mexico City'nin tarihi caddeleri dev geçit törenlerine ev sahipliği yapar. Geleneksel kostümler, iskelet figürleri, canlı müzik performansları ve el sanatları stantları şehri adeta açık hava kültür sahnesine dönüştürür. Gün boyunca kurulan pazarları gezebilir, geleneksel Pan de Muerto ve yerel lezzetleri deneyebilir, akşam ise mumlarla aydınlatılan meydanlarda festivalin eşsiz atmosferini yaşayabilirsiniz.\r\n\r\nFestivalin en etkileyici yanı ise ölümün hüzün yerine sevgiyle hatırlanmasıdır. Mezarlar çiçeklerle süslenir, aileler sevdikleriyle birlikte vakit geçirir gibi mezarlıklarda toplanır ve geçmiş nesillerin anıları müzik, yemek ve sohbet eşliğinde yaşatılır. UNESCO tarafından Somut Olmayan Kültürel Miras olarak kabul edilen bu gelenek, Meksika kültürünün en güçlü simgelerinden biri olmaya devam ediyor.",
+            "en": "Although it may appear to be a day of mourning, the Day of the Dead is a joyful celebration of life, family, and remembrance. Held on 1 and 2 November, the festival fills homes and public spaces with beautifully decorated ofrendas, marigold flowers, candles, and traditional offerings prepared to welcome the spirits of loved ones.\r\n\r\nThroughout the festival, the streets of Mexico City come alive with vibrant parades, traditional costumes, live music, and artisan markets. Visitors can explore local food stalls, taste the iconic Pan de Muerto, admire handcrafted decorations, and experience a city where every neighborhood embraces this extraordinary tradition.\r\n\r\nWhat makes the celebration truly unique is its perspective on death—not as an ending, but as a continuation of life and memory. Families gather in cemeteries to decorate graves with flowers and candles, sharing stories, music, and meals in honor of those who came before them. Recognized by UNESCO as an Intangible Cultural Heritage of Humanity, the Day of the Dead remains one of the world's most meaningful cultural celebrations."
+        },
+        "month": {
+            "tr": "Temmuz",
+            "en": "July"
+        },
+        "loc": {
+            "tr": "Türkiye",
+            "en": "Turkey"
+        }
+    },
+    {
+        "id": 19,
+        "tag": {
+            "tr": "Işık • Gelenek • Maneviyat",
+            "en": "Işık • Gelenek • Maneviyat"
+        },
+        "img": "uploads\/events\/1783963397_6a551f05ad515.png",
+        "desc": {
+            "tr": "Dolunayın yükselmeye başladığı akşam saatlerinde Tayland'ın nehirleri, gölleri ve kanalları sessizce ışıkla dolmaya başlar. Muz yapraklarından hazırlanan, çiçekler, mumlar ve tütsülerle süslenen küçük krathonglar suya bırakılırken insanlar geçmiş yılın olumsuzluklarını geride bırakmayı, yeni başlangıçları ise umutla karşılamayı simgeler.\r\n\r\nFestivalin en etkileyici atmosferi ise Kuzey Tayland'ın kültür başkenti Chiang Mai'de yaşanır. Loy Krathong ile aynı dönemde kutlanan Yi Peng sırasında binlerce kâğıt fener gökyüzüne yükselir; tapınaklar mumlarla aydınlatılır, geleneksel Lanna gösterileri, el sanatları pazarları ve sokak lezzetleri şehrin her köşesine yayılır. Ortaya çıkan manzara, dünyanın en unutulmaz gece deneyimlerinden biri olarak görülür.\r\n\r\nFestivalin doğduğu yer olarak kabul edilen Sukhothai Tarihi Parkı ise kutlamalara farklı bir atmosfer kazandırır. UNESCO Dünya Mirası listesindeki antik tapınakların arasında düzenlenen ışık gösterileri, geleneksel dans performansları ve tarihi dekorlar, ziyaretçilere Tayland'ın kültürel mirasını en etkileyici şekilde deneyimleme fırsatı sunar.\r\n\r\nLoy Krathong, yalnızca görsel güzelliğiyle değil, taşıdığı anlamla da unutulmazdır. Suyun üzerine bırakılan her kandil, dileklerin, teşekkürlerin ve yeni başlangıçların sessiz bir simgesi hâline gelir. Tayland'ı ziyaret etmek için en büyülü dönemlerden biri olarak kabul edilmesinin nedeni de tam olarak budur.",
+            "en": "As the full moon rises over Thailand, rivers, lakes, and canals begin to shimmer with hundreds of floating krathongs crafted from banana leaves, flowers, candles, and incense. Releasing a krathong symbolizes letting go of misfortune, expressing gratitude to the water, and welcoming new beginnings.\r\n\r\nThe most spectacular celebrations take place in Chiang Mai, where Loy Krathong coincides with the northern Yi Peng lantern festival. As thousands of glowing lanterns drift into the night sky, temples illuminate with candlelight, traditional Lanna performances fill the streets, and local markets showcase regional crafts and cuisine. Together, they create one of the world's most breathtaking nighttime spectacles.\r\n\r\nMeanwhile, the ancient city of Sukhothai, considered the birthplace of the festival, offers a more historic atmosphere. Set among the illuminated ruins of Sukhothai Historical Park, visitors can enjoy traditional performances, cultural ceremonies, and light displays that celebrate centuries of Thai heritage.\r\n\r\nMore than a festival of lights, Loy Krathong is a celebration of gratitude, hope, and renewal. Watching countless floating candles and lanterns illuminate the night is an experience that leaves a lasting impression long after the festival ends."
+        },
+        "slug_tr": "loy-krathong",
+        "slug_en": "loy-krathong",
+        "created_at": "2026-07-25 11:04:13",
+        "updated_at": "2026-07-25 11:04:13",
+        "title": {
+            "tr": "🇹🇭 Loy Krathong",
+            "en": "🇹🇭 Loy Krathong"
+        },
+        "long_desc": {
+            "tr": "Dolunayın yükselmeye başladığı akşam saatlerinde Tayland'ın nehirleri, gölleri ve kanalları sessizce ışıkla dolmaya başlar. Muz yapraklarından hazırlanan, çiçekler, mumlar ve tütsülerle süslenen küçük krathonglar suya bırakılırken insanlar geçmiş yılın olumsuzluklarını geride bırakmayı, yeni başlangıçları ise umutla karşılamayı simgeler.\r\n\r\nFestivalin en etkileyici atmosferi ise Kuzey Tayland'ın kültür başkenti Chiang Mai'de yaşanır. Loy Krathong ile aynı dönemde kutlanan Yi Peng sırasında binlerce kâğıt fener gökyüzüne yükselir; tapınaklar mumlarla aydınlatılır, geleneksel Lanna gösterileri, el sanatları pazarları ve sokak lezzetleri şehrin her köşesine yayılır. Ortaya çıkan manzara, dünyanın en unutulmaz gece deneyimlerinden biri olarak görülür.\r\n\r\nFestivalin doğduğu yer olarak kabul edilen Sukhothai Tarihi Parkı ise kutlamalara farklı bir atmosfer kazandırır. UNESCO Dünya Mirası listesindeki antik tapınakların arasında düzenlenen ışık gösterileri, geleneksel dans performansları ve tarihi dekorlar, ziyaretçilere Tayland'ın kültürel mirasını en etkileyici şekilde deneyimleme fırsatı sunar.\r\n\r\nLoy Krathong, yalnızca görsel güzelliğiyle değil, taşıdığı anlamla da unutulmazdır. Suyun üzerine bırakılan her kandil, dileklerin, teşekkürlerin ve yeni başlangıçların sessiz bir simgesi hâline gelir. Tayland'ı ziyaret etmek için en büyülü dönemlerden biri olarak kabul edilmesinin nedeni de tam olarak budur.",
+            "en": "As the full moon rises over Thailand, rivers, lakes, and canals begin to shimmer with hundreds of floating krathongs crafted from banana leaves, flowers, candles, and incense. Releasing a krathong symbolizes letting go of misfortune, expressing gratitude to the water, and welcoming new beginnings.\r\n\r\nThe most spectacular celebrations take place in Chiang Mai, where Loy Krathong coincides with the northern Yi Peng lantern festival. As thousands of glowing lanterns drift into the night sky, temples illuminate with candlelight, traditional Lanna performances fill the streets, and local markets showcase regional crafts and cuisine. Together, they create one of the world's most breathtaking nighttime spectacles.\r\n\r\nMeanwhile, the ancient city of Sukhothai, considered the birthplace of the festival, offers a more historic atmosphere. Set among the illuminated ruins of Sukhothai Historical Park, visitors can enjoy traditional performances, cultural ceremonies, and light displays that celebrate centuries of Thai heritage.\r\n\r\nMore than a festival of lights, Loy Krathong is a celebration of gratitude, hope, and renewal. Watching countless floating candles and lanterns illuminate the night is an experience that leaves a lasting impression long after the festival ends."
+        },
+        "month": {
+            "tr": "Temmuz",
+            "en": "July"
+        },
+        "loc": {
+            "tr": "Türkiye",
+            "en": "Turkey"
+        }
+    },
+    {
+        "id": 20,
+        "tag": {
+            "tr": "Noel • Gelenek • Kış Büyüsü",
+            "en": "Noel • Gelenek • Kış Büyüsü"
+        },
+        "img": "uploads\/events\/1783963572_6a551fb4e889f.png",
+        "desc": {
+            "tr": "Kışın ilk soğuk günleriyle birlikte Almanya'nın tarihi meydanlarında ahşap stantlar kurulmaya başlar. Gün batımından sonra şehirler binlerce ışıkla aydınlanır; tarçın, kavrulmuş badem, zencefilli kurabiye ve sıcak Glühwein kokusu sokaklara yayılır. Bir Noel pazarı gezmek, yalnızca alışveriş yapmak değil, Avrupa'nın en köklü kış geleneklerinden birinin parçası olmaktır.\r\n\r\nNürnberg'deki Christkindlesmarkt, Dresden'in tarihi Striezelmarkt'ı, Münih'in Marienplatz Christkindlmarkt'ı ve Köln Katedrali'nin önünde kurulan pazarlar, her biri kendine özgü atmosferiyle ziyaretçilerini karşılar. El yapımı ahşap süsler, cam işlemeler, geleneksel oyuncaklar ve yerel tatlar, her şehrin kendi kültürünü yansıtan ayrıntılar sunar.\r\n\r\nAkşam saatlerinde canlı Noel koroları meydanlarda şarkılar söylerken, tarihi binaların ışıklandırmaları kış manzarasını tamamlar. Sıcak bir fincan Glühwein eşliğinde tezgâhlar arasında dolaşmak, dev Noel ağaçlarının altında vakit geçirmek ve yerel lezzetleri tatmak, bu deneyimin vazgeçilmez parçalarıdır.\r\n\r\nGerman Christmas Markets'i özel kılan yalnızca dekorasyonu değil; yüzyıllardır değişmeden yaşayan gelenekleridir. Noel ruhunu en otantik hâliyle hissetmek isteyenler için Almanya'nın Christmas Market'leri, Avrupa kışının en unutulmaz seyahat deneyimlerinden biri olmaya devam ediyor.",
+            "en": "As winter arrives, Germany's historic city centres are transformed into enchanting Christmas villages. Wooden market stalls line medieval squares, thousands of lights illuminate the streets, and the aromas of roasted almonds, gingerbread, cinnamon, and warm Glühwein fill the air. Visiting a German Christmas Market is not simply a shopping trip—it's an opportunity to experience one of Europe's most cherished holiday traditions.\r\n\r\nEach city offers its own unique atmosphere. Nuremberg's famous Christkindlesmarkt, Dresden's historic Striezelmarkt, Munich's Marienplatz Christmas Market, and Cologne's spectacular market beneath its Gothic cathedral each showcase regional crafts, festive foods, and local traditions.\r\n\r\nThroughout the season, choirs perform traditional Christmas carols, beautifully decorated Christmas trees become gathering places for families and travelers, and artisans present handcrafted ornaments, wooden toys, and seasonal gifts. The festive atmosphere continues from morning until late evening, creating one of the most memorable winter experiences in Europe.\r\n\r\nMore than just holiday markets, Germany's Christmas Markets celebrate centuries of craftsmanship, hospitality, and seasonal tradition. For anyone dreaming of a classic European Christmas, few experiences capture the spirit of the season more beautifully."
+        },
+        "slug_tr": "german-christmas-markets",
+        "slug_en": "german-christmas-markets",
+        "created_at": "2026-07-25 11:04:13",
+        "updated_at": "2026-07-25 11:04:13",
+        "title": {
+            "tr": "🇩🇪 German Christmas Markets",
+            "en": "🇩🇪 German Christmas Markets"
+        },
+        "long_desc": {
+            "tr": "Kışın ilk soğuk günleriyle birlikte Almanya'nın tarihi meydanlarında ahşap stantlar kurulmaya başlar. Gün batımından sonra şehirler binlerce ışıkla aydınlanır; tarçın, kavrulmuş badem, zencefilli kurabiye ve sıcak Glühwein kokusu sokaklara yayılır. Bir Noel pazarı gezmek, yalnızca alışveriş yapmak değil, Avrupa'nın en köklü kış geleneklerinden birinin parçası olmaktır.\r\n\r\nNürnberg'deki Christkindlesmarkt, Dresden'in tarihi Striezelmarkt'ı, Münih'in Marienplatz Christkindlmarkt'ı ve Köln Katedrali'nin önünde kurulan pazarlar, her biri kendine özgü atmosferiyle ziyaretçilerini karşılar. El yapımı ahşap süsler, cam işlemeler, geleneksel oyuncaklar ve yerel tatlar, her şehrin kendi kültürünü yansıtan ayrıntılar sunar.\r\n\r\nAkşam saatlerinde canlı Noel koroları meydanlarda şarkılar söylerken, tarihi binaların ışıklandırmaları kış manzarasını tamamlar. Sıcak bir fincan Glühwein eşliğinde tezgâhlar arasında dolaşmak, dev Noel ağaçlarının altında vakit geçirmek ve yerel lezzetleri tatmak, bu deneyimin vazgeçilmez parçalarıdır.\r\n\r\nGerman Christmas Markets'i özel kılan yalnızca dekorasyonu değil; yüzyıllardır değişmeden yaşayan gelenekleridir. Noel ruhunu en otantik hâliyle hissetmek isteyenler için Almanya'nın Christmas Market'leri, Avrupa kışının en unutulmaz seyahat deneyimlerinden biri olmaya devam ediyor.",
+            "en": "As winter arrives, Germany's historic city centres are transformed into enchanting Christmas villages. Wooden market stalls line medieval squares, thousands of lights illuminate the streets, and the aromas of roasted almonds, gingerbread, cinnamon, and warm Glühwein fill the air. Visiting a German Christmas Market is not simply a shopping trip—it's an opportunity to experience one of Europe's most cherished holiday traditions.\r\n\r\nEach city offers its own unique atmosphere. Nuremberg's famous Christkindlesmarkt, Dresden's historic Striezelmarkt, Munich's Marienplatz Christmas Market, and Cologne's spectacular market beneath its Gothic cathedral each showcase regional crafts, festive foods, and local traditions.\r\n\r\nThroughout the season, choirs perform traditional Christmas carols, beautifully decorated Christmas trees become gathering places for families and travelers, and artisans present handcrafted ornaments, wooden toys, and seasonal gifts. The festive atmosphere continues from morning until late evening, creating one of the most memorable winter experiences in Europe.\r\n\r\nMore than just holiday markets, Germany's Christmas Markets celebrate centuries of craftsmanship, hospitality, and seasonal tradition. For anyone dreaming of a classic European Christmas, few experiences capture the spirit of the season more beautifully."
+        },
+        "month": {
+            "tr": "Temmuz",
+            "en": "July"
+        },
+        "loc": {
+            "tr": "Türkiye",
+            "en": "Turkey"
+        }
+    },
+    {
+        "id": 21,
+        "tag": {
+            "tr": "Zarafet • Gelenek • Balo Kültürü",
+            "en": "Zarafet • Gelenek • Balo Kültürü"
+        },
+        "img": "uploads\/events\/1783963848_6a5520c827b8d.png",
+        "desc": {
+            "tr": "Kış aylarında Viyana'nın tarihi sarayları ve görkemli balo salonları yeniden hayat buluyor. Kristal avizelerin altında vals yapan çiftler, canlı orkestra performansları ve siyah smokinler ile uzun gece elbiseleri, şehrin yüzyıllardır koruduğu balo geleneğini günümüze taşıyor.\r\n\r\nSezon boyunca Hofburg Sarayı, Viyana Devlet Operası ve şehrin tarihi salonlarında farklı temalara sahip onlarca balo düzenleniyor. Philharmonic Ball, Opera Ball, Coffeehouse Owners' Ball ve Jurists' Ball gibi organizasyonlar yalnızca Avusturya'dan değil, dünyanın dört bir yanından gelen davetlileri ağırlıyor.\r\n\r\nGeceler, geleneksel açılış seremonileriyle başlıyor; profesyonel dansçılar ilk valsi yaptıktan sonra salon tüm misafirlere açılıyor. Canlı klasik müzik eşliğinde dans etmek, tarihi salonlarda vakit geçirmek ve Viyana'nın zarif sosyal yaşamını deneyimlemek, bu sezonun en unutulmaz anlarını oluşturuyor.\r\n\r\nVienna Ball Season yalnızca bir dizi balodan ibaret değil; Avrupa aristokrasisinin yüzyıllardır yaşattığı kültürün bugün hâlâ canlı şekilde devam ettiği nadir geleneklerden biri. Viyana'yı ziyaret etmek için en büyüleyici dönemlerden biri olarak kabul edilmesinin nedeni de tam olarak bu atmosfer.",
+            "en": "During the winter months, Vienna's magnificent palaces and historic ballrooms come alive with one of Europe's most celebrated traditions. Beneath crystal chandeliers, elegantly dressed guests gather for evenings of classical music, refined etiquette, and the timeless beauty of the Viennese waltz.\r\n\r\nThroughout the season, venues including the Hofburg Palace, the Vienna State Opera, and many of the city's historic halls host prestigious events such as the Vienna Opera Ball, the Philharmonic Ball, the Coffeehouse Owners' Ball, and numerous themed celebrations that attract visitors from around the world.\r\n\r\nEach evening begins with a traditional opening ceremony before the dance floor is opened to all guests. Live orchestras, formal attire, and the elegance of Vienna's historic interiors create an atmosphere unlike anywhere else in Europe.\r\n\r\nMore than a series of glamorous events, the Vienna Ball Season is a living cultural tradition that has been preserved for generations. For travelers seeking history, elegance, and authentic Viennese culture, winter is undoubtedly one of the most enchanting times to experience the Austrian capital."
+        },
+        "slug_tr": "vienna-ball-season",
+        "slug_en": "vienna-ball-season",
+        "created_at": "2026-07-25 11:04:14",
+        "updated_at": "2026-07-25 11:04:14",
+        "title": {
+            "tr": "🇦🇹 Vienna Ball Season",
+            "en": "🇦🇹 Vienna Ball Season"
+        },
+        "long_desc": {
+            "tr": "Kış aylarında Viyana'nın tarihi sarayları ve görkemli balo salonları yeniden hayat buluyor. Kristal avizelerin altında vals yapan çiftler, canlı orkestra performansları ve siyah smokinler ile uzun gece elbiseleri, şehrin yüzyıllardır koruduğu balo geleneğini günümüze taşıyor.\r\n\r\nSezon boyunca Hofburg Sarayı, Viyana Devlet Operası ve şehrin tarihi salonlarında farklı temalara sahip onlarca balo düzenleniyor. Philharmonic Ball, Opera Ball, Coffeehouse Owners' Ball ve Jurists' Ball gibi organizasyonlar yalnızca Avusturya'dan değil, dünyanın dört bir yanından gelen davetlileri ağırlıyor.\r\n\r\nGeceler, geleneksel açılış seremonileriyle başlıyor; profesyonel dansçılar ilk valsi yaptıktan sonra salon tüm misafirlere açılıyor. Canlı klasik müzik eşliğinde dans etmek, tarihi salonlarda vakit geçirmek ve Viyana'nın zarif sosyal yaşamını deneyimlemek, bu sezonun en unutulmaz anlarını oluşturuyor.\r\n\r\nVienna Ball Season yalnızca bir dizi balodan ibaret değil; Avrupa aristokrasisinin yüzyıllardır yaşattığı kültürün bugün hâlâ canlı şekilde devam ettiği nadir geleneklerden biri. Viyana'yı ziyaret etmek için en büyüleyici dönemlerden biri olarak kabul edilmesinin nedeni de tam olarak bu atmosfer.",
+            "en": "During the winter months, Vienna's magnificent palaces and historic ballrooms come alive with one of Europe's most celebrated traditions. Beneath crystal chandeliers, elegantly dressed guests gather for evenings of classical music, refined etiquette, and the timeless beauty of the Viennese waltz.\r\n\r\nThroughout the season, venues including the Hofburg Palace, the Vienna State Opera, and many of the city's historic halls host prestigious events such as the Vienna Opera Ball, the Philharmonic Ball, the Coffeehouse Owners' Ball, and numerous themed celebrations that attract visitors from around the world.\r\n\r\nEach evening begins with a traditional opening ceremony before the dance floor is opened to all guests. Live orchestras, formal attire, and the elegance of Vienna's historic interiors create an atmosphere unlike anywhere else in Europe.\r\n\r\nMore than a series of glamorous events, the Vienna Ball Season is a living cultural tradition that has been preserved for generations. For travelers seeking history, elegance, and authentic Viennese culture, winter is undoubtedly one of the most enchanting times to experience the Austrian capital."
+        },
+        "month": {
+            "tr": "Temmuz",
+            "en": "July"
+        },
+        "loc": {
+            "tr": "Türkiye",
+            "en": "Turkey"
         }
     }
 ]
