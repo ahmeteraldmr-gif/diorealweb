@@ -225,6 +225,7 @@
             margin-right: 0.4rem;
         }
     </style>
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}?v={{ time() }}">
 </head>
 <body>
 

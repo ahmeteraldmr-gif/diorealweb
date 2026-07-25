@@ -14,8 +14,12 @@
     
     <!-- Premium Stylesheet -->
     <link rel="stylesheet" href="{{ asset('css/admin-new.css') }}?v={{ time() }}">
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}?v={{ time() }}">
 </head>
 <body>
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
     <!-- Sidebar -->
     <aside class="admin-sidebar" id="sidebar">
@@ -153,19 +157,44 @@
         // Sidebar toggle logic for mobile
         const sidebarToggle = document.getElementById('sidebarToggle');
         const sidebar = document.getElementById('sidebar');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+        
+        function openSidebar() {
+            sidebar.classList.add('open');
+            if (sidebarOverlay) {
+                sidebarOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeSidebar() {
+            sidebar.classList.remove('open');
+            if (sidebarOverlay) {
+                sidebarOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
         
         if (sidebarToggle && sidebar) {
             sidebarToggle.addEventListener('click', () => {
-                sidebar.classList.toggle('open');
-            });
-            
-            // Close sidebar when clicking outside on mobile
-            document.addEventListener('click', (e) => {
-                if (window.innerWidth <= 1024 && !sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
-                    sidebar.classList.remove('open');
+                if (sidebar.classList.contains('open')) {
+                    closeSidebar();
+                } else {
+                    openSidebar();
                 }
             });
         }
+
+        if (sidebarOverlay) {
+            sidebarOverlay.addEventListener('click', closeSidebar);
+        }
+
+        // Close sidebar on window resize above tablet breakpoint
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 1024) {
+                closeSidebar();
+            }
+        });
 
         // Language tab switching helper
         function switchLanguageTab(lang) {

@@ -225,6 +225,7 @@
             margin-right: 0.4rem;
         }
     </style>
+    <link rel="stylesheet" href="<?php echo e(asset('css/responsive.css')); ?>?v=<?php echo e(time()); ?>">
 </head>
 <body>
 

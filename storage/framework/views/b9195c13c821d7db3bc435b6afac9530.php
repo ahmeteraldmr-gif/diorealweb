@@ -55,6 +55,7 @@
     <?php echo $schema_json; ?>
 
     <?php endif; ?>
+    <link rel="stylesheet" href="<?php echo e(asset('css/responsive.css')); ?>?v=<?php echo e(time()); ?>">
 </head>
 <body>
     <nav id="mainNav">

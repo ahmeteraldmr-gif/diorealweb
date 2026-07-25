@@ -71,6 +71,7 @@
             background: var(--white);
         }
     </style>
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}?v={{ time() }}">
 </head>
 <body>
     <nav id="mainNav" style="background: transparent;">

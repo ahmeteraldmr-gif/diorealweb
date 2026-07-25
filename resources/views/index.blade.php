@@ -80,6 +80,7 @@
     }
     </script>
     @endverbatim
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}?v={{ time() }}">
 </head>
 
 <body>

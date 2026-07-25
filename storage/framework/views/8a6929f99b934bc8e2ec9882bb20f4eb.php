@@ -81,6 +81,7 @@
     }
     </script>
     
+    <link rel="stylesheet" href="<?php echo e(asset('css/responsive.css')); ?>?v=<?php echo e(time()); ?>">
 </head>
 
 <body>

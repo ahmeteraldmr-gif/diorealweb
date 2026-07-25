@@ -361,6 +361,7 @@
     @if(isset($schema_json))
     {!! $schema_json !!}
     @endif
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}?v={{ time() }}">
 </head>
 <body>
 
