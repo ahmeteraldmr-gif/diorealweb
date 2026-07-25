@@ -22,7 +22,12 @@
             "tr": "Fethiye’nin dünyaca ünlü turkuaz sularıyla çevrili Ölüdeniz kıyısında yer alan Ölüdeniz Terrace, sahil şıklığı ile gurme lezzetleri buluşturuyor. Kumsala sıfır konumuyla denizin esintisini hissederken, Akdeniz ve dünya mutfağının seçkin örneklerini tatma imkanı sunuyor. Gündüz plaj keyfinin ardından akşam mum ışığında şık bir akşam yemeğine dönüşen mekan; taze deniz ürünleri, ızgara çeşitleri ve ferahlatıcı tropikal kokteylleriyle ünlüdür. Eşsiz Babadağ manzarası eşliğinde dalgaların sesini dinleyerek yemek yemek isteyenler için Ölüdeniz'in en seçkin adresidir.",
             "en": "Located on the shore of Ölüdeniz, surrounded by Fethiye's world-famous turquoise waters, Ölüdeniz Terrace blends beachfront elegance with gourmet flavors. Positioned right on the beach, it offers the opportunity to taste selected examples of Mediterranean and world cuisine while feeling the sea breeze. Transforming from a daytime beach club into a candlelit dinner venue in the evening, the restaurant is famous for its fresh seafood, grilled selections, and refreshing tropical cocktails. It is the most distinguished address in Ölüdeniz for those who want to dine listening to the sound of waves accompanied by the unique Babadağ view."
         },
-        "gallery": []
+        "gallery": [],
+        "seo_title_tr": "Ölüdeniz Terrace | Dioreal Dijital Lüks Yaşam Platformu",
+        "seo_title_en": "Ölüdeniz Terrace | Dioreal Digital Luxury Platform",
+        "seo_description_tr": "Fethiye’nin dünyaca ünlü turkuaz sularıyla çevrili Ölüdeniz kıyısında yer alan Ölüdeniz Terrace, sahil şıklığı ile gurme lezzetleri buluşturuyor. Kumsala s...",
+        "seo_description_en": "Located on the shore of Ölüdeniz, surrounded by Fethiye's world-famous turquoise waters, Ölüdeniz Terrace blends beachfront elegance with gourmet flavors....",
+        "seo_noindex": 0
     },
     {
         "id": 10,
@@ -47,7 +52,12 @@
             "tr": "Ege'nin en taze deniz ürünleri, nefis zeytinyağlılar ve muhteşem Alaçatı manzarasıyla unutulmaz bir sofra.",
             "en": "An unforgettable table with Aegean's freshest seafood, delicious olive oil dishes and Alaçatı views."
         },
-        "gallery": []
+        "gallery": [],
+        "seo_title_tr": "Melengeç Restaurant | Dioreal Dijital Lüks Yaşam Platformu",
+        "seo_title_en": "Melengeç Restaurant | Dioreal Digital Luxury Platform",
+        "seo_description_tr": "Ege'nin en taze deniz ürünleri, nefis zeytinyağlılar ve muhteşem Alaçatı manzarasıyla unutulmaz bir sofra.",
+        "seo_description_en": "An unforgettable table with Aegean's freshest seafood, delicious olive oil dishes and Alaçatı views.",
+        "seo_noindex": 0
     },
     {
         "id": 9,
@@ -72,7 +82,12 @@
             "tr": "Çardak altında Kapadokya üzüm bağlarından derlenmiş yerel şaraplar ve Anadolu mutfağının en güzel yorumu.",
             "en": "Local wines from Cappadocia vineyards and the finest interpretation of Anatolian cuisine under a pergola."
         },
-        "gallery": []
+        "gallery": [],
+        "seo_title_tr": "Seki Restaurant | Dioreal Dijital Lüks Yaşam Platformu",
+        "seo_title_en": "Seki Restaurant | Dioreal Digital Luxury Platform",
+        "seo_description_tr": "Çardak altında Kapadokya üzüm bağlarından derlenmiş yerel şaraplar ve Anadolu mutfağının en güzel yorumu.",
+        "seo_description_en": "Local wines from Cappadocia vineyards and the finest interpretation of Anatolian cuisine under a pergola.",
+        "seo_noindex": 0
     },
     {
         "id": 8,
@@ -97,7 +112,12 @@
             "tr": "Boğaz manzarasına hâkim terası ve Türk-İskandinav mutfağı füzyonuyla İstanbul'un efsanevi adresi.",
             "en": "Istanbul's legendary address with its Bosphorus terrace and Turkish-Scandinavian fusion cuisine."
         },
-        "gallery": []
+        "gallery": [],
+        "seo_title_tr": "Mikla | Dioreal Dijital Lüks Yaşam Platformu",
+        "seo_title_en": "Mikla | Dioreal Digital Luxury Platform",
+        "seo_description_tr": "Boğaz manzarasına hâkim terası ve Türk-İskandinav mutfağı füzyonuyla İstanbul'un efsanevi adresi.",
+        "seo_description_en": "Istanbul's legendary address with its Bosphorus terrace and Turkish-Scandinavian fusion cuisine.",
+        "seo_noindex": 0
     },
     {
         "id": 3,
@@ -128,7 +148,12 @@
             "uploads\/restaurants\/1783880839_6a53dc87adb88.jpeg",
             "uploads\/restaurants\/1783880889_6a53dcb94c98a.jpeg",
             "uploads\/restaurants\/1783880889_6a53dcb95050a.jpeg"
-        ]
+        ],
+        "seo_title_tr": "Melengeç Restaurant | Dioreal Dijital Lüks Yaşam Platformu",
+        "seo_title_en": "Melengeç Restaurant | Dioreal Digital Luxury Platform",
+        "seo_description_tr": "Ege'nin en taze deniz ürünleri, nefis zeytinyağlılar ve muhteşem Alaçatı manzarasıyla unutulmaz bir sofra.",
+        "seo_description_en": "An unforgettable table with Aegean's freshest seafood, delicious olive oil dishes and Alaçatı views.",
+        "seo_noindex": 0
     },
     {
         "id": 2,
@@ -153,6 +178,11 @@
             "tr": "Japon Izakaya geleneğini modern lüksle buluşturan, Bodrum Marina'nın en prestijli restoranı.",
             "en": "Bodrum Marina's most prestigious restaurant, blending Japanese Izakaya tradition with modern luxury."
         },
-        "gallery": []
+        "gallery": [],
+        "seo_title_tr": "Zuma Bodrum | Dioreal Dijital Lüks Yaşam Platformu",
+        "seo_title_en": "Zuma Bodrum | Dioreal Digital Luxury Platform",
+        "seo_description_tr": "Japon Izakaya geleneğini modern lüksle buluşturan, Bodrum Marina'nın en prestijli restoranı.",
+        "seo_description_en": "Bodrum Marina's most prestigious restaurant, blending Japanese Izakaya tradition with modern luxury.",
+        "seo_noindex": 0
     }
 ]

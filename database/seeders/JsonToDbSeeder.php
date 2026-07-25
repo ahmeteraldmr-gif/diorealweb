@@ -37,8 +37,23 @@ class JsonToDbSeeder extends Seeder
                 $data = json_decode($json, true);
                 if (is_array($data)) {
                     foreach ($data as $item) {
-                        // Remove id to allow auto-increment, or keep it if we want to preserve URLs
-                        // Since URLs depend on IDs currently, preserving IDs is safer!
+                        $trName = is_array($item['name'] ?? null) ? ($item['name']['tr'] ?? '') : ($item['name'] ?? '');
+                        $enName = is_array($item['name'] ?? null) ? ($item['name']['en'] ?? $trName) : ($item['name'] ?? '');
+                        if (!$trName) {
+                            $trName = is_array($item['title'] ?? null) ? ($item['title']['tr'] ?? '') : ($item['title'] ?? '');
+                            $enName = is_array($item['title'] ?? null) ? ($item['title']['en'] ?? $trName) : ($item['title'] ?? '');
+                        }
+
+                        $trDesc = is_array($item['desc'] ?? null) ? ($item['desc']['tr'] ?? '') : ($item['desc'] ?? '');
+                        $enDesc = is_array($item['desc'] ?? null) ? ($item['desc']['en'] ?? $trDesc) : ($item['desc'] ?? '');
+
+                        if (empty($item['slug_tr']) && $trName) $item['slug_tr'] = \Illuminate\Support\Str::slug($trName);
+                        if (empty($item['slug_en']) && $enName) $item['slug_en'] = \Illuminate\Support\Str::slug($enName);
+                        if (empty($item['seo_title_tr']) && $trName) $item['seo_title_tr'] = $trName . ' | Dioreal Dijital Lüks Yaşam Platformu';
+                        if (empty($item['seo_title_en']) && $enName) $item['seo_title_en'] = $enName . ' | Dioreal Digital Luxury Platform';
+                        if (empty($item['seo_description_tr']) && $trDesc) $item['seo_description_tr'] = \Illuminate\Support\Str::limit(strip_tags($trDesc), 155);
+                        if (empty($item['seo_description_en']) && $enDesc) $item['seo_description_en'] = \Illuminate\Support\Str::limit(strip_tags($enDesc), 155);
+
                         $modelClass::updateOrCreate(
                             ['id' => $item['id'] ?? null],
                             $item

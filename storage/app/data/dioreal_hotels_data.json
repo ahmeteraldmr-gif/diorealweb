@@ -26,7 +26,12 @@
             "uploads\/hotels\/1783853810_6a5372f2c05ef.jpeg",
             "uploads\/hotels\/1783853810_6a5372f2c2470.jpeg",
             "uploads\/hotels\/1783854436_6a53756451f91.jpeg"
-        ]
+        ],
+        "seo_title_tr": "Reschio | Dioreal Dijital Lüks Yaşam Platformu",
+        "seo_title_en": "Reschio | Dioreal Digital Luxury Platform",
+        "seo_description_tr": "Positano'nun ikonik manzarası karşısında, denizi ve bougainvillea'ları izleyen efsanevi butik otel.",
+        "seo_description_en": "Legendary boutique hotel overlooking the sea and bougainvilleas, facing Positano's iconic view.",
+        "seo_noindex": 0
     },
     {
         "id": 5,
@@ -57,7 +62,12 @@
             "uploads\/hotels\/1783858767_6a53864fc74d5.jpeg",
             "uploads\/hotels\/1783858803_6a538673a3ac0.jpeg",
             "uploads\/hotels\/1783858836_6a538694b30ab.jpeg"
-        ]
+        ],
+        "seo_title_tr": "Tenuta di Murlo | Dioreal Dijital Lüks Yaşam Platformu",
+        "seo_title_en": "Tenuta di Murlo | Dioreal Digital Luxury Platform",
+        "seo_description_tr": "Japon wabi-sabi felsefesini modern lüksle harmanlayan, orman içinde saklı benzersiz bir sığınak.",
+        "seo_description_en": "A unique retreat hidden in the forest, blending Japan's wabi-sabi philosophy with modern luxury.",
+        "seo_noindex": 0
     },
     {
         "id": 4,
@@ -86,7 +96,12 @@
             "uploads\/hotels\/1783860054_6a538b567b812.jpeg",
             "uploads\/hotels\/1783860605_6a538d7dbdb06.jpeg",
             "uploads\/hotels\/1783860605_6a538d7dd0dd5.jpeg"
-        ]
+        ],
+        "seo_title_tr": "Castello di Velona | Dioreal Dijital Lüks Yaşam Platformu",
+        "seo_title_en": "Castello di Velona | Dioreal Digital Luxury Platform",
+        "seo_description_tr": "Su üstü villalar, kristal berraklığında lagün ve sonsuz gökyüzü altında rüya konaklama.",
+        "seo_description_en": "Overwater villas, crystal-clear lagoon and dream accommodation under endless skies.",
+        "seo_noindex": 0
     },
     {
         "id": 3,
@@ -114,7 +129,12 @@
         "gallery": [
             "uploads\/hotels\/1783861291_6a53902b09b59.jpeg",
             "uploads\/hotels\/1783861447_6a5390c7c051a.jpeg"
-        ]
+        ],
+        "seo_title_tr": "Villa di Piazzano | Dioreal Dijital Lüks Yaşam Platformu",
+        "seo_title_en": "Villa di Piazzano | Dioreal Digital Luxury Platform",
+        "seo_description_tr": "Özel plajı, eşsiz koyu ve lüks hizmetleriyle Türkiye'nin en prestijli tatil köyü.",
+        "seo_description_en": "Turkey's most prestigious resort with its private beach, unique bay and luxury services.",
+        "seo_noindex": 0
     },
     {
         "id": 2,
@@ -145,7 +165,12 @@
             "uploads\/hotels\/1783863120_6a5397507f3fb.jpeg",
             "uploads\/hotels\/1783863148_6a53976c929b4.jpeg",
             "uploads\/hotels\/1783863189_6a53979569dcd.jpeg"
-        ]
+        ],
+        "seo_title_tr": "Nautical | Dioreal Dijital Lüks Yaşam Platformu",
+        "seo_title_en": "Nautical | Dioreal Digital Luxury Platform",
+        "seo_description_tr": "Antik kaya oymaları içinde, tarihin derinliklerinde unutulmaz bir konaklama deneyimi.",
+        "seo_description_en": "An unforgettable stay deep in history, inside ancient rock carvings.",
+        "seo_noindex": 0
     },
     {
         "id": 1,
@@ -173,6 +198,11 @@
         "gallery": [
             "uploads\/hotels\/1783864888_6a539e3803a9d.jpeg",
             "uploads\/hotels\/1783864985_6a539e9979861.jpeg"
-        ]
+        ],
+        "seo_title_tr": "Perdue | Dioreal Dijital Lüks Yaşam Platformu",
+        "seo_title_en": "Perdue | Dioreal Digital Luxury Platform",
+        "seo_description_tr": "Eşsiz Ege manzarası ve ultra-lüks tesisleriyle benzersiz bir deneyim sunan 5 yıldızlı resort.",
+        "seo_description_en": "A 5-star resort offering a unique experience with stunning Aegean views and ultra-luxury facilities.",
+        "seo_noindex": 0
     }
 ]

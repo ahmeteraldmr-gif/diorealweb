@@ -18,7 +18,12 @@
             "tr": "Bodrum",
             "en": "🇹🇷 Bodrum Destination Guide"
         },
-        "gallery": []
+        "gallery": [],
+        "seo_title_tr": "Bodrum | Dioreal Dijital Lüks Yaşam Platformu",
+        "seo_title_en": "🇹🇷 Bodrum Destination Guide | Dioreal Digital Luxury Platform",
+        "seo_description_tr": "",
+        "seo_description_en": "Many first-time visitors head straight to Yalıkavak Marina or popular beach clubs. Yet Bodrum's story goes far deeper.\n\nFor nearly 2,500 years, this penins...",
+        "seo_noindex": 0
     },
     {
         "id": 5,
@@ -39,6 +44,11 @@
             "tr": "Yalıkavak",
             "en": "Yalıkavak"
         },
-        "gallery": []
+        "gallery": [],
+        "seo_title_tr": "Yalıkavak | Dioreal Dijital Lüks Yaşam Platformu",
+        "seo_title_en": "Yalıkavak | Dioreal Digital Luxury Platform",
+        "seo_description_tr": "",
+        "seo_description_en": "Yalıkavak has transformed from a quiet fishing village into one of the Mediterranean's premier superyacht destinations.\n\nHome to Yalıkavak Marina, high-end...",
+        "seo_noindex": 0
     }
 ]
