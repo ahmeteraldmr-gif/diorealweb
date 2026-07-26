@@ -793,6 +793,10 @@ textarea.form-control {
 
     .sidebar-toggle {
         display: inline-flex !important;
+        cursor: pointer !important;
+        pointer-events: auto !important;
+        z-index: 100000 !important;
+        position: relative !important;
     }
 
     /* Sidebar: hide by default, slide in on .open */
@@ -803,12 +807,14 @@ textarea.form-control {
         left: 0 !important;
         width: 280px !important;
         height: 100vh !important;
+        max-height: 100vh !important;
         background: #0f172a !important;
         z-index: 99999 !important;
         transform: translateX(-100%) !important;
-        transition: transform 0.3s ease-in-out !important;
-        box-shadow: 10px 0 30px rgba(0,0,0,0.5) !important;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        box-shadow: 10px 0 30px rgba(0,0,0,0.7) !important;
         overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
     }
 
     .admin-sidebar.open {
