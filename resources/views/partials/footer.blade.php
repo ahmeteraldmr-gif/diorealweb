@@ -54,8 +54,56 @@
             </ul>
         </div>
     </div>
-    <div class="footer-bottom">
+    <div class="footer-bottom" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
         <span>{{ $settings['footer_copy'] ?? '© 2026 Dioreal Dijital. All Rights Reserved.' }}</span>
-        <span>Est. 15 Years of Experience</span>
+        <div class="footer-legal-links" style="display: flex; gap: 1.25rem; font-size: 0.82rem; opacity: 0.85; flex-wrap: wrap;">
+            <a href="javascript:void(0)" onclick="openLegalModal('kvkk')" style="color: inherit; text-decoration: underline;">KVKK / GDPR Aydınlatma Metni</a>
+            <a href="javascript:void(0)" onclick="openLegalModal('privacy')" style="color: inherit; text-decoration: underline;">Gizlilik & Çerez Politikası</a>
+            <a href="javascript:void(0)" onclick="openLegalModal('terms')" style="color: inherit; text-decoration: underline;">Kullanım Koşulları</a>
+        </div>
     </div>
 </footer>
+
+<!-- Legal Text Modal Popup -->
+<div id="legalModal" style="display:none; position:fixed; inset:0; z-index:999999; background:rgba(0,0,0,0.85); backdrop-filter:blur(8px); padding:2rem 1rem; overflow-y:auto; align-items:center; justify-content:center;">
+    <div style="background:#141414; border:1px solid rgba(255,255,255,0.12); border-radius:20px; max-width:750px; width:100%; margin:auto; padding:2.5rem; color:#e2e8f0; position:relative; box-shadow:0 25px 50px rgba(0,0,0,0.7);">
+        <button type="button" onclick="closeLegalModal()" style="position:absolute; top:1.5rem; right:1.5rem; background:none; border:none; color:#94a3b8; font-size:1.5rem; cursor:pointer;">&times;</button>
+        <h3 id="legalModalTitle" style="font-family:var(--font-display); font-size:1.8rem; margin-bottom:1.5rem; color:var(--accent, #c4a47c);"></h3>
+        <div id="legalModalBody" style="font-size:0.95rem; line-height:1.8; color:#cbd5e1; max-height:60vh; overflow-y:auto; padding-right:0.5rem;"></div>
+    </div>
+</div>
+
+<script>
+    const legalTexts = {
+        kvkk: {
+            title: "KVKK & GDPR Aydınlatma Metni",
+            body: "<p><strong>Dioreal Dijital Platformu KVKK Aydınlatma Metni</strong></p><p>6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) uyarınca, kişisel verileriniz veri sorumlusu sıfatıyla Dioreal Dijital tarafından hukuka ve dürüstlük kurallarına uygun olarak işlenmektedir.</p><p>Toplanan kişisel verileriniz, platform hizmetlerinin sunulması, iletişim taleplerinin karşılanması ve kullanıcı deneyiminin iyileştirilmesi amaçlarıyla sınırlı olarak işlenir ve 3. şahıslarla rızanız olmaksızın paylaşılmaz.</p>"
+        },
+        privacy: {
+            title: "Gizlilik & Çerez Politikası",
+            body: "<p><strong>Dioreal Dijital Gizlilik ve Çerez Politikası</strong></p><p>Sitemizde kullanıcı deneyimini ve sayfa performansını artırmak amacıyla zorunlu ve analitik çerezler kullanılmaktadır. Web sitemizi ziyaret ederek çerez kullanımını kabul etmiş sayılırsınız.</p><p>Toplanan trafik verileri kesinlikle ticari amaca yönelik 3. taraflara satılmaz veya devredilmez.</p>"
+        },
+        terms: {
+            title: "Kullanım Koşulları",
+            body: "<p><strong>Dioreal Dijital Kullanım Koşulları</strong></p><p>Dioreal Dijital web sitesinde yer alan tüm görsel, metin, marka ve özgün içeriklerin telif hakları saklıdır. Yazılı izin alınmaksızın kopyalanamaz veya ticari amaçla kullanılamaz.</p><p>Platformda sunulan otel, restoran ve yat içerikleri bilgilendirme amaçlıdır.</p>"
+        }
+    };
+
+    function openLegalModal(key) {
+        const item = legalTexts[key];
+        if (!item) return;
+        document.getElementById('legalModalTitle').innerHTML = item.title;
+        document.getElementById('legalModalBody').innerHTML = item.body;
+        document.getElementById('legalModal').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLegalModal() {
+        document.getElementById('legalModal').style.display = 'none';
+        document.body.style.overflow = '';
+    }
+
+    document.getElementById('legalModal').addEventListener('click', function(e) {
+        if (e.target === this) closeLegalModal();
+    });
+</script>
