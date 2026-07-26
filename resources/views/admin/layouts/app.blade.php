@@ -159,27 +159,30 @@
 
     <!-- Global Admin Scripts -->
     <script>
-        let sidebarToggleLock = false;
         function toggleSidebar(e) {
-            if (e) {
-                if (e.stopPropagation) e.stopPropagation();
-            }
-            if (sidebarToggleLock) return;
-            sidebarToggleLock = true;
-            setTimeout(() => { sidebarToggleLock = false; }, 250);
+            if (e && e.preventDefault) e.preventDefault();
+            if (e && e.stopPropagation) e.stopPropagation();
 
             const sidebar = document.getElementById('sidebar');
             const overlay = document.getElementById('sidebarOverlay');
             if (!sidebar) return;
 
-            const isOpen = sidebar.classList.contains('open');
+            const isOpen = sidebar.classList.contains('open') || sidebar.style.transform === 'translateX(0px)';
             if (isOpen) {
                 sidebar.classList.remove('open');
-                if (overlay) overlay.classList.remove('active');
+                sidebar.setAttribute('style', '');
+                if (overlay) {
+                    overlay.classList.remove('active');
+                    overlay.setAttribute('style', '');
+                }
                 document.body.style.overflow = '';
             } else {
                 sidebar.classList.add('open');
-                if (overlay) overlay.classList.add('active');
+                sidebar.setAttribute('style', 'transform: translateX(0px) !important; left: 0px !important; z-index: 999999 !important; display: flex !important;');
+                if (overlay) {
+                    overlay.classList.add('active');
+                    overlay.setAttribute('style', 'display: block !important; opacity: 1 !important; z-index: 999998 !important;');
+                }
                 document.body.style.overflow = 'hidden';
             }
         }
@@ -189,8 +192,14 @@
             if (window.innerWidth > 1024) {
                 const sidebar = document.getElementById('sidebar');
                 const overlay = document.getElementById('sidebarOverlay');
-                if (sidebar) sidebar.classList.remove('open');
-                if (overlay) overlay.classList.remove('active');
+                if (sidebar) {
+                    sidebar.classList.remove('open');
+                    sidebar.setAttribute('style', '');
+                }
+                if (overlay) {
+                    overlay.classList.remove('active');
+                    overlay.setAttribute('style', '');
+                }
                 document.body.style.overflow = '';
             }
         });
