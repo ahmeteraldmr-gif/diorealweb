@@ -30,11 +30,6 @@
             DIOREAL<span>.</span>
         </div>
 
-        <!-- Animated Scroll Up Button -->
-        <button type="button" class="sidebar-scroll-btn scroll-up" id="scrollUpBtn" onclick="scrollSidebar(-120)" title="Yukarı Kaydır">
-            <i class="fas fa-chevron-up"></i>
-        </button>
-        
         <div class="sidebar-menu-wrapper" id="sidebarMenuWrapper">
             <ul class="sidebar-menu" id="sidebarMenu">
                 <li class="sidebar-item {{ Request::routeIs('admin.dashboard') ? 'active' : '' }}">
@@ -108,11 +103,6 @@
             </ul>
         </div>
 
-        <!-- Animated Scroll Down Button -->
-        <button type="button" class="sidebar-scroll-btn scroll-down" id="scrollDownBtn" onclick="scrollSidebar(120)" title="Aşağı Kaydır">
-            <i class="fas fa-chevron-down"></i>
-        </button>
-        
         <div class="sidebar-footer">
             <form action="{{ route('logout') }}" method="POST">
                 @csrf
