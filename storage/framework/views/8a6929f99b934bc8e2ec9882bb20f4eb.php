@@ -135,13 +135,13 @@
     <section class="hero">
         <div class="hero-slider">
             <div class="hero-slide active"
-                style="background-image:url('<?php echo e((!empty($settings['hero_slide_1']) && file_exists(public_path($settings['hero_slide_1']))) ? asset($settings['hero_slide_1']) : asset('foto.img/hero_4k.jpg')); ?>')">
+                style="background-image:url('<?php echo e(asset(!empty($settings['hero_slide_1']) ? $settings['hero_slide_1'] : 'foto.img/hero_4k.jpg')); ?>')">
             </div>
             <div class="hero-slide"
-                style="background-image:url('<?php echo e((!empty($settings['hero_slide_2']) && file_exists(public_path($settings['hero_slide_2']))) ? asset($settings['hero_slide_2']) : asset('foto.img/hero_slide_2.jpg')); ?>')">
+                style="background-image:url('<?php echo e(asset(!empty($settings['hero_slide_2']) ? $settings['hero_slide_2'] : 'foto.img/hero_slide_2.jpg')); ?>')">
             </div>
             <div class="hero-slide"
-                style="background-image:url('<?php echo e((!empty($settings['hero_slide_3']) && file_exists(public_path($settings['hero_slide_3']))) ? asset($settings['hero_slide_3']) : asset('foto.img/hero_slide_3.jpg')); ?>')">
+                style="background-image:url('<?php echo e(asset(!empty($settings['hero_slide_3']) ? $settings['hero_slide_3'] : 'foto.img/hero_slide_3.jpg')); ?>')">
             </div>
         </div>
         <div class="hero-overlay"></div>
@@ -209,7 +209,7 @@
         <div class="bt-about-grid" style="display: grid; gap: 2rem; text-align: left;">
             <!-- Trend Otel -->
             <div class="bt-about-card" style="aspect-ratio: 3/4; position: relative; overflow: hidden; background: var(--near-black); cursor: pointer; transition: transform 0.4s;">
-                <img src="<?php echo e((!empty($settings['trend_otel_img']) && file_exists(public_path($settings['trend_otel_img']))) ? asset($settings['trend_otel_img']) : asset('foto.img/about_safari.jpg')); ?>" alt="Trend Otel" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
+                <img src="<?php echo e(asset(!empty($settings['trend_otel_img']) ? $settings['trend_otel_img'] : 'foto.img/about_safari.jpg')); ?>" alt="Trend Otel" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: white; pointer-events: none;">
                     <div style="font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem; color: rgba(255,255,255,0.8);">
                         <span class="lang-text-tr">Trend Otel</span>
@@ -227,7 +227,7 @@
             </div>
             <!-- Trend Restoran -->
             <div class="bt-about-card" style="aspect-ratio: 3/4; position: relative; overflow: hidden; background: var(--near-black); cursor: pointer; transition: transform 0.4s;">
-                <img src="<?php echo e((!empty($settings['trend_rest_img']) && file_exists(public_path($settings['trend_rest_img']))) ? asset($settings['trend_rest_img']) : asset('foto.img/rest_mikla.jpg')); ?>" alt="Trend Restoran" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
+                <img src="<?php echo e(asset(!empty($settings['trend_rest_img']) ? $settings['trend_rest_img'] : 'foto.img/rest_mikla.jpg')); ?>" alt="Trend Restoran" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: white; pointer-events: none;">
                     <div style="font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem; color: rgba(255,255,255,0.8);">
                         <span class="lang-text-tr">Trend Restoran</span>
@@ -245,7 +245,7 @@
             </div>
             <!-- Trend Yat -->
             <div class="bt-about-card" style="aspect-ratio: 3/4; position: relative; overflow: hidden; background: var(--near-black); cursor: pointer; transition: transform 0.4s;">
-                <img src="<?php echo e((!empty($settings['trend_yat_img']) && file_exists(public_path($settings['trend_yat_img']))) ? asset($settings['trend_yat_img']) : asset('foto.img/about_yacht.jpg')); ?>" alt="Trend Yat" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
+                <img src="<?php echo e(asset(!empty($settings['trend_yat_img']) ? $settings['trend_yat_img'] : 'foto.img/about_yacht.jpg')); ?>" alt="Trend Yat" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: white; pointer-events: none;">
                     <div style="font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem; color: rgba(255,255,255,0.8);">
                         <span class="lang-text-tr">Trend Yat</span>
@@ -263,7 +263,7 @@
             </div>
             <!-- Trend Beach -->
             <div class="bt-about-card" style="aspect-ratio: 3/4; position: relative; overflow: hidden; background: var(--near-black); cursor: pointer; transition: transform 0.4s;">
-                <img src="<?php echo e((!empty($settings['trend_beach_img']) && file_exists(public_path($settings['trend_beach_img']))) ? asset($settings['trend_beach_img']) : asset('foto.img/bodrum.jpg')); ?>" alt="Trend Beach" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
+                <img src="<?php echo e(asset(!empty($settings['trend_beach_img']) ? $settings['trend_beach_img'] : 'foto.img/bodrum.jpg')); ?>" alt="Trend Beach" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: white; pointer-events: none;">
                     <div style="font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem; color: rgba(255,255,255,0.8);">
                         <span class="lang-text-tr">Trend Beach</span>
