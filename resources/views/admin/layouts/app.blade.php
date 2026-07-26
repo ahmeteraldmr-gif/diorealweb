@@ -22,7 +22,7 @@
 <body>
 
     <!-- Sidebar Overlay (Mobile) -->
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar(event)"></div>
 
     <!-- Sidebar -->
     <aside class="admin-sidebar" id="sidebar">
@@ -118,7 +118,7 @@
         
         <header class="admin-header">
             <div class="header-left">
-                <button type="button" class="sidebar-toggle" id="sidebarToggle">
+                <button type="button" class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar(event)">
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="header-title-wrapper">
@@ -159,7 +159,15 @@
 
     <!-- Global Admin Scripts -->
     <script>
-        function toggleSidebar() {
+        let sidebarToggleLock = false;
+        function toggleSidebar(e) {
+            if (e) {
+                if (e.stopPropagation) e.stopPropagation();
+            }
+            if (sidebarToggleLock) return;
+            sidebarToggleLock = true;
+            setTimeout(() => { sidebarToggleLock = false; }, 250);
+
             const sidebar = document.getElementById('sidebar');
             const overlay = document.getElementById('sidebarOverlay');
             if (!sidebar) return;
@@ -175,27 +183,6 @@
                 document.body.style.overflow = 'hidden';
             }
         }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const sidebarToggle = document.getElementById('sidebarToggle');
-            const sidebarOverlay = document.getElementById('sidebarOverlay');
-
-            if (sidebarToggle) {
-                sidebarToggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    toggleSidebar();
-                });
-            }
-
-            if (sidebarOverlay) {
-                sidebarOverlay.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    toggleSidebar();
-                });
-            }
-        });
 
         // Close sidebar on window resize above tablet breakpoint
         window.addEventListener('resize', () => {
