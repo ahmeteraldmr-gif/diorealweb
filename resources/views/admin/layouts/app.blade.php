@@ -19,7 +19,7 @@
 <body>
 
     <!-- Sidebar Overlay (Mobile) -->
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar(event)"></div>
 
     <!-- Sidebar -->
     <aside class="admin-sidebar" id="sidebar">
@@ -113,7 +113,7 @@
         
         <header class="admin-header">
             <div class="header-left">
-                <button class="sidebar-toggle" id="sidebarToggle">
+                <button type="button" class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar(event)">
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="header-title-wrapper">
@@ -154,45 +154,50 @@
 
     <!-- Global Admin Scripts -->
     <script>
-        // Sidebar toggle logic for mobile
-        const sidebarToggle = document.getElementById('sidebarToggle');
-        const sidebar = document.getElementById('sidebar');
-        const sidebarOverlay = document.getElementById('sidebarOverlay');
-        
-        function openSidebar() {
-            sidebar.classList.add('open');
-            if (sidebarOverlay) {
-                sidebarOverlay.classList.add('active');
+        // Sidebar toggle logic for mobile & touch devices
+        function toggleSidebar(e) {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            if (!sidebar) return;
+
+            if (sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
+                if (overlay) overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            } else {
+                sidebar.classList.add('open');
+                if (overlay) overlay.classList.add('active');
                 document.body.style.overflow = 'hidden';
             }
         }
 
-        function closeSidebar() {
-            sidebar.classList.remove('open');
-            if (sidebarOverlay) {
-                sidebarOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        }
-        
-        if (sidebarToggle && sidebar) {
-            sidebarToggle.addEventListener('click', () => {
-                if (sidebar.classList.contains('open')) {
-                    closeSidebar();
-                } else {
-                    openSidebar();
-                }
-            });
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+        if (sidebarToggle) {
+            sidebarToggle.addEventListener('touchstart', function(e) {
+                toggleSidebar(e);
+            }, { passive: false });
         }
 
         if (sidebarOverlay) {
-            sidebarOverlay.addEventListener('click', closeSidebar);
+            sidebarOverlay.addEventListener('touchstart', function(e) {
+                toggleSidebar(e);
+            }, { passive: false });
         }
 
         // Close sidebar on window resize above tablet breakpoint
         window.addEventListener('resize', () => {
             if (window.innerWidth > 1024) {
-                closeSidebar();
+                const sidebar = document.getElementById('sidebar');
+                const overlay = document.getElementById('sidebarOverlay');
+                if (sidebar) sidebar.classList.remove('open');
+                if (overlay) overlay.classList.remove('active');
+                document.body.style.overflow = '';
             }
         });
 
