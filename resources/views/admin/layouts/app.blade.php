@@ -22,7 +22,7 @@
 <body>
 
     <!-- Sidebar Overlay (Mobile) -->
-    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar(event)"></div>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
     <!-- Sidebar -->
     <aside class="admin-sidebar" id="sidebar">
@@ -118,7 +118,7 @@
         
         <header class="admin-header">
             <div class="header-left">
-                <button type="button" class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar(event)">
+                <button type="button" class="sidebar-toggle" id="sidebarToggle">
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="header-title-wrapper">

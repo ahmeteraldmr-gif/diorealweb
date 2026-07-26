@@ -568,34 +568,7 @@ textarea.form-control {
     color: #fca5a5;
 }
 
-/* Hamburger toggle for mobile */
-.sidebar-toggle {
-    display: none;
-    font-size: 1.5rem;
-    color: var(--white);
-    background: transparent;
-    border: none;
-    cursor: pointer;
-}
 
-/* Mobile Responsiveness */
-@media (max-width: 1024px) {
-    .admin-sidebar {
-        left: -280px;
-    }
-    .admin-sidebar.open {
-        left: 0;
-    }
-    .admin-main {
-        margin-left: 0;
-        padding: 1.5rem;
-        width: 100%;
-        max-width: 100%;
-    }
-    .sidebar-toggle {
-        display: block;
-    }
-}
 
 /* Gallery Sortable Drag & Drop */
 #gallery-sortable-container {
