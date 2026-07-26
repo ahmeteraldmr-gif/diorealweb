@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="<?php echo e(get_active_locale()); ?>">
 <head>
+    <!-- Favicon & Touch Icons -->
+    <link rel="icon" type="image/png" href="<?php echo e(asset('foto.img/logo_dioreal.png')); ?>">
+    <link rel="apple-touch-icon" href="<?php echo e(asset('foto.img/logo_dioreal.png')); ?>">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
@@ -14,8 +17,12 @@
     
     <!-- Premium Stylesheet -->
     <link rel="stylesheet" href="<?php echo e(asset('css/admin-new.css')); ?>?v=<?php echo e(time()); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('css/responsive.css')); ?>?v=<?php echo e(time()); ?>">
 </head>
 <body>
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar(event)"></div>
 
     <!-- Sidebar -->
     <aside class="admin-sidebar" id="sidebar">
@@ -109,7 +116,7 @@
         
         <header class="admin-header">
             <div class="header-left">
-                <button class="sidebar-toggle" id="sidebarToggle">
+                <button type="button" class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar(event)">
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="header-title-wrapper">
@@ -150,22 +157,52 @@
 
     <!-- Global Admin Scripts -->
     <script>
-        // Sidebar toggle logic for mobile
-        const sidebarToggle = document.getElementById('sidebarToggle');
-        const sidebar = document.getElementById('sidebar');
-        
-        if (sidebarToggle && sidebar) {
-            sidebarToggle.addEventListener('click', () => {
-                sidebar.classList.toggle('open');
-            });
-            
-            // Close sidebar when clicking outside on mobile
-            document.addEventListener('click', (e) => {
-                if (window.innerWidth <= 1024 && !sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
-                    sidebar.classList.remove('open');
-                }
-            });
+        // Sidebar toggle logic for mobile & touch devices
+        function toggleSidebar(e) {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            if (!sidebar) return;
+
+            if (sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
+                if (overlay) overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            } else {
+                sidebar.classList.add('open');
+                if (overlay) overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
         }
+
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+        if (sidebarToggle) {
+            sidebarToggle.addEventListener('touchstart', function(e) {
+                toggleSidebar(e);
+            }, { passive: false });
+        }
+
+        if (sidebarOverlay) {
+            sidebarOverlay.addEventListener('touchstart', function(e) {
+                toggleSidebar(e);
+            }, { passive: false });
+        }
+
+        // Close sidebar on window resize above tablet breakpoint
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 1024) {
+                const sidebar = document.getElementById('sidebar');
+                const overlay = document.getElementById('sidebarOverlay');
+                if (sidebar) sidebar.classList.remove('open');
+                if (overlay) overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
 
         // Language tab switching helper
         function switchLanguageTab(lang) {

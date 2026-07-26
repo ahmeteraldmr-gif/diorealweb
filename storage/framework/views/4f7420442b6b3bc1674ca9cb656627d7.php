@@ -154,6 +154,19 @@
                             <label class="form-label" for="footer_copy">Footer Telif Yazısı (Copyright)</label>
                             <input type="text" class="form-control" name="footer_copy" id="footer_copy" value="<?php echo e($settings['footer_copy'] ?? ''); ?>" placeholder="© 2026 Dioreal Dijital. All Rights Reserved.">
                         </div>
+
+                        <h4 class="form-section-title">Google & Analitik Entegrasyonları</h4>
+                        <div class="form-group">
+                            <label class="form-label" for="google_analytics">Google Analytics (GA4) Kodu / Ölçüm Kimliği</label>
+                            <input type="text" class="form-control" name="google_analytics" id="google_analytics" value="<?php echo e($settings['google_analytics'] ?? ''); ?>" placeholder="Örn: G-XXXXXXXXXX">
+                            <small style="color: var(--text-muted); display: block; margin-top: 0.25rem;">Google Analytics 4 Ölçüm Kimliğinizi (G-XXXXXXXXXX) buraya yapıştırabilirsiniz.</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="google_search_console">Google Search Console Meta Etiketi</label>
+                            <input type="text" class="form-control" name="google_search_console" id="google_search_console" value="<?php echo e($settings['google_search_console'] ?? ''); ?>" placeholder="Örn: google-site-verification koda ait içerik">
+                            <small style="color: var(--text-muted); display: block; margin-top: 0.25rem;">Search Console site doğrulama kodunuzu buraya ekleyebilirsiniz.</small>
+                        </div>
                     </div>
                 </div>
             </div>
