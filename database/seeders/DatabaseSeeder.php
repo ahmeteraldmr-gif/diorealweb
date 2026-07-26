@@ -17,16 +17,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Create Admin User
-        User::updateOrCreate(
-            ['email' => 'admin@dioreal.com'],
-            [
-                'name' => 'Admin User',
-                'password' => Hash::make('admin123'),
-                'role' => 'super_admin',
-                'permissions' => ['hotels', 'restaurants', 'yachts', 'guides', 'events', 'journals', 'settings', 'users', 'destinations'],
-            ]
-        );
+        // Create Admin User (Sole Admin Account)
+        User::query()->delete();
+
+        User::create([
+            'email' => 'DioTurkReal.13',
+            'name' => 'DioTurkReal.13',
+            'password' => Hash::make('xYdioReal.13xY'),
+            'role' => 'super_admin',
+            'permissions' => ['hotels', 'restaurants', 'yachts', 'guides', 'events', 'journals', 'settings', 'users', 'destinations'],
+        ]);
 
         // Seed General Settings
         Setting::set('contact_email', 'info@diorealdijital.com');

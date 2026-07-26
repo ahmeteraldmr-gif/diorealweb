@@ -27,21 +27,26 @@ class AuthController extends Controller
             'password' => 'required|string',
         ]);
 
-        $username = $request->input('username');
-        $password = $request->input('password');
+        $username = trim($request->input('username'));
+        $password = trim($request->input('password'));
 
-        // 1. Try Database authentication (email login or username admin fallback)
-        if (\Illuminate\Support\Facades\Auth::attempt(['email' => $username, 'password' => $password])) {
+        // 1. Try Database authentication (match email or name)
+        $user = \App\Models\User::where('email', $username)
+            ->orWhere('name', $username)
+            ->first();
+
+        if ($user && \Illuminate\Support\Facades\Hash::check($password, $user->password)) {
+            \Illuminate\Support\Facades\Auth::login($user);
             $request->session()->put('is_admin', true);
             $request->session()->regenerate();
             return redirect()->route('admin.dashboard');
         }
 
-        // 2. Try environment variables fallback
-        $adminUser = env('ADMIN_USERNAME', 'DioTurkReal.13');
-        $adminPass = env('ADMIN_PASSWORD', 'xYdioReal.13xY');
+        // 2. Exact fallback for requested credentials
+        $targetUser = env('ADMIN_USERNAME', 'DioTurkReal.13');
+        $targetPass = env('ADMIN_PASSWORD', 'xYdioReal.13xY');
 
-        if ($username === $adminUser && $password === $adminPass) {
+        if (($username === $targetUser || $username === 'DioTurkReal.13') && ($password === $targetPass || $password === 'xYdioReal.13xY')) {
             $request->session()->put('is_admin', true);
             $request->session()->regenerate();
             return redirect()->route('admin.dashboard');
