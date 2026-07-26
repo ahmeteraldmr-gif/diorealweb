@@ -73,18 +73,18 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::middleware(['admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
     
-    Route::middleware(['permission:hotels'])->resource('hotels', App\Http\Controllers\Admin\HotelController::class);
-    Route::middleware(['permission:restaurants'])->resource('restaurants', App\Http\Controllers\Admin\RestaurantController::class);
-    Route::middleware(['permission:yachts'])->resource('yachts', App\Http\Controllers\Admin\YachtController::class);
-    Route::middleware(['permission:guides'])->resource('guides', App\Http\Controllers\Admin\GuideController::class);
-    Route::middleware(['permission:events'])->resource('events', App\Http\Controllers\Admin\EventController::class);
-    Route::middleware(['permission:journals'])->resource('journals', App\Http\Controllers\Admin\JournalController::class);
+    Route::middleware(['permission:hotels'])->resource('hotels', App\Http\Controllers\Admin\HotelController::class)->except(['show']);
+    Route::middleware(['permission:restaurants'])->resource('restaurants', App\Http\Controllers\Admin\RestaurantController::class)->except(['show']);
+    Route::middleware(['permission:yachts'])->resource('yachts', App\Http\Controllers\Admin\YachtController::class)->except(['show']);
+    Route::middleware(['permission:guides'])->resource('guides', App\Http\Controllers\Admin\GuideController::class)->except(['show']);
+    Route::middleware(['permission:events'])->resource('events', App\Http\Controllers\Admin\EventController::class)->except(['show']);
+    Route::middleware(['permission:journals'])->resource('journals', App\Http\Controllers\Admin\JournalController::class)->except(['show']);
     
     // Users Management
-    Route::middleware(['permission:users'])->resource('users', App\Http\Controllers\Admin\UserController::class);
+    Route::middleware(['permission:users'])->resource('users', App\Http\Controllers\Admin\UserController::class)->except(['show']);
     
     // Destinations Management
-    Route::middleware(['permission:destinations'])->resource('destinations', App\Http\Controllers\Admin\DestinationController::class);
+    Route::middleware(['permission:destinations'])->resource('destinations', App\Http\Controllers\Admin\DestinationController::class)->except(['show']);
     
     // Global Settings & Brands Management
     Route::middleware(['permission:settings'])->group(function () {
