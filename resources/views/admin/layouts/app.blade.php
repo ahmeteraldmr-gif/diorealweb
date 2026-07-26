@@ -29,77 +29,89 @@
         <div class="sidebar-brand">
             DIOREAL<span>.</span>
         </div>
+
+        <!-- Animated Scroll Up Button -->
+        <button type="button" class="sidebar-scroll-btn scroll-up" id="scrollUpBtn" onclick="scrollSidebar(-120)" title="Yukarı Kaydır">
+            <i class="fas fa-chevron-up"></i>
+        </button>
         
-        <ul class="sidebar-menu">
-            <li class="sidebar-item {{ Request::routeIs('admin.dashboard') ? 'active' : '' }}">
-                <a href="{{ route('admin.dashboard') }}">
-                    <i class="fas fa-chart-pie"></i> Kontrol Paneli
-                </a>
-            </li>
-            @adminCan('hotels')
-            <li class="sidebar-item {{ Request::routeIs('admin.hotels.*') ? 'active' : '' }}">
-                <a href="{{ route('admin.hotels.index') }}">
-                    <i class="fas fa-hotel"></i> Oteller
-                </a>
-            </li>
-            @endadminCan
-            @adminCan('restaurants')
-            <li class="sidebar-item {{ Request::routeIs('admin.restaurants.*') ? 'active' : '' }}">
-                <a href="{{ route('admin.restaurants.index') }}">
-                    <i class="fas fa-utensils"></i> Restoranlar
-                </a>
-            </li>
-            @endadminCan
-            @adminCan('yachts')
-            <li class="sidebar-item {{ Request::routeIs('admin.yachts.*') ? 'active' : '' }}">
-                <a href="{{ route('admin.yachts.index') }}">
-                    <i class="fas fa-ship"></i> Yatlar
-                </a>
-            </li>
-            @endadminCan
-            @adminCan('guides')
-            <li class="sidebar-item {{ Request::routeIs('admin.guides.*') ? 'active' : '' }}">
-                <a href="{{ route('admin.guides.index') }}">
-                    <i class="fas fa-map-marked-alt"></i> Destinasyon Rehberleri
-                </a>
-            </li>
-            @endadminCan
-            @adminCan('events')
-            <li class="sidebar-item {{ Request::routeIs('admin.events.*') ? 'active' : '' }}">
-                <a href="{{ route('admin.events.index') }}">
-                    <i class="fas fa-calendar-alt"></i> Etkinlikler
-                </a>
-            </li>
-            @endadminCan
-            @adminCan('journals')
-            <li class="sidebar-item {{ Request::routeIs('admin.journals.*') ? 'active' : '' }}">
-                <a href="{{ route('admin.journals.index') }}">
-                    <i class="fas fa-newspaper"></i> Journal
-                </a>
-            </li>
-            @endadminCan
-            @adminCan('destinations')
-            <li class="sidebar-item {{ Request::routeIs('admin.destinations.*') ? 'active' : '' }}">
-                <a href="{{ route('admin.destinations.index') }}">
-                    <i class="fas fa-map-signs"></i> Destinasyonlar
-                </a>
-            </li>
-            @endadminCan
-            @adminCan('users')
-            <li class="sidebar-item {{ Request::routeIs('admin.users.*') ? 'active' : '' }}">
-                <a href="{{ route('admin.users.index') }}">
-                    <i class="fas fa-users-cog"></i> Kullanıcılar & Yetkiler
-                </a>
-            </li>
-            @endadminCan
-            @adminCan('settings')
-            <li class="sidebar-item {{ Request::routeIs('admin.settings.*') ? 'active' : '' }}">
-                <a href="{{ route('admin.settings.index') }}">
-                    <i class="fas fa-sliders-h"></i> Hakkımızda & Genel Ayarlar
-                </a>
-            </li>
-            @endadminCan
-        </ul>
+        <div class="sidebar-menu-wrapper" id="sidebarMenuWrapper">
+            <ul class="sidebar-menu" id="sidebarMenu">
+                <li class="sidebar-item {{ Request::routeIs('admin.dashboard') ? 'active' : '' }}">
+                    <a href="{{ route('admin.dashboard') }}">
+                        <i class="fas fa-chart-pie"></i> Kontrol Paneli
+                    </a>
+                </li>
+                @adminCan('hotels')
+                <li class="sidebar-item {{ Request::routeIs('admin.hotels.*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.hotels.index') }}">
+                        <i class="fas fa-hotel"></i> Oteller
+                    </a>
+                </li>
+                @endadminCan
+                @adminCan('restaurants')
+                <li class="sidebar-item {{ Request::routeIs('admin.restaurants.*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.restaurants.index') }}">
+                        <i class="fas fa-utensils"></i> Restoranlar
+                    </a>
+                </li>
+                @endadminCan
+                @adminCan('yachts')
+                <li class="sidebar-item {{ Request::routeIs('admin.yachts.*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.yachts.index') }}">
+                        <i class="fas fa-ship"></i> Yatlar
+                    </a>
+                </li>
+                @endadminCan
+                @adminCan('guides')
+                <li class="sidebar-item {{ Request::routeIs('admin.guides.*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.guides.index') }}">
+                        <i class="fas fa-map-marked-alt"></i> Destinasyon Rehberleri
+                    </a>
+                </li>
+                @endadminCan
+                @adminCan('events')
+                <li class="sidebar-item {{ Request::routeIs('admin.events.*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.events.index') }}">
+                        <i class="fas fa-calendar-alt"></i> Etkinlikler
+                    </a>
+                </li>
+                @endadminCan
+                @adminCan('journals')
+                <li class="sidebar-item {{ Request::routeIs('admin.journals.*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.journals.index') }}">
+                        <i class="fas fa-newspaper"></i> Journal
+                    </a>
+                </li>
+                @endadminCan
+                @adminCan('destinations')
+                <li class="sidebar-item {{ Request::routeIs('admin.destinations.*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.destinations.index') }}">
+                        <i class="fas fa-map-signs"></i> Destinasyonlar
+                    </a>
+                </li>
+                @endadminCan
+                @adminCan('users')
+                <li class="sidebar-item {{ Request::routeIs('admin.users.*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.users.index') }}">
+                        <i class="fas fa-users-cog"></i> Kullanıcılar & Yetkiler
+                    </a>
+                </li>
+                @endadminCan
+                @adminCan('settings')
+                <li class="sidebar-item {{ Request::routeIs('admin.settings.*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.settings.index') }}">
+                        <i class="fas fa-sliders-h"></i> Hakkımızda & Genel Ayarlar
+                    </a>
+                </li>
+                @endadminCan
+            </ul>
+        </div>
+
+        <!-- Animated Scroll Down Button -->
+        <button type="button" class="sidebar-scroll-btn scroll-down" id="scrollDownBtn" onclick="scrollSidebar(120)" title="Aşağı Kaydır">
+            <i class="fas fa-chevron-down"></i>
+        </button>
         
         <div class="sidebar-footer">
             <form action="{{ route('logout') }}" method="POST">
@@ -325,7 +337,12 @@
                     }
                 });
             });
-        });
+        function scrollSidebar(amount) {
+            const wrapper = document.getElementById('sidebarMenuWrapper');
+            if (wrapper) {
+                wrapper.scrollBy({ top: amount, behavior: 'smooth' });
+            }
+        }
     </script>
 </body>
 </html>
