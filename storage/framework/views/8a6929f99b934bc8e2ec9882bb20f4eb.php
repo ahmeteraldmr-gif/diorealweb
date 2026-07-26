@@ -2,6 +2,9 @@
 <html lang="<?php echo e(get_active_locale()); ?>">
 
 <head>
+    <!-- Favicon & Touch Icons -->
+    <link rel="icon" type="image/png" href="<?php echo e(asset('foto.img/logo_dioreal.png')); ?>">
+    <link rel="apple-touch-icon" href="<?php echo e(asset('foto.img/logo_dioreal.png')); ?>">
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
     <meta name="base-url" content="<?php echo e(url('/')); ?>">
     <meta charset="UTF-8">

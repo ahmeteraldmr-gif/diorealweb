@@ -52,6 +52,8 @@ class SettingController extends Controller
             'footer_copy' => 'nullable|string|max:255',
             'hero_title_tr' => 'nullable|string|max:500',
             'hero_title_en' => 'nullable|string|max:500',
+            'google_analytics' => 'nullable|string',
+            'google_search_console' => 'nullable|string',
 
             // Homepage selection (Manifesto)
             'man_eyebrow_tr' => 'nullable|string|max:255',
@@ -147,6 +149,8 @@ class SettingController extends Controller
             'footer_copy',
             'hero_title_tr',
             'hero_title_en',
+            'google_analytics',
+            'google_search_console',
 
             'man_eyebrow_tr',
             'man_eyebrow_en',

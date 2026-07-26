@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="<?php echo e(get_active_locale()); ?>">
 <head>
+    <!-- Favicon & Touch Icons -->
+    <link rel="icon" type="image/png" href="<?php echo e(asset('foto.img/logo_dioreal.png')); ?>">
+    <link rel="apple-touch-icon" href="<?php echo e(asset('foto.img/logo_dioreal.png')); ?>">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dioreal Dijital — Admin Girişi</title>

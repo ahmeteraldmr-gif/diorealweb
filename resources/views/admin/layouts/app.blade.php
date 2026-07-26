@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ get_active_locale() }}">
 <head>
+    <!-- Favicon & Touch Icons -->
+    <link rel="icon" type="image/png" href="{{ asset('foto.img/logo_dioreal.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('foto.img/logo_dioreal.png') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
