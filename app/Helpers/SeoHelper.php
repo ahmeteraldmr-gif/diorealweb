@@ -45,11 +45,20 @@ if (!function_exists('make_slug')) {
 
 if (!function_exists('get_active_locale')) {
     /**
-     * Resolves the current locale from request input 'lang'
+     * Resolves the current locale from request input 'lang' or session
      */
     function get_active_locale(): string
     {
-        return request('lang') === 'en' ? 'en' : 'tr';
+        $requestLang = request('lang');
+        if ($requestLang === 'en') {
+            if (function_exists('session')) session(['locale' => 'en']);
+            return 'en';
+        }
+        if ($requestLang === 'tr') {
+            if (function_exists('session')) session(['locale' => 'tr']);
+            return 'tr';
+        }
+        return (function_exists('session') && session('locale') === 'en') ? 'en' : 'tr';
     }
 }
 

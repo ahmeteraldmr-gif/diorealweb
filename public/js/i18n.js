@@ -173,30 +173,24 @@ document.addEventListener("DOMContentLoaded", () => {
     
     updateLang(lang);
 
-    // Setup click handlers for TR/EN switches to follow alternate localized links if present
+    function switchLocaleUrl(targetLang) {
+        localStorage.setItem('dioreal_lang', targetLang);
+        const url = new URL(window.location.href);
+        url.searchParams.set('lang', targetLang);
+        window.location.href = url.toString();
+    }
+
     document.querySelectorAll('#lang-en, #lang-en-fs').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
-            const altLink = document.querySelector('link[rel="alternate"][hreflang="en"]');
-            if (altLink && altLink.href) {
-                localStorage.setItem('dioreal_lang', 'en');
-                window.location.href = altLink.href;
-            } else {
-                updateLang('en');
-            }
+            switchLocaleUrl('en');
         });
     });
 
     document.querySelectorAll('#lang-tr, #lang-tr-fs').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
-            const altLink = document.querySelector('link[rel="alternate"][hreflang="tr"]');
-            if (altLink && altLink.href) {
-                localStorage.setItem('dioreal_lang', 'tr');
-                window.location.href = altLink.href;
-            } else {
-                updateLang('tr');
-            }
+            switchLocaleUrl('tr');
         });
     });
 });
