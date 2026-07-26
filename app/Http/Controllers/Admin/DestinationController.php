@@ -109,7 +109,8 @@ class DestinationController extends Controller
         if ($request->hasFile('img_file')) {
             $data['img'] = $this->handleFileUpload($request->file('img_file'));
         } else {
-            $data['img'] = $request->input('img_url') ?? 'foto.img/istanbul.jpg';
+            $imgUrl = trim((string)$request->input('img_url'));
+            $data['img'] = !empty($imgUrl) ? $imgUrl : 'foto.img/amalfi.jpg';
         }
 
         // Handle video upload
@@ -217,6 +218,8 @@ class DestinationController extends Controller
             $data['img'] = $request->input('cover_image');
         } elseif ($request->filled('img_url')) {
             $data['img'] = $request->input('img_url');
+        } elseif (empty($destination->img)) {
+            $data['img'] = 'foto.img/amalfi.jpg';
         }
 
         // Handle video deletion
