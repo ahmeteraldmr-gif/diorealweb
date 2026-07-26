@@ -159,17 +159,23 @@
 
     <!-- Global Admin Scripts -->
     <script>
-        // Sidebar toggle logic for mobile & touch devices
+        // Debounced sidebar toggle logic for mobile & touch devices
+        let isTogglingSidebar = false;
         function toggleSidebar(e) {
             if (e) {
                 e.preventDefault();
                 e.stopPropagation();
             }
+            if (isTogglingSidebar) return;
+            isTogglingSidebar = true;
+            setTimeout(() => { isTogglingSidebar = false; }, 350);
+
             const sidebar = document.getElementById('sidebar');
             const overlay = document.getElementById('sidebarOverlay');
             if (!sidebar) return;
 
-            if (sidebar.classList.contains('open')) {
+            const isOpen = sidebar.classList.contains('open');
+            if (isOpen) {
                 sidebar.classList.remove('open');
                 if (overlay) overlay.classList.remove('active');
                 document.body.style.overflow = '';
@@ -178,21 +184,6 @@
                 if (overlay) overlay.classList.add('active');
                 document.body.style.overflow = 'hidden';
             }
-        }
-
-        const sidebarToggle = document.getElementById('sidebarToggle');
-        const sidebarOverlay = document.getElementById('sidebarOverlay');
-
-        if (sidebarToggle) {
-            sidebarToggle.addEventListener('touchstart', function(e) {
-                toggleSidebar(e);
-            }, { passive: false });
-        }
-
-        if (sidebarOverlay) {
-            sidebarOverlay.addEventListener('touchstart', function(e) {
-                toggleSidebar(e);
-            }, { passive: false });
         }
 
         // Close sidebar on window resize above tablet breakpoint
