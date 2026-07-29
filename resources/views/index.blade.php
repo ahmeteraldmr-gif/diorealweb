@@ -158,41 +158,41 @@
         </div>
     </section>
 
-    <!-- OLD: Marquee -->
+    <!-- Marquee - Clickable Cities -->
     <div class="marquee">
         <div class="marquee-track">
             <!-- SET A -->
-            <div class="marquee-item"><span data-i18n="dest_istanbul">İstanbul</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_bodrum">Bodrum</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_fethiye">Fethiye</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_kapadokya">Kapadokya</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_cesme">Çeşme</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_kas">Kaş</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_datca">Datça</span> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="{{ url('/destinasyon/istanbul') }}" class="marquee-link"><span data-i18n="dest_istanbul">İstanbul</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="{{ url('/destinasyon/bodrum') }}" class="marquee-link"><span data-i18n="dest_bodrum">Bodrum</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="{{ url('/destinasyon/fethiye') }}" class="marquee-link"><span data-i18n="dest_fethiye">Fethiye</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="{{ url('/destinasyon/kapadokya') }}" class="marquee-link"><span data-i18n="dest_kapadokya">Kapadokya</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="{{ url('/destinasyon/cesme') }}" class="marquee-link"><span data-i18n="dest_cesme">Çeşme</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="{{ url('/destinasyon/kas') }}" class="marquee-link"><span data-i18n="dest_kas">Kaş</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="{{ url('/destinasyon/datca') }}" class="marquee-link"><span data-i18n="dest_datca">Datça</span></a> <span class="marquee-dot">◆</span></div>
             <!-- SET B -->
-            <div class="marquee-item"><span data-i18n="dest_istanbul">İstanbul</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_bodrum">Bodrum</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_fethiye">Fethiye</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_kapadokya">Kapadokya</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_cesme">Çeşme</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_kas">Kaş</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_datca">Datça</span> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="{{ url('/destinasyon/istanbul') }}" class="marquee-link"><span data-i18n="dest_istanbul">İstanbul</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="{{ url('/destinasyon/bodrum') }}" class="marquee-link"><span data-i18n="dest_bodrum">Bodrum</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="{{ url('/destinasyon/fethiye') }}" class="marquee-link"><span data-i18n="dest_fethiye">Fethiye</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="{{ url('/destinasyon/kapadokya') }}" class="marquee-link"><span data-i18n="dest_kapadokya">Kapadokya</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="{{ url('/destinasyon/cesme') }}" class="marquee-link"><span data-i18n="dest_cesme">Çeşme</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="{{ url('/destinasyon/kas') }}" class="marquee-link"><span data-i18n="dest_kas">Kaş</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="{{ url('/destinasyon/datca') }}" class="marquee-link"><span data-i18n="dest_datca">Datça</span></a> <span class="marquee-dot">◆</span></div>
             <!-- SET C -->
-            <div class="marquee-item"><span data-i18n="dest_istanbul">İstanbul</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_bodrum">Bodrum</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_fethiye">Fethiye</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_kapadokya">Kapadokya</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_cesme">Çeşme</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_kas">Kaş</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_datca">Datça</span> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="{{ url('/destinasyon/istanbul') }}" class="marquee-link"><span data-i18n="dest_istanbul">İstanbul</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="{{ url('/destinasyon/bodrum') }}" class="marquee-link"><span data-i18n="dest_bodrum">Bodrum</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="{{ url('/destinasyon/fethiye') }}" class="marquee-link"><span data-i18n="dest_fethiye">Fethiye</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="{{ url('/destinasyon/kapadokya') }}" class="marquee-link"><span data-i18n="dest_kapadokya">Kapadokya</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="{{ url('/destinasyon/cesme') }}" class="marquee-link"><span data-i18n="dest_cesme">Çeşme</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="{{ url('/destinasyon/kas') }}" class="marquee-link"><span data-i18n="dest_kas">Kaş</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="{{ url('/destinasyon/datca') }}" class="marquee-link"><span data-i18n="dest_datca">Datça</span></a> <span class="marquee-dot">◆</span></div>
             <!-- SET D -->
-            <div class="marquee-item"><span data-i18n="dest_istanbul">İstanbul</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_bodrum">Bodrum</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_fethiye">Fethiye</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_kapadokya">Kapadokya</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_cesme">Çeşme</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_kas">Kaş</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_datca">Datça</span> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="{{ url('/destinasyon/istanbul') }}" class="marquee-link"><span data-i18n="dest_istanbul">İstanbul</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="{{ url('/destinasyon/bodrum') }}" class="marquee-link"><span data-i18n="dest_bodrum">Bodrum</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="{{ url('/destinasyon/fethiye') }}" class="marquee-link"><span data-i18n="dest_fethiye">Fethiye</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="{{ url('/destinasyon/kapadokya') }}" class="marquee-link"><span data-i18n="dest_kapadokya">Kapadokya</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="{{ url('/destinasyon/cesme') }}" class="marquee-link"><span data-i18n="dest_cesme">Çeşme</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="{{ url('/destinasyon/kas') }}" class="marquee-link"><span data-i18n="dest_kas">Kaş</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="{{ url('/destinasyon/datca') }}" class="marquee-link"><span data-i18n="dest_datca">Datça</span></a> <span class="marquee-dot">◆</span></div>
         </div>
     </div>
 

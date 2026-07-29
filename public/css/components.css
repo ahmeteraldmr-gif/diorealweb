@@ -77,6 +77,19 @@
     font-size: .45rem;
 }
 
+/* Marquee tıklanabilir şehir linkleri */
+.marquee-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.25s ease, opacity 0.25s ease;
+    cursor: pointer;
+}
+
+.marquee-link:hover {
+    color: var(--accent);
+    opacity: 1;
+}
+
 /* ── STATS ── */
 .stats-row {
     display: flex;
