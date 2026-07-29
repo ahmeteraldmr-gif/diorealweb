@@ -111,6 +111,27 @@
     box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
 }
 
+/* Hero içindeki İletişime Geç butonu — şeffaf glassmorphism */
+.hero .whatsapp-cta,
+.hero-cta-group .whatsapp-cta {
+    background: transparent !important;
+    border: 2px solid rgba(255, 255, 255, 0.7) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #fff !important;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+}
+
+.hero .whatsapp-cta:hover,
+.hero-cta-group .whatsapp-cta:hover {
+    background: rgba(255, 255, 255, 0.18) !important;
+    border-color: rgba(255, 255, 255, 0.95) !important;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25) !important;
+}
+
 /* ── MANIFESTO & TRENDS ── */
 .bt-about-section {
     background: var(--white);
