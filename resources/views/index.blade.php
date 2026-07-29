@@ -199,7 +199,7 @@
     <!-- NEW ABOUT SECTION (BLACK TOMATO STYLE) -->
     <section class="bt-about-section" id="hakkimizda" style="padding: 7rem 5rem; text-align: center; background: var(--white);">
         <div style="max-width: 800px; margin: 0 auto 5rem;">
-            <h2 style="font-family: var(--font-condensed); font-size: 2.5rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2rem; color: var(--near-black);">
+            <h2 style="font-family: var(--font-display); font-size: 3rem; font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 2rem; color: var(--near-black);">
                 <span class="lang-text-tr">{{ $settings['man_eyebrow_tr'] ?? 'BU AYIN SEÇKİNLERİ' }}</span>
                 <span class="lang-text-en">{{ $settings['man_eyebrow_en'] ?? "THIS MONTH'S SELECTION" }}</span>
             </h2>
@@ -484,7 +484,7 @@
     <section class="collabs" id="referanslar" style="text-align: center; padding: 7rem 5rem; background: var(--white); border-top: 1px solid rgba(0,0,0,0.05);">
         <div class="section-header reveal" style="justify-content: center; margin-bottom: 2rem;">
             <div>
-                <h2 class="section-title" data-i18n="collab_title" style="font-family: var(--font-condensed); font-size: 2.5rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; color: var(--near-black); text-align: center;">MARKA & İŞ BİRLİKLERİ</h2>
+                <h2 class="section-title" data-i18n="collab_title" style="font-family: var(--font-display); font-size: 3rem; font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1rem; color: var(--near-black); text-align: center;">MARKA & İŞ BİRLİKLERİ</h2>
                 <p style="color: var(--mid-gray); font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase;">Güvenilir Partnerlerimiz</p>
             </div>
         </div>

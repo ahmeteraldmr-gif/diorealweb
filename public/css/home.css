@@ -405,10 +405,10 @@
 }
 
 .dest-main-title {
-    font-family: var(--font-condensed);
+    font-family: var(--font-display);
     font-size: 3.5rem;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: 0.05em;
     margin-bottom: 2rem;
     color: var(--near-black);
