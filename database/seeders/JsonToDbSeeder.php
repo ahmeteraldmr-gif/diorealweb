@@ -54,7 +54,7 @@ class JsonToDbSeeder extends Seeder
                         if (empty($item['seo_description_tr']) && $trDesc) $item['seo_description_tr'] = \Illuminate\Support\Str::limit(strip_tags($trDesc), 155);
                         if (empty($item['seo_description_en']) && $enDesc) $item['seo_description_en'] = \Illuminate\Support\Str::limit(strip_tags($enDesc), 155);
 
-                        $modelClass::updateOrCreate(
+                        $modelClass::firstOrCreate(
                             ['id' => $item['id'] ?? null],
                             $item
                         );
