@@ -12,10 +12,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@200;300;400;500;600&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo e(asset('css/base.css')); ?>?v=<?php echo e(time()); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('css/nav-footer.css')); ?>?v=<?php echo e(time()); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('css/components.css')); ?>?v=<?php echo e(time()); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('css/about.css')); ?>?v=<?php echo e(time()); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('css/base.css')); ?>?v=2.5.0">
+    <link rel="stylesheet" href="<?php echo e(asset('css/nav-footer.css')); ?>?v=2.5.0">
+    <link rel="stylesheet" href="<?php echo e(asset('css/components.css')); ?>?v=2.5.0">
+    <link rel="stylesheet" href="<?php echo e(asset('css/about.css')); ?>?v=2.5.0">
     <?php
         $locale = get_active_locale();
         $seoData = get_page_seo('gezi-rehberi');
@@ -57,7 +57,7 @@
     <?php echo $schema_json; ?>
 
     <?php endif; ?>
-    <link rel="stylesheet" href="<?php echo e(asset('css/responsive.css')); ?>?v=<?php echo e(time()); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('css/responsive.css')); ?>?v=2.5.0">
 </head>
 <body>
     <nav id="mainNav">
@@ -185,9 +185,9 @@
             }
         }
     </script>
-    <script src="<?php echo e(asset('js/i18n.js')); ?>?v=<?php echo e(time()); ?>"></script>
-    <script src="<?php echo e(asset('js/common.js')); ?>?v=<?php echo e(time()); ?>"></script>
-    <script src="<?php echo e(asset('js/nav.js')); ?>?v=<?php echo e(time()); ?>"></script>
+    <script src="<?php echo e(asset('js/i18n.js')); ?>?v=2.5.0"></script>
+    <script src="<?php echo e(asset('js/common.js')); ?>?v=2.5.0"></script>
+    <script src="<?php echo e(asset('js/nav.js')); ?>?v=2.5.0"></script>
 </body>
 </html>
 <?php /**PATH C:\Users\ahmet\Desktop\dioreal web\resources\views/destinasyonlar.blade.php ENDPATH**/ ?>

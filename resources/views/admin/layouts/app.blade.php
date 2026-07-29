@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Premium Stylesheet -->
-    <link rel="stylesheet" href="{{ asset('css/admin-new.css') }}?v={{ time() }}">
-    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}?v={{ time() }}">
+    <link rel="stylesheet" href="{{ asset('css/admin-new.css') }}?v=2.5.0">
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}?v=2.5.0">
 </head>
 <body>
 
