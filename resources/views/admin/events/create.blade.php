@@ -64,7 +64,7 @@
             <div class="lang-pane" data-lang="en">
                 <div class="form-group">
                     <label class="form-label" for="title_en">Event Title (EN)</label>
-                    <input type="text" name="title[en]" id="title_en" class="form-control" placeholder="e.g. Bodrum Jazz Festival" value="{{ old('title.en') }}" required>
+                    <input type="text" name="title[en]" id="title_en" class="form-control" placeholder="e.g. Bodrum Jazz Festival" value="{{ old('title.en') }}">
                 </div>
                 
                 <div class="form-group">
@@ -74,17 +74,17 @@
 
                 <div class="form-group">
                     <label class="form-label" for="month_en">Month Info (EN)</label>
-                    <input type="text" name="month[en]" id="month_en" class="form-control" placeholder="e.g. JUNE" value="{{ old('month.en') }}" required>
+                    <input type="text" name="month[en]" id="month_en" class="form-control" placeholder="e.g. JUNE" value="{{ old('month.en') }}">
                 </div>
 
                 <div class="form-group">
                     <label class="form-label" for="loc_en">Venue / Location (EN)</label>
-                    <input type="text" name="loc[en]" id="loc_en" class="form-control" placeholder="e.g. Antique Theatre, Bodrum" value="{{ old('loc.en') }}" required>
+                    <input type="text" name="loc[en]" id="loc_en" class="form-control" placeholder="e.g. Antique Theatre, Bodrum" value="{{ old('loc.en') }}">
                 </div>
                 
                 <div class="form-group">
                     <label class="form-label" for="desc_en">Description (EN)</label>
-                    <textarea name="desc[en]" id="desc_en" class="form-control" placeholder="Event description..." required style="min-height: 120px;">{{ old('desc.en') }}</textarea>
+                    <textarea name="desc[en]" id="desc_en" class="form-control" placeholder="Event description..." style="min-height: 120px;">{{ old('desc.en') }}</textarea>
                 </div>
 
                 <div class="form-group">

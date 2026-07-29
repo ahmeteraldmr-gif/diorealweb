@@ -204,22 +204,24 @@
             }
         });
 
-        // Language tab switching helper
+        // Failproof language tab switching helper
         function switchLanguageTab(lang) {
-            // Toggle active tabs
             document.querySelectorAll('.lang-tab').forEach(tab => {
-                if (tab.dataset.lang === lang) {
+                const tLang = tab.getAttribute('data-lang') || (tab.dataset ? tab.dataset.lang : null);
+                if (tLang === lang) {
                     tab.classList.add('active');
                 } else {
                     tab.classList.remove('active');
                 }
             });
-            // Toggle active panes
             document.querySelectorAll('.lang-pane').forEach(pane => {
-                if (pane.dataset.lang === lang) {
+                const pLang = pane.getAttribute('data-lang') || (pane.dataset ? pane.dataset.lang : null);
+                if (pLang === lang) {
                     pane.classList.add('active');
+                    pane.style.display = 'block';
                 } else {
                     pane.classList.remove('active');
+                    pane.style.display = 'none';
                 }
             });
         }

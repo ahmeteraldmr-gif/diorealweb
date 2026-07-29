@@ -60,7 +60,7 @@
                 
                 <div class="form-group">
                     <label class="form-label" for="desc_en">Description (EN)</label>
-                    <textarea name="desc[en]" id="desc_en" class="form-control" required style="min-height: 180px;">{{ old('desc.en', $guide->desc['en'] ?? '') }}</textarea>
+                    <textarea name="desc[en]" id="desc_en" class="form-control" style="min-height: 180px;">{{ old('desc.en', $guide->desc['en'] ?? '') }}</textarea>
                 </div>
             </div>
 
