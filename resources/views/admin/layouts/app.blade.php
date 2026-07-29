@@ -204,9 +204,13 @@
             }
         });
 
-        // Failproof language tab switching helper
-        function switchLanguageTab(lang) {
-            document.querySelectorAll('.lang-tab').forEach(tab => {
+        // Global failproof language tab switching helper
+        window.switchLanguageTab = function(lang) {
+            if (!lang) return;
+            const tabs = document.querySelectorAll('.lang-tab');
+            const panes = document.querySelectorAll('.lang-pane');
+
+            tabs.forEach(tab => {
                 const tLang = tab.getAttribute('data-lang') || (tab.dataset ? tab.dataset.lang : null);
                 if (tLang === lang) {
                     tab.classList.add('active');
@@ -214,17 +218,31 @@
                     tab.classList.remove('active');
                 }
             });
-            document.querySelectorAll('.lang-pane').forEach(pane => {
+
+            panes.forEach(pane => {
                 const pLang = pane.getAttribute('data-lang') || (pane.dataset ? pane.dataset.lang : null);
                 if (pLang === lang) {
                     pane.classList.add('active');
-                    pane.style.display = 'block';
+                    pane.setAttribute('style', 'display: block !important;');
                 } else {
                     pane.classList.remove('active');
-                    pane.style.display = 'none';
+                    pane.setAttribute('style', 'display: none !important;');
                 }
             });
-        }
+        };
+
+        // Automatic event delegation for all lang-tab clicks
+        document.addEventListener('click', function(e) {
+            const tabBtn = e.target.closest('.lang-tab');
+            if (tabBtn) {
+                e.preventDefault();
+                e.stopPropagation();
+                const lang = tabBtn.getAttribute('data-lang') || (tabBtn.dataset ? tabBtn.dataset.lang : '');
+                if (lang) {
+                    window.switchLanguageTab(lang);
+                }
+            }
+        });
 
         // ── Client-side file size guard (max 50 MB per file) ──
         const MAX_FILE_MB = 50;

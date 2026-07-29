@@ -447,6 +447,8 @@ textarea.form-control {
     margin-bottom: 1.5rem;
     display: flex;
     gap: 0.5rem;
+    position: relative;
+    z-index: 10;
 }
 
 .lang-tab {
@@ -457,7 +459,9 @@ textarea.form-control {
     color: var(--text-muted);
     font-weight: 600;
     font-size: 0.9rem;
-    cursor: pointer;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    user-select: none;
     transition: var(--transition);
 }
 
@@ -466,16 +470,16 @@ textarea.form-control {
 }
 
 .lang-tab.active {
-    color: var(--primary);
-    border-bottom-color: var(--primary);
+    color: var(--primary) !important;
+    border-bottom-color: var(--primary) !important;
 }
 
 .lang-pane {
-    display: none;
+    display: none !important;
 }
 
 .lang-pane.active {
-    display: block;
+    display: block !important;
     animation: fadeIn 0.4s ease;
 }
 
