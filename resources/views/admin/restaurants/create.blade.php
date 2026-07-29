@@ -311,6 +311,8 @@
                 previewGrid.innerHTML = '<div style="grid-column: 1/-1; display:flex; align-items:center; justify-content:center; color: var(--text-muted); font-size: 0.8rem;">Seçilen Görsel Yok</div>';
             }
         }
+    </script>
+
     <script>
         // INLINE LANG TAB FIX - runs directly in this page
         (function() {
