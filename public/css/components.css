@@ -49,6 +49,8 @@
     overflow: hidden;
     background: var(--near-black);
     padding: 1.4rem 0;
+    position: relative;
+    z-index: 1;
 }
 
 .marquee-track {
@@ -56,6 +58,7 @@
     gap: 4rem;
     width: max-content;
     animation: marqueeRoll 28s linear infinite;
+    pointer-events: auto;
 }
 
 .marquee-item {
@@ -69,24 +72,32 @@
     font-style: italic;
     color: rgba(255, 255, 255, .22);
     letter-spacing: .04em;
+    pointer-events: auto;
 }
 
 .marquee-dot {
     color: var(--accent);
     font-style: normal;
     font-size: .45rem;
+    pointer-events: none;
 }
 
 /* Marquee tıklanabilir şehir linkleri */
 .marquee-link {
     color: inherit;
     text-decoration: none;
-    transition: color 0.25s ease, opacity 0.25s ease;
-    cursor: pointer;
+    transition: color 0.3s ease;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    position: relative;
+    z-index: 5;
+    display: inline-block;
+    padding: 0.2rem 0.1rem;
 }
 
-.marquee-link:hover {
-    color: var(--accent);
+.marquee-link:hover,
+.marquee-link:hover span {
+    color: var(--accent) !important;
     opacity: 1;
 }
 

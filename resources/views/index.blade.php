@@ -159,8 +159,8 @@
     </section>
 
     <!-- Marquee - Clickable Cities -->
-    <div class="marquee">
-        <div class="marquee-track">
+    <div class="marquee" style="position:relative;z-index:2;">
+        <div class="marquee-track" style="pointer-events:auto;">
             <!-- SET A -->
             <div class="marquee-item"><a href="{{ url('/destinasyon/istanbul') }}" class="marquee-link"><span data-i18n="dest_istanbul">İstanbul</span></a> <span class="marquee-dot">◆</span></div>
             <div class="marquee-item"><a href="{{ url('/destinasyon/bodrum') }}" class="marquee-link"><span data-i18n="dest_bodrum">Bodrum</span></a> <span class="marquee-dot">◆</span></div>
