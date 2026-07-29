@@ -769,11 +769,13 @@ textarea.form-control {
     -webkit-backdrop-filter: blur(4px);
     z-index: 9998;
     opacity: 0;
+    pointer-events: none; /* Do NOT swallow clicks when inactive */
     transition: opacity 0.3s ease;
 }
 .sidebar-overlay.active {
     display: block !important;
     opacity: 1 !important;
+    pointer-events: auto !important; /* Only intercept when active */
 }
 
 /* ── TABLET & MOBİL (1024px) ── */
