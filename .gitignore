@@ -32,7 +32,13 @@ Thumbs.db
 /.gemini
 /.agents
 __MACOSX/
+# Database Protection
+*.sqlite
+/database/*.sqlite
+/database/database.sqlite*
+
 # Uploaded Media Protection
 /public/uploads/*
 !/public/uploads/.gitkeep
+
 
