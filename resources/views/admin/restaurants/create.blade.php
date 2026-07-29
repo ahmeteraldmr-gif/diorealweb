@@ -311,5 +311,50 @@
                 previewGrid.innerHTML = '<div style="grid-column: 1/-1; display:flex; align-items:center; justify-content:center; color: var(--text-muted); font-size: 0.8rem;">Seçilen Görsel Yok</div>';
             }
         }
+    <script>
+        // INLINE LANG TAB FIX - runs directly in this page
+        (function() {
+            function doSwitchTab(lang) {
+                // Switch tabs
+                document.querySelectorAll('.lang-tab').forEach(function(tab) {
+                    if (tab.getAttribute('data-lang') === lang) {
+                        tab.classList.add('active');
+                        tab.style.cssText = 'color: #c4a47c !important; border-bottom-color: #c4a47c !important;';
+                    } else {
+                        tab.classList.remove('active');
+                        tab.style.cssText = 'color: #94a3b8; border-bottom-color: transparent;';
+                    }
+                });
+                // Switch panes
+                document.querySelectorAll('.lang-pane').forEach(function(pane) {
+                    if (pane.getAttribute('data-lang') === lang) {
+                        pane.style.cssText = 'display: block !important; visibility: visible !important; opacity: 1 !important;';
+                        pane.classList.add('active');
+                    } else {
+                        pane.style.cssText = 'display: none !important; visibility: hidden !important; opacity: 0 !important;';
+                        pane.classList.remove('active');
+                    }
+                });
+            }
+
+            // Override global function too
+            window.switchLanguageTab = doSwitchTab;
+
+            // Bind on DOM ready
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelectorAll('.lang-tab').forEach(function(btn) {
+                    btn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        doSwitchTab(this.getAttribute('data-lang'));
+                    });
+                    btn.addEventListener('touchend', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        doSwitchTab(this.getAttribute('data-lang'));
+                    });
+                });
+            });
+        })();
     </script>
 @endsection

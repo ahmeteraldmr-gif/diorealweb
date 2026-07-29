@@ -218,4 +218,42 @@
             }
         }
     </script>
+
+    <script>
+        /* ── INLINE LANG TAB: Failproof tab switcher, no external deps ── */
+        (function() {
+            function doSwitchTab(lang) {
+                document.querySelectorAll('.lang-tab').forEach(function(tab) {
+                    if (tab.getAttribute('data-lang') === lang) {
+                        tab.classList.add('active');
+                        tab.style.cssText = 'color:#c4a47c!important;border-bottom-color:#c4a47c!important;';
+                    } else {
+                        tab.classList.remove('active');
+                        tab.style.cssText = 'color:#94a3b8;border-bottom-color:transparent;';
+                    }
+                });
+                document.querySelectorAll('.lang-pane').forEach(function(pane) {
+                    if (pane.getAttribute('data-lang') === lang) {
+                        pane.style.cssText = 'display:block!important;visibility:visible!important;opacity:1!important;';
+                        pane.classList.add('active');
+                    } else {
+                        pane.style.cssText = 'display:none!important;visibility:hidden!important;opacity:0!important;';
+                        pane.classList.remove('active');
+                    }
+                });
+            }
+            window.switchLanguageTab = doSwitchTab;
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelectorAll('.lang-tab').forEach(function(btn) {
+                    ['click','touchend'].forEach(function(evt) {
+                        btn.addEventListener(evt, function(e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            doSwitchTab(this.getAttribute('data-lang'));
+                        });
+                    });
+                });
+            });
+        })();
+    </script>
 @endsection
