@@ -149,8 +149,8 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="hero-title reveal">
-                <span class="lang-text-tr">Türkiye ve dünyada seçkin<br />deneyimlerin kapısını aralıyoruz.</span>
-                <span class="lang-text-en">Opening doors to exclusive<br />experiences globally.</span>
+                <span class="lang-text-tr">{!! nl2br(e($settings['hero_title_tr'] ?? 'Türkiye ve dünyada seçkin' . "\n" . 'deneyimlerin kapısını aralıyoruz.')) !!}</span>
+                <span class="lang-text-en">{!! nl2br(e($settings['hero_title_en'] ?? 'Opening doors to exclusive' . "\n" . 'experiences globally.')) !!}</span>
             </h1>
             <div class="hero-cta-group reveal" style="transition-delay: 0.2s;">
                 <a href="https://wa.me/{{ format_whatsapp($settings['whatsapp'] ?? '905320000000') }}" target="_blank" class="btn btn-outline whatsapp-cta" data-i18n="btn_contact">İletişime Geç</a>
