@@ -42,7 +42,7 @@ const initHome = () => {
             const track = container.querySelector('.marquee-track');
             if (!track) return;
             
-            // Dynamically clone to ensure exactly 3 copies for seamless infinite scroll on wide screens
+            // Dynamically clone to ensure exactly 3 copies for seamless infinite scroll
             const originalContent = container.querySelector('.marquee-content');
             if (originalContent) {
                 track.innerHTML = '';
@@ -70,19 +70,29 @@ const initHome = () => {
             let startTranslateX = 0;
             let isDragging = false;
 
-            // Disable CSS animation entirely so JS controls the translation
+            // Disable CSS animation so JS handles position with zero subpixel drift
             track.style.animation = 'none';
+
+            // Helper to get exact width of one copy including flex gap
+            const getOneCopyWidth = () => {
+                const firstChild = track.firstElementChild;
+                if (!firstChild) return 0;
+                const rect = firstChild.getBoundingClientRect();
+                const trackStyle = window.getComputedStyle(track);
+                const gap = parseFloat(trackStyle.gap || trackStyle.columnGap || '0') || 0;
+                return rect.width + gap;
+            };
 
             // Auto-scroll loop
             const step = () => {
                 if (!isPaused && !isDragging) {
-                    const oneCopyWidth = track.scrollWidth / 3;
+                    const oneCopyWidth = getOneCopyWidth();
                     if (oneCopyWidth > 0) {
                         currentX -= speed;
                         if (currentX <= -oneCopyWidth) {
                             currentX += oneCopyWidth;
                         }
-                        track.style.transform = `translateX(${currentX}px)`;
+                        track.style.transform = `translate3d(${currentX}px, 0, 0)`;
                     }
                 }
                 requestAnimationFrame(step);
@@ -112,7 +122,7 @@ const initHome = () => {
             container.addEventListener('touchmove', (e) => {
                 if (!isDragging) return;
                 const deltaX = e.touches[0].clientX - startTouchX;
-                const oneCopyWidth = track.scrollWidth / 3;
+                const oneCopyWidth = getOneCopyWidth();
                 if (oneCopyWidth === 0) return;
 
                 currentX = startTranslateX + deltaX;
@@ -128,7 +138,7 @@ const initHome = () => {
                     startTouchX = e.touches[0].clientX;
                 }
 
-                track.style.transform = `translateX(${currentX}px)`;
+                track.style.transform = `translate3d(${currentX}px, 0, 0)`;
             }, { passive: true });
 
             container.addEventListener('touchend', () => {
@@ -148,7 +158,7 @@ const initHome = () => {
             container.addEventListener('mousemove', (e) => {
                 if (!isDragging) return;
                 const deltaX = e.clientX - startTouchX;
-                const oneCopyWidth = track.scrollWidth / 3;
+                const oneCopyWidth = getOneCopyWidth();
                 if (oneCopyWidth === 0) return;
 
                 currentX = startTranslateX + deltaX;
@@ -164,7 +174,7 @@ const initHome = () => {
                     startTouchX = e.clientX;
                 }
 
-                track.style.transform = `translateX(${currentX}px)`;
+                track.style.transform = `translate3d(${currentX}px, 0, 0)`;
             });
 
             container.addEventListener('mouseup', () => {

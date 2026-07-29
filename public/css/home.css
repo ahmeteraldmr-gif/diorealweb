@@ -339,18 +339,31 @@
     width: max-content;
     animation: marquee-scroll 45s linear infinite;
     align-items: flex-start;
+    will-change: transform;
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .marquee-content {
     display: flex;
+    flex-shrink: 0 !important;
     gap: 2rem;
     padding-right: 2rem;
     align-items: flex-start;
+    will-change: transform;
+}
+
+.dest-card-h {
+    flex-shrink: 0 !important;
+    position: relative;
+    z-index: 1;
 }
 
 @media (max-width: 768px) {
     .dest-card-h {
         flex: 0 0 260px !important;
+        flex-shrink: 0 !important;
     }
     
     .marquee-container {
