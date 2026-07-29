@@ -150,50 +150,50 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="hero-title reveal">
-                <span class="lang-text-tr">Türkiye ve dünyada seçkin<br />deneyimlerin kapısını aralıyoruz.</span>
-                <span class="lang-text-en">Opening doors to exclusive<br />experiences globally.</span>
+                <span class="lang-text-tr"><?php echo nl2br(e($settings['hero_title_tr'] ?? 'Türkiye ve dünyada seçkin' . "\n" . 'deneyimlerin kapısını aralıyoruz.')); ?></span>
+                <span class="lang-text-en"><?php echo nl2br(e($settings['hero_title_en'] ?? 'Opening doors to exclusive' . "\n" . 'experiences globally.')); ?></span>
             </h1>
             <div class="hero-cta-group reveal" style="transition-delay: 0.2s;">
-                <a href="https://wa.me/<?php echo e(format_whatsapp($settings['whatsapp'] ?? '905320000000')); ?>" target="_blank" class="btn btn-outline whatsapp-cta" data-i18n="btn_contact">İletişime Geç</a>
+                <a href="https://wa.me/<?php echo e(format_whatsapp($settings['whatsapp'] ?? '905320000000')); ?>" target="_blank" class="btn btn-outline whatsapp-cta" data-i18n="btn_contact" style="background:transparent!important;border:2px solid rgba(255,255,255,0.75)!important;color:#fff!important;box-shadow:0 4px 20px rgba(0,0,0,0.18)!important;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);">İletişime Geç</a>
             </div>
         </div>
     </section>
 
-    <!-- OLD: Marquee -->
-    <div class="marquee">
-        <div class="marquee-track">
+    <!-- Marquee - Clickable Cities -->
+    <div class="marquee" style="position:relative;z-index:2;">
+        <div class="marquee-track" style="pointer-events:auto;">
             <!-- SET A -->
-            <div class="marquee-item"><span data-i18n="dest_istanbul">İstanbul</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_bodrum">Bodrum</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_fethiye">Fethiye</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_kapadokya">Kapadokya</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_cesme">Çeşme</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_kas">Kaş</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_datca">Datça</span> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="<?php echo e(url('/destinasyon/istanbul')); ?>" class="marquee-link"><span data-i18n="dest_istanbul">İstanbul</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="<?php echo e(url('/destinasyon/bodrum')); ?>" class="marquee-link"><span data-i18n="dest_bodrum">Bodrum</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="<?php echo e(url('/destinasyon/fethiye')); ?>" class="marquee-link"><span data-i18n="dest_fethiye">Fethiye</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="<?php echo e(url('/destinasyon/kapadokya')); ?>" class="marquee-link"><span data-i18n="dest_kapadokya">Kapadokya</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="<?php echo e(url('/destinasyon/cesme')); ?>" class="marquee-link"><span data-i18n="dest_cesme">Çeşme</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="<?php echo e(url('/destinasyon/kas')); ?>" class="marquee-link"><span data-i18n="dest_kas">Kaş</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="<?php echo e(url('/destinasyon/datca')); ?>" class="marquee-link"><span data-i18n="dest_datca">Datça</span></a> <span class="marquee-dot">◆</span></div>
             <!-- SET B -->
-            <div class="marquee-item"><span data-i18n="dest_istanbul">İstanbul</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_bodrum">Bodrum</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_fethiye">Fethiye</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_kapadokya">Kapadokya</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_cesme">Çeşme</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_kas">Kaş</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_datca">Datça</span> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="<?php echo e(url('/destinasyon/istanbul')); ?>" class="marquee-link"><span data-i18n="dest_istanbul">İstanbul</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="<?php echo e(url('/destinasyon/bodrum')); ?>" class="marquee-link"><span data-i18n="dest_bodrum">Bodrum</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="<?php echo e(url('/destinasyon/fethiye')); ?>" class="marquee-link"><span data-i18n="dest_fethiye">Fethiye</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="<?php echo e(url('/destinasyon/kapadokya')); ?>" class="marquee-link"><span data-i18n="dest_kapadokya">Kapadokya</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="<?php echo e(url('/destinasyon/cesme')); ?>" class="marquee-link"><span data-i18n="dest_cesme">Çeşme</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="<?php echo e(url('/destinasyon/kas')); ?>" class="marquee-link"><span data-i18n="dest_kas">Kaş</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="<?php echo e(url('/destinasyon/datca')); ?>" class="marquee-link"><span data-i18n="dest_datca">Datça</span></a> <span class="marquee-dot">◆</span></div>
             <!-- SET C -->
-            <div class="marquee-item"><span data-i18n="dest_istanbul">İstanbul</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_bodrum">Bodrum</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_fethiye">Fethiye</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_kapadokya">Kapadokya</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_cesme">Çeşme</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_kas">Kaş</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_datca">Datça</span> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="<?php echo e(url('/destinasyon/istanbul')); ?>" class="marquee-link"><span data-i18n="dest_istanbul">İstanbul</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="<?php echo e(url('/destinasyon/bodrum')); ?>" class="marquee-link"><span data-i18n="dest_bodrum">Bodrum</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="<?php echo e(url('/destinasyon/fethiye')); ?>" class="marquee-link"><span data-i18n="dest_fethiye">Fethiye</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="<?php echo e(url('/destinasyon/kapadokya')); ?>" class="marquee-link"><span data-i18n="dest_kapadokya">Kapadokya</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="<?php echo e(url('/destinasyon/cesme')); ?>" class="marquee-link"><span data-i18n="dest_cesme">Çeşme</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="<?php echo e(url('/destinasyon/kas')); ?>" class="marquee-link"><span data-i18n="dest_kas">Kaş</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="<?php echo e(url('/destinasyon/datca')); ?>" class="marquee-link"><span data-i18n="dest_datca">Datça</span></a> <span class="marquee-dot">◆</span></div>
             <!-- SET D -->
-            <div class="marquee-item"><span data-i18n="dest_istanbul">İstanbul</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_bodrum">Bodrum</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_fethiye">Fethiye</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_kapadokya">Kapadokya</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_cesme">Çeşme</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_kas">Kaş</span> <span class="marquee-dot">◆</span></div>
-            <div class="marquee-item"><span data-i18n="dest_datca">Datça</span> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="<?php echo e(url('/destinasyon/istanbul')); ?>" class="marquee-link"><span data-i18n="dest_istanbul">İstanbul</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="<?php echo e(url('/destinasyon/bodrum')); ?>" class="marquee-link"><span data-i18n="dest_bodrum">Bodrum</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="<?php echo e(url('/destinasyon/fethiye')); ?>" class="marquee-link"><span data-i18n="dest_fethiye">Fethiye</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="<?php echo e(url('/destinasyon/kapadokya')); ?>" class="marquee-link"><span data-i18n="dest_kapadokya">Kapadokya</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="<?php echo e(url('/destinasyon/cesme')); ?>" class="marquee-link"><span data-i18n="dest_cesme">Çeşme</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="<?php echo e(url('/destinasyon/kas')); ?>" class="marquee-link"><span data-i18n="dest_kas">Kaş</span></a> <span class="marquee-dot">◆</span></div>
+            <div class="marquee-item"><a href="<?php echo e(url('/destinasyon/datca')); ?>" class="marquee-link"><span data-i18n="dest_datca">Datça</span></a> <span class="marquee-dot">◆</span></div>
         </div>
     </div>
 

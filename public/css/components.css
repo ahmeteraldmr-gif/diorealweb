@@ -82,23 +82,35 @@
     pointer-events: none;
 }
 
-/* Marquee tıklanabilir şehir linkleri */
-.marquee-link {
-    color: inherit;
-    text-decoration: none;
+/* Marquee tıklanabilir şehir linkleri - Orijinal soluk görünüm, çizgisiz ve mavi renk olmadan */
+.marquee-link,
+.marquee-link:link,
+.marquee-link:visited,
+.marquee-link:hover,
+.marquee-link:active,
+.marquee-link:focus,
+.marquee-link span {
+    color: rgba(255, 255, 255, 0.22) !important;
+    text-decoration: none !important;
+    font-style: italic !important;
+    font-family: var(--font-display) !important;
+    font-size: 1.25rem !important;
+    font-weight: 300 !important;
     cursor: pointer !important;
     pointer-events: auto !important;
     position: relative;
     z-index: 5;
     display: inline-block;
-    padding: 0.2rem 0.1rem;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 .marquee-link:hover,
 .marquee-link:hover span {
-    color: inherit !important;
-    opacity: 1;
-    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5) !important;
+    text-decoration: none !important;
 }
 
 /* ── STATS ── */
