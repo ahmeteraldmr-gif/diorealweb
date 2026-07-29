@@ -153,7 +153,7 @@
                 <span class="lang-text-en">{!! nl2br(e($settings['hero_title_en'] ?? 'Opening doors to exclusive' . "\n" . 'experiences globally.')) !!}</span>
             </h1>
             <div class="hero-cta-group reveal" style="transition-delay: 0.2s;">
-                <a href="https://wa.me/{{ format_whatsapp($settings['whatsapp'] ?? '905320000000') }}" target="_blank" class="btn btn-outline whatsapp-cta" data-i18n="btn_contact">İletişime Geç</a>
+                <a href="https://wa.me/{{ format_whatsapp($settings['whatsapp'] ?? '905320000000') }}" target="_blank" class="btn btn-outline whatsapp-cta" data-i18n="btn_contact" style="background:transparent!important;border:2px solid rgba(255,255,255,0.75)!important;color:#fff!important;box-shadow:0 4px 20px rgba(0,0,0,0.18)!important;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);">İletişime Geç</a>
             </div>
         </div>
     </section>
