@@ -214,8 +214,12 @@
                 const tLang = tab.getAttribute('data-lang') || (tab.dataset ? tab.dataset.lang : null);
                 if (tLang === lang) {
                     tab.classList.add('active');
+                    tab.style.color = '#c4a47c';
+                    tab.style.borderBottomColor = '#c4a47c';
                 } else {
                     tab.classList.remove('active');
+                    tab.style.color = '';
+                    tab.style.borderBottomColor = 'transparent';
                 }
             });
 
@@ -223,26 +227,36 @@
                 const pLang = pane.getAttribute('data-lang') || (pane.dataset ? pane.dataset.lang : null);
                 if (pLang === lang) {
                     pane.classList.add('active');
-                    pane.setAttribute('style', 'display: block !important;');
+                    pane.style.display = 'block';
+                    pane.style.visibility = 'visible';
+                    pane.style.opacity = '1';
                 } else {
                     pane.classList.remove('active');
-                    pane.setAttribute('style', 'display: none !important;');
+                    pane.style.display = 'none';
+                    pane.style.visibility = 'hidden';
+                    pane.style.opacity = '0';
                 }
             });
         };
 
-        // Automatic event delegation for all lang-tab clicks
-        document.addEventListener('click', function(e) {
-            const tabBtn = e.target.closest('.lang-tab');
-            if (tabBtn) {
-                e.preventDefault();
-                e.stopPropagation();
-                const lang = tabBtn.getAttribute('data-lang') || (tabBtn.dataset ? tabBtn.dataset.lang : '');
-                if (lang) {
-                    window.switchLanguageTab(lang);
-                }
-            }
-        });
+        // Attach event listeners for click, touchstart, mousedown on all language tabs
+        function bindLangTabs() {
+            const tabBtns = document.querySelectorAll('.lang-tab');
+            tabBtns.forEach(btn => {
+                ['click', 'touchstart', 'mousedown'].forEach(evtName => {
+                    btn.addEventListener(evtName, function(e) {
+                        if (e.cancelable) e.preventDefault();
+                        e.stopPropagation();
+                        const lang = this.getAttribute('data-lang') || (this.dataset ? this.dataset.lang : '');
+                        if (lang) {
+                            window.switchLanguageTab(lang);
+                        }
+                    }, { passive: false });
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', bindLangTabs);
 
         // ── Client-side file size guard (max 50 MB per file) ──
         const MAX_FILE_MB = 50;

@@ -475,12 +475,16 @@ textarea.form-control {
 }
 
 .lang-pane {
-    display: none !important;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
 }
 
 .lang-pane.active {
     display: block !important;
-    animation: fadeIn 0.4s ease;
+    visibility: visible !important;
+    opacity: 1 !important;
+    animation: fadeIn 0.3s ease;
 }
 
 @keyframes fadeIn {
