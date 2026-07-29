@@ -86,7 +86,6 @@
 .marquee-link {
     color: inherit;
     text-decoration: none;
-    transition: color 0.3s ease;
     cursor: pointer !important;
     pointer-events: auto !important;
     position: relative;
@@ -97,8 +96,9 @@
 
 .marquee-link:hover,
 .marquee-link:hover span {
-    color: var(--accent) !important;
+    color: inherit !important;
     opacity: 1;
+    text-decoration: none;
 }
 
 /* ── STATS ── */
