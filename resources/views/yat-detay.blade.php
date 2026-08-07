@@ -28,9 +28,12 @@
 <!DOCTYPE html>
 <html lang="{{ get_active_locale() }}">
 <head>
-    <!-- Favicon & Touch Icons -->
-    <link rel="icon" type="image/png" href="{{ asset('foto.img/logo_dioreal.png') }}">
-    <link rel="apple-touch-icon" href="{{ asset('foto.img/logo_dioreal.png') }}">
+    <!-- Favicon & Touch Icons for Google Search & Browsers -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" type="image/png" sizes="48x48" href="{{ asset('favicon-48x48.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="base-url" content="{{ url('/') }}">
     <meta charset="UTF-8">
