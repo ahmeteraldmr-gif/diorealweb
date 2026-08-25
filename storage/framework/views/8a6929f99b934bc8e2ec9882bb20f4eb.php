@@ -73,8 +73,8 @@
       "url": "https://dioreal.com",
       "logo": "https://dioreal.com/foto.img/dioreal_beyaz_logo.png",
       "sameAs": [
-        "https://www.instagram.com/dioreal",
-        "https://www.linkedin.com/company/dioreal"
+        "https://www.instagram.com/diorealcom",
+        "https://www.linkedin.com/company/diorealcom/"
       ]
     }
     </script>

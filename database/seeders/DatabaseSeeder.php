@@ -33,8 +33,8 @@ class DatabaseSeeder extends Seeder
         Setting::set('contact_phone', '+90 212 555 0100');
         Setting::set('contact_address_tr', 'İstanbul, Türkiye');
         Setting::set('contact_address_en', 'Istanbul, Turkey');
-        Setting::set('instagram', 'https://instagram.com');
-        Setting::set('linkedin', 'https://linkedin.com');
+        Setting::set('instagram', 'https://www.instagram.com/diorealcom');
+        Setting::set('linkedin', 'https://www.linkedin.com/company/diorealcom/');
         Setting::set('whatsapp', '905449157011');
         Setting::set('footer_copy', '© 2026 Dioreal Dijital. All Rights Reserved.');
         Setting::set('hero_title_tr', "Türkiye ve dünyada seçkin\ndeneyimlerin kapısını aralıyoruz.");
