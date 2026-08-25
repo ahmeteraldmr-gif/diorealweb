@@ -124,15 +124,15 @@
                     <span class="lang-text-en"><?php echo e($settings['about_story_eyebrow_en'] ?? 'Our Story'); ?></span>
                 </span>
                 <h2 class="content-title">
-                    <span class="lang-text-tr"><?php echo $settings['about_story_title_tr'] ?? '15 yıldır lüks <em>seyahatin</em> sesi'; ?></span>
-                    <span class="lang-text-en"><?php echo $settings['about_story_title_en'] ?? 'Voice of luxury <em>travel</em> for 15 years'; ?></span>
+                    <span class="lang-text-tr"><?php echo $settings['about_story_title_tr'] ?? '15 yıldır <em>seyahatin</em> sesi'; ?></span>
+                    <span class="lang-text-en"><?php echo $settings['about_story_title_en'] ?? 'Voice of <em>travel</em> for 15 years'; ?></span>
                 </h2>
                 <div class="lang-text-tr">
-                    <p class="content-body"><?php echo nl2br(e($settings['about_story_p1_tr'] ?? '2010 yılında İstanbul\'da kurulan Dioreal Dijital, Türkiye\'nin öncü lüks seyahat ve yaşam tarzı medya platformuna dönüşmüştür. Seçkin destinasyonlar, premium markalar ve doğru kitleyi bir araya getiren köprü olmak misyonuyla kurulduk.')); ?></p>
+                    <p class="content-body"><?php echo nl2br(e($settings['about_story_p1_tr'] ?? '2010 yılında İstanbul\'da kurulan Dioreal Dijital, Türkiye\'nin öncü seyahat ve yaşam tarzı medya platformuna dönüşmüştür. Seçkin destinasyonlar, seçkin markalar ve doğru kitleyi bir araya getiren köprü olmak misyonuyla kurulduk.')); ?></p>
                     <p class="content-body"><?php echo nl2br(e($settings['about_story_p2_tr'] ?? 'Her destinasyonda bizzat bulunarak, her oteli bizatihi deneyimleyerek ve her markayı özenle seçerek güvenilir bir referans noktası haline geldik.')); ?></p>
                 </div>
                 <div class="lang-text-en">
-                    <p class="content-body"><?php echo nl2br(e($settings['about_story_p1_en'] ?? 'Founded in Istanbul in 2010, Dioreal Digital has evolved into Turkey\'s leading luxury travel and lifestyle media platform.')); ?></p>
+                    <p class="content-body"><?php echo nl2br(e($settings['about_story_p1_en'] ?? 'Founded in Istanbul in 2010, Dioreal Digital has evolved into Turkey\'s leading travel and lifestyle media platform.')); ?></p>
                     <p class="content-body"><?php echo nl2br(e($settings['about_story_p2_en'] ?? 'By personally visiting every destination and experiencing every hotel firsthand, we\'ve become a trusted reference.')); ?></p>
                 </div>
             </div>

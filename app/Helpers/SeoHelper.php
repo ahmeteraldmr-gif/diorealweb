@@ -70,28 +70,28 @@ if (!function_exists('get_page_seo')) {
     {
         $seoMap = [
             'home' => [
-                'title_tr' => 'Dioreal Dijital — Lüks Seyahat, Koleksiyon Oteller & Yaşam Tarzı',
-                'title_en' => 'Dioreal Digital — Luxury Travel, Collection Hotels & Lifestyle',
-                'desc_tr'  => 'Seçkin destinasyonlar, premium markalar ve eşsiz tatil deneyimlerini bir araya getiren bağımsız lüks seyahat platformu.',
-                'desc_en'  => 'An independent luxury travel platform connecting exclusive destinations, boutique hotels, and luxury lifestyle experiences.',
+                'title_tr' => 'DIOREAL — Seyahat, Destinasyonlar ve Yaşam Kültürü',
+                'title_en' => 'DIOREAL — Travel, Destinations & Lifestyle',
+                'desc_tr'  => 'Türkiye’den dünyaya seçilmiş destinasyonları, karakter sahibi otelleri, restoranları, yatları ve seyahat hikâyelerini keşfedin.',
+                'desc_en'  => 'Discover selected destinations, distinctive hotels, restaurants, yachts and travel stories from Türkiye and around the world.',
             ],
             'hakkimizda' => [
-                'title_tr' => 'Hakkımızda — Dioreal Dijital Lüks Seyahat Medyası',
-                'title_en' => 'About Us — Dioreal Digital Luxury Travel Media',
-                'desc_tr'  => 'Dioreal Dijital hakkında daha fazla bilgi edinin: Seçkin destinasyonlar ve premium yaşam tarzını buluşturan yayıncılık vizyonumuz.',
-                'desc_en'  => 'Discover Dioreal Digital: Our publishing vision bridging exclusive destinations, curated hotels, and luxury lifestyle.',
+                'title_tr' => 'Hakkımızda — Dioreal Dijital Seyahat Medyası',
+                'title_en' => 'About Us — Dioreal Digital Travel Media',
+                'desc_tr'  => 'Dioreal Dijital hakkında daha fazla bilgi edinin: Seçkin destinasyonlar ve yaşam kültürünü buluşturan yayıncılık vizyonumuz.',
+                'desc_en'  => 'Discover Dioreal Digital: Our publishing vision bridging exclusive destinations, curated hotels, and lifestyle.',
             ],
             'oteller' => [
-                'title_tr' => 'Lüks Oteller & Butik Konaklama Koleksiyonu — Dioreal Dijital',
-                'title_en' => 'Luxury Hotels & Boutique Stays Collection — Dioreal Digital',
-                'desc_tr'  => 'Türkiye ve dünyanın en seçkin butik otelleri, resortları ve lüks konaklama seçeneklerini keşfedin.',
-                'desc_en'  => 'Explore Turkey and the world’s finest boutique hotels, luxury resorts, and bespoke accommodation choices.',
+                'title_tr' => 'Oteller & Butik Konaklama Koleksiyonu — Dioreal Dijital',
+                'title_en' => 'Hotels & Boutique Stays Collection — Dioreal Digital',
+                'desc_tr'  => 'Türkiye ve dünyanın en seçkin butik otelleri, resortları ve konaklama seçeneklerini keşfedin.',
+                'desc_en'  => 'Explore Turkey and the world’s finest boutique hotels, resorts, and bespoke accommodation choices.',
             ],
             'yatlar' => [
                 'title_tr' => 'Özel Yat Kiralama & Mavi Yolculuk Filosu — Dioreal Dijital',
                 'title_en' => 'Private Yacht Charter & Blue Cruise Fleet — Dioreal Digital',
                 'desc_tr'  => 'Ege ve Akdeniz’in en prestijli motor yatları, guletleri ve yelkenlileri ile kişiye özel mavi yolculuk turları.',
-                'desc_en'  => 'Bespoke blue cruise journeys with the Aegean and Mediterranean’s most prestigious motor yachts and luxury gulets.',
+                'desc_en'  => 'Bespoke blue cruise journeys with the Aegean and Mediterranean’s most prestigious motor yachts and gulets.',
             ],
             'restoranlar' => [
                 'title_tr' => 'Gastronomi & Seçkin Restoran Rehberi — Dioreal Dijital',

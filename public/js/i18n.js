@@ -30,7 +30,7 @@ const DEFAULT_CONTENT = {
     "footer_pages": { "tr": "Sayfalar", "en": "Pages" },
     "footer_serv": { "tr": "Hizmetler", "en": "Services" },
     "footer_contact": { "tr": "İletişim", "en": "Contact" },
-    "footer_p": { "tr": "Seçkin destinasyonları ve premium markaları doğru kitleyle buluşturan medya platformu.", "en": "Media platform connecting exclusive destinations and premium brands with the right audience." },
+    "footer_p": { "tr": "Seçkin destinasyonları ve markaları doğru kitleyle buluşturan medya platformu.", "en": "Media platform connecting exclusive destinations and brands with the right audience." },
     "cont_ist": { "tr": "İstanbul, Türkiye", "en": "Istanbul, Turkey" },
     "cont_ig": { "tr": "Instagram", "en": "Instagram" },
     "cont_li": { "tr": "LinkedIn", "en": "LinkedIn" },
@@ -72,8 +72,8 @@ const DEFAULT_CONTENT = {
     "about_eyebrow": { "tr": "Biz Kimiz", "en": "Who We Are" },
     "about_title": { "tr": "<em>Dioreal</em> Dijital", "en": "<em>Dioreal</em> Digital" },
     "story_eyebrow": { "tr": "Hikayemiz", "en": "Our Story" },
-    "story_title": { "tr": "15 yıldır lüks <em>seyahatin</em> sesi", "en": "Voice of luxury <em>travel</em> for 15 years" },
-    "about_p1": { "tr": "2010 yılında İstanbul'da kurulan Dioreal Dijital, Türkiye'nin öncü lüks seyahat ve yaşam tarzı medya platformuna dönüşmüştür.", "en": "Founded in Istanbul in 2010, Dioreal Digital has evolved into Turkey's leading luxury travel and lifestyle media platform." },
+    "story_title": { "tr": "15 yıldır <em>seyahatin</em> sesi", "en": "Voice of <em>travel</em> for 15 years" },
+    "about_p1": { "tr": "2010 yılında İstanbul'da kurulan Dioreal Dijital, Türkiye'nin öncü seyahat ve yaşam tarzı medya platformuna dönüşmüştür.", "en": "Founded in Istanbul in 2010, Dioreal Digital has evolved into Turkey's leading travel and lifestyle media platform." },
     "about_p2": { "tr": "Her destinasyonda bizzat bulunarak, her oteli bizatihi deneyimleyerek ve her markayı özenle seçerek güvenilir bir referans noktası haline geldik.", "en": "By personally visiting every destination and experiencing every hotel firsthand, we've become a trusted reference." },
     "stats_eyebrow": { "tr": "Rakamlarla", "en": "By Numbers" },
     "stats_title": { "tr": "15 Yılın <em>Mirası</em>", "en": "Legacy of <em>15 Years</em>" },
@@ -86,10 +86,10 @@ const DEFAULT_CONTENT = {
     "mission_p1": { "tr": "Sadece güzel yerler göstermiyoruz. Seyahatin ruhunu, bir destinasyonun gerçek özünü aktarıyoruz.", "en": "We don't just show beautiful places. We convey the true essence of a destination." },
 
     // Oteller
-    "otel_hero_eye": { "tr": "Premium Konaklama", "en": "Premium Accommodation" },
+    "otel_hero_eye": { "tr": "Seçkin Konaklama", "en": "Boutique Accommodation" },
     "otel_exp_eye": { "tr": "Deneyim Tasarımı", "en": "Experience Design" },
     "otel_exp_title": { "tr": "Her konaklamanın bir <em>hikayesi</em> vardır", "en": "Every stay has a <em>story</em>" },
-    "otel_maxx_desc": { "tr": "Eşsiz Ege manzarası ve ultra-lüks tesisleriyle benzersiz bir deneyim sunan 5 yıldızlı resort.", "en": "A 5-star resort offering a unique experience with stunning Aegean views." },
+    "otel_maxx_desc": { "tr": "Eşsiz Ege manzarası ve özel tesisleriyle benzersiz bir deneyim sunan 5 yıldızlı resort.", "en": "A 5-star resort offering a unique experience with stunning Aegean views." },
     "otel_museum_desc": { "tr": "Antik kaya oymaları içinde, tarihin derinliklerinde unutulmaz bir konaklama deneyimi.", "en": "An unforgettable stay deep in history, inside ancient rock carvings." },
 
     // Yatlar
