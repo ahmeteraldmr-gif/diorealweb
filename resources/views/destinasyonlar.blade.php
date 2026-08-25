@@ -69,13 +69,13 @@
             </a>
         </div>
         <ul class="nav-links">
-            <li><a href="{{ route('hakkimizda') }}" data-i18n="nav_about">Hakkımızda</a></li>
-            <li><a href="{{ route('oteller') }}" data-i18n="nav_hotels">Oteller</a></li>
-            <li><a href="{{ route('yatlar') }}" data-i18n="nav_yachts">Yatlar</a></li>
-            <li><a href="{{ route('restoranlar') }}" data-i18n="nav_restaurants">Restoranlar</a></li>
-            <li><a href="{{ route('gezi-rehberi') }}" class="active-page" data-i18n="nav_guide">Gezi Rehberi</a></li>
-            <li><a href="{{ route('etkinlikler') }}" data-i18n="nav_events">Etkinlikler</a></li>
-            <li><a href="{{ route('journal') }}" data-i18n="nav_journal">Journal</a></li>
+            <li><a href="{{ route('hakkimizda') }}" data-i18n="nav_about"><span class="lang-text-tr">Hakkımızda</span><span class="lang-text-en">About</span></a></li>
+            <li><a href="{{ route('oteller') }}" data-i18n="nav_hotels"><span class="lang-text-tr">Oteller</span><span class="lang-text-en">Hotels</span></a></li>
+            <li><a href="{{ route('yatlar') }}" data-i18n="nav_yachts"><span class="lang-text-tr">Yatlar</span><span class="lang-text-en">Yachts</span></a></li>
+            <li><a href="{{ route('restoranlar') }}" data-i18n="nav_restaurants"><span class="lang-text-tr">Restoranlar</span><span class="lang-text-en">Restaurants</span></a></li>
+            <li><a href="{{ route('gezi-rehberi') }}" class="active-page" data-i18n="nav_guide"><span class="lang-text-tr">Gezi Rehberi</span><span class="lang-text-en">Travel Guide</span></a></li>
+            <li><a href="{{ route('etkinlikler') }}" data-i18n="nav_events"><span class="lang-text-tr">Etkinlikler</span><span class="lang-text-en">Events</span></a></li>
+            <li><a href="{{ route('journal') }}" data-i18n="nav_journal"><span class="lang-text-tr">Journal</span><span class="lang-text-en">Journal</span></a></li>
         </ul>
         <div class="nav-right">
             <div class="lang-switch desk-lang">
@@ -90,30 +90,45 @@
     </nav>
     <div class="fs-menu" id="fsMenu">
         <ul class="fs-links">
-            <li><a href="{{ route('hakkimizda') }}" data-i18n="nav_about">Hakkımızda</a></li>
-            <li><a href="{{ route('oteller') }}" data-i18n="nav_hotels">Oteller</a></li>
-            <li><a href="{{ route('yatlar') }}" data-i18n="nav_yachts">Yatlar</a></li>
-            <li><a href="{{ route('restoranlar') }}" data-i18n="nav_restaurants">Restoranlar</a></li>
+            <li><a href="{{ route('hakkimizda') }}" data-i18n="nav_about"><span class="lang-text-tr">Hakkımızda</span><span class="lang-text-en">About</span></a></li>
+            <li><a href="{{ route('oteller') }}" data-i18n="nav_hotels"><span class="lang-text-tr">Oteller</span><span class="lang-text-en">Hotels</span></a></li>
+            <li><a href="{{ route('yatlar') }}" data-i18n="nav_yachts"><span class="lang-text-tr">Yatlar</span><span class="lang-text-en">Yachts</span></a></li>
+            <li><a href="{{ route('restoranlar') }}" data-i18n="nav_restaurants"><span class="lang-text-tr">Restoranlar</span><span class="lang-text-en">Restaurants</span></a></li>
             <div class="fs-divider"></div>
-            <li><a href="{{ route('gezi-rehberi') }}" data-i18n="nav_guide">Gezi Rehberi</a></li>
-            <li><a href="{{ route('etkinlikler') }}" data-i18n="nav_events">Etkinlikler</a></li>
-            <li><a href="{{ route('journal') }}" data-i18n="nav_journal">Journal</a></li>
+            <li><a href="{{ route('gezi-rehberi') }}" data-i18n="nav_guide"><span class="lang-text-tr">Gezi Rehberi</span><span class="lang-text-en">Travel Guide</span></a></li>
+            <li><a href="{{ route('etkinlikler') }}" data-i18n="nav_events"><span class="lang-text-tr">Etkinlikler</span><span class="lang-text-en">Events</span></a></li>
+            <li><a href="{{ route('journal') }}" data-i18n="nav_journal"><span class="lang-text-tr">Journal</span><span class="lang-text-en">Journal</span></a></li>
             <li style="font-size:1.5rem;font-family:var(--font-display);margin-top:2rem;"><span id="lang-tr-fs" class="lang-btn active">TR</span> | <span id="lang-en-fs" class="lang-btn">EN</span></li>
         </ul>
     </div>
 
     <div class="page-hero" style="background-image:url('foto.img/kapadokya.jpg');">
         <div class="page-hero-content">
-            <span class="page-eyebrow" data-i18n="guide_hero_eye">Keşfet & Öğren</span>
-            <h1 class="page-title" data-i18n="nav_guide">Destinasyon<em>lar</em></h1>
+            <span class="page-eyebrow" data-i18n="guide_hero_eye">
+                <span class="lang-text-tr">Keşfet & Öğren</span>
+                <span class="lang-text-en">Discover & Learn</span>
+            </span>
+            <h1 class="page-title" data-i18n="guide_hero_title">
+                <span class="lang-text-tr">Destinasyon<em>lar</em></span>
+                <span class="lang-text-en">Destina<em>tions</em></span>
+            </h1>
         </div>
     </div>
 
     <section class="content-section">
         <div style="text-align:center;max-width:700px;margin:0 auto 5rem;" class="reveal">
-            <span class="content-eyebrow" style="display:block;" data-i18n="guide_exp_eye">Uzman Tavsiyeleri</span>
-            <h2 class="content-title" data-i18n="guide_exp_title">Doğru kararları <em>kolayca</em> verin</h2>
-            <p class="content-body" data-i18n="guide_exp_p1">Deneyimli seyahat editörlerimizin hazırladığı destinasyon rehberleri, pratik ipuçları ve sezonluk önerilerle seyahat planlamanızı kolaylaştırıyoruz.</p>
+            <span class="content-eyebrow" style="display:block;" data-i18n="guide_exp_eye">
+                <span class="lang-text-tr">Uzman Tavsiyeleri</span>
+                <span class="lang-text-en">Expert Insights</span>
+            </span>
+            <h2 class="content-title" data-i18n="guide_exp_title">
+                <span class="lang-text-tr">Doğru kararları <em>kolayca</em> verin</span>
+                <span class="lang-text-en">Make the Right Travel Decisions with <em>Ease</em></span>
+            </h2>
+            <p class="content-body" data-i18n="guide_exp_p1">
+                <span class="lang-text-tr">Deneyimli seyahat editörlerimizin hazırladığı destinasyon rehberleri, pratik ipuçları ve sezonluk önerilerle seyahat planlamanızı kolaylaştırıyoruz.</span>
+                <span class="lang-text-en">Plan your journey with confidence through destination guides, practical insights and seasonal recommendations prepared by our experienced travel editors.</span>
+            </p>
         </div>
         <div class="card-grid">
             @foreach($rehberler as $g)

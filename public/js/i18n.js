@@ -6,7 +6,7 @@ const DEFAULT_CONTENT = {
     "nav_hotels": { "tr": "Oteller", "en": "Hotels" },
     "nav_yachts": { "tr": "Yatlar", "en": "Yachts" },
     "nav_restaurants": { "tr": "Restoranlar", "en": "Restaurants" },
-    "nav_guide": { "tr": "Destinasyonlar", "en": "Destinations" },
+    "nav_guide": { "tr": "Gezi Rehberi", "en": "Travel Guide" },
     "nav_events": { "tr": "Etkinlikler", "en": "Events" },
     "nav_journal": { "tr": "Journal", "en": "Journal" },
     "nav_turkey": { "tr": "Türkiye", "en": "Turkey" },
@@ -103,7 +103,10 @@ const DEFAULT_CONTENT = {
 
     // Gezi Rehberi
     "guide_hero_eye": { "tr": "Keşfet & Öğren", "en": "Discover & Learn" },
-    "guide_exp_eye": { "tr": "Uzman Tavsiyeleri", "en": "Expert Advice" },
+    "guide_hero_title": { "tr": "Destinasyon<em>lar</em>", "en": "Destina<em>tions</em>" },
+    "guide_exp_eye": { "tr": "Uzman Tavsiyeleri", "en": "Expert Insights" },
+    "guide_exp_title": { "tr": "Doğru kararları <em>kolayca</em> verin", "en": "Make the Right Travel Decisions with <em>Ease</em>" },
+    "guide_exp_p1": { "tr": "Deneyimli seyahat editörlerimizin hazırladığı destinasyon rehberleri, pratik ipuçları ve sezonluk önerilerle seyahat planlamanızı kolaylaştırıyoruz.", "en": "Plan your journey with confidence through destination guides, practical insights and seasonal recommendations prepared by our experienced travel editors." },
 
     // Etkinlikler
     "event_hero_eye": { "tr": "Takvim 2026", "en": "Calendar 2026" },
