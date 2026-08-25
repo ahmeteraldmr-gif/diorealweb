@@ -283,4 +283,52 @@ class PageController extends Controller
 
         return view("yat-detay", compact("yat", "canonical", "hreflang_tr", "hreflang_en"));
     }
+
+    public function kvkk()
+    {
+        $seo = [
+            'title_tr' => 'KVKK & GDPR Aydınlatma Metni - Dioreal Dijital',
+            'title_en' => 'KVKK & GDPR Privacy Notice - Dioreal Digital',
+            'desc_tr' => 'Dioreal Dijital Kişisel Verilerin Korunması Kanunu (KVKK) ve GDPR aydınlatma metni.',
+            'desc_en' => 'Dioreal Digital Personal Data Protection Law (KVKK) and GDPR privacy notice.',
+        ];
+        $activeLang = get_active_locale();
+        $canonical = route('kvkk', $activeLang === 'en' ? ['lang' => 'en'] : []);
+        $hreflang_tr = route('kvkk', ['lang' => 'tr']);
+        $hreflang_en = route('kvkk', ['lang' => 'en']);
+
+        return view("kvkk", compact("seo", "canonical", "hreflang_tr", "hreflang_en"));
+    }
+
+    public function privacy()
+    {
+        $seo = [
+            'title_tr' => 'Gizlilik & Çerez Politikası - Dioreal Dijital',
+            'title_en' => 'Privacy & Cookie Policy - Dioreal Digital',
+            'desc_tr' => 'Dioreal Dijital Gizlilik ve Çerez Politikası.',
+            'desc_en' => 'Dioreal Digital Privacy and Cookie Policy.',
+        ];
+        $activeLang = get_active_locale();
+        $canonical = route('privacy', $activeLang === 'en' ? ['lang' => 'en'] : []);
+        $hreflang_tr = route('privacy', ['lang' => 'tr']);
+        $hreflang_en = route('privacy', ['lang' => 'en']);
+
+        return view("privacy", compact("seo", "canonical", "hreflang_tr", "hreflang_en"));
+    }
+
+    public function terms()
+    {
+        $seo = [
+            'title_tr' => 'Kullanım Koşulları - Dioreal Dijital',
+            'title_en' => 'Terms of Use - Dioreal Digital',
+            'desc_tr' => 'Dioreal Dijital Kullanım Koşulları sözleşmesi.',
+            'desc_en' => 'Dioreal Digital Terms of Use agreement.',
+        ];
+        $activeLang = get_active_locale();
+        $canonical = route('terms', $activeLang === 'en' ? ['lang' => 'en'] : []);
+        $hreflang_tr = route('terms', ['lang' => 'tr']);
+        $hreflang_en = route('terms', ['lang' => 'en']);
+
+        return view("terms", compact("seo", "canonical", "hreflang_tr", "hreflang_en"));
+    }
 }

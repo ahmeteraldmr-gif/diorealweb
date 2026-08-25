@@ -55,6 +55,11 @@ Route::get('/journal.html', function() {
     return redirect()->route('journal', [], 301);
 });
 
+// Legal Pages
+Route::get('/kvkk-gdpr', [PageController::class, 'kvkk'])->name('kvkk');
+Route::get('/gizlilik-ve-cerez-politikasi', [PageController::class, 'privacy'])->name('privacy');
+Route::get('/kullanim-kosullari', [PageController::class, 'terms'])->name('terms');
+
 // Detail Pages (Slug-first, ID fallback with 301 redirect to canonical slug)
 Route::get('/otel/{slug_or_id}', [PageController::class, 'otelDetay'])->name('otel.detay');
 Route::get('/restoran/{slug_or_id}', [PageController::class, 'restoranDetay'])->name('restoran.detay');

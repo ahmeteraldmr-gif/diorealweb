@@ -13,6 +13,9 @@
             'gezi-rehberi' => ['freq' => 'daily', 'prio' => '0.9'],
             'etkinlikler' => ['freq' => 'daily', 'prio' => '0.9'],
             'journal' => ['freq' => 'daily', 'prio' => '0.9'],
+            'kvkk' => ['freq' => 'monthly', 'prio' => '0.5'],
+            'privacy' => ['freq' => 'monthly', 'prio' => '0.5'],
+            'terms' => ['freq' => 'monthly', 'prio' => '0.5'],
         ];
     ?>
 

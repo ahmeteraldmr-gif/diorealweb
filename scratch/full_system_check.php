@@ -107,6 +107,15 @@ $viewsToTest = [
     'login' => function() {
         return view('login');
     },
+    'kvkk' => function() {
+        return view('kvkk');
+    },
+    'privacy' => function() {
+        return view('privacy');
+    },
+    'terms' => function() {
+        return view('terms');
+    },
     'sitemap' => function() {
         $hotels = Hotel::all();
         $restaurants = Restaurant::all();

@@ -57,15 +57,15 @@
     <div class="footer-bottom" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
         <span>{{ $settings['footer_copy'] ?? '© 2026 Dioreal Dijital. All Rights Reserved.' }}</span>
         <div class="footer-legal-links" style="display: flex; gap: 1.25rem; font-size: 0.82rem; opacity: 0.85; flex-wrap: wrap;">
-            <a href="javascript:void(0)" onclick="openLegalModal('kvkk')" style="color: inherit; text-decoration: underline;">
+            <a href="{{ route('kvkk') }}" style="color: inherit; text-decoration: underline;">
                 <span class="lang-text-tr">KVKK / GDPR Aydınlatma Metni</span>
                 <span class="lang-text-en">KVKK / GDPR Privacy Notice</span>
             </a>
-            <a href="javascript:void(0)" onclick="openLegalModal('privacy')" style="color: inherit; text-decoration: underline;">
+            <a href="{{ route('privacy') }}" style="color: inherit; text-decoration: underline;">
                 <span class="lang-text-tr">Gizlilik & Çerez Politikası</span>
                 <span class="lang-text-en">Privacy & Cookie Policy</span>
             </a>
-            <a href="javascript:void(0)" onclick="openLegalModal('terms')" style="color: inherit; text-decoration: underline;">
+            <a href="{{ route('terms') }}" style="color: inherit; text-decoration: underline;">
                 <span class="lang-text-tr">Kullanım Koşulları</span>
                 <span class="lang-text-en">Terms of Use</span>
             </a>
