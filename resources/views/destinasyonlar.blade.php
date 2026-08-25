@@ -109,35 +109,6 @@
         </div>
     </div>
 
-    <style>
-        .card-desc-container {
-            max-height: 4.8em; /* Roughly 3 lines of text */
-            overflow: hidden;
-            transition: max-height 0.4s ease;
-            position: relative;
-        }
-        .card-desc-container.expanded {
-            max-height: 1000px;
-        }
-        .read-more-btn {
-            background: none;
-            border: none;
-            color: var(--accent, #c8a96e);
-            font-family: var(--font-body, 'Jost', sans-serif);
-            font-size: 0.8rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            margin-top: 0.5rem;
-            padding: 0;
-            text-decoration: underline;
-            transition: color 0.2s;
-        }
-        .read-more-btn:hover {
-            color: var(--near-black, #1a1816);
-        }
-    </style>
     <section class="content-section">
         <div style="text-align:center;max-width:700px;margin:0 auto 5rem;" class="reveal">
             <span class="content-eyebrow" style="display:block;" data-i18n="guide_exp_eye">Uzman Tavsiyeleri</span>
@@ -146,47 +117,80 @@
         </div>
         <div class="card-grid">
             @foreach($rehberler as $g)
-                <div class="card reveal visible">
-                    <div class="card-img" style="background-image:url('{{ asset($g->img) }}');"></div>
-                    <div class="card-body">
-                        <span class="card-tag lang-text-tr">{{ !empty($g->tag["tr"]) ? $g->tag["tr"] : ($g->tag["en"] ?? "") }}</span>
-                        <span class="card-tag lang-text-en">{{ !empty($g->tag["en"]) ? $g->tag["en"] : ($g->tag["tr"] ?? "") }}</span>
+                @php
+                    $detailUrl = route('rehber.detay', $g->slug_tr ?: ($g->slug_en ?: $g->id));
+                    $tagTr = !empty($g->tag["tr"]) ? $g->tag["tr"] : ($g->tag["en"] ?? "");
+                    $tagEn = !empty($g->tag["en"]) ? $g->tag["en"] : ($g->tag["tr"] ?? "");
+                    $titleTr = !empty($g->title["tr"]) ? $g->title["tr"] : ($g->title["en"] ?? "");
+                    $titleEn = !empty($g->title["en"]) ? $g->title["en"] : ($g->title["tr"] ?? "");
+                    $descRawTr = !empty($g->desc["tr"]) ? $g->desc["tr"] : ($g->desc["en"] ?? "");
+                    $descRawEn = !empty($g->desc["en"]) ? $g->desc["en"] : ($g->desc["tr"] ?? "");
+                    $shortTr = \Illuminate\Support\Str::words(strip_tags($descRawTr), 35, '...');
+                    $shortEn = \Illuminate\Support\Str::words(strip_tags($descRawEn), 35, '...');
+                @endphp
+                <div class="card reveal visible" style="display: flex; flex-direction: column;">
+                    <a href="{{ $detailUrl }}" style="display: block; overflow: hidden; text-decoration: none;">
+                        <div class="card-img" style="background-image:url('{{ asset($g->img) }}');"></div>
+                    </a>
+                    <div class="card-body" style="display: flex; flex-direction: column; flex-grow: 1; padding: 2rem 1.5rem;">
+                        @if($tagTr || $tagEn)
+                            <span class="card-tag lang-text-tr" style="margin-bottom: 0.5rem;">{{ $tagTr }}</span>
+                            <span class="card-tag lang-text-en" style="margin-bottom: 0.5rem;">{{ $tagEn }}</span>
+                        @endif
                         
-                        <h3 class="card-title lang-text-tr">{{ !empty($g->title["tr"]) ? $g->title["tr"] : ($g->title["en"] ?? "") }}</h3>
-                        <h3 class="card-title lang-text-en">{{ !empty($g->title["en"]) ? $g->title["en"] : ($g->title["tr"] ?? "") }}</h3>
+                        <a href="{{ $detailUrl }}" style="text-decoration: none; color: inherit;">
+                            <h3 class="card-title lang-text-tr" style="font-size: 1.5rem; line-height: 1.3; margin-bottom: 0.75rem;">{{ $titleTr }}</h3>
+                            <h3 class="card-title lang-text-en" style="font-size: 1.5rem; line-height: 1.3; margin-bottom: 0.75rem;">{{ $titleEn }}</h3>
+                        </a>
                         
-                        <div class="card-desc-container">
-                            <p class="card-desc lang-text-tr">{{ !empty($g->desc["tr"]) ? $g->desc["tr"] : ($g->desc["en"] ?? "") }}</p>
-                            <p class="card-desc lang-text-en">{{ !empty($g->desc["en"]) ? $g->desc["en"] : ($g->desc["tr"] ?? "") }}</p>
+                        <div style="margin-bottom: 1.5rem; flex-grow: 1;">
+                            <p class="card-desc lang-text-tr" style="color: var(--dark-gray); font-size: 0.9rem; line-height: 1.6; max-height: none; display: block;">{{ $shortTr }}</p>
+                            <p class="card-desc lang-text-en" style="color: var(--dark-gray); font-size: 0.9rem; line-height: 1.6; max-height: none; display: block;">{{ $shortEn }}</p>
                         </div>
-                        <div class="card-btn-wrapper" style="margin-top: 1.25rem;">
-                            <a href="{{ route('rehber.detay', $g->slug_tr ?: ($g->slug_en ?: $g->id)) }}" class="read-more-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
-                                <span class="lang-text-tr">Detayları İncele</span>
-                                <span class="lang-text-en">View Details</span>
-                                <i class="fas fa-chevron-right" style="font-size: 0.75rem;"></i>
+                        
+                        <div class="card-btn-wrapper" style="margin-top: auto; padding-top: 0.5rem;">
+                            <a href="{{ $detailUrl }}" class="btn-guide-explore">
+                                <span class="lang-text-tr">Rehberi İncele</span>
+                                <span class="lang-text-en">View Guide</span>
+                                <i class="fas fa-arrow-right" style="font-size: 0.75rem;"></i>
                             </a>
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
+
+        @if(method_exists($rehberler, 'hasPages') && $rehberler->hasPages())
+            <div class="custom-pagination">
+                {{-- Previous Page Link --}}
+                @if ($rehberler->onFirstPage())
+                    <span class="pagination-btn disabled">&laquo; <span class="lang-text-tr">Önceki</span><span class="lang-text-en">Previous</span></span>
+                @else
+                    <a href="{{ $rehberler->previousPageUrl() }}" class="pagination-btn">&laquo; <span class="lang-text-tr">Önceki</span><span class="lang-text-en">Previous</span></a>
+                @endif
+
+                {{-- Pagination Elements --}}
+                <div class="pagination-numbers">
+                    @foreach ($rehberler->getUrlRange(1, $rehberler->lastPage()) as $page => $url)
+                        @if ($page == $rehberler->currentPage())
+                            <span class="pagination-number active">{{ $page }}</span>
+                        @else
+                            <a href="{{ $url }}" class="pagination-number">{{ $page }}</a>
+                        @endif
+                    @endforeach
+                </div>
+
+                {{-- Next Page Link --}}
+                @if ($rehberler->hasMorePages())
+                    <a href="{{ $rehberler->nextPageUrl() }}" class="pagination-btn"><span class="lang-text-tr">Sonraki</span><span class="lang-text-en">Next</span> &raquo;</a>
+                @else
+                    <span class="pagination-btn disabled"><span class="lang-text-tr">Sonraki</span><span class="lang-text-en">Next</span> &raquo;</span>
+                @endif
+            </div>
+        @endif
     </section>
 
     @include('partials.footer')
-    <script>
-        function toggleReadMore(button) {
-            const container = button.previousElementSibling;
-            if (container.classList.contains('expanded')) {
-                container.classList.remove('expanded');
-                button.querySelector('.lang-text-tr').textContent = 'Devamını Oku';
-                button.querySelector('.lang-text-en').textContent = 'Read More';
-            } else {
-                container.classList.add('expanded');
-                button.querySelector('.lang-text-tr').textContent = 'Kapat';
-                button.querySelector('.lang-text-en').textContent = 'Read Less';
-            }
-        }
-    </script>
     <script src="{{ asset('js/i18n.js') }}?v=2.5.0"></script>
     <script src="{{ asset('js/common.js') }}?v=2.5.0"></script>
     <script src="{{ asset('js/nav.js') }}?v=2.5.0"></script>

@@ -2,9 +2,12 @@
 <html lang="<?php echo e(get_active_locale()); ?>">
 
 <head>
-    <!-- Favicon & Touch Icons -->
-    <link rel="icon" type="image/png" href="<?php echo e(asset('foto.img/logo_dioreal.png')); ?>">
-    <link rel="apple-touch-icon" href="<?php echo e(asset('foto.img/logo_dioreal.png')); ?>">
+    <!-- Favicon & Touch Icons for Google Search & Browsers -->
+    <link rel="icon" type="image/x-icon" href="<?php echo e(asset('favicon.ico')); ?>">
+    <link rel="icon" type="image/png" sizes="48x48" href="<?php echo e(asset('favicon-48x48.png')); ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo e(asset('favicon-32x32.png')); ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo e(asset('favicon-16x16.png')); ?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo e(asset('apple-touch-icon.png')); ?>">
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
     <meta name="base-url" content="<?php echo e(url('/')); ?>">
     <meta charset="UTF-8">

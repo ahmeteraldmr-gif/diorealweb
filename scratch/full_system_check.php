@@ -79,7 +79,7 @@ $viewsToTest = [
         return view('restoran-detay', compact('restoran'));
     },
     'destinasyonlar' => function() {
-        $rehberler = Guide::all();
+        $rehberler = Guide::orderBy('id', 'desc')->paginate(12);
         return view('destinasyonlar', compact('rehberler'));
     },
     'destinasyon-detay' => function() {

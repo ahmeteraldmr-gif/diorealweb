@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="<?php echo e(get_active_locale()); ?>">
 <head>
-    <!-- Favicon & Touch Icons -->
-    <link rel="icon" type="image/png" href="<?php echo e(asset('foto.img/logo_dioreal.png')); ?>">
-    <link rel="apple-touch-icon" href="<?php echo e(asset('foto.img/logo_dioreal.png')); ?>">
+    <!-- Favicon & Touch Icons for Google Search & Browsers -->
+    <link rel="icon" type="image/x-icon" href="<?php echo e(asset('favicon.ico')); ?>">
+    <link rel="icon" type="image/png" sizes="48x48" href="<?php echo e(asset('favicon-48x48.png')); ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo e(asset('favicon-32x32.png')); ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo e(asset('favicon-16x16.png')); ?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo e(asset('apple-touch-icon.png')); ?>">
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
     <meta name="base-url" content="<?php echo e(url('/')); ?>">
     <meta charset="UTF-8">
@@ -107,35 +110,6 @@
         </div>
     </div>
 
-    <style>
-        .card-desc-container {
-            max-height: 4.8em; /* Roughly 3 lines of text */
-            overflow: hidden;
-            transition: max-height 0.4s ease;
-            position: relative;
-        }
-        .card-desc-container.expanded {
-            max-height: 1000px;
-        }
-        .read-more-btn {
-            background: none;
-            border: none;
-            color: var(--accent, #c8a96e);
-            font-family: var(--font-body, 'Jost', sans-serif);
-            font-size: 0.8rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            margin-top: 0.5rem;
-            padding: 0;
-            text-decoration: underline;
-            transition: color 0.2s;
-        }
-        .read-more-btn:hover {
-            color: var(--near-black, #1a1816);
-        }
-    </style>
     <section class="content-section">
         <div style="text-align:center;max-width:700px;margin:0 auto 5rem;" class="reveal">
             <span class="content-eyebrow" style="display:block;" data-i18n="guide_exp_eye">Uzman Tavsiyeleri</span>
@@ -144,47 +118,80 @@
         </div>
         <div class="card-grid">
             <?php $__currentLoopData = $rehberler; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $g): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <div class="card reveal visible">
-                    <div class="card-img" style="background-image:url('<?php echo e(asset($g->img)); ?>');"></div>
-                    <div class="card-body">
-                        <span class="card-tag lang-text-tr"><?php echo e(!empty($g->tag["tr"]) ? $g->tag["tr"] : ($g->tag["en"] ?? "")); ?></span>
-                        <span class="card-tag lang-text-en"><?php echo e(!empty($g->tag["en"]) ? $g->tag["en"] : ($g->tag["tr"] ?? "")); ?></span>
+                <?php
+                    $detailUrl = route('rehber.detay', $g->slug_tr ?: ($g->slug_en ?: $g->id));
+                    $tagTr = !empty($g->tag["tr"]) ? $g->tag["tr"] : ($g->tag["en"] ?? "");
+                    $tagEn = !empty($g->tag["en"]) ? $g->tag["en"] : ($g->tag["tr"] ?? "");
+                    $titleTr = !empty($g->title["tr"]) ? $g->title["tr"] : ($g->title["en"] ?? "");
+                    $titleEn = !empty($g->title["en"]) ? $g->title["en"] : ($g->title["tr"] ?? "");
+                    $descRawTr = !empty($g->desc["tr"]) ? $g->desc["tr"] : ($g->desc["en"] ?? "");
+                    $descRawEn = !empty($g->desc["en"]) ? $g->desc["en"] : ($g->desc["tr"] ?? "");
+                    $shortTr = \Illuminate\Support\Str::words(strip_tags($descRawTr), 35, '...');
+                    $shortEn = \Illuminate\Support\Str::words(strip_tags($descRawEn), 35, '...');
+                ?>
+                <div class="card reveal visible" style="display: flex; flex-direction: column;">
+                    <a href="<?php echo e($detailUrl); ?>" style="display: block; overflow: hidden; text-decoration: none;">
+                        <div class="card-img" style="background-image:url('<?php echo e(asset($g->img)); ?>');"></div>
+                    </a>
+                    <div class="card-body" style="display: flex; flex-direction: column; flex-grow: 1; padding: 2rem 1.5rem;">
+                        <?php if($tagTr || $tagEn): ?>
+                            <span class="card-tag lang-text-tr" style="margin-bottom: 0.5rem;"><?php echo e($tagTr); ?></span>
+                            <span class="card-tag lang-text-en" style="margin-bottom: 0.5rem;"><?php echo e($tagEn); ?></span>
+                        <?php endif; ?>
                         
-                        <h3 class="card-title lang-text-tr"><?php echo e(!empty($g->title["tr"]) ? $g->title["tr"] : ($g->title["en"] ?? "")); ?></h3>
-                        <h3 class="card-title lang-text-en"><?php echo e(!empty($g->title["en"]) ? $g->title["en"] : ($g->title["tr"] ?? "")); ?></h3>
+                        <a href="<?php echo e($detailUrl); ?>" style="text-decoration: none; color: inherit;">
+                            <h3 class="card-title lang-text-tr" style="font-size: 1.5rem; line-height: 1.3; margin-bottom: 0.75rem;"><?php echo e($titleTr); ?></h3>
+                            <h3 class="card-title lang-text-en" style="font-size: 1.5rem; line-height: 1.3; margin-bottom: 0.75rem;"><?php echo e($titleEn); ?></h3>
+                        </a>
                         
-                        <div class="card-desc-container">
-                            <p class="card-desc lang-text-tr"><?php echo e(!empty($g->desc["tr"]) ? $g->desc["tr"] : ($g->desc["en"] ?? "")); ?></p>
-                            <p class="card-desc lang-text-en"><?php echo e(!empty($g->desc["en"]) ? $g->desc["en"] : ($g->desc["tr"] ?? "")); ?></p>
+                        <div style="margin-bottom: 1.5rem; flex-grow: 1;">
+                            <p class="card-desc lang-text-tr" style="color: var(--dark-gray); font-size: 0.9rem; line-height: 1.6; max-height: none; display: block;"><?php echo e($shortTr); ?></p>
+                            <p class="card-desc lang-text-en" style="color: var(--dark-gray); font-size: 0.9rem; line-height: 1.6; max-height: none; display: block;"><?php echo e($shortEn); ?></p>
                         </div>
-                        <div class="card-btn-wrapper" style="margin-top: 1.25rem;">
-                            <a href="<?php echo e(route('rehber.detay', $g->slug_tr ?: ($g->slug_en ?: $g->id))); ?>" class="read-more-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
-                                <span class="lang-text-tr">Detayları İncele</span>
-                                <span class="lang-text-en">View Details</span>
-                                <i class="fas fa-chevron-right" style="font-size: 0.75rem;"></i>
+                        
+                        <div class="card-btn-wrapper" style="margin-top: auto; padding-top: 0.5rem;">
+                            <a href="<?php echo e($detailUrl); ?>" class="btn-guide-explore">
+                                <span class="lang-text-tr">Rehberi İncele</span>
+                                <span class="lang-text-en">View Guide</span>
+                                <i class="fas fa-arrow-right" style="font-size: 0.75rem;"></i>
                             </a>
                         </div>
                     </div>
                 </div>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
+
+        <?php if(method_exists($rehberler, 'hasPages') && $rehberler->hasPages()): ?>
+            <div class="custom-pagination">
+                
+                <?php if($rehberler->onFirstPage()): ?>
+                    <span class="pagination-btn disabled">&laquo; <span class="lang-text-tr">Önceki</span><span class="lang-text-en">Previous</span></span>
+                <?php else: ?>
+                    <a href="<?php echo e($rehberler->previousPageUrl()); ?>" class="pagination-btn">&laquo; <span class="lang-text-tr">Önceki</span><span class="lang-text-en">Previous</span></a>
+                <?php endif; ?>
+
+                
+                <div class="pagination-numbers">
+                    <?php $__currentLoopData = $rehberler->getUrlRange(1, $rehberler->lastPage()); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $page => $url): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php if($page == $rehberler->currentPage()): ?>
+                            <span class="pagination-number active"><?php echo e($page); ?></span>
+                        <?php else: ?>
+                            <a href="<?php echo e($url); ?>" class="pagination-number"><?php echo e($page); ?></a>
+                        <?php endif; ?>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </div>
+
+                
+                <?php if($rehberler->hasMorePages()): ?>
+                    <a href="<?php echo e($rehberler->nextPageUrl()); ?>" class="pagination-btn"><span class="lang-text-tr">Sonraki</span><span class="lang-text-en">Next</span> &raquo;</a>
+                <?php else: ?>
+                    <span class="pagination-btn disabled"><span class="lang-text-tr">Sonraki</span><span class="lang-text-en">Next</span> &raquo;</span>
+                <?php endif; ?>
+            </div>
+        <?php endif; ?>
     </section>
 
     <?php echo $__env->make('partials.footer', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
-    <script>
-        function toggleReadMore(button) {
-            const container = button.previousElementSibling;
-            if (container.classList.contains('expanded')) {
-                container.classList.remove('expanded');
-                button.querySelector('.lang-text-tr').textContent = 'Devamını Oku';
-                button.querySelector('.lang-text-en').textContent = 'Read More';
-            } else {
-                container.classList.add('expanded');
-                button.querySelector('.lang-text-tr').textContent = 'Kapat';
-                button.querySelector('.lang-text-en').textContent = 'Read Less';
-            }
-        }
-    </script>
     <script src="<?php echo e(asset('js/i18n.js')); ?>?v=2.5.0"></script>
     <script src="<?php echo e(asset('js/common.js')); ?>?v=2.5.0"></script>
     <script src="<?php echo e(asset('js/nav.js')); ?>?v=2.5.0"></script>
