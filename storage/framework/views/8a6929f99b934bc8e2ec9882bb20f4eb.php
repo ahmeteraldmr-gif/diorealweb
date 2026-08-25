@@ -215,7 +215,7 @@
         <div class="bt-about-grid" style="display: grid; gap: 2rem; text-align: left;">
             <!-- Trend Otel -->
             <a href="<?php echo e($settings['trend_otel_url'] ?? route('oteller')); ?>" class="bt-about-card" style="aspect-ratio: 3/4; position: relative; overflow: hidden; background: var(--near-black); cursor: pointer; transition: transform 0.4s; text-decoration: none; display: block;">
-                <img src="<?php echo e(asset(!empty($settings['trend_otel_img']) ? $settings['trend_otel_img'] : 'foto.img/about_safari.jpg')); ?>" alt="Trend Otel" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
+                <img src="<?php echo e(asset(!empty($settings['trend_otel_img']) ? $settings['trend_otel_img'] : 'foto.img/about_safari.webp')); ?>" alt="Trend Otel" loading="lazy" width="600" height="800" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: white; pointer-events: none;">
                     <div style="font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem; color: rgba(255,255,255,0.8);">
                         <span class="lang-text-tr">Trend Otel</span>
@@ -233,7 +233,7 @@
             </a>
             <!-- Trend Restoran -->
             <a href="<?php echo e($settings['trend_rest_url'] ?? route('restoran.detay', 'melengec-restaurant')); ?>" class="bt-about-card" style="aspect-ratio: 3/4; position: relative; overflow: hidden; background: var(--near-black); cursor: pointer; transition: transform 0.4s; text-decoration: none; display: block;">
-                <img src="<?php echo e(asset(!empty($settings['trend_rest_img']) ? $settings['trend_rest_img'] : 'foto.img/rest_mikla.jpg')); ?>" alt="Trend Restoran" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
+                <img src="<?php echo e(asset(!empty($settings['trend_rest_img']) ? $settings['trend_rest_img'] : 'foto.img/rest_mikla.webp')); ?>" alt="Trend Restoran" loading="lazy" width="600" height="800" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: white; pointer-events: none;">
                     <div style="font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem; color: rgba(255,255,255,0.8);">
                         <span class="lang-text-tr">Trend Restoran</span>
@@ -251,7 +251,7 @@
             </a>
             <!-- Trend Yat -->
             <a href="<?php echo e($settings['trend_yat_url'] ?? route('yat.detay', 'blue-voyage-yatch')); ?>" class="bt-about-card" style="aspect-ratio: 3/4; position: relative; overflow: hidden; background: var(--near-black); cursor: pointer; transition: transform 0.4s; text-decoration: none; display: block;">
-                <img src="<?php echo e(asset(!empty($settings['trend_yat_img']) ? $settings['trend_yat_img'] : 'foto.img/about_yacht.jpg')); ?>" alt="Trend Yat" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
+                <img src="<?php echo e(asset(!empty($settings['trend_yat_img']) ? $settings['trend_yat_img'] : 'foto.img/about_yacht.webp')); ?>" alt="Trend Yat" loading="lazy" width="600" height="800" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: white; pointer-events: none;">
                     <div style="font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem; color: rgba(255,255,255,0.8);">
                         <span class="lang-text-tr">Trend Yat</span>
@@ -269,7 +269,7 @@
             </a>
             <!-- Trend Beach -->
             <a href="<?php echo e($settings['trend_beach_url'] ?? route('rehber.detay', 'bodrum')); ?>" class="bt-about-card" style="aspect-ratio: 3/4; position: relative; overflow: hidden; background: var(--near-black); cursor: pointer; transition: transform 0.4s; text-decoration: none; display: block;">
-                <img src="<?php echo e(asset(!empty($settings['trend_beach_img']) ? $settings['trend_beach_img'] : 'foto.img/bodrum.jpg')); ?>" alt="Trend Beach" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
+                <img src="<?php echo e(asset(!empty($settings['trend_beach_img']) ? $settings['trend_beach_img'] : 'foto.img/bodrum.webp')); ?>" alt="Trend Beach" loading="lazy" width="600" height="800" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: white; pointer-events: none;">
                     <div style="font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem; color: rgba(255,255,255,0.8);">
                         <span class="lang-text-tr">Trend Beach</span>
@@ -307,7 +307,7 @@
                         <?php $__currentLoopData = $destinations['turkiye']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dest): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <a href="<?php echo e(route('destinasyon.detay', $dest->slug_tr ?: ($dest->slug_en ?: $dest->id))); ?>" class="dest-card-h" style="display: block; text-decoration: none; color: inherit;">
                                 <div class="dest-img-container">
-                                    <div class="dest-img" style="background-image:url('<?php echo e(asset(!empty($dest->img) ? $dest->img : 'foto.img/amalfi.jpg')); ?>'); position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);"></div>
+                                    <div class="dest-img" style="background-image:url('<?php echo e(asset(!empty($dest->img) ? $dest->img : 'foto.img/amalfi.webp')); ?>'); position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);"></div>
                                 </div>
                                 <div class="dest-info-ext">
                                     <div class="dest-region">
@@ -333,7 +333,7 @@
                         <?php $__currentLoopData = $destinations['turkiye']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dest): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <a href="<?php echo e(route('destinasyon.detay', $dest->slug_tr ?: ($dest->slug_en ?: $dest->id))); ?>" class="dest-card-h" style="display: block; text-decoration: none; color: inherit;">
                                 <div class="dest-img-container">
-                                    <div class="dest-img" style="background-image:url('<?php echo e(asset(!empty($dest->img) ? $dest->img : 'foto.img/amalfi.jpg')); ?>'); position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);"></div>
+                                    <div class="dest-img" style="background-image:url('<?php echo e(asset(!empty($dest->img) ? $dest->img : 'foto.img/amalfi.webp')); ?>'); position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);"></div>
                                 </div>
                                 <div class="dest-info-ext">
                                     <div class="dest-region">
@@ -394,7 +394,7 @@
                                 <?php $__currentLoopData = $destinations[$type]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dest): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <a href="<?php echo e(route('destinasyon.detay', $dest->slug_tr ?: ($dest->slug_en ?: $dest->id))); ?>" class="dest-card-h" style="display: block; text-decoration: none; color: inherit;">
                                         <div class="dest-img-container">
-                                            <div class="dest-img" style="background-image:url('<?php echo e(asset(!empty($dest->img) ? $dest->img : 'foto.img/amalfi.jpg')); ?>'); position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);"></div>
+                                            <div class="dest-img" style="background-image:url('<?php echo e(asset(!empty($dest->img) ? $dest->img : 'foto.img/amalfi.webp')); ?>'); position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);"></div>
                                         </div>
                                         <div class="dest-info-ext">
                                             <div class="dest-region">
@@ -420,7 +420,7 @@
                                 <?php $__currentLoopData = $destinations[$type]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dest): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <a href="<?php echo e(route('destinasyon.detay', $dest->slug_tr ?: ($dest->slug_en ?: $dest->id))); ?>" class="dest-card-h" style="display: block; text-decoration: none; color: inherit;">
                                         <div class="dest-img-container">
-                                            <div class="dest-img" style="background-image:url('<?php echo e(asset(!empty($dest->img) ? $dest->img : 'foto.img/amalfi.jpg')); ?>'); position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);"></div>
+                                            <div class="dest-img" style="background-image:url('<?php echo e(asset(!empty($dest->img) ? $dest->img : 'foto.img/amalfi.webp')); ?>'); position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);"></div>
                                         </div>
                                         <div class="dest-info-ext">
                                             <div class="dest-region">
@@ -498,7 +498,7 @@
         <div class="bt-logos-wrapper reveal" id="refsGrid" style="transition-delay: 0.2s;">
             <?php if(isset($settings['brands']) && is_array($settings['brands'])): ?>
                 <?php $__currentLoopData = $settings['brands']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $brand): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <img class="bt-logo-img" src="<?php echo e(asset($brand['img'])); ?>" alt="<?php echo e($brand['name']); ?>" title="<?php echo e($brand['name']); ?>">
+                    <img class="bt-logo-img" src="<?php echo e(asset($brand['img'])); ?>" alt="<?php echo e($brand['name']); ?>" title="<?php echo e($brand['name']); ?>" loading="lazy" width="140" height="60">
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             <?php endif; ?>
         </div>
