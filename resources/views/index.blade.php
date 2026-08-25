@@ -488,7 +488,10 @@
         <div class="section-header reveal" style="justify-content: center; margin-bottom: 2rem;">
             <div>
                 <h2 class="section-title" data-i18n="collab_title" style="font-family: var(--font-display); font-size: 3rem; font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1rem; color: var(--near-black); text-align: center;">MARKA & İŞ BİRLİKLERİ</h2>
-                <p style="color: var(--mid-gray); font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase;">Güvenilir Partnerlerimiz</p>
+                <p style="color: var(--mid-gray); font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase;" data-i18n="collab_sub">
+                    <span class="lang-text-tr">Güvenilir Partnerlerimiz</span>
+                    <span class="lang-text-en">Our Trusted Partners</span>
+                </p>
             </div>
         </div>
         <div class="bt-logos-wrapper reveal" id="refsGrid" style="transition-delay: 0.2s;">

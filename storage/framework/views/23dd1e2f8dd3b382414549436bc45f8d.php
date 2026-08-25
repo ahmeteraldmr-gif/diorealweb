@@ -23,17 +23,17 @@
             </ul>
         </div>
         <div class="footer-col">
-            <h4 data-i18n="footer_serv">Hizmetler</h4>
+            <h4 data-i18n="footer_serv"><span class="lang-text-tr">Hizmetler</span><span class="lang-text-en">Services</span></h4>
             <ul class="footer-links">
-                <li><a href="<?php echo e(route('oteller')); ?>">Balayı Paketleri</a></li>
-                <li><a href="<?php echo e(route('gezi-rehberi')); ?>">Aile Tatilleri</a></li>
-                <li><a href="<?php echo e(route('etkinlikler')); ?>">Macera Turları</a></li>
-                <li><a href="<?php echo e(route('gezi-rehberi')); ?>">Kültür Gezileri</a></li>
-                <li><a href="<?php echo e(route('yatlar')); ?>">Özel Yat Hizmetleri</a></li>
+                <li><a href="<?php echo e(route('oteller')); ?>"><span class="lang-text-tr">Balayı Paketleri</span><span class="lang-text-en">Honeymoon Experiences</span></a></li>
+                <li><a href="<?php echo e(route('gezi-rehberi')); ?>"><span class="lang-text-tr">Aile Tatilleri</span><span class="lang-text-en">Family Travel</span></a></li>
+                <li><a href="<?php echo e(route('etkinlikler')); ?>"><span class="lang-text-tr">Macera Turları</span><span class="lang-text-en">Adventure Travel</span></a></li>
+                <li><a href="<?php echo e(route('gezi-rehberi')); ?>"><span class="lang-text-tr">Kültür Gezileri</span><span class="lang-text-en">Cultural Journeys</span></a></li>
+                <li><a href="<?php echo e(route('yatlar')); ?>"><span class="lang-text-tr">Özel Yat Hizmetleri</span><span class="lang-text-en">Private Yacht Experiences</span></a></li>
             </ul>
         </div>
         <div class="footer-col">
-            <h4 data-i18n="footer_contact">İletişim</h4>
+            <h4 data-i18n="footer_contact"><span class="lang-text-tr">İletişim</span><span class="lang-text-en">Contact</span></h4>
             <ul class="footer-links">
                 <?php if(!empty($settings['contact_email'])): ?>
                     <li><a href="mailto:<?php echo e($settings['contact_email']); ?>"><?php echo e($settings['contact_email']); ?></a></li>
@@ -57,9 +57,18 @@
     <div class="footer-bottom" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
         <span><?php echo e($settings['footer_copy'] ?? '© 2026 Dioreal Dijital. All Rights Reserved.'); ?></span>
         <div class="footer-legal-links" style="display: flex; gap: 1.25rem; font-size: 0.82rem; opacity: 0.85; flex-wrap: wrap;">
-            <a href="javascript:void(0)" onclick="openLegalModal('kvkk')" style="color: inherit; text-decoration: underline;">KVKK / GDPR Aydınlatma Metni</a>
-            <a href="javascript:void(0)" onclick="openLegalModal('privacy')" style="color: inherit; text-decoration: underline;">Gizlilik & Çerez Politikası</a>
-            <a href="javascript:void(0)" onclick="openLegalModal('terms')" style="color: inherit; text-decoration: underline;">Kullanım Koşulları</a>
+            <a href="javascript:void(0)" onclick="openLegalModal('kvkk')" style="color: inherit; text-decoration: underline;">
+                <span class="lang-text-tr">KVKK / GDPR Aydınlatma Metni</span>
+                <span class="lang-text-en">KVKK / GDPR Privacy Notice</span>
+            </a>
+            <a href="javascript:void(0)" onclick="openLegalModal('privacy')" style="color: inherit; text-decoration: underline;">
+                <span class="lang-text-tr">Gizlilik & Çerez Politikası</span>
+                <span class="lang-text-en">Privacy & Cookie Policy</span>
+            </a>
+            <a href="javascript:void(0)" onclick="openLegalModal('terms')" style="color: inherit; text-decoration: underline;">
+                <span class="lang-text-tr">Kullanım Koşulları</span>
+                <span class="lang-text-en">Terms of Use</span>
+            </a>
         </div>
     </div>
 </footer>
@@ -76,24 +85,45 @@
 <script>
     const legalTexts = {
         kvkk: {
-            title: "KVKK & GDPR Aydınlatma Metni",
-            body: "<p><strong>Dioreal Dijital Platformu KVKK Aydınlatma Metni</strong></p><p>6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) uyarınca, kişisel verileriniz veri sorumlusu sıfatıyla Dioreal Dijital tarafından hukuka ve dürüstlük kurallarına uygun olarak işlenmektedir.</p><p>Toplanan kişisel verileriniz, platform hizmetlerinin sunulması, iletişim taleplerinin karşılanması ve kullanıcı deneyiminin iyileştirilmesi amaçlarıyla sınırlı olarak işlenir ve 3. şahıslarla rızanız olmaksızın paylaşılmaz.</p>"
+            title: {
+                tr: "KVKK & GDPR Aydınlatma Metni",
+                en: "KVKK & GDPR Privacy Notice"
+            },
+            body: {
+                tr: "<p><strong>Dioreal Dijital Platformu KVKK Aydınlatma Metni</strong></p><p>6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) uyarınca, kişisel verileriniz veri sorumlusu sıfatıyla Dioreal Dijital tarafından hukuka ve dürüstlük kurallarına uygun olarak işlenmektedir.</p><p>Toplanan kişisel verileriniz, platform hizmetlerinin sunulması, iletişim taleplerinin karşılanması ve kullanıcı deneyiminin iyileştirilmesi amaçlarıyla sınırlı olarak işlenir ve 3. şahıslarla rızanız olmaksızın paylaşılmaz.</p>",
+                en: "<p><strong>Dioreal Digital Platform KVKK & GDPR Privacy Notice</strong></p><p>In accordance with the Personal Data Protection Law (KVKK) and GDPR, your personal data is processed by Dioreal Digital as data controller in accordance with law and honesty rules.</p><p>Your collected personal data is processed exclusively for platform services, responding to inquiries, and enhancing user experience, and will not be shared with 3rd parties without consent.</p>"
+            }
         },
         privacy: {
-            title: "Gizlilik & Çerez Politikası",
-            body: "<p><strong>Dioreal Dijital Gizlilik ve Çerez Politikası</strong></p><p>Sitemizde kullanıcı deneyimini ve sayfa performansını artırmak amacıyla zorunlu ve analitik çerezler kullanılmaktadır. Web sitemizi ziyaret ederek çerez kullanımını kabul etmiş sayılırsınız.</p><p>Toplanan trafik verileri kesinlikle ticari amaca yönelik 3. taraflara satılmaz veya devredilmez.</p>"
+            title: {
+                tr: "Gizlilik & Çerez Politikası",
+                en: "Privacy & Cookie Policy"
+            },
+            body: {
+                tr: "<p><strong>Dioreal Dijital Gizlilik ve Çerez Politikası</strong></p><p>Sitemizde kullanıcı deneyimini ve sayfa performansını artırmak amacıyla zorunlu ve analitik çerezler kullanılmaktadır. Web sitemizi ziyaret ederek çerez kullanımını kabul etmiş sayılırsınız.</p><p>Toplanan trafik verileri kesinlikle ticari amaca yönelik 3. taraflara satılmaz veya devredilmez.</p>",
+                en: "<p><strong>Dioreal Digital Privacy & Cookie Policy</strong></p><p>Essential and analytical cookies are used on our website to enhance user experience and page performance. By visiting our website, you agree to the use of cookies.</p><p>Collected traffic data is never sold or transferred to 3rd parties for commercial purposes.</p>"
+            }
         },
         terms: {
-            title: "Kullanım Koşulları",
-            body: "<p><strong>Dioreal Dijital Kullanım Koşulları</strong></p><p>Dioreal Dijital web sitesinde yer alan tüm görsel, metin, marka ve özgün içeriklerin telif hakları saklıdır. Yazılı izin alınmaksızın kopyalanamaz veya ticari amaçla kullanılamaz.</p><p>Platformda sunulan otel, restoran ve yat içerikleri bilgilendirme amaçlıdır.</p>"
+            title: {
+                tr: "Kullanım Koşulları",
+                en: "Terms of Use"
+            },
+            body: {
+                tr: "<p><strong>Dioreal Dijital Kullanım Koşulları</strong></p><p>Dioreal Dijital web sitesinde yer alan tüm görsel, metin, marka ve özgün içeriklerin telif hakları saklıdır. Yazılı izin alınmaksızın kopyalanamaz veya ticari amaçla kullanılamaz.</p><p>Platformda sunulan otel, restoran ve yat içerikleri bilgilendirme amaçlıdır.</p>",
+                en: "<p><strong>Dioreal Digital Terms of Use</strong></p><p>All visual, text, trademark, and original contents on the Dioreal Digital website are copyrighted. They cannot be copied or used for commercial purposes without written permission.</p><p>Hotel, restaurant, and yacht contents provided on the platform are for informational purposes.</p>"
+            }
         }
     };
 
     function openLegalModal(key) {
         const item = legalTexts[key];
         if (!item) return;
-        document.getElementById('legalModalTitle').innerHTML = item.title;
-        document.getElementById('legalModalBody').innerHTML = item.body;
+        const currentLang = document.documentElement.getAttribute('lang') || 'tr';
+        const titleText = typeof item.title === 'object' ? (item.title[currentLang] || item.title['tr']) : item.title;
+        const bodyText = typeof item.body === 'object' ? (item.body[currentLang] || item.body['tr']) : item.body;
+        document.getElementById('legalModalTitle').innerHTML = titleText;
+        document.getElementById('legalModalBody').innerHTML = bodyText;
         document.getElementById('legalModal').style.display = 'flex';
         document.body.style.overflow = 'hidden';
     }
