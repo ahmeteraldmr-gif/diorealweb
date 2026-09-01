@@ -21,6 +21,20 @@ class PageController extends Controller
             ->first();
 
         if (!$item) {
+            // Fuzzy search fallback by slugified name or title
+            $cleanSlug = \Illuminate\Support\Str::slug($slug_or_id);
+            $all = $modelClass::all();
+            foreach ($all as $candidate) {
+                $trSlug = $candidate->slug_tr ?: make_slug($candidate->name['tr'] ?? ($candidate->title['tr'] ?? ''));
+                $enSlug = $candidate->slug_en ?: make_slug($candidate->name['en'] ?? ($candidate->title['en'] ?? ''));
+                if ($trSlug === $cleanSlug || $enSlug === $cleanSlug || (string)$candidate->id === (string)$slug_or_id) {
+                    $item = $candidate;
+                    break;
+                }
+            }
+        }
+
+        if (!$item) {
             abort(404);
         }
 
