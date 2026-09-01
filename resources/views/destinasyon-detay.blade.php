@@ -301,21 +301,21 @@
             </div>
         @endif
         <div class="page-hero-content" style="position: relative; z-index: 2;">
-            <span class="page-eyebrow lang-text-tr">{{ $destination->region['tr'] ?? '' }}</span>
-            <span class="page-eyebrow lang-text-en">{{ $destination->region['en'] ?? '' }}</span>
-            <h1 class="page-title lang-text-tr">{{ $destination->name['tr'] ?? '' }}</h1>
-            <h1 class="page-title lang-text-en">{{ $destination->name['en'] ?? '' }}</h1>
+            <span class="page-eyebrow lang-text-tr">{{ is_array($destination->region) ? ($destination->region['tr'] ?? '') : $destination->region }}</span>
+            <span class="page-eyebrow lang-text-en">{{ is_array($destination->region) ? ($destination->region['en'] ?? '') : $destination->region }}</span>
+            <h1 class="page-title lang-text-tr">{{ is_array($destination->name) ? ($destination->name['tr'] ?? '') : $destination->name }}</h1>
+            <h1 class="page-title lang-text-en">{{ is_array($destination->name) ? ($destination->name['en'] ?? '') : $destination->name }}</h1>
         </div>
     </div>
 
     <!-- Description Introduction -->
-    @if(!empty($destination->desc['tr']) || !empty($destination->desc['en']))
+    @if(!empty($destination->desc))
         <section class="dest-intro">
             <div class="dest-intro-desc lang-text-tr">
-                {!! nl2br(e(preg_replace('/<br\s*\/?>/i', "\n", $destination->desc['tr'] ?? ''))) !!}
+                {!! nl2br(e(preg_replace('/<br\s*\/?>/i', "\n", is_array($destination->desc) ? ($destination->desc['tr'] ?? '') : $destination->desc))) !!}
             </div>
             <div class="dest-intro-desc lang-text-en">
-                {!! nl2br(e(preg_replace('/<br\s*\/?>/i', "\n", $destination->desc['en'] ?? ''))) !!}
+                {!! nl2br(e(preg_replace('/<br\s*\/?>/i', "\n", is_array($destination->desc) ? ($destination->desc['en'] ?? '') : $destination->desc))) !!}
             </div>
         </section>
     @endif

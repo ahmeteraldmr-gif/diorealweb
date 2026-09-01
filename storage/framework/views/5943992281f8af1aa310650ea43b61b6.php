@@ -303,22 +303,22 @@
             </div>
         <?php endif; ?>
         <div class="page-hero-content" style="position: relative; z-index: 2;">
-            <span class="page-eyebrow lang-text-tr"><?php echo e($destination->region['tr'] ?? ''); ?></span>
-            <span class="page-eyebrow lang-text-en"><?php echo e($destination->region['en'] ?? ''); ?></span>
-            <h1 class="page-title lang-text-tr"><?php echo e($destination->name['tr'] ?? ''); ?></h1>
-            <h1 class="page-title lang-text-en"><?php echo e($destination->name['en'] ?? ''); ?></h1>
+            <span class="page-eyebrow lang-text-tr"><?php echo e(is_array($destination->region) ? ($destination->region['tr'] ?? '') : $destination->region); ?></span>
+            <span class="page-eyebrow lang-text-en"><?php echo e(is_array($destination->region) ? ($destination->region['en'] ?? '') : $destination->region); ?></span>
+            <h1 class="page-title lang-text-tr"><?php echo e(is_array($destination->name) ? ($destination->name['tr'] ?? '') : $destination->name); ?></h1>
+            <h1 class="page-title lang-text-en"><?php echo e(is_array($destination->name) ? ($destination->name['en'] ?? '') : $destination->name); ?></h1>
         </div>
     </div>
 
     <!-- Description Introduction -->
-    <?php if(!empty($destination->desc['tr']) || !empty($destination->desc['en'])): ?>
+    <?php if(!empty($destination->desc)): ?>
         <section class="dest-intro">
             <div class="dest-intro-desc lang-text-tr">
-                <?php echo nl2br(e(preg_replace('/<br\s*\/?>/i', "\n", $destination->desc['tr'] ?? ''))); ?>
+                <?php echo nl2br(e(preg_replace('/<br\s*\/?>/i', "\n", is_array($destination->desc) ? ($destination->desc['tr'] ?? '') : $destination->desc))); ?>
 
             </div>
             <div class="dest-intro-desc lang-text-en">
-                <?php echo nl2br(e(preg_replace('/<br\s*\/?>/i', "\n", $destination->desc['en'] ?? ''))); ?>
+                <?php echo nl2br(e(preg_replace('/<br\s*\/?>/i', "\n", is_array($destination->desc) ? ($destination->desc['en'] ?? '') : $destination->desc))); ?>
 
             </div>
         </section>

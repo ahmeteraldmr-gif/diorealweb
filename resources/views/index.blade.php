@@ -310,12 +310,12 @@
                                 </div>
                                 <div class="dest-info-ext">
                                     <div class="dest-region">
-                                        <span class="lang-tr-text">{{ $dest->region['tr'] ?? '' }}</span>
-                                        <span class="lang-en-text">{{ $dest->region['en'] ?? '' }}</span>
+                                        <span class="lang-tr-text">{{ is_array($dest->region) ? ($dest->region['tr'] ?? '') : $dest->region }}</span>
+                                        <span class="lang-en-text">{{ is_array($dest->region) ? ($dest->region['en'] ?? '') : $dest->region }}</span>
                                     </div>
                                     <div class="dest-name-grid">
-                                        <span class="lang-tr-text">{{ $dest->name['tr'] ?? '' }}</span>
-                                        <span class="lang-en-text">{{ $dest->name['en'] ?? '' }}</span>
+                                        <span class="lang-tr-text">{{ is_array($dest->name) ? ($dest->name['tr'] ?? '') : $dest->name }}</span>
+                                        <span class="lang-en-text">{{ is_array($dest->name) ? ($dest->name['en'] ?? '') : $dest->name }}</span>
                                     </div>
                                     <div class="dest-btn-wrapper" style="margin-top: 0.8rem;">
                                         <span class="btn-dest-explore">
@@ -336,12 +336,12 @@
                                 </div>
                                 <div class="dest-info-ext">
                                     <div class="dest-region">
-                                        <span class="lang-tr-text">{{ $dest->region['tr'] ?? '' }}</span>
-                                        <span class="lang-en-text">{{ $dest->region['en'] ?? '' }}</span>
+                                        <span class="lang-tr-text">{{ is_array($dest->region) ? ($dest->region['tr'] ?? '') : $dest->region }}</span>
+                                        <span class="lang-en-text">{{ is_array($dest->region) ? ($dest->region['en'] ?? '') : $dest->region }}</span>
                                     </div>
                                     <div class="dest-name-grid">
-                                        <span class="lang-tr-text">{{ $dest->name['tr'] ?? '' }}</span>
-                                        <span class="lang-en-text">{{ $dest->name['en'] ?? '' }}</span>
+                                        <span class="lang-tr-text">{{ is_array($dest->name) ? ($dest->name['tr'] ?? '') : $dest->name }}</span>
+                                        <span class="lang-en-text">{{ is_array($dest->name) ? ($dest->name['en'] ?? '') : $dest->name }}</span>
                                     </div>
                                     <div class="dest-btn-wrapper" style="margin-top: 0.8rem;">
                                         <span class="btn-dest-explore">
@@ -397,12 +397,12 @@
                                         </div>
                                         <div class="dest-info-ext">
                                             <div class="dest-region">
-                                                <span class="lang-tr-text">{{ $dest->region['tr'] ?? '' }}</span>
-                                                <span class="lang-en-text">{{ $dest->region['en'] ?? '' }}</span>
+                                                <span class="lang-tr-text">{{ is_array($dest->region) ? ($dest->region['tr'] ?? '') : $dest->region }}</span>
+                                                <span class="lang-en-text">{{ is_array($dest->region) ? ($dest->region['en'] ?? '') : $dest->region }}</span>
                                             </div>
                                             <div class="dest-name-grid">
-                                                <span class="lang-tr-text">{{ $dest->name['tr'] ?? '' }}</span>
-                                                <span class="lang-en-text">{{ $dest->name['en'] ?? '' }}</span>
+                                                <span class="lang-tr-text">{{ is_array($dest->name) ? ($dest->name['tr'] ?? '') : $dest->name }}</span>
+                                                <span class="lang-en-text">{{ is_array($dest->name) ? ($dest->name['en'] ?? '') : $dest->name }}</span>
                                             </div>
                                             <div class="dest-btn-wrapper" style="margin-top: 0.8rem;">
                                                 <span class="btn-dest-explore">
@@ -423,12 +423,12 @@
                                         </div>
                                         <div class="dest-info-ext">
                                             <div class="dest-region">
-                                                <span class="lang-tr-text">{{ $dest->region['tr'] ?? '' }}</span>
-                                                <span class="lang-en-text">{{ $dest->region['en'] ?? '' }}</span>
+                                                <span class="lang-tr-text">{{ is_array($dest->region) ? ($dest->region['tr'] ?? '') : $dest->region }}</span>
+                                                <span class="lang-en-text">{{ is_array($dest->region) ? ($dest->region['en'] ?? '') : $dest->region }}</span>
                                             </div>
                                             <div class="dest-name-grid">
-                                                <span class="lang-tr-text">{{ $dest->name['tr'] ?? '' }}</span>
-                                                <span class="lang-en-text">{{ $dest->name['en'] ?? '' }}</span>
+                                                <span class="lang-tr-text">{{ is_array($dest->name) ? ($dest->name['tr'] ?? '') : $dest->name }}</span>
+                                                <span class="lang-en-text">{{ is_array($dest->name) ? ($dest->name['en'] ?? '') : $dest->name }}</span>
                                             </div>
                                             <div class="dest-btn-wrapper" style="margin-top: 0.8rem;">
                                                 <span class="btn-dest-explore">
