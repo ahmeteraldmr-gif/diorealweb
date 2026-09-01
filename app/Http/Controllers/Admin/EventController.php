@@ -28,7 +28,8 @@ class EventController extends Controller
 
     public function create()
     {
-        return view('admin.events.create');
+        $destinations = \App\Models\Destination::all();
+        return view('admin.events.create', compact('destinations'));
     }
 
     public function store(Request $request)
@@ -61,7 +62,7 @@ class EventController extends Controller
             'video_url' => 'nullable|string',
         ]);
 
-        $data = $request->only(['title', 'tag', 'month', 'loc', 'desc', 'long_desc', 'day', 'video_url']);
+        $data = $request->only(['title', 'tag', 'month', 'loc', 'desc', 'long_desc', 'day', 'video_url', 'destination_id']);
         $data['show_video_on_cover'] = $request->has('show_video_on_cover') ? 1 : 0;
 
         // Auto-fallback EN fields if empty
@@ -110,7 +111,8 @@ class EventController extends Controller
 
     public function edit(Event $event)
     {
-        return view('admin.events.edit', compact('event'));
+        $destinations = \App\Models\Destination::all();
+        return view('admin.events.edit', compact('event', 'destinations'));
     }
 
     public function update(Request $request, Event $event)
@@ -143,7 +145,7 @@ class EventController extends Controller
             'video_url' => 'nullable|string',
         ]);
 
-        $data = $request->only(['title', 'tag', 'month', 'loc', 'desc', 'long_desc', 'day', 'video_url']);
+        $data = $request->only(['title', 'tag', 'month', 'loc', 'desc', 'long_desc', 'day', 'video_url', 'destination_id']);
         $data['show_video_on_cover'] = $request->has('show_video_on_cover') ? 1 : 0;
 
         // Auto-fallback EN fields if empty

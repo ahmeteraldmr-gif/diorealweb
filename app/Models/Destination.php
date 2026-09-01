@@ -29,6 +29,16 @@ class Destination extends Model
         return $this->hasMany(Restaurant::class);
     }
 
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
+
+    public function guides()
+    {
+        return $this->hasMany(Guide::class);
+    }
+
     public function journals()
     {
         return $this->hasMany(Journal::class);

@@ -28,7 +28,8 @@ class GuideController extends Controller
 
     public function create()
     {
-        return view('admin.guides.create');
+        $destinations = \App\Models\Destination::all();
+        return view('admin.guides.create', compact('destinations'));
     }
 
     public function store(Request $request)
@@ -55,7 +56,7 @@ class GuideController extends Controller
             'video_url' => 'nullable|string',
         ]);
 
-        $data = $request->only(['title', 'tag', 'desc', 'video_url']);
+        $data = $request->only(['title', 'tag', 'desc', 'video_url', 'destination_id']);
         $data['show_video_on_cover'] = $request->has('show_video_on_cover') ? 1 : 0;
 
                 
@@ -123,7 +124,8 @@ class GuideController extends Controller
 
     public function edit(Guide $guide)
     {
-        return view('admin.guides.edit', compact('guide'));
+        $destinations = \App\Models\Destination::all();
+        return view('admin.guides.edit', compact('guide', 'destinations'));
     }
 
     public function update(Request $request, Guide $guide)
@@ -150,7 +152,7 @@ class GuideController extends Controller
             'video_url' => 'nullable|string',
         ]);
 
-        $data = $request->only(['title', 'tag', 'desc', 'video_url']);
+        $data = $request->only(['title', 'tag', 'desc', 'video_url', 'destination_id']);
         $data['show_video_on_cover'] = $request->has('show_video_on_cover') ? 1 : 0;
 
                 

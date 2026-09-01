@@ -88,6 +88,19 @@
                 </div>
             </div>
 
+            <!-- Destination Association -->
+            <div style="margin-bottom: 2rem;">
+                <label class="form-label" for="destination_id">Bağlı Olduğu Ana Destinasyon (Örn: Bodrum, İstanbul)</label>
+                <select name="destination_id" id="destination_id" class="form-control">
+                    <option value="">-- Destinasyon Seçin (Opsiyonel) --</option>
+                    @foreach($destinations as $dest)
+                        <option value="{{ $dest->id }}" {{ old('destination_id') == $dest->id ? 'selected' : '' }}>
+                            {{ $dest->name['tr'] ?? $dest->name['en'] ?? ('Destinasyon #' . $dest->id) }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+
             <!-- Video Upload -->
             <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 2rem 0;">
 

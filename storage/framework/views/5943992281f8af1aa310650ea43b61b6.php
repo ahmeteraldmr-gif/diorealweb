@@ -346,9 +346,61 @@
         </section>
     <?php endif; ?>
 
+    <!-- Guides & Regions Section -->
+    <?php if(!empty($guides) && count($guides) > 0): ?>
+        <section class="dest-section alt">
+            <h2 class="dest-section-title">
+                <span class="lang-text-tr">Gezi & Bölge <em>Rehberleri</em></span>
+                <span class="lang-text-en">Travel & Region <em>Guides</em></span>
+            </h2>
+            <div class="inner-container">
+                <div class="card-grid">
+                    <?php $__currentLoopData = $guides; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $guide): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="card reveal visible">
+                            <div class="card-img" style="position: relative; overflow: hidden; background-image: none;">
+                                <?php if($guide->show_video_on_cover && (!empty($guide->video_file) || !empty($guide->video_url))): ?>
+                                    <?php if(!empty($guide->video_file)): ?>
+                                        <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;">
+                                            <source src="<?php echo e(asset($guide->video_file)); ?>" type="video/mp4">
+                                        </video>
+                                    <?php elseif(!empty($guide->video_url)): ?>
+                                        <?php
+                                            $embedUrl = $guide->video_url;
+                                            if (preg_match('/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/', $guide->video_url, $matches)) {
+                                                $embedUrl = 'https://www.youtube.com/embed/' . $matches[1] . '?autoplay=1&mute=1&loop=1&playlist=' . $matches[1] . '&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3';
+                                            }
+                                        ?>
+                                        <iframe src="<?php echo e($embedUrl); ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none; transform: scale(1.35); position: absolute; inset: 0; border: none;"></iframe>
+                                    <?php endif; ?>
+                                <?php else: ?>
+                                    <div style="background-image:url('<?php echo e(asset($guide->img)); ?>'); width: 100%; height: 100%; background-size: cover; background-position: center; position: absolute; inset: 0;"></div>
+                                <?php endif; ?>
+                            </div>
+                            <div class="card-body">
+                                <span class="card-tag lang-text-tr"><?php echo e($guide->tag["tr"] ?? "Gezi Rehberi"); ?></span>
+                                <span class="card-tag lang-text-en"><?php echo e($guide->tag["en"] ?? "Travel Guide"); ?></span>
+                                
+                                <h3 class="card-title lang-text-tr"><?php echo e($guide->title["tr"] ?? ""); ?></h3>
+                                <h3 class="card-title lang-text-en"><?php echo e($guide->title["en"] ?? ""); ?></h3>
+                                
+                                <p class="card-desc lang-text-tr"><?php echo e(\Illuminate\Support\Str::words(strip_tags($guide->desc["tr"] ?? ""), 35)); ?></p>
+                                <p class="card-desc lang-text-en"><?php echo e(\Illuminate\Support\Str::words(strip_tags($guide->desc["en"] ?? ""), 35)); ?></p>
+                                
+                                <a href="<?php echo e(route('rehber.detay', $guide->slug_tr ?: ($guide->slug_en ?: $guide->id))); ?>" class="btn btn-primary" style="margin-top:1rem; padding: 0.5rem 1rem;">
+                                    <span class="lang-text-tr">Rehberi İncele</span>
+                                    <span class="lang-text-en">View Guide</span>
+                                </a>
+                            </div>
+                        </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </div>
+            </div>
+        </section>
+    <?php endif; ?>
+
     <!-- Hotels Section -->
     <?php if(!empty($hotels) && count($hotels) > 0): ?>
-        <section class="dest-section alt">
+        <section class="dest-section">
             <h2 class="dest-section-title">Lüks <em>Oteller</em></h2>
             <div class="inner-container">
                 <div class="card-grid">
@@ -444,9 +496,61 @@
         </section>
     <?php endif; ?>
 
+    <!-- Events Section -->
+    <?php if(!empty($events) && count($events) > 0): ?>
+        <section class="dest-section alt">
+            <h2 class="dest-section-title">
+                <span class="lang-text-tr">Bölgedeki <em>Etkinlikler</em></span>
+                <span class="lang-text-en">Regional <em>Events</em></span>
+            </h2>
+            <div class="inner-container">
+                <div class="card-grid">
+                    <?php $__currentLoopData = $events; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $event): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="card reveal visible">
+                            <div class="card-img" style="position: relative; overflow: hidden; background-image: none;">
+                                <?php if($event->show_video_on_cover && (!empty($event->video_file) || !empty($event->video_url))): ?>
+                                    <?php if(!empty($event->video_file)): ?>
+                                        <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;">
+                                            <source src="<?php echo e(asset($event->video_file)); ?>" type="video/mp4">
+                                        </video>
+                                    <?php elseif(!empty($event->video_url)): ?>
+                                        <?php
+                                            $embedUrl = $event->video_url;
+                                            if (preg_match('/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/', $event->video_url, $matches)) {
+                                                $embedUrl = 'https://www.youtube.com/embed/' . $matches[1] . '?autoplay=1&mute=1&loop=1&playlist=' . $matches[1] . '&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3';
+                                            }
+                                        ?>
+                                        <iframe src="<?php echo e($embedUrl); ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none; transform: scale(1.35); position: absolute; inset: 0; border: none;"></iframe>
+                                    <?php endif; ?>
+                                <?php else: ?>
+                                    <div style="background-image:url('<?php echo e(asset($event->img)); ?>'); width: 100%; height: 100%; background-size: cover; background-position: center; position: absolute; inset: 0;"></div>
+                                <?php endif; ?>
+                            </div>
+                            <div class="card-body">
+                                <span class="card-tag lang-text-tr"><?php echo e($event->tag["tr"] ?? "Etkinlik"); ?></span>
+                                <span class="card-tag lang-text-en"><?php echo e($event->tag["en"] ?? "Event"); ?></span>
+                                
+                                <h3 class="card-title lang-text-tr"><?php echo e($event->title["tr"] ?? ""); ?></h3>
+                                <h3 class="card-title lang-text-en"><?php echo e($event->title["en"] ?? ""); ?></h3>
+                                
+                                <p class="card-desc lang-text-tr"><?php echo e(\Illuminate\Support\Str::words(strip_tags($event->desc["tr"] ?? ""), 25)); ?></p>
+                                <p class="card-desc lang-text-en"><?php echo e(\Illuminate\Support\Str::words(strip_tags($event->desc["en"] ?? ""), 25)); ?></p>
+                                
+                                <a href="<?php echo e(route('etkinlik.detay', $event->slug_tr ?: ($event->slug_en ?: $event->id))); ?>" class="btn btn-primary" style="margin-top:1rem; padding: 0.5rem 1rem;">
+                                    <span class="lang-text-tr">Etkinlik Detayı</span>
+                                    <span class="lang-text-en">Event Details</span>
+                                </a>
+                            </div>
+                        </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </div>
+            </div>
+        </section>
+    <?php endif; ?>
+
     <!-- Journal Section -->
     <?php if(!empty($journals) && count($journals) > 0): ?>
-        <section class="dest-section alt">
+        <section class="dest-section">
             <h2 class="dest-section-title">İlgili <em>Yazılar & Blog</em></h2>
             <div class="inner-container">
                 <div class="card-grid">

@@ -195,18 +195,50 @@ class PageController extends Controller
         if ($result instanceof \Illuminate\Http\RedirectResponse) return $result;
         $destination = $result;
         
-        $hotels = Hotel::where('destination_id', $destination->id)
+        $destNameTr = $destination->name['tr'] ?? '';
+
+        $guides = Guide::where('destination_id', $destination->id)
+            ->when(!empty($destNameTr), function($q) use ($destNameTr) {
+                $q->orWhere('title->tr', 'LIKE', "%{$destNameTr}%")
+                  ->orWhere('tag->tr', 'LIKE', "%{$destNameTr}%");
+            })
+            ->latest()
+            ->get();
+
+        $hotels = Hotel::where(function($query) use ($destination, $destNameTr) {
+                $query->where('destination_id', $destination->id);
+                if (!empty($destNameTr)) {
+                    $query->orWhere('location->tr', 'LIKE', "%{$destNameTr}%")
+                          ->orWhere('name->tr', 'LIKE', "%{$destNameTr}%");
+                }
+            })
             ->where('is_archived', 0)
             ->orderBy('order')
             ->orderBy('id', 'desc')
             ->get();
-            
-        $restaurants = Restaurant::where('destination_id', $destination->id)
+
+        $restaurants = Restaurant::where(function($query) use ($destination, $destNameTr) {
+                $query->where('destination_id', $destination->id);
+                if (!empty($destNameTr)) {
+                    $query->orWhere('location->tr', 'LIKE', "%{$destNameTr}%")
+                          ->orWhere('name->tr', 'LIKE', "%{$destNameTr}%");
+                }
+            })
             ->where('is_archived', 0)
             ->orderBy('order')
             ->orderBy('id', 'desc')
             ->get();
-            
+
+        $events = Event::where(function($query) use ($destination, $destNameTr) {
+                $query->where('destination_id', $destination->id);
+                if (!empty($destNameTr)) {
+                    $query->orWhere('loc->tr', 'LIKE', "%{$destNameTr}%")
+                          ->orWhere('title->tr', 'LIKE', "%{$destNameTr}%");
+                }
+            })
+            ->latest()
+            ->get();
+
         $journals = Journal::where('destination_id', $destination->id)
             ->latest()
             ->get();
@@ -221,7 +253,7 @@ class PageController extends Controller
         $hreflang_tr = route('destinasyon.detay', ['slug_or_id' => $slugTr, 'lang' => 'tr']);
         $hreflang_en = route('destinasyon.detay', ['slug_or_id' => $slugEn, 'lang' => 'en']);
             
-        return view("destinasyon-detay", compact("destination", "hotels", "restaurants", "journals", "canonical", "hreflang_tr", "hreflang_en"));
+        return view("destinasyon-detay", compact("destination", "guides", "hotels", "restaurants", "events", "journals", "canonical", "hreflang_tr", "hreflang_en"));
     }
 
     public function etkinlikDetay($slug_or_id)

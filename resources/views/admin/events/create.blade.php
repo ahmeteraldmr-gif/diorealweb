@@ -105,6 +105,18 @@
                         <small style="color: var(--text-muted); display:block; margin-top:0.25rem;">Etkinliğin yapılacağı günleri sayısal olarak girin.</small>
                     </div>
 
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label class="form-label" for="destination_id">Bağlı Olduğu Ana Destinasyon (Örn: Bodrum, İstanbul)</label>
+                        <select name="destination_id" id="destination_id" class="form-control">
+                            <option value="">-- Destinasyon Seçin (Opsiyonel) --</option>
+                            @foreach($destinations as $dest)
+                                <option value="{{ $dest->id }}" {{ old('destination_id') == $dest->id ? 'selected' : '' }}>
+                                    {{ $dest->name['tr'] ?? $dest->name['en'] ?? ('Destinasyon #' . $dest->id) }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+
                     <div style="margin-top: 2rem;">
                         <label class="form-label" for="video_file">Video Yükle (MP4 / MOV)</label>
                         <input type="file" name="video_file" id="video_file" accept="video/*" class="form-control" style="margin-bottom: 1rem;">
