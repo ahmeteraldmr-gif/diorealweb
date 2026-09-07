@@ -533,8 +533,9 @@ class ExamTracking extends Component
         // Aylık Ortalama Net Skorları (Monthly Average)
         $monthlyAverage = [];
         foreach ($recentExams as $exam) {
-            $monthKey = $exam->exam_date->format('Y-m');
-            $monthLabel = $exam->exam_date->format('M Y');
+            $examDate = is_string($exam->exam_date) ? \Carbon\Carbon::parse($exam->exam_date) : $exam->exam_date;
+            $monthKey = $examDate->format('Y-m');
+            $monthLabel = $examDate->format('M Y');
             if (!isset($monthlyAverage[$monthKey])) {
                 $monthlyAverage[$monthKey] = [
                     'label' => $monthLabel,

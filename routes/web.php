@@ -30,7 +30,7 @@ Route::get('/subscription-expired', function () {
 
     if ($user->isAdmin()) {
         $subscription = $user->subscription;
-        if ($subscription && $subscription->is_active && !($subscription->end_date && $subscription->end_date->isPast())) {
+        if ($subscription && $subscription->is_active && !($subscription->end_date && $subscription->end_date->endOfDay()->isPast())) {
             return redirect('/admin/dashboard');
         }
     } elseif ($user->isStudent()) {
@@ -39,13 +39,13 @@ Route::get('/subscription-expired', function () {
         })->first();
         if ($admin) {
             $adminSub = $admin->subscription;
-            if ($adminSub && $adminSub->is_active && !($adminSub->end_date && $adminSub->end_date->isPast())) {
+            if ($adminSub && $adminSub->is_active && !($adminSub->end_date && $adminSub->end_date->endOfDay()->isPast())) {
                 return redirect('/student/dashboard');
             }
         }
     } elseif ($user->isCoach()) {
         $subscription = $user->subscription;
-        if ($subscription && $subscription->is_active && !($subscription->end_date && $subscription->end_date->isPast())) {
+        if ($subscription && $subscription->is_active && !($subscription->end_date && $subscription->end_date->endOfDay()->isPast())) {
             return redirect('/coach/dashboard');
         }
     }

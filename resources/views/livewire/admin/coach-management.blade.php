@@ -92,7 +92,7 @@
                             <td class="px-6 py-4">
                                 @if($coach->subscription && $coach->subscription->end_date)
                                     @php
-                                        $remaining = \Carbon\Carbon::now()->diffInDays($coach->subscription->end_date, false);
+                                        $remaining = $coach->subscription->remaining_days;
                                         $isExpired = $remaining < 0 || !$coach->subscription->is_active;
                                     @endphp
                                     <div class="text-xs font-semibold {{ $isExpired ? 'text-red-600' : 'text-gray-900' }}">

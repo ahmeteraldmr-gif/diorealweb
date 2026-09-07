@@ -38,4 +38,12 @@ class Subscription extends Model
     {
         return $this->belongsTo(SubscriptionPlan::class, 'subscription_plan_id');
     }
+
+    public function getRemainingDaysAttribute(): int
+    {
+        if (!$this->end_date) {
+            return 0;
+        }
+        return (int) \Carbon\Carbon::today()->diffInDays(\Carbon\Carbon::parse($this->end_date)->startOfDay(), false);
+    }
 }

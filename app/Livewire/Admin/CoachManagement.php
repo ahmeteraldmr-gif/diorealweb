@@ -101,8 +101,8 @@ class CoachManagement extends Component
         $this->validate();
 
         $coachRole = Role::where('name', 'coach')->first();
-        $startDate = Carbon::now();
-        $endDate = Carbon::now()->addDays((int) $this->duration_days);
+        $startDate = Carbon::today();
+        $endDate = Carbon::today()->addDays((int) $this->duration_days);
 
         if ($this->editMode) {
             $coach = User::findOrFail($this->coachId);
@@ -173,8 +173,8 @@ class CoachManagement extends Component
         $this->subscription_plan_id = $coach->subscription?->subscription_plan_id;
         
         if ($coach->subscription && $coach->subscription->end_date) {
-            $remainingDays = Carbon::now()->diffInDays($coach->subscription->end_date, false);
-            $this->duration_days = $remainingDays > 0 ? (int) $remainingDays : 30;
+            $remainingDays = (int) Carbon::today()->diffInDays(Carbon::parse($coach->subscription->end_date)->startOfDay(), false);
+            $this->duration_days = $remainingDays >= 0 ? $remainingDays : 0;
             $this->student_limit = $coach->subscription->student_limit ?? 20;
         } else {
             $this->duration_days = 30;

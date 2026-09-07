@@ -271,7 +271,7 @@
                     </div>
                     <div class="value">
                         {{ $subscription->end_date ? $subscription->end_date->format('d.m.Y') : 'Belirtilmemiş' }}
-                        @if($subscription->end_date && $subscription->end_date->isPast())
+                        @if($subscription->end_date && $subscription->end_date->endOfDay()->isPast())
                             — {{ $subscription->end_date->diffForHumans() }} sona erdi
                         @endif
                     </div>

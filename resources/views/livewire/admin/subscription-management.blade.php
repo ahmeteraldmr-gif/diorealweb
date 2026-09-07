@@ -25,7 +25,7 @@
                 </div>
             </div>
             @php
-                $remainingDays = (int) now()->diffInDays($mySub->end_date, false);
+                $remainingDays = $mySub->remaining_days;
             @endphp
             @if($remainingDays <= 15)
                 <span class="px-3.5 py-1.5 bg-orange-600 text-white text-xs font-bold rounded-full shadow-sm {{ $remainingDays <= 5 ? 'animate-pulse' : '' }}">
@@ -177,8 +177,11 @@
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="text-sm text-gray-900">{{ $subscription->end_date->format('d.m.Y') }}</div>
-                                @if($subscription->is_active && $subscription->end_date->diffInDays(now()) <= 7)
-                                    <span class="text-xs text-orange-600">{{ $subscription->end_date->diffInDays(now()) }} gün kaldı</span>
+                                @php
+                                    $subDaysLeft = $subscription->remaining_days;
+                                @endphp
+                                @if($subscription->is_active && $subDaysLeft <= 7 && $subDaysLeft >= 0)
+                                    <span class="text-xs text-orange-600">{{ $subDaysLeft }} gün kaldı</span>
                                 @endif
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">

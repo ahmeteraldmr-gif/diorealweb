@@ -85,7 +85,7 @@
                 @foreach($criticalAlerts as $alert)
                     @php
                         $rate = ($alert->correct / $alert->total) * 100;
-                        $fieldName = $alert->course->field->name ?? 'Genel';
+                        $fieldName = $alert->course?->field?->name ?? 'Genel';
                     @endphp
                     <div
                         class="bg-white border-2 border-gray-100 rounded-xl p-5 shadow-sm hover:border-red-200 hover:shadow-md transition relative group overflow-hidden">
@@ -100,15 +100,15 @@
                             <div class="flex items-center gap-2 mb-3">
                                 <div
                                     class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center text-red-600 font-bold text-xs">
-                                    {{ substr($alert->student->name, 0, 1) }}
+                                    {{ substr($alert->student?->name ?? 'Ö', 0, 1) }}
                                 </div>
-                                <span class="font-bold text-gray-900 truncate">{{ $alert->student->name }}</span>
+                                <span class="font-bold text-gray-900 truncate">{{ $alert->student?->name ?? 'Öğrenci' }}</span>
                             </div>
 
                             <div class="mb-4">
                                 <span
-                                    class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{{ $alert->course->name }}</span>
-                                <h4 class="font-bold text-gray-800 leading-tight">{{ $alert->topic->name }}</h4>
+                                    class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{{ $alert->course?->name ?? 'Ders' }}</span>
+                                <h4 class="font-bold text-gray-800 leading-tight">{{ $alert->topic?->name ?? 'Konu' }}</h4>
                             </div>
 
                             <div class="mt-auto space-y-3">

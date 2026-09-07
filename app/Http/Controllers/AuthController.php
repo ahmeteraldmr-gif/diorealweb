@@ -35,7 +35,7 @@ class AuthController extends Controller
                 // SuperAdmin için abonelik kontrolünü atla
                 if (!$user->isSuperAdmin()) {
                     $subscription = $user->subscription;
-                    if ($subscription && (!$subscription->is_active || ($subscription->end_date && $subscription->end_date->isPast()))) {
+                    if ($subscription && (!$subscription->is_active || ($subscription->end_date && $subscription->end_date->endOfDay()->isPast()))) {
                         return redirect()->route('subscription.expired');
                     }
                 }
@@ -47,14 +47,14 @@ class AuthController extends Controller
                 })->first();
                 if ($admin) {
                     $adminSub = $admin->subscription;
-                    if ($adminSub && (!$adminSub->is_active || ($adminSub->end_date && $adminSub->end_date->isPast()))) {
+                    if ($adminSub && (!$adminSub->is_active || ($adminSub->end_date && $adminSub->end_date->endOfDay()->isPast()))) {
                         return redirect()->route('subscription.expired');
                     }
                 }
 
                 // Koçun bireysel abonelik kontrolü
                 $subscription = $user->subscription;
-                if ($subscription && (!$subscription->is_active || ($subscription->end_date && $subscription->end_date->isPast()))) {
+                if ($subscription && (!$subscription->is_active || ($subscription->end_date && $subscription->end_date->endOfDay()->isPast()))) {
                     return redirect()->route('subscription.expired');
                 }
                 return redirect()->intended('/coach/dashboard');

@@ -157,7 +157,7 @@ class User extends Authenticatable
         if (!$sub) {
             return false;
         }
-        return !$sub->is_active || ($sub->end_date && $sub->end_date->isPast());
+        return !$sub->is_active || ($sub->end_date && $sub->end_date->endOfDay()->isPast());
     }
 
     public function hasExpiredCoachSubscription(): bool
