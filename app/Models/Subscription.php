@@ -46,4 +46,38 @@ class Subscription extends Model
         }
         return (int) \Carbon\Carbon::today()->diffInDays(\Carbon\Carbon::parse($this->end_date)->startOfDay(), false);
     }
+
+    public function getRemainingTimeTextAttribute(): string
+    {
+        if (!$this->is_active || !$this->end_date) {
+            return '🔴 Süresi Doldu';
+        }
+
+        $endOfDay = \Carbon\Carbon::parse($this->end_date)->endOfDay();
+        $now = \Carbon\Carbon::now();
+
+        if ($endOfDay->isPast()) {
+            return '🔴 Süresi Doldu';
+        }
+
+        $days = (int) \Carbon\Carbon::today()->diffInDays(\Carbon\Carbon::parse($this->end_date)->startOfDay(), false);
+
+        if ($days >= 1) {
+            return '🟢 ' . $days . ' gün kaldı';
+        }
+
+        $diff = $now->diff($endOfDay);
+        $hours = $diff->h;
+        $minutes = $diff->i;
+
+        if ($hours > 0 && $minutes > 0) {
+            return '🟢 ' . $hours . ' saat ' . $minutes . ' dakika kaldı';
+        } elseif ($hours > 0) {
+            return '🟢 ' . $hours . ' saat kaldı';
+        } elseif ($minutes > 0) {
+            return '🟢 ' . $minutes . ' dakika kaldı';
+        } else {
+            return '🟢 Son dakikalar';
+        }
+    }
 }

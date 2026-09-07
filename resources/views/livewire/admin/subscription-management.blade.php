@@ -177,11 +177,8 @@
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="text-sm text-gray-900">{{ $subscription->end_date->format('d.m.Y') }}</div>
-                                @php
-                                    $subDaysLeft = $subscription->remaining_days;
-                                @endphp
-                                @if($subscription->is_active && $subDaysLeft <= 7 && $subDaysLeft >= 0)
-                                    <span class="text-xs text-orange-600">{{ $subDaysLeft }} gün kaldı</span>
+                                @if($subscription->is_active && !$subscription->end_date->endOfDay()->isPast())
+                                    <span class="text-xs font-medium {{ $subscription->remaining_days <= 7 ? 'text-orange-600' : 'text-gray-600' }}">{{ $subscription->remaining_time_text }}</span>
                                 @endif
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">

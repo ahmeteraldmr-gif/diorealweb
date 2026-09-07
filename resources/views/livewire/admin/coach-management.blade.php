@@ -92,11 +92,10 @@
                             <td class="px-6 py-4">
                                 @if($coach->subscription && $coach->subscription->end_date)
                                     @php
-                                        $remaining = $coach->subscription->remaining_days;
-                                        $isExpired = $remaining < 0 || !$coach->subscription->is_active;
+                                        $isExpired = !$coach->subscription->is_active || $coach->subscription->end_date->endOfDay()->isPast();
                                     @endphp
                                     <div class="text-xs font-semibold {{ $isExpired ? 'text-red-600' : 'text-gray-900' }}">
-                                        {{ $isExpired ? '🔴 Süresi Doldu' : '🟢 '.$remaining.' gün kaldı' }}
+                                        {{ $coach->subscription->remaining_time_text }}
                                     </div>
                                     <div class="text-xs text-gray-500 mt-0.5">
                                         Bitiş: {{ $coach->subscription->end_date->format('d.m.Y') }}
