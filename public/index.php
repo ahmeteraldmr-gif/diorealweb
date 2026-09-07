@@ -4,6 +4,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 
 define('LARAVEL_START', microtime(true));
+// OPcache invalidation trigger: 2026-09-07
 
 /**
  * cPanel deployment support:
