@@ -80,4 +80,9 @@ class Subscription extends Model
             return '🟢 Son dakikalar';
         }
     }
+
+    public function remainingTimeText(): string
+    {
+        return $this->getRemainingTimeTextAttribute();
+    }
 }

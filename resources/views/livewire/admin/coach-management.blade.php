@@ -95,7 +95,7 @@
                                         $isExpired = !$coach->subscription->is_active || $coach->subscription->end_date->endOfDay()->isPast();
                                     @endphp
                                     <div class="text-xs font-semibold {{ $isExpired ? 'text-red-600' : 'text-gray-900' }}">
-                                        {{ $coach->subscription->remaining_time_text }}
+                                        {{ $coach->subscription->remainingTimeText() }}
                                     </div>
                                     <div class="text-xs text-gray-500 mt-0.5">
                                         Bitiş: {{ $coach->subscription->end_date->format('d.m.Y') }}

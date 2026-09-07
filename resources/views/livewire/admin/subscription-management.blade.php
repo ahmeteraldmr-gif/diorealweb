@@ -178,7 +178,7 @@
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="text-sm text-gray-900">{{ $subscription->end_date->format('d.m.Y') }}</div>
                                 @if($subscription->is_active && !$subscription->end_date->endOfDay()->isPast())
-                                    <span class="text-xs font-medium {{ $subscription->remaining_days <= 7 ? 'text-orange-600' : 'text-gray-600' }}">{{ $subscription->remaining_time_text }}</span>
+                                    <span class="text-xs font-medium {{ $subscription->remaining_days <= 7 ? 'text-orange-600' : 'text-gray-600' }}">{{ $subscription->remainingTimeText() }}</span>
                                 @endif
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
