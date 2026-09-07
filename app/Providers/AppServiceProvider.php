@@ -20,7 +20,9 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         // Livewire'ın HandleRequests sınıfını override et
-        $this->app->singleton(HandleRequests::class, HandleRequestsWithSubdir::class);
+        if (class_exists(HandleRequests::class) && class_exists(HandleRequestsWithSubdir::class)) {
+            $this->app->singleton(HandleRequests::class, HandleRequestsWithSubdir::class);
+        }
     }
 
     /**
@@ -31,12 +33,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $base = request()->getBaseUrl();
-        $uri = ($base ? rtrim($base, '/') : '') . '/livewire/update';
+        if (class_exists(Livewire::class)) {
+            $base = request()->getBaseUrl();
+            $uri = ($base ? rtrim($base, '/') : '') . '/livewire/update';
 
-        Livewire::setUpdateRoute(function ($handle) use ($uri) {
-            return Route::post($uri, $handle)->middleware('web');
-        });
+            Livewire::setUpdateRoute(function ($handle) use ($uri) {
+                return Route::post($uri, $handle)->middleware('web');
+            });
+        }
     }
 }
 
