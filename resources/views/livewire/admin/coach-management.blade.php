@@ -146,132 +146,161 @@
     </div>
 
     <!-- Modal -->
-    @if($showModal)
-        <div class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50" wire:click="closeModal">
-            <div class="relative top-10 mx-auto p-5 border w-full max-w-2xl shadow-lg rounded-lg bg-white" wire:click.stop>
+    <div
+        x-show="$wire.showModal"
+        x-cloak
+        wire:key="coach-modal"
+        class="fixed inset-0 z-50 overflow-y-auto"
+        style="display: none;"
+    >
+        <!-- Static Backdrop (clicks do NOT close the modal) -->
+        <div class="fixed inset-0 bg-gray-900/60 backdrop-blur-sm transition-opacity"></div>
+
+        <!-- Dialog Container -->
+        <div class="min-h-full flex items-center justify-center p-4 text-center sm:p-0">
+            <div 
+                class="relative bg-white rounded-2xl text-left shadow-2xl transform transition-all sm:my-8 w-full max-w-2xl max-h-[90vh] flex flex-col border border-gray-100"
+                @click.stop
+            >
                 <!-- Modal Header -->
-                <div class="flex items-center justify-between pb-4 border-b">
-                    <h3 class="text-xl font-semibold text-gray-900">
+                <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100 bg-gray-50/50 rounded-t-2xl">
+                    <h3 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+                        <span class="p-2 bg-blue-100 text-blue-700 rounded-lg">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                            </svg>
+                        </span>
                         {{ $editMode ? 'Koç & Abonelik Düzenle' : 'Yeni Koç Ekle' }}
                     </h3>
-                    <button wire:click="closeModal" class="text-gray-400 hover:text-gray-600">
+                    <button type="button" wire:click="closeModal" class="p-1 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-colors">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                         </svg>
                     </button>
                 </div>
 
-                <!-- Modal Body -->
-                <form wire:submit.prevent="save" class="mt-4 space-y-4">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">
-                                İsim Soyisim *
-                            </label>
-                            <input 
-                                type="text" 
-                                wire:model="name" 
-                                class="input-field"
-                                placeholder="Ahmet Yılmaz"
-                            >
-                            @error('name') <span class="text-xs text-red-600">{{ $message }}</span> @enderror
-                        </div>
-
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">
-                                E-posta *
-                            </label>
-                            <input 
-                                type="email" 
-                                wire:model="email" 
-                                class="input-field"
-                                placeholder="ornek@email.com"
-                            >
-                            @error('email') <span class="text-xs text-red-600">{{ $message }}</span> @enderror
-                        </div>
-
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">
-                                Şifre {{ $editMode ? '(Boş bırakılırsa değişmez)' : '*' }}
-                            </label>
-                            <input 
-                                type="password" 
-                                wire:model="password" 
-                                class="input-field"
-                                placeholder="••••••••"
-                            >
-                            @error('password') <span class="text-xs text-red-600">{{ $message }}</span> @enderror
-                        </div>
-
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">
-                                Telefon
-                            </label>
-                            <input 
-                                type="text" 
-                                wire:model="phone" 
-                                class="input-field"
-                                placeholder="0555 555 55 55"
-                            >
-                            @error('phone') <span class="text-xs text-red-600">{{ $message }}</span> @enderror
-                        </div>
-
-                        <!-- ABONELİK SÜRESİ (GÜN) -->
-                        <div class="bg-indigo-50/60 border border-indigo-100 rounded-xl p-3">
-                            <label class="block text-sm font-bold text-indigo-900 mb-1">
-                                📅 Abonelik Süresi (Gün Sayısı) *
-                            </label>
-                            <input 
-                                type="number" 
-                                wire:model="duration_days" 
-                                min="1"
-                                max="3650"
-                                class="input-field bg-white"
-                                placeholder="Örn: 30"
-                            >
-                            <p class="text-[11px] text-indigo-600 mt-1">Giriş anından itibaren tanımlanacak süre (gün)</p>
-                            @error('duration_days') <span class="text-xs text-red-600">{{ $message }}</span> @enderror
-                        </div>
-
-                        <!-- MAKSİMUM ÖĞRENCİ LİMİTİ -->
-                        <div class="bg-blue-50/60 border border-blue-100 rounded-xl p-3">
-                            <label class="block text-sm font-bold text-blue-900 mb-1">
-                                👥 Öğrenci Kontenjanı (Max Limiti)
-                            </label>
-                            <input 
-                                type="number" 
-                                wire:model="student_limit" 
-                                min="1"
-                                class="input-field bg-white"
-                                placeholder="Örn: 20 (Boş ise sınırsız)"
-                            >
-                            <p class="text-[11px] text-blue-600 mt-1">Koçun ekleyebileceği maks öğrenci sayısı</p>
-                            @error('student_limit') <span class="text-xs text-red-600">{{ $message }}</span> @enderror
-                        </div>
-
-                        <div class="md:col-span-2">
-                            <label class="flex items-center">
+                <!-- Modal Body with internal scroll -->
+                <div class="overflow-y-auto px-6 py-5 flex-1">
+                    <form id="coachForm" wire:submit.prevent="save" class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">
+                                    İsim Soyisim *
+                                </label>
                                 <input 
-                                    type="checkbox" 
-                                    wire:model="is_active" 
-                                    class="h-4 w-4 text-accent-blue focus:ring-accent-blue border-gray-300 rounded"
+                                    type="text" 
+                                    wire:model="name" 
+                                    class="input-field"
+                                    placeholder="Ahmet Yılmaz"
                                 >
-                                <span class="ml-2 text-sm text-gray-700 font-medium">Koç Hesabı Aktif Olsun</span>
-                            </label>
-                        </div>
-                    </div>
+                                @error('name') <span class="text-xs text-red-600 font-medium">{{ $message }}</span> @enderror
+                            </div>
 
-                    <!-- Modal Footer -->
-                    <div class="flex items-center justify-end space-x-3 pt-4 border-t">
-                        <button type="button" wire:click="closeModal" class="btn-secondary">
-                            İptal
-                        </button>
-                        <button type="submit" class="btn-primary">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">
+                                    E-posta *
+                                </label>
+                                <input 
+                                    type="email" 
+                                    wire:model="email" 
+                                    class="input-field"
+                                    placeholder="ornek@email.com"
+                                >
+                                @error('email') <span class="text-xs text-red-600 font-medium">{{ $message }}</span> @enderror
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">
+                                    Şifre {{ $editMode ? '(Boş bırakılırsa değişmez)' : '*' }}
+                                </label>
+                                <input 
+                                    type="password" 
+                                    wire:model="password" 
+                                    class="input-field"
+                                    placeholder="••••••••"
+                                >
+                                @error('password') <span class="text-xs text-red-600 font-medium">{{ $message }}</span> @enderror
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">
+                                    Telefon
+                                </label>
+                                <input 
+                                    type="text" 
+                                    wire:model="phone" 
+                                    class="input-field"
+                                    placeholder="0555 555 55 55"
+                                >
+                                @error('phone') <span class="text-xs text-red-600 font-medium">{{ $message }}</span> @enderror
+                            </div>
+
+                            <!-- ABONELİK SÜRESİ (GÜN) -->
+                            <div class="bg-indigo-50/60 border border-indigo-100 rounded-xl p-3">
+                                <label class="block text-sm font-bold text-indigo-900 mb-1">
+                                    📅 Abonelik Süresi (Gün Sayısı) *
+                                </label>
+                                <input 
+                                    type="number" 
+                                    wire:model="duration_days" 
+                                    min="1"
+                                    max="3650"
+                                    class="input-field bg-white"
+                                    placeholder="Örn: 30"
+                                >
+                                <p class="text-[11px] text-indigo-600 mt-1">Giriş anından itibaren tanımlanacak süre (gün)</p>
+                                @error('duration_days') <span class="text-xs text-red-600 font-medium">{{ $message }}</span> @enderror
+                            </div>
+
+                            <!-- MAKSİMUM ÖĞRENCİ LİMİTİ -->
+                            <div class="bg-blue-50/60 border border-blue-100 rounded-xl p-3">
+                                <label class="block text-sm font-bold text-blue-900 mb-1">
+                                    👥 Öğrenci Kontenjanı (Max Limiti)
+                                </label>
+                                <input 
+                                    type="number" 
+                                    wire:model="student_limit" 
+                                    min="1"
+                                    class="input-field bg-white"
+                                    placeholder="Örn: 20 (Boş ise sınırsız)"
+                                >
+                                <p class="text-[11px] text-blue-600 mt-1">Koçun ekleyebileceği maks öğrenci sayısı</p>
+                                @error('student_limit') <span class="text-xs text-red-600 font-medium">{{ $message }}</span> @enderror
+                            </div>
+
+                            <div class="md:col-span-2">
+                                <label class="flex items-center cursor-pointer select-none">
+                                    <input 
+                                        type="checkbox" 
+                                        wire:model="is_active" 
+                                        class="h-4 w-4 text-accent-blue focus:ring-accent-blue border-gray-300 rounded"
+                                    >
+                                    <span class="ml-2 text-sm text-gray-700 font-medium">Koç Hesabı Aktif Olsun</span>
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="flex items-center justify-end space-x-3 px-6 py-4 border-t border-gray-100 bg-gray-50/50 rounded-b-2xl">
+                    <button type="button" wire:click="closeModal" class="btn-secondary">
+                        İptal
+                    </button>
+                    <button type="submit" form="coachForm" class="btn-primary flex items-center gap-2">
+                        <span wire:loading.remove wire:target="save">
                             {{ $editMode ? 'Güncelle' : 'Kaydet' }}
-                        </button>
-                    </div>
-                </form>
+                        </span>
+                        <span wire:loading wire:target="save" class="flex items-center gap-1">
+                            <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            Kaydediliyor...
+                        </span>
+                    </button>
+                </div>
             </div>
         </div>
-    @endif
+    </div>
 </div>
