@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr" class="scroll-smooth">
 <head>
     <meta charset="utf-8">
@@ -234,175 +234,200 @@
             </div>
         </section>
 
-        <!-- ===== NASIL ÇALIŞIR? - Premium Animasyonlu Demo Bölümü ===== -->
-        <section id="nasil-calisir">
+        <!-- ===== NASIL ÇALIŞIR? - Premium Redesign ===== -->
+        <section id="nasil-calisir" class="py-24 relative overflow-hidden">
 
-            <!-- Section Header -->
-            <div class="text-center space-y-3 max-w-3xl mx-auto mb-14">
-                <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-violet-50 text-violet-700 border border-violet-100">
-                    🎬 İnteraktif Demo
-                </span>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900">Nasıl Çalışır?</h2>
-                <p class="text-slate-500 text-sm md:text-base leading-relaxed">Koçluk sürecini dijitalleştiren 4 adımı keşfedin.</p>
+            <!-- Background decoration -->
+            <div class="absolute inset-0 pointer-events-none">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-b from-violet-100/60 to-transparent rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 right-0 w-96 h-96 bg-indigo-100/40 rounded-full blur-3xl"></div>
             </div>
 
-            <!-- Main Demo Container -->
-            <div class="max-w-5xl mx-auto flex flex-col lg:flex-row rounded-3xl overflow-hidden shadow-2xl" style="border: 1px solid rgba(99,102,241,0.25);">
+            <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
 
-                <!-- LEFT: Sidebar -->
-                <div class="lg:w-60 flex-shrink-0 flex flex-row lg:flex-col" style="background:linear-gradient(160deg,#1e1b4b 0%,#0f172a 100%);">
-
-                    <!-- Logo (desktop) -->
-                    <div class="hidden lg:flex items-center gap-2 px-5 py-5 border-b border-white/10">
-                        <div class="w-7 h-7 rounded-lg bg-indigo-600 flex items-center justify-center text-white text-xs font-black">R</div>
-                        <span class="text-white font-black text-sm">rehber<span class="text-indigo-400">koçum</span></span>
-                    </div>
-
-                    <!-- Step buttons -->
-                    <button type="button" id="dsb-0" onclick="demoGoTo(0)" class="demo-sb flex items-center gap-3 px-5 py-4 text-left w-full border-b lg:border-b border-white/10 border-r lg:border-r-0 flex-1 lg:flex-none relative" style="background:rgba(99,102,241,0.18);">
-                        <div class="w-8 h-8 rounded-xl bg-indigo-600 flex items-center justify-center text-white text-sm font-black flex-shrink-0 shadow-lg">1</div>
-                        <div class="hidden lg:block">
-                            <div class="text-white text-xs font-bold">Öğrenci Ekle</div>
-                            <div class="text-white/40 text-[10px]">Sisteme kayıt</div>
-                        </div>
-                        <div class="absolute right-0 top-0 bottom-0 w-0.5 bg-indigo-400 hidden lg:block"></div>
-                    </button>
-
-                    <button type="button" id="dsb-1" onclick="demoGoTo(1)" class="demo-sb flex items-center gap-3 px-5 py-4 text-left w-full border-b lg:border-b border-white/10 border-r lg:border-r-0 flex-1 lg:flex-none relative opacity-50">
-                        <div class="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center text-white/50 text-sm font-black flex-shrink-0">2</div>
-                        <div class="hidden lg:block">
-                            <div class="text-white/60 text-xs font-bold">Ders Ata</div>
-                            <div class="text-white/30 text-[10px]">TYT & AYT konuları</div>
-                        </div>
-                    </button>
-
-                    <button type="button" id="dsb-2" onclick="demoGoTo(2)" class="demo-sb flex items-center gap-3 px-5 py-4 text-left w-full border-b lg:border-b border-white/10 border-r lg:border-r-0 flex-1 lg:flex-none relative opacity-50">
-                        <div class="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center text-white/50 text-sm font-black flex-shrink-0">3</div>
-                        <div class="hidden lg:block">
-                            <div class="text-white/60 text-xs font-bold">Program Kur</div>
-                            <div class="text-white/30 text-[10px]">Haftalık çizelge</div>
-                        </div>
-                    </button>
-
-                    <button type="button" id="dsb-3" onclick="demoGoTo(3)" class="demo-sb flex items-center gap-3 px-5 py-4 text-left w-full border-r lg:border-r-0 flex-1 lg:flex-none relative opacity-50">
-                        <div class="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center text-white/50 text-sm font-black flex-shrink-0">4</div>
-                        <div class="hidden lg:block">
-                            <div class="text-white/60 text-xs font-bold">Gelişimi İzle</div>
-                            <div class="text-white/30 text-[10px]">Analiz & raporlar</div>
-                        </div>
-                    </button>
-
-                    <!-- Play button (desktop) -->
-                    <div class="hidden lg:flex flex-col mt-auto border-t border-white/10 p-4 gap-3">
-                        <button type="button" id="demo-play-btn" onclick="demoTogglePlay()" class="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white transition-all shadow-lg">
-                            <svg id="demo-pi" class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                            <svg id="demo-pai" class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                            <span id="demo-play-lbl">Otomatik Oynat</span>
-                        </button>
-                        <div class="flex justify-center gap-1.5">
-                            <div id="dd0" class="h-1 rounded-full bg-indigo-400 transition-all duration-400" style="width:24px;"></div>
-                            <div id="dd1" class="h-1 rounded-full bg-white/20 transition-all duration-400" style="width:8px;"></div>
-                            <div id="dd2" class="h-1 rounded-full bg-white/20 transition-all duration-400" style="width:8px;"></div>
-                            <div id="dd3" class="h-1 rounded-full bg-white/20 transition-all duration-400" style="width:8px;"></div>
-                        </div>
-                    </div>
-
-                    <!-- Play button (mobile) -->
-                    <div class="lg:hidden flex items-center px-3">
-                        <button type="button" onclick="demoTogglePlay()" class="flex items-center gap-1 py-2 px-3 rounded-xl text-xs font-bold bg-indigo-600 text-white">
-                            <svg id="demo-pi-m" class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                            <svg id="demo-pai-m" class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                        </button>
-                    </div>
+                <!-- Section Header -->
+                <div class="text-center space-y-4 mb-16">
+                    <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-violet-50 text-violet-700 border border-violet-200 shadow-sm">
+                        🎬 İnteraktif Demo
+                    </span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
+                        Nasıl <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-indigo-600">Çalışır?</span>
+                    </h2>
+                    <p class="text-slate-500 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
+                        Koçluk sürecini dijitalleştiren 4 adımı canlı olarak keşfedin.
+                    </p>
                 </div>
 
-                <!-- RIGHT: Screen -->
-                <div class="flex-1 flex flex-col" style="background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 100%);">
+                <!-- Step pills (above demo) -->
+                <div class="flex flex-wrap justify-center gap-3 mb-8">
+                    <button type="button" id="pill-0" onclick="demoGoTo(0)" class="demo-pill flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 bg-indigo-600 text-white shadow-lg shadow-indigo-200">
+                        <span class="w-5 h-5 rounded-full bg-white/25 flex items-center justify-center text-xs font-black">1</span>
+                        Öğrenci Ekle
+                    </button>
+                    <button type="button" id="pill-1" onclick="demoGoTo(1)" class="demo-pill flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 bg-white text-slate-500 border border-slate-200 hover:border-emerald-300 hover:text-emerald-700">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center text-xs font-black">2</span>
+                        Ders Ata
+                    </button>
+                    <button type="button" id="pill-2" onclick="demoGoTo(2)" class="demo-pill flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 bg-white text-slate-500 border border-slate-200 hover:border-purple-300 hover:text-purple-700">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center text-xs font-black">3</span>
+                        Program Kur
+                    </button>
+                    <button type="button" id="pill-3" onclick="demoGoTo(3)" class="demo-pill flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 bg-white text-slate-500 border border-slate-200 hover:border-rose-300 hover:text-rose-700">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center text-xs font-black">4</span>
+                        Gelişimi İzle
+                    </button>
+                </div>
 
-                    <!-- Fake browser bar -->
-                    <div class="flex items-center gap-2 px-5 py-3 border-b border-white/10" style="background:rgba(255,255,255,0.03);">
+                <!-- Main Demo Window -->
+                <div class="rounded-[2rem] overflow-hidden shadow-[0_32px_80px_-12px_rgba(99,102,241,0.3)] border border-white/60" style="background:linear-gradient(145deg,#1e1b4b 0%,#0f172a 60%,#1a0533 100%);">
+
+                    <!-- Browser chrome bar -->
+                    <div class="flex items-center gap-3 px-5 py-3 border-b border-white/10" style="background:rgba(255,255,255,0.04);">
                         <div class="flex gap-1.5">
-                            <div class="w-2.5 h-2.5 rounded-full bg-red-500/70"></div>
-                            <div class="w-2.5 h-2.5 rounded-full bg-yellow-400/70"></div>
-                            <div class="w-2.5 h-2.5 rounded-full bg-emerald-400/70"></div>
+                            <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-400/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-emerald-400/80"></div>
                         </div>
-                        <div class="flex-1 mx-3 bg-white/10 rounded-md px-3 py-1 text-[11px] text-white/40 font-mono" id="demo-url">rehberkoçum.com/koc/ogrenciler</div>
+                        <div class="flex-1 mx-3 bg-white/8 border border-white/10 rounded-lg px-4 py-1.5 text-[11px] text-white/40 font-mono flex items-center gap-2">
+                            <svg class="w-3 h-3 text-white/25 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                            <span id="demo-url">rehberkoçum.com/koc/ogrenciler/yeni</span>
+                        </div>
+                        <div class="hidden sm:flex items-center gap-2 text-white/25 text-[10px] font-medium">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400/60 animate-pulse"></span>
+                            Canlı Demo
+                        </div>
                     </div>
 
-                    <!-- Panels -->
-                    <div class="relative flex-1 min-h-[460px] md:min-h-[380px]">
+                    <!-- Progress bar -->
+                    <div class="h-[3px]" style="background:rgba(255,255,255,0.06);">
+                        <div id="demo-prog" class="h-full rounded-full" style="width:0%;background:linear-gradient(90deg,#818cf8,#a78bfa);transition:none;"></div>
+                    </div>
 
-                        <!-- Panel 0 -->
-                        <div id="dpanel-0" class="absolute inset-0 p-4 sm:p-6 md:p-8 flex flex-col gap-4 overflow-y-auto" style="opacity:1;transition:opacity 0.5s;">
+                    <!-- Panel content area -->
+                    <div class="relative min-h-[460px] md:min-h-[420px] overflow-hidden">
+
+                        <!-- ── Panel 0: Öğrenci Ekle ── -->
+                        <div id="dpanel-0" class="demo-panel absolute inset-0 p-6 md:p-10 flex flex-col gap-5" style="opacity:1;transition:opacity 0.5s,transform 0.5s;transform:translateX(0);">
                             <div class="flex items-center gap-3">
-                                <div class="w-1.5 h-6 rounded-full bg-indigo-500 flex-shrink-0"></div>
-                                <h3 class="text-white font-extrabold text-sm sm:text-base">Yeni Öğrenci Oluştur</h3>
-                                <span class="ml-auto text-white/30 text-[10px] font-mono hidden sm:inline">koç › öğrenciler › yeni</span>
+                                <div class="w-8 h-8 rounded-xl bg-indigo-600 flex items-center justify-center shadow-lg shadow-indigo-900/60">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-white font-extrabold text-base leading-tight">Yeni Öğrenci Oluştur</h3>
+                                    <p class="text-indigo-300/70 text-[11px] font-mono">koç › öğrenciler › yeni</p>
+                                </div>
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-5 gap-4 flex-1">
-                                <div class="md:col-span-3 bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-5 space-y-3">
+                                <!-- Form -->
+                                <div class="md:col-span-3 rounded-2xl border border-white/10 p-5 space-y-3.5" style="background:rgba(255,255,255,0.05);">
                                     <div class="grid grid-cols-2 gap-3">
-                                        <div><div class="text-white/40 text-[10px] uppercase font-bold mb-1">Ad</div><div class="bg-white/10 border border-white/15 rounded-lg h-9 flex items-center px-3"><span class="text-white/70 text-xs">Ali</span><span class="w-0.5 h-4 bg-indigo-400 ml-0.5 animate-pulse"></span></div></div>
-                                        <div><div class="text-white/40 text-[10px] uppercase font-bold mb-1">Soyad</div><div class="bg-white/10 border border-white/15 rounded-lg h-9 flex items-center px-3"><span class="text-white/70 text-xs">Yılmaz</span></div></div>
+                                        <div>
+                                            <div class="text-white/40 text-[10px] uppercase font-bold tracking-widest mb-1.5">Ad</div>
+                                            <div class="bg-white/8 border border-indigo-400/40 rounded-xl h-9 flex items-center px-3 gap-1 ring-1 ring-indigo-500/40">
+                                                <span class="text-white/80 text-xs">Ali</span>
+                                                <span class="w-px h-4 bg-indigo-400 animate-pulse ml-0.5"></span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="text-white/40 text-[10px] uppercase font-bold tracking-widest mb-1.5">Soyad</div>
+                                            <div class="bg-white/8 border border-white/10 rounded-xl h-9 flex items-center px-3">
+                                                <span class="text-white/80 text-xs">Yılmaz</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div><div class="text-white/40 text-[10px] uppercase font-bold mb-1">E-posta</div><div class="bg-white/10 border border-white/15 rounded-lg h-9 flex items-center px-3"><span class="text-white/70 text-xs truncate">ali.yilmaz@gmail.com</span></div></div>
+                                    <div>
+                                        <div class="text-white/40 text-[10px] uppercase font-bold tracking-widest mb-1.5">E-posta</div>
+                                        <div class="bg-white/8 border border-white/10 rounded-xl h-9 flex items-center px-3">
+                                            <span class="text-white/70 text-xs truncate">ali.yilmaz@gmail.com</span>
+                                        </div>
+                                    </div>
                                     <div class="grid grid-cols-2 gap-3">
-                                        <div><div class="text-white/40 text-[10px] uppercase font-bold mb-1">Şifre</div><div class="bg-white/10 border border-white/15 rounded-lg h-9 flex items-center px-3"><span class="text-white/70 text-xs">••••••••</span></div></div>
-                                        <div><div class="text-white/40 text-[10px] uppercase font-bold mb-1">Sınıf</div><div class="bg-white/10 border border-white/15 rounded-lg h-9 flex items-center px-3"><span class="text-white/70 text-xs">12. Sınıf</span></div></div>
+                                        <div>
+                                            <div class="text-white/40 text-[10px] uppercase font-bold tracking-widest mb-1.5">Şifre</div>
+                                            <div class="bg-white/8 border border-white/10 rounded-xl h-9 flex items-center px-3">
+                                                <span class="text-white/60 text-xs tracking-widest">••••••••</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="text-white/40 text-[10px] uppercase font-bold tracking-widest mb-1.5">Sınıf</div>
+                                            <div class="bg-white/8 border border-white/10 rounded-xl h-9 flex items-center px-3">
+                                                <span class="text-white/70 text-xs">12. Sınıf</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="h-10 bg-indigo-600 rounded-xl flex items-center justify-center gap-2 text-white text-xs font-extrabold shadow-lg shadow-indigo-900/50 mt-2">
+                                    <button class="w-full h-10 rounded-xl flex items-center justify-center gap-2 text-white text-xs font-extrabold shadow-xl shadow-indigo-900/50 mt-1 transition-transform hover:scale-[1.02]" style="background:linear-gradient(135deg,#4f46e5,#7c3aed);">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
                                         Öğrenci Oluştur
-                                    </div>
+                                    </button>
                                 </div>
-                                <div class="md:col-span-2 space-y-2">
-                                    <div class="text-white/40 text-[10px] uppercase font-bold tracking-wider mb-2">Kayıtlı Öğrenciler</div>
-                                    <div class="bg-indigo-500/20 border border-indigo-400/40 rounded-xl p-3 flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-white font-black text-xs">AY</div>
-                                        <div><div class="text-white text-xs font-semibold">Ali Yılmaz</div><div class="text-indigo-300 text-[10px]">Yeni eklendi ✓</div></div>
-                                        <div class="ml-auto w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
+                                <!-- Student list -->
+                                <div class="md:col-span-2 space-y-2.5">
+                                    <div class="text-white/40 text-[10px] uppercase font-bold tracking-widest">Kayıtlı Öğrenciler</div>
+                                    <div class="rounded-xl p-3 flex items-center gap-3 border border-indigo-400/50" style="background:rgba(99,102,241,0.2);">
+                                        <div class="w-9 h-9 rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center text-white font-black text-xs shadow-lg">AY</div>
+                                        <div class="flex-1 min-w-0">
+                                            <div class="text-white text-xs font-bold">Ali Yılmaz</div>
+                                            <div class="text-indigo-300 text-[10px] flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>Yeni eklendi ✓</div>
+                                        </div>
                                     </div>
-                                    <div class="bg-white/5 border border-white/10 rounded-xl p-3 flex items-center gap-3 opacity-60">
-                                        <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-white font-black text-xs">ZK</div>
+                                    <div class="rounded-xl p-3 flex items-center gap-3 border border-white/8 opacity-60" style="background:rgba(255,255,255,0.04);">
+                                        <div class="w-9 h-9 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-white font-black text-xs">ZK</div>
                                         <div><div class="text-white text-xs font-semibold">Zeynep Kara</div><div class="text-white/30 text-[10px]">aktif öğrenci</div></div>
                                     </div>
-                                    <div class="bg-white/5 border border-white/10 rounded-xl p-3 flex items-center gap-3 opacity-40">
-                                        <div class="w-8 h-8 rounded-full bg-emerald-600 flex items-center justify-center text-white font-black text-xs">MB</div>
+                                    <div class="rounded-xl p-3 flex items-center gap-3 border border-white/8 opacity-35" style="background:rgba(255,255,255,0.04);">
+                                        <div class="w-9 h-9 rounded-full bg-gradient-to-br from-emerald-600 to-teal-600 flex items-center justify-center text-white font-black text-xs">MB</div>
                                         <div><div class="text-white text-xs font-semibold">Mert Bulut</div><div class="text-white/30 text-[10px]">aktif öğrenci</div></div>
+                                    </div>
+                                    <div class="rounded-xl px-3 py-2 flex items-center gap-2 border border-dashed border-white/15">
+                                        <svg class="w-3.5 h-3.5 text-white/25" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                                        <span class="text-white/25 text-[10px]">Yeni öğrenci ekle...</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Panel 1 -->
-                        <div id="dpanel-1" class="absolute inset-0 p-4 sm:p-6 md:p-8 flex flex-col gap-4 overflow-y-auto" style="opacity:0;transition:opacity 0.5s;pointer-events:none;">
+                        <!-- ── Panel 1: Ders Ata ── -->
+                        <div id="dpanel-1" class="demo-panel absolute inset-0 p-6 md:p-10 flex flex-col gap-5" style="opacity:0;transition:opacity 0.5s,transform 0.5s;transform:translateX(60px);pointer-events:none;">
                             <div class="flex items-center gap-3">
-                                <div class="w-1.5 h-6 rounded-full bg-emerald-500 flex-shrink-0"></div>
-                                <h3 class="text-white font-extrabold text-sm sm:text-base">Ders & Konu Ataması</h3>
-                                <span class="ml-auto text-white/30 text-[10px] font-mono hidden sm:inline">koç › Ali Yılmaz › dersler</span>
+                                <div class="w-8 h-8 rounded-xl bg-emerald-600 flex items-center justify-center shadow-lg shadow-emerald-900/60">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-white font-extrabold text-base leading-tight">Ders & Konu Ataması</h3>
+                                    <p class="text-emerald-300/70 text-[11px] font-mono">koç › Ali Yılmaz › dersler</p>
+                                </div>
+                                <span class="ml-auto hidden sm:flex items-center gap-1.5 text-emerald-300 text-[10px] font-bold bg-emerald-500/15 border border-emerald-500/30 px-2.5 py-1 rounded-full">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>Ali Yılmaz
+                                </span>
                             </div>
                             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 flex-1">
-                                <div class="bg-emerald-900/40 border border-emerald-500/30 rounded-2xl p-4">
-                                    <div class="flex items-center justify-between mb-3"><span class="text-emerald-400 text-[10px] font-black uppercase tracking-wider">TYT</span><span class="text-emerald-400 text-[10px] bg-emerald-400/20 px-1.5 py-0.5 rounded-full">4/5</span></div>
+                                <div class="rounded-2xl p-4 border border-emerald-500/30" style="background:rgba(16,185,129,0.1);">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <span class="text-emerald-400 text-[10px] font-black uppercase tracking-widest">TYT</span>
+                                        <span class="text-emerald-400 text-[10px] bg-emerald-400/20 px-2 py-0.5 rounded-full font-bold">4/5</span>
+                                    </div>
                                     <div class="space-y-2">
-                                        <div class="flex items-center gap-2"><div class="w-4 h-4 rounded-md bg-emerald-500 flex items-center justify-center"><svg class="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-white text-[11px]">Matematik</span></div>
-                                        <div class="flex items-center gap-2"><div class="w-4 h-4 rounded-md bg-emerald-500 flex items-center justify-center"><svg class="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-white text-[11px]">Türkçe</span></div>
-                                        <div class="flex items-center gap-2"><div class="w-4 h-4 rounded-md bg-emerald-500 flex items-center justify-center"><svg class="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-white text-[11px]">Fizik</span></div>
-                                        <div class="flex items-center gap-2"><div class="w-4 h-4 rounded-md bg-white/20"></div><span class="text-white/40 text-[11px]">Kimya</span></div>
+                                        <div class="flex items-center gap-2"><div class="w-4 h-4 rounded-md bg-emerald-500 flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-white text-[11px]">Matematik</span></div>
+                                        <div class="flex items-center gap-2"><div class="w-4 h-4 rounded-md bg-emerald-500 flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-white text-[11px]">Türkçe</span></div>
+                                        <div class="flex items-center gap-2"><div class="w-4 h-4 rounded-md bg-emerald-500 flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-white text-[11px]">Fizik</span></div>
+                                        <div class="flex items-center gap-2"><div class="w-4 h-4 rounded-md border border-white/20 flex-shrink-0"></div><span class="text-white/35 text-[11px]">Kimya</span></div>
                                     </div>
                                 </div>
-                                <div class="bg-indigo-900/40 border border-indigo-500/30 rounded-2xl p-4">
-                                    <div class="flex items-center justify-between mb-3"><span class="text-indigo-400 text-[10px] font-black uppercase tracking-wider">AYT</span><span class="text-indigo-400 text-[10px] bg-indigo-400/20 px-1.5 py-0.5 rounded-full">3/6</span></div>
+                                <div class="rounded-2xl p-4 border border-indigo-500/30" style="background:rgba(99,102,241,0.1);">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <span class="text-indigo-400 text-[10px] font-black uppercase tracking-widest">AYT</span>
+                                        <span class="text-indigo-400 text-[10px] bg-indigo-400/20 px-2 py-0.5 rounded-full font-bold">3/6</span>
+                                    </div>
                                     <div class="space-y-2">
-                                        <div class="flex items-center gap-2"><div class="w-4 h-4 rounded-md bg-indigo-500 flex items-center justify-center"><svg class="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-white text-[11px]">Mat (AYT)</span></div>
-                                        <div class="flex items-center gap-2"><div class="w-4 h-4 rounded-md bg-indigo-500 flex items-center justify-center"><svg class="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-white text-[11px]">Fizik (AYT)</span></div>
-                                        <div class="flex items-center gap-2"><div class="w-4 h-4 rounded-md bg-white/20 animate-pulse"></div><span class="text-white/50 text-[11px]">Kimya...</span></div>
-                                        <div class="flex items-center gap-2"><div class="w-4 h-4 rounded-md bg-white/20"></div><span class="text-white/30 text-[11px]">Biyoloji</span></div>
+                                        <div class="flex items-center gap-2"><div class="w-4 h-4 rounded-md bg-indigo-500 flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-white text-[11px]">Mat (AYT)</span></div>
+                                        <div class="flex items-center gap-2"><div class="w-4 h-4 rounded-md bg-indigo-500 flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-white text-[11px]">Fizik (AYT)</span></div>
+                                        <div class="flex items-center gap-2"><div class="w-4 h-4 rounded-md border border-white/20 animate-pulse flex-shrink-0"></div><span class="text-white/50 text-[11px]">Kimya...</span></div>
+                                        <div class="flex items-center gap-2"><div class="w-4 h-4 rounded-md border border-white/15 flex-shrink-0"></div><span class="text-white/25 text-[11px]">Biyoloji</span></div>
                                     </div>
                                 </div>
-                                <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
-                                    <div class="text-white/40 text-[10px] uppercase font-bold tracking-wider mb-3">Atama Günlüğü</div>
-                                    <div class="space-y-2.5">
+                                <div class="rounded-2xl p-4 border border-white/10" style="background:rgba(255,255,255,0.04);">
+                                    <div class="text-white/40 text-[10px] uppercase font-bold tracking-widest mb-3">Atama Günlüğü</div>
+                                    <div class="space-y-3">
                                         <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1 flex-shrink-0"></div><div><div class="text-white text-[11px] font-semibold">Matematik - Limit</div><div class="text-white/30 text-[9px]">az önce</div></div></div>
                                         <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1 flex-shrink-0"></div><div><div class="text-white text-[11px] font-semibold">Türkçe - Paragraf</div><div class="text-white/30 text-[9px]">2 dk önce</div></div></div>
                                         <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-yellow-400 mt-1 flex-shrink-0 animate-pulse"></div><div><div class="text-white/60 text-[11px] font-semibold">Fizik - Kuvvet...</div><div class="text-yellow-400/60 text-[9px]">atanıyor...</div></div></div>
@@ -411,112 +436,157 @@
                             </div>
                         </div>
 
-                        <!-- Panel 2 -->
-                        <div id="dpanel-2" class="absolute inset-0 p-4 sm:p-6 md:p-8 flex flex-col gap-4 overflow-y-auto" style="opacity:0;transition:opacity 0.5s;pointer-events:none;">
+                        <!-- ── Panel 2: Program Kur ── -->
+                        <div id="dpanel-2" class="demo-panel absolute inset-0 p-6 md:p-10 flex flex-col gap-5" style="opacity:0;transition:opacity 0.5s,transform 0.5s;transform:translateX(60px);pointer-events:none;">
                             <div class="flex items-center gap-3">
-                                <div class="w-1.5 h-6 rounded-full bg-purple-500 flex-shrink-0"></div>
-                                <h3 class="text-white font-extrabold text-sm sm:text-base">Haftalık Çalışma Programı</h3>
-                                <span class="ml-auto flex items-center gap-1.5 text-purple-300 text-[10px] font-bold bg-purple-500/20 px-2.5 py-1 rounded-full"><span class="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></span>Ali Yılmaz için</span>
+                                <div class="w-8 h-8 rounded-xl bg-purple-600 flex items-center justify-center shadow-lg shadow-purple-900/60">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-white font-extrabold text-base leading-tight">Haftalık Çalışma Programı</h3>
+                                    <p class="text-purple-300/70 text-[11px] font-mono">koç › ali-yilmaz › program</p>
+                                </div>
+                                <span class="ml-auto hidden sm:flex items-center gap-1.5 text-purple-300 text-[10px] font-bold bg-purple-500/15 border border-purple-500/30 px-2.5 py-1 rounded-full">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></span>Ali Yılmaz için
+                                </span>
                             </div>
-                            <div class="flex-1 overflow-x-auto">
-                                <table class="w-full text-[11px] text-white border-collapse min-w-[360px]">
+                            <div class="flex-1 overflow-x-auto rounded-2xl border border-white/10" style="background:rgba(255,255,255,0.04);">
+                                <table class="w-full text-[11px] text-white border-collapse min-w-[380px]">
                                     <thead><tr>
-                                        <th class="py-2 px-2 bg-white/5 border border-white/10 text-white/40 font-semibold text-left w-16">Saat</th>
-                                        <th class="py-2 px-2 bg-white/5 border border-white/10 text-white/60 font-semibold text-center">Pzt</th>
-                                        <th class="py-2 px-2 bg-white/5 border border-white/10 text-white/60 font-semibold text-center">Sal</th>
-                                        <th class="py-2 px-2 bg-white/5 border border-white/10 text-white/60 font-semibold text-center">Çar</th>
-                                        <th class="py-2 px-2 bg-white/5 border border-white/10 text-white/60 font-semibold text-center">Per</th>
-                                        <th class="py-2 px-2 bg-white/5 border border-white/10 text-white/60 font-semibold text-center">Cum</th>
+                                        <th class="py-3 px-3 text-white/30 font-semibold text-left w-14 border-b border-r border-white/8">Saat</th>
+                                        <th class="py-3 px-2 text-white/50 font-bold text-center border-b border-r border-white/8">Pzt</th>
+                                        <th class="py-3 px-2 text-white/50 font-bold text-center border-b border-r border-white/8">Sal</th>
+                                        <th class="py-3 px-2 text-white/50 font-bold text-center border-b border-r border-white/8">Çar</th>
+                                        <th class="py-3 px-2 text-white/50 font-bold text-center border-b border-r border-white/8">Per</th>
+                                        <th class="py-3 px-2 text-white/50 font-bold text-center border-b border-white/8">Cum</th>
                                     </tr></thead>
                                     <tbody>
                                         <tr>
-                                            <td class="py-2 px-2 border border-white/10 text-white/30">09:00</td>
-                                            <td class="py-1 px-1 border border-white/10"><div class="bg-indigo-600/70 rounded-lg px-2 py-1.5 text-center font-semibold">Matematik</div></td>
-                                            <td class="py-1 px-1 border border-white/10"><div class="bg-emerald-600/70 rounded-lg px-2 py-1.5 text-center font-semibold">Türkçe</div></td>
-                                            <td class="py-1 px-1 border border-white/10"></td>
-                                            <td class="py-1 px-1 border border-white/10"><div class="bg-purple-600/70 rounded-lg px-2 py-1.5 text-center font-semibold">Kimya</div></td>
-                                            <td class="py-1 px-1 border border-white/10"><div class="bg-indigo-600/70 rounded-lg px-2 py-1.5 text-center font-semibold">Matematik</div></td>
+                                            <td class="py-2 px-3 border-r border-b border-white/8 text-white/25 font-mono text-[10px]">09:00</td>
+                                            <td class="py-1.5 px-1.5 border-r border-b border-white/8"><div class="bg-indigo-600/60 rounded-lg px-2 py-1.5 text-center font-semibold text-[10px]">Matematik</div></td>
+                                            <td class="py-1.5 px-1.5 border-r border-b border-white/8"><div class="bg-emerald-600/60 rounded-lg px-2 py-1.5 text-center font-semibold text-[10px]">Türkçe</div></td>
+                                            <td class="py-1.5 px-1.5 border-r border-b border-white/8"></td>
+                                            <td class="py-1.5 px-1.5 border-r border-b border-white/8"><div class="bg-purple-600/60 rounded-lg px-2 py-1.5 text-center font-semibold text-[10px]">Kimya</div></td>
+                                            <td class="py-1.5 px-1.5 border-b border-white/8"><div class="bg-indigo-600/60 rounded-lg px-2 py-1.5 text-center font-semibold text-[10px]">Matematik</div></td>
                                         </tr>
                                         <tr>
-                                            <td class="py-2 px-2 border border-white/10 text-white/30">11:00</td>
-                                            <td class="py-1 px-1 border border-white/10"><div class="bg-yellow-600/70 rounded-lg px-2 py-1.5 text-center font-semibold">Fizik</div></td>
-                                            <td class="py-1 px-1 border border-white/10"></td>
-                                            <td class="py-1 px-1 border border-white/10"><div class="bg-emerald-600/70 rounded-lg px-2 py-1.5 text-center font-semibold">Türkçe</div></td>
-                                            <td class="py-1 px-1 border border-white/10"><div class="bg-indigo-600/70 rounded-lg px-2 py-1.5 text-center font-semibold">Matematik</div></td>
-                                            <td class="py-1 px-1 border border-white/10"></td>
+                                            <td class="py-2 px-3 border-r border-b border-white/8 text-white/25 font-mono text-[10px]">11:00</td>
+                                            <td class="py-1.5 px-1.5 border-r border-b border-white/8"><div class="bg-yellow-600/60 rounded-lg px-2 py-1.5 text-center font-semibold text-[10px]">Fizik</div></td>
+                                            <td class="py-1.5 px-1.5 border-r border-b border-white/8"></td>
+                                            <td class="py-1.5 px-1.5 border-r border-b border-white/8"><div class="bg-emerald-600/60 rounded-lg px-2 py-1.5 text-center font-semibold text-[10px]">Türkçe</div></td>
+                                            <td class="py-1.5 px-1.5 border-r border-b border-white/8"><div class="bg-indigo-600/60 rounded-lg px-2 py-1.5 text-center font-semibold text-[10px]">Matematik</div></td>
+                                            <td class="py-1.5 px-1.5 border-b border-white/8"></td>
                                         </tr>
                                         <tr>
-                                            <td class="py-2 px-2 border border-white/10 text-white/30">14:00</td>
-                                            <td class="py-1 px-1 border border-white/10"></td>
-                                            <td class="py-1 px-1 border border-white/10"><div class="bg-purple-600/70 rounded-lg px-2 py-1.5 text-center font-semibold">Kimya</div></td>
-                                            <td class="py-1 px-1 border border-white/10"><div class="bg-yellow-600/70 rounded-lg px-2 py-1.5 text-center font-semibold">Fizik</div></td>
-                                            <td class="py-1 px-1 border border-white/10"></td>
-                                            <td class="py-1 px-1 border border-white/10"><div class="bg-emerald-500/90 border border-emerald-400/60 rounded-lg px-2 py-1.5 text-center font-bold animate-pulse">Türkçe ✏️</div></td>
+                                            <td class="py-2 px-3 border-r border-white/8 text-white/25 font-mono text-[10px]">14:00</td>
+                                            <td class="py-1.5 px-1.5 border-r border-white/8"></td>
+                                            <td class="py-1.5 px-1.5 border-r border-white/8"><div class="bg-purple-600/60 rounded-lg px-2 py-1.5 text-center font-semibold text-[10px]">Kimya</div></td>
+                                            <td class="py-1.5 px-1.5 border-r border-white/8"><div class="bg-yellow-600/60 rounded-lg px-2 py-1.5 text-center font-semibold text-[10px]">Fizik</div></td>
+                                            <td class="py-1.5 px-1.5 border-r border-white/8"></td>
+                                            <td class="py-1.5 px-1.5"><div class="bg-gradient-to-r from-emerald-600 to-emerald-500 rounded-lg px-2 py-1.5 text-center font-bold text-[10px] animate-pulse">Türkçe ✏️</div></td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="flex items-center justify-between mt-1">
-                                <div class="text-white/30 text-[10px]">15 görev • 5 gün</div>
-                                <div class="h-7 bg-purple-600 rounded-lg flex items-center px-3 text-white text-[11px] font-bold gap-1.5 shadow-lg shadow-purple-900/40">
+                            <div class="flex items-center justify-between">
+                                <div class="text-white/30 text-[10px] flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>15 görev • 5 gün</div>
+                                <button class="h-8 rounded-lg flex items-center px-3 text-white text-[11px] font-bold gap-1.5 shadow-lg shadow-purple-900/40 transition-transform hover:scale-105" style="background:linear-gradient(135deg,#7c3aed,#9333ea);">
                                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
                                     Öğrenciye Gönder
-                                </div>
+                                </button>
                             </div>
                         </div>
 
-                        <!-- Panel 3 -->
-                        <div id="dpanel-3" class="absolute inset-0 p-4 sm:p-6 md:p-8 flex flex-col gap-4 overflow-y-auto" style="opacity:0;transition:opacity 0.5s;pointer-events:none;">
+                        <!-- ── Panel 3: Gelişimi İzle ── -->
+                        <div id="dpanel-3" class="demo-panel absolute inset-0 p-6 md:p-10 flex flex-col gap-5" style="opacity:0;transition:opacity 0.5s,transform 0.5s;transform:translateX(60px);pointer-events:none;">
                             <div class="flex items-center gap-3">
-                                <div class="w-1.5 h-6 rounded-full bg-rose-500 flex-shrink-0"></div>
-                                <h3 class="text-white font-extrabold text-sm sm:text-base">Gelişim Takip Paneli</h3>
-                                <span class="ml-auto text-white/30 text-[10px] font-mono hidden sm:inline">Ali Yılmaz • Bu Hafta</span>
+                                <div class="w-8 h-8 rounded-xl bg-rose-600 flex items-center justify-center shadow-lg shadow-rose-900/60">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-white font-extrabold text-base leading-tight">Gelişim Takip Paneli</h3>
+                                    <p class="text-rose-300/70 text-[11px] font-mono">ali-yilmaz • Bu Hafta</p>
+                                </div>
                             </div>
                             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                                <div class="bg-indigo-900/50 border border-indigo-500/30 rounded-2xl p-4">
-                                    <div class="text-indigo-300 text-[10px] uppercase font-black tracking-wider">TYT Net Ort.</div>
-                                    <div class="text-2xl sm:text-3xl font-black text-white mt-1">74.5</div>
-                                    <div class="flex items-center gap-1 mt-1"><svg class="w-3 h-3 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z"/></svg><span class="text-emerald-400 text-[10px] font-semibold">+3.2 bu hafta</span></div>
-                                    <div class="flex items-end gap-0.5 h-10 mt-3">
-                                        <div class="flex-1 bg-indigo-500/40 rounded-sm" style="height:35%"></div>
-                                        <div class="flex-1 bg-indigo-500/55 rounded-sm" style="height:50%"></div>
-                                        <div class="flex-1 bg-indigo-500/65 rounded-sm" style="height:43%"></div>
-                                        <div class="flex-1 bg-indigo-500/75 rounded-sm" style="height:60%"></div>
-                                        <div class="flex-1 bg-indigo-500/90 rounded-sm" style="height:70%"></div>
-                                        <div class="flex-1 bg-indigo-400 rounded-sm animate-pulse" style="height:90%"></div>
+                                <div class="rounded-2xl p-4 border border-indigo-500/30" style="background:rgba(99,102,241,0.15);">
+                                    <div class="text-indigo-300 text-[10px] uppercase font-black tracking-widest">TYT Net Ort.</div>
+                                    <div class="text-4xl font-black text-white mt-2">74.5</div>
+                                    <div class="flex items-center gap-1 mt-1">
+                                        <svg class="w-3 h-3 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z"/></svg>
+                                        <span class="text-emerald-400 text-[10px] font-semibold">+3.2 bu hafta</span>
+                                    </div>
+                                    <div class="flex items-end gap-0.5 h-10 mt-4">
+                                        <div class="flex-1 bg-indigo-500/30 rounded-sm" style="height:35%"></div>
+                                        <div class="flex-1 bg-indigo-500/45 rounded-sm" style="height:50%"></div>
+                                        <div class="flex-1 bg-indigo-500/55 rounded-sm" style="height:45%"></div>
+                                        <div class="flex-1 bg-indigo-500/70 rounded-sm" style="height:62%"></div>
+                                        <div class="flex-1 bg-indigo-500/85 rounded-sm" style="height:72%"></div>
+                                        <div class="flex-1 bg-indigo-400 rounded-sm animate-pulse" style="height:92%"></div>
                                     </div>
                                 </div>
-                                <div class="bg-yellow-900/30 border border-yellow-500/30 rounded-2xl p-4">
-                                    <div class="text-yellow-300 text-[10px] uppercase font-black tracking-wider">Görev Tamamlama</div>
-                                    <div class="text-2xl sm:text-3xl font-black text-white mt-1">18<span class="text-base text-white/30">/24</span></div>
+                                <div class="rounded-2xl p-4 border border-yellow-500/30" style="background:rgba(234,179,8,0.1);">
+                                    <div class="text-yellow-300 text-[10px] uppercase font-black tracking-widest">Görev Tamamlama</div>
+                                    <div class="text-4xl font-black text-white mt-2">18<span class="text-lg text-white/30">/24</span></div>
                                     <div class="text-yellow-400 text-[10px] font-semibold mt-1">%75 Tamamlandı</div>
-                                    <div class="w-full h-2 bg-white/10 rounded-full mt-3"><div class="h-2 bg-gradient-to-r from-yellow-500 to-yellow-400 rounded-full" style="width:75%"></div></div>
-                                </div>
-                                <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
-                                    <div class="text-white/40 text-[10px] uppercase font-black tracking-wider mb-3">Son Aktiviteler</div>
-                                    <div class="space-y-2.5">
-                                        <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0"></div><span class="text-white text-[11px]">Limit konusu ✓</span></div>
-                                        <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0"></div><span class="text-white text-[11px]">35 soru çözüldü</span></div>
-                                        <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-yellow-400 flex-shrink-0 animate-pulse"></div><span class="text-white/70 text-[11px]">Deneme girildi</span></div>
+                                    <div class="w-full h-2.5 bg-white/10 rounded-full mt-4 overflow-hidden">
+                                        <div class="h-full rounded-full" style="width:75%;background:linear-gradient(90deg,#eab308,#facc15);"></div>
                                     </div>
+                                </div>
+                                <div class="rounded-2xl p-4 border border-white/10 space-y-3" style="background:rgba(255,255,255,0.04);">
+                                    <div class="text-white/40 text-[10px] uppercase font-black tracking-widest">Son Aktiviteler</div>
+                                    <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0"></div><span class="text-white text-[11px]">Limit konusu ✓</span></div>
+                                    <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0"></div><span class="text-white text-[11px]">35 soru çözüldü</span></div>
+                                    <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-yellow-400 flex-shrink-0 animate-pulse"></div><span class="text-white/70 text-[11px]">Deneme girildi</span></div>
                                 </div>
                             </div>
-                            <div class="grid grid-cols-4 gap-2 mt-auto">
-                                <div class="bg-white/5 border border-white/10 rounded-xl p-2.5 text-center"><div class="text-white font-black text-sm">12</div><div class="text-white/30 text-[9px] mt-0.5">Konu</div></div>
-                                <div class="bg-white/5 border border-white/10 rounded-xl p-2.5 text-center"><div class="text-white font-black text-sm">340</div><div class="text-white/30 text-[9px] mt-0.5">Soru</div></div>
-                                <div class="bg-white/5 border border-white/10 rounded-xl p-2.5 text-center"><div class="text-white font-black text-sm">5</div><div class="text-white/30 text-[9px] mt-0.5">Deneme</div></div>
-                                <div class="bg-white/5 border border-white/10 rounded-xl p-2.5 text-center"><div class="text-emerald-400 font-black text-sm">↑</div><div class="text-white/30 text-[9px] mt-0.5">Trend</div></div>
+                            <div class="grid grid-cols-4 gap-2">
+                                <div class="rounded-xl p-3 text-center border border-white/10" style="background:rgba(255,255,255,0.04);"><div class="text-white font-black text-lg">12</div><div class="text-white/30 text-[9px] mt-0.5 uppercase tracking-wider">Konu</div></div>
+                                <div class="rounded-xl p-3 text-center border border-white/10" style="background:rgba(255,255,255,0.04);"><div class="text-white font-black text-lg">340</div><div class="text-white/30 text-[9px] mt-0.5 uppercase tracking-wider">Soru</div></div>
+                                <div class="rounded-xl p-3 text-center border border-white/10" style="background:rgba(255,255,255,0.04);"><div class="text-white font-black text-lg">5</div><div class="text-white/30 text-[9px] mt-0.5 uppercase tracking-wider">Deneme</div></div>
+                                <div class="rounded-xl p-3 text-center border border-emerald-500/30" style="background:rgba(16,185,129,0.12);"><div class="text-emerald-400 font-black text-lg">↑</div><div class="text-white/30 text-[9px] mt-0.5 uppercase tracking-wider">Trend</div></div>
                             </div>
                         </div>
 
                     </div><!-- /panels -->
 
-                    <!-- Progress bar -->
-                    <div class="h-0.5 bg-white/10"><div id="demo-prog" class="h-0.5 bg-indigo-400" style="width:0%;transition:none;"></div></div>
+                    <!-- Bottom bar with controls -->
+                    <div class="flex items-center justify-between px-6 py-3 border-t border-white/10" style="background:rgba(255,255,255,0.03);">
+                        <!-- Dot indicators -->
+                        <div class="flex items-center gap-1.5">
+                            <div id="dd0" class="h-1 rounded-full transition-all duration-400" style="width:24px;background:#818cf8;"></div>
+                            <div id="dd1" class="h-1 rounded-full bg-white/20 transition-all duration-400" style="width:8px;"></div>
+                            <div id="dd2" class="h-1 rounded-full bg-white/20 transition-all duration-400" style="width:8px;"></div>
+                            <div id="dd3" class="h-1 rounded-full bg-white/20 transition-all duration-400" style="width:8px;"></div>
+                        </div>
+                        <!-- Controls -->
+                        <div class="flex items-center gap-2">
+                            <button type="button" onclick="demoGoTo((window._demoState.current - 1 + 4) % 4)" class="w-7 h-7 rounded-lg flex items-center justify-center text-white/40 hover:text-white/80 hover:bg-white/10 transition-all">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                            </button>
+                            <button type="button" id="demo-play-btn" onclick="demoTogglePlay()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-bold transition-all" style="background:rgba(99,102,241,0.3);color:#a5b4fc;border:1px solid rgba(99,102,241,0.4);">
+                                <svg id="demo-pi" class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                <svg id="demo-pai" class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                                <span id="demo-play-lbl">Otomatik Oynat</span>
+                            </button>
+                            <button type="button" onclick="demoGoTo((window._demoState.current + 1) % 4)" class="w-7 h-7 rounded-lg flex items-center justify-center text-white/40 hover:text-white/80 hover:bg-white/10 transition-all">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </button>
+                        </div>
+                    </div>
 
-                </div><!-- /screen -->
-            </div><!-- /container -->
+                </div><!-- /demo window -->
 
+                <!-- Bottom CTA strip -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-10 text-sm text-slate-500">
+                    <span>Daha fazlasını görmek ister misiniz?</span>
+                    <a href="{{ route('login') }}" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-bold text-white shadow-lg shadow-indigo-200 transition-all hover:shadow-indigo-300 hover:scale-105 text-sm" style="background:linear-gradient(135deg,#4f46e5,#7c3aed);">
+                        Ücretsiz Deneyin
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </a>
+                </div>
+
+            </div>
         </section>
 
         {{-- Subscription Packages (Geçici olarak kaldırıldı) --}}
@@ -554,11 +624,14 @@
 <script>
 (function() {
     var TOTAL = 4;
-    var DURATION = 4500;
+    var DURATION = 5000;
     var current = 0;
     var playing = false;
     var rafId = null;
     var startTime = null;
+
+    // Expose state for prev/next buttons
+    window._demoState = { current: 0 };
 
     var urls = [
         'rehberkoçum.com/koc/ogrenciler/yeni',
@@ -567,46 +640,40 @@
         'rehberkoçum.com/koc/ali-yilmaz/gelisim'
     ];
 
-    var sidebarColors = [
-        'rgba(99,102,241,0.18)',
-        'rgba(16,185,129,0.15)',
-        'rgba(139,92,246,0.18)',
-        'rgba(244,63,94,0.18)'
+    var pillActiveClasses = [
+        ['bg-indigo-600', 'text-white', 'shadow-indigo-200'],
+        ['bg-emerald-600', 'text-white', 'shadow-emerald-200'],
+        ['bg-purple-600',  'text-white', 'shadow-purple-200'],
+        ['bg-rose-600',    'text-white', 'shadow-rose-200']
     ];
 
-    var numColors = ['bg-indigo-600','bg-emerald-600','bg-purple-600','bg-rose-600'];
-    var dotColors = ['bg-indigo-400','bg-emerald-400','bg-purple-400','bg-rose-400'];
+    var dotColors = ['#818cf8','#34d399','#c084fc','#fb7185'];
 
     function showPanel(idx) {
         for (var i = 0; i < TOTAL; i++) {
             var p = document.getElementById('dpanel-' + i);
-            var b = document.getElementById('dsb-' + i);
-            if (!p || !b) continue;
-
+            if (!p) continue;
             if (i === idx) {
                 p.style.opacity = '1';
+                p.style.transform = 'translateX(0)';
                 p.style.pointerEvents = 'auto';
-                b.style.background = sidebarColors[idx];
-                b.style.opacity = '1';
-                // Update number button style
-                var numEl = b.querySelector('div');
-                if (numEl) {
-                    numEl.className = 'w-8 h-8 rounded-xl flex items-center justify-center text-white text-sm font-black flex-shrink-0 shadow-lg ' + numColors[idx];
-                }
-                // Show right border indicator on desktop
-                var bar = b.querySelector('.absolute');
-                if (bar) bar.style.opacity = '1';
             } else {
                 p.style.opacity = '0';
+                p.style.transform = i < idx ? 'translateX(-40px)' : 'translateX(40px)';
                 p.style.pointerEvents = 'none';
-                b.style.background = 'transparent';
-                b.style.opacity = '0.45';
-                var numEl2 = b.querySelector('div');
-                if (numEl2) {
-                    numEl2.className = 'w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center text-white/50 text-sm font-black flex-shrink-0';
-                }
-                var bar2 = b.querySelector('.absolute');
-                if (bar2) bar2.style.opacity = '0';
+            }
+
+            // Pills
+            var pill = document.getElementById('pill-' + i);
+            if (!pill) continue;
+            if (i === idx) {
+                pill.className = 'demo-pill flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 shadow-lg ' + pillActiveClasses[i].join(' ');
+                var numSpan = pill.querySelector('span');
+                if (numSpan) numSpan.className = 'w-5 h-5 rounded-full bg-white/25 flex items-center justify-center text-xs font-black';
+            } else {
+                pill.className = 'demo-pill flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 bg-white text-slate-500 border border-slate-200 hover:border-indigo-200';
+                var numSpan2 = pill.querySelector('span');
+                if (numSpan2) numSpan2.className = 'w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center text-xs font-black';
             }
         }
 
@@ -620,14 +687,17 @@
             if (!dot) continue;
             if (d === idx) {
                 dot.style.width = '24px';
-                dot.className = 'h-1 rounded-full transition-all duration-400 ' + dotColors[idx];
+                dot.style.background = dotColors[idx];
+                dot.style.opacity = '1';
             } else {
                 dot.style.width = '8px';
-                dot.className = 'h-1 rounded-full bg-white/20 transition-all duration-400';
+                dot.style.background = 'rgba(255,255,255,0.2)';
+                dot.style.opacity = '1';
             }
         }
 
         current = idx;
+        window._demoState.current = idx;
         resetProgress();
     }
 
@@ -649,8 +719,7 @@
             bar.style.width = pct + '%';
         }
         if (pct >= 100) {
-            var next = (current + 1) % TOTAL;
-            showPanel(next);
+            showPanel((current + 1) % TOTAL);
             startTime = null;
         }
         rafId = requestAnimationFrame(tick);
@@ -660,17 +729,14 @@
         playing = true;
         startTime = null;
         rafId = requestAnimationFrame(tick);
-        // Update icons
-        var pi = document.getElementById('demo-pi');
+        var pi  = document.getElementById('demo-pi');
         var pai = document.getElementById('demo-pai');
-        var pim = document.getElementById('demo-pi-m');
-        var paim = document.getElementById('demo-pai-m');
         var lbl = document.getElementById('demo-play-lbl');
-        if (pi) pi.style.display = 'none';
+        if (pi)  pi.style.display  = 'none';
         if (pai) pai.style.display = '';
-        if (pim) pim.style.display = 'none';
-        if (paim) paim.style.display = '';
-        if (lbl) lbl.textContent = 'Duraklat';
+        if (lbl) lbl.textContent   = 'Duraklat';
+        var btn = document.getElementById('demo-play-btn');
+        if (btn) btn.style.background = 'rgba(99,102,241,0.5)';
     }
 
     function stopPlay() {
@@ -679,16 +745,14 @@
         rafId = null;
         startTime = null;
         resetProgress();
-        var pi = document.getElementById('demo-pi');
+        var pi  = document.getElementById('demo-pi');
         var pai = document.getElementById('demo-pai');
-        var pim = document.getElementById('demo-pi-m');
-        var paim = document.getElementById('demo-pai-m');
         var lbl = document.getElementById('demo-play-lbl');
-        if (pi) pi.style.display = '';
+        if (pi)  pi.style.display  = '';
         if (pai) pai.style.display = 'none';
-        if (pim) pim.style.display = '';
-        if (paim) paim.style.display = 'none';
-        if (lbl) lbl.textContent = 'Otomatik Oynat';
+        if (lbl) lbl.textContent   = 'Otomatik Oynat';
+        var btn = document.getElementById('demo-play-btn');
+        if (btn) btn.style.background = 'rgba(99,102,241,0.3)';
     }
 
     window.demoGoTo = function(idx) {
