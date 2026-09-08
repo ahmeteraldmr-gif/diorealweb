@@ -190,11 +190,24 @@
     </div>
 
     <!-- Modal -->
-    @if($showModal)
-        <div class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50" wire:click="closeModal">
-            <div class="relative top-20 mx-auto p-5 border w-full max-w-md shadow-lg rounded-lg bg-white" wire:click.stop>
-                <div class="flex items-center justify-between pb-4 border-b">
-                    <h3 class="text-xl font-semibold text-gray-900">
+    <div
+        x-show="$wire.showModal"
+        x-cloak
+        wire:key="field-management-modal"
+        class="fixed inset-0 z-50 overflow-y-auto"
+        style="display: none;"
+    >
+        <!-- Static Backdrop (clicks do NOT close the modal) -->
+        <div class="fixed inset-0 bg-gray-900/60 backdrop-blur-sm transition-opacity"></div>
+
+        <!-- Dialog Container -->
+        <div class="min-h-full flex items-center justify-center p-4 text-center sm:p-0">
+            <div 
+                class="relative bg-white rounded-2xl text-left shadow-2xl transform transition-all sm:my-8 w-full max-w-md max-h-[90vh] flex flex-col border border-gray-100"
+                @click.stop
+            >
+                <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100 bg-gray-50/50 rounded-t-2xl">
+                    <h3 class="text-lg font-bold text-gray-900">
                         @if($modalType === 'field')
                             {{ $editMode ? 'Alan Düzenle' : 'Yeni Alan Ekle' }}
                         @elseif($modalType === 'course')
@@ -205,88 +218,95 @@
                             {{ $editMode ? 'Alt Konu Düzenle' : 'Yeni Alt Konu Ekle' }}
                         @endif
                     </h3>
-                    <button wire:click="closeModal" class="text-gray-400 hover:text-gray-600">
+                    <button type="button" wire:click="closeModal" class="p-1 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-colors">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                         </svg>
                     </button>
                 </div>
 
-                <form wire:submit.prevent="save" class="mt-4 space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">
-                            İsim *
-                        </label>
-                        <input 
-                            type="text" 
-                            wire:model="name" 
-                            class="input-field"
-                            placeholder="{{ $modalType === 'field' ? 'TYT, AYT, DGS, KPSS' : 'İsim giriniz' }}"
-                        >
-                        @error('name') <span class="text-xs text-red-600">{{ $message }}</span> @enderror
-                    </div>
-
-                    @if($modalType === 'field')
+                <div class="overflow-y-auto px-6 py-5 flex-1">
+                    <form id="fieldForm" wire:submit.prevent="save" class="space-y-4">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">
-                                Slug (URL için) *
+                            <label class="block text-sm font-medium text-gray-700 mb-1">
+                                İsim *
                             </label>
                             <input 
                                 type="text" 
-                                wire:model="slug" 
+                                wire:model="name" 
                                 class="input-field"
-                                placeholder="tyt, ayt, dgs, kpss"
+                                placeholder="{{ $modalType === 'field' ? 'TYT, AYT, DGS, KPSS' : 'İsim giriniz' }}"
                             >
-                            @error('slug') <span class="text-xs text-red-600">{{ $message }}</span> @enderror
+                            @error('name') <span class="text-xs text-red-600 font-medium">{{ $message }}</span> @enderror
+                        </div>
+
+                        @if($modalType === 'field')
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">
+                                    Slug (URL için) *
+                                </label>
+                                <input 
+                                    type="text" 
+                                    wire:model="slug" 
+                                    class="input-field"
+                                    placeholder="tyt, ayt, dgs, kpss"
+                                >
+                                @error('slug') <span class="text-xs text-red-600 font-medium">{{ $message }}</span> @enderror
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">
+                                    Kategori Türü *
+                                </label>
+                                <select wire:model="category_type" class="input-field">
+                                    <option value="course_field">Ders Müfredat Alanı (Örn: TYT, AYT)</option>
+                                    <option value="exam_category">Sınav/Deneme Kategorisi (Örn: Sayısal, Sözel)</option>
+                                    <option value="both">Her İkisi</option>
+                                </select>
+                                @error('category_type') <span class="text-xs text-red-600 font-medium">{{ $message }}</span> @enderror
+                            </div>
+                        @endif
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">
+                                Sıralama
+                            </label>
+                            <input 
+                                type="number" 
+                                wire:model="order" 
+                                class="input-field"
+                                min="0"
+                            >
+                            @error('order') <span class="text-xs text-red-600 font-medium">{{ $message }}</span> @enderror
                         </div>
 
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">
-                                Kategori Türü *
+                            <label class="flex items-center cursor-pointer select-none">
+                                <input 
+                                    type="checkbox" 
+                                    wire:model="is_active" 
+                                    class="h-4 w-4 text-accent-blue focus:ring-accent-blue border-gray-300 rounded"
+                                >
+                                <span class="ml-2 text-sm text-gray-700 font-medium">Aktif</span>
                             </label>
-                            <select wire:model="category_type" class="input-field">
-                                <option value="course_field">Ders Müfredat Alanı (Örn: TYT, AYT)</option>
-                                <option value="exam_category">Sınav/Deneme Kategorisi (Örn: Sayısal, Sözel)</option>
-                                <option value="both">Her İkisi</option>
-                            </select>
-                            @error('category_type') <span class="text-xs text-red-600">{{ $message }}</span> @enderror
                         </div>
-                    @endif
+                    </form>
+                </div>
 
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">
-                            Sıralama
-                        </label>
-                        <input 
-                            type="number" 
-                            wire:model="order" 
-                            class="input-field"
-                            min="0"
-                        >
-                        @error('order') <span class="text-xs text-red-600">{{ $message }}</span> @enderror
-                    </div>
-
-                    <div>
-                        <label class="flex items-center">
-                            <input 
-                                type="checkbox" 
-                                wire:model="is_active" 
-                                class="h-4 w-4 text-accent-blue focus:ring-accent-blue border-gray-300 rounded"
-                            >
-                            <span class="ml-2 text-sm text-gray-700">Aktif</span>
-                        </label>
-                    </div>
-
-                    <div class="flex items-center justify-end space-x-3 pt-4 border-t">
-                        <button type="button" wire:click="closeModal" class="btn-secondary">
-                            İptal
-                        </button>
-                        <button type="submit" class="btn-primary">
+                <div class="flex items-center justify-end space-x-3 px-6 py-4 border-t border-gray-100 bg-gray-50/50 rounded-b-2xl">
+                    <button type="button" wire:click="closeModal" class="btn-secondary">
+                        İptal
+                    </button>
+                    <button type="submit" form="fieldForm" class="btn-primary flex items-center gap-2">
+                        <span wire:loading.remove wire:target="save">
                             {{ $editMode ? 'Güncelle' : 'Kaydet' }}
-                        </button>
-                    </div>
-                </form>
+                        </span>
+                        <span wire:loading wire:target="save">
+                            Kaydediliyor...
+                        </span>
+                    </button>
+                </div>
             </div>
         </div>
-    @endif
+    </div>
 </div>
