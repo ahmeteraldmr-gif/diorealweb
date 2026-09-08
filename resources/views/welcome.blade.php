@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="tr" class="scroll-smooth">
 <head>
     <meta charset="utf-8">
@@ -577,14 +577,6 @@
 
                 </div><!-- /demo window -->
 
-                <!-- Bottom CTA strip -->
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-10 text-sm text-slate-500">
-                    <span>Daha fazlasını görmek ister misiniz?</span>
-                    <a href="{{ route('login') }}" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-bold text-white shadow-lg shadow-indigo-200 transition-all hover:shadow-indigo-300 hover:scale-105 text-sm" style="background:linear-gradient(135deg,#4f46e5,#7c3aed);">
-                        Ücretsiz Deneyin
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                    </a>
-                </div>
 
             </div>
         </section>
