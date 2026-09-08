@@ -100,9 +100,14 @@
                             @if(auth()->user()->isSuperAdmin())
                                 {{ \App\Models\Subscription::where('is_active', true)->count() }}
                             @else
-                                {{ auth()->user()->subscription ? auth()->user()->subscription->plan->name : 'Abonelik Yok' }}
+                                {{ auth()->user()->subscription ? (auth()->user()->subscription->plan?->name ?? 'Aktif Paket') : 'Abonelik Yok' }}
                             @endif
                         </dd>
+                        @if(!auth()->user()->isSuperAdmin() && auth()->user()->subscription)
+                            <div class="text-xs font-medium text-gray-600 mt-1">
+                                {{ auth()->user()->subscription->remainingTimeText() }}
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -146,6 +151,9 @@
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Kayıt Tarihi
                             </th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Abonelik
+                            </th>
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
@@ -154,7 +162,8 @@
                             if (!auth()->user()->isSuperAdmin()) {
                                 $coachesQuery->where('created_by', auth()->id());
                             }
-                            $coaches = $coachesQuery->withCount('students')
+                            $coaches = $coachesQuery->with(['subscription'])
+                                ->withCount('students')
                                 ->latest()
                                 ->take(5)
                                 ->get();
@@ -172,6 +181,14 @@
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                 {{ $coach->created_at->format('d.m.Y') }}
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-xs font-semibold">
+                                @if($coach->subscription && $coach->subscription->end_date)
+                                    <div>{{ $coach->subscription->remainingTimeText() }}</div>
+                                    <div class="text-[11px] text-gray-400 font-normal">Bitiş: {{ $coach->subscription->end_date->format('d.m.Y') }}</div>
+                                @else
+                                    <span class="text-green-600 font-medium">Sınırsız / Aktif</span>
+                                @endif
                             </td>
                         </tr>
                         @endforeach
